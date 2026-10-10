@@ -96,3 +96,22 @@ stager rereads accepted inputs and replaces files individually; provenance prose
 still describes an earlier divergence. The edition uses the accepted tracked
 module directly and does not execute that stager or TMB binding. These findings
 are retained here for the existing engine owner, without changing their scope.
+
+## Delivery checkpoint
+
+Both repositories' topic branches were pushed and their remote commit identities
+read back. The implementation is in SIMVLTANEA PR 30; this report and verifier
+are in [system PR 1](https://github.com/4444J99/audiovisual-composition-system/pull/1).
+Neither submission is recorded as merged.
+
+The one-shot delivery submission for SIMVLTANEA `f49290f` was deferred because
+its lifecycle label was missing. The existing `lifecycle:delivery` label was then
+applied. The one-shot system submission at `1e3d0a5` was held by the existing
+Limen merge policy. Read-only diagnosis established that its default Python lacks
+`yaml`; consequently `scripts/verify.py --deploy-regex` cannot read the existing
+gates registry and the policy conservatively treats the change as deployment
+sensitive while advisory checks are pending. The owner is Limen's verification
+environment. No policy override, repeat merge submission, CI wait or new schedule
+was used. The subsequent documentation checkpoint changes no verified runtime
+or importer bytes. This is a delivery hold, not a failure of the composition's
+passing browser checks.
