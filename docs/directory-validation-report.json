@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-10-10T21:55:21.681211+00:00",
+  "scope": "directory contract and non-destructive navigation",
+  "project_count": 15,
+  "repository_references": 5,
+  "generated_files": 28,
+  "local_links": 22,
+  "safety_tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "passed": 8,
+    "failed": 0
+  },
+  "directory_check": {
+    "command": "python3 tools/workspace_layout.py check --workspace ..",
+    "result": "PASS"
+  },
+  "idempotence": {
+    "apply_created_on_second_run": 0,
+    "render_bytes_unchanged": true
+  },
+  "editor_workspace_folders": "verified from both tracked source and outer compatibility entry",
+  "source_changes": "no tracked or untracked source content altered; worktree metadata repaired separately",
+  "worktree_repairs": 8,
+  "media_acceptance": "not assessed",
+  "physical_source_relocation": "not performed; navigation consolidated through aliases"
+}

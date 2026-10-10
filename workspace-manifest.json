@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0.0",
+  "name": "audiovisual-composition-system",
+  "display_title": "Audiovisual Composition System",
+  "legacy_workspace_alias": "audiovisual-composition-engine",
+  "catalog_scope": "15 distinct ACE project records, not a complete estate census",
+  "observed_date": "2026-10-10",
+  "source_directory": "https://chatgpt.com/space/page_12848f3c0cac8191a8e7dec178106188",
+  "design_status": "ACE-specific adopted directory contract; EES source controls remain reviewed draft",
+  "repositories": [
+    {
+      "key": "postproduction",
+      "github_id": 1409689012,
+      "full_name": "4444J99/audiovisual-media-postproduction-system",
+      "private": false,
+      "local_path": null,
+      "role": "Reusable postproduction primitives and God’s Ears composition"
+    },
+    {
+      "key": "historical-web",
+      "github_id": 924834822,
+      "full_name": "4444J99/generative-multimedia-spatial-environment",
+      "private": false,
+      "local_path": null,
+      "role": "Historical website source; mavsoleum-a and OGOD share this owner"
+    },
+    {
+      "key": "simvltanea",
+      "github_id": 1364497735,
+      "full_name": "4444J99/simvltanea",
+      "private": false,
+      "local_path": "simvltanea",
+      "role": "Simultaneous independent-loop artwork"
+    },
+    {
+      "key": "time-moment-brief",
+      "github_id": 1408128309,
+      "full_name": "4444J99/time-moment-brief",
+      "private": true,
+      "local_path": "time-moment-brief",
+      "role": "Multicamera playback and current development owner of shared playback modules"
+    },
+    {
+      "key": "danse-source",
+      "github_id": 1320324017,
+      "full_name": "4444J99/the-thing-without-a-name-screendance",
+      "private": true,
+      "local_path": "the-thing-without-a-name",
+      "configured_origin": "https://github.com/organvm/the-thing-without-a-name.git",
+      "authority_state": "conflict: local canonical declaration and live redirected identity require reconciliation",
+      "role": "Local Danse source origin resolves here; distinct public personal remote retained",
+      "additional_remote": {
+        "configured_name": "personal",
+        "github_id": 1347780050,
+        "full_name": "4444J99/the-thing-without-a-name",
+        "private": false
+      }
+    }
+  ],
+  "components": [
+    {
+      "slug": "spatial-audio",
+      "local_path": "engine",
+      "role": "Unversioned spatial-audio/choreography integration workspace; source authority unresolved; do not treat as released reusable engine"
+    },
+    {
+      "slug": "composition-tests",
+      "local_path": "tests",
+      "role": "Existing cross-workspace tests; historical runtime assumptions retained"
+    }
+  ],
+  "archives": [
+    {
+      "slug": "god-here",
+      "local_path": "god-here",
+      "role": "Original preservation Git repository; no remote configured"
+    },
+    {
+      "slug": "god-here-sessions",
+      "local_path": "Earlier god-here session archive",
+      "role": "Preserved earlier session archive"
+    },
+    {
+      "slug": "nrcsvs",
+      "local_path": "reflect-recur",
+      "role": "Chat vault, exports and acquisition scripts"
+    },
+    {
+      "slug": "engine-recovery-2026-10-10",
+      "local_path": "temporary-work-preservation-2026-10-10",
+      "role": "Historical recovery snapshot; no remote configured; not active implementation"
+    }
+  ],
+  "projects": [
+    {
+      "id": "g-p-6ab7e2663fe881919dae29c328e14d72",
+      "slug": "backwards-up-hill",
+      "title": "backwards-up-hill",
+      "page_id": "page_c3bcaee35f408191b826eccec64bd80c",
+      "page_url": "https://chatgpt.com/space/page_c3bcaee35f408191b826eccec64bd80c",
+      "chatgpt_title": "backwards-up-hill",
+      "aliases": [],
+      "profile": "artwork-record",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {
+        "collection": "backwards-up-hill"
+      },
+      "source_state": "local-observed",
+      "decision": "Existing local directory is empty; related footage is referenced by time-moment-brief. The two project identities remain separate."
+    },
+    {
+      "id": "g-p-6ab7e5b6ce4c8191991f43045a689276",
+      "slug": "cycles",
+      "title": "cycles",
+      "page_id": "page_4f875b9b0e688191a8b69f07bc1bd16a",
+      "page_url": "https://chatgpt.com/space/page_4f875b9b0e688191a8b69f07bc1bd16a",
+      "chatgpt_title": "cycles",
+      "aliases": [],
+      "profile": "source-collection",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "page-record-only",
+      "decision": "The Page holds a verified image inventory. No implementation repository was resolved in this bounded pass."
+    },
+    {
+      "id": "g-p-6a95f0226b2c81919be2e375b79af8db",
+      "slug": "danse",
+      "title": "Danse Macabre",
+      "page_id": "page_0995e695a60c8191a27b7a7594692766",
+      "page_url": "https://chatgpt.com/space/page_0995e695a60c8191a27b7a7594692766",
+      "chatgpt_title": "danse",
+      "aliases": [
+        "the-thing-without-a-name",
+        "danse"
+      ],
+      "profile": "browser-artwork",
+      "repository_keys": [
+        "danse-source"
+      ],
+      "repository_subpath": null,
+      "local_bindings": {
+        "checkout": "the-thing-without-a-name"
+      },
+      "source_state": "local-observed",
+      "decision": "Local project-record.yml supplies project_id danse. The origin URL redirects to a private screendance repository; the personal remote is distinct. Resolve authority before changing either remote or moving the checkout.",
+      "native_identity": {
+        "project_id": "danse",
+        "authority": "the-thing-without-a-name/project-record.yml"
+      }
+    },
+    {
+      "id": "g-p-6ab7e4d0d8e881918e8c2395f70fe272",
+      "slug": "etc",
+      "title": "etc",
+      "page_id": "page_0bfe780383e88191954530bdafe1d336",
+      "page_url": "https://chatgpt.com/space/page_0bfe780383e88191954530bdafe1d336",
+      "chatgpt_title": "etc",
+      "aliases": [],
+      "profile": "artwork-record",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "page-record-only",
+      "decision": "Preserve etc as an artwork identity, never a miscellaneous-files bucket. Association with the historical etceter4 site remains unresolved."
+    },
+    {
+      "id": "g-p-6ab7e48981d88191ae8b0a658b118c39",
+      "slug": "god-here",
+      "title": "God’s Ears",
+      "page_id": "page_63ec959cafe881918e05c22c0718b747",
+      "page_url": "https://chatgpt.com/space/page_63ec959cafe881918e05c22c0718b747",
+      "chatgpt_title": "god-here",
+      "aliases": [
+        "God's Ears",
+        "god-here"
+      ],
+      "profile": "postproduction-artwork",
+      "repository_keys": [
+        "postproduction"
+      ],
+      "repository_subpath": "projects/god-here",
+      "local_bindings": {
+        "archive": "god-here",
+        "sessions": "Earlier god-here session archive"
+      },
+      "source_state": "local-observed",
+      "decision": "The local god-here Git repository is preservation. Active implementation belongs to audiovisual-media-postproduction-system; do not merge the archive into its public source."
+    },
+    {
+      "id": "g-p-6ab7e5f7ede88191903fcf8149f1b11e",
+      "slug": "hole-loop",
+      "title": "hole-loop",
+      "page_id": "page_bb118d8d09b08191abece05e8dde605f",
+      "page_url": "https://chatgpt.com/space/page_bb118d8d09b08191abece05e8dde605f",
+      "chatgpt_title": "hole-loop",
+      "aliases": [],
+      "profile": "artwork-record",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "page-record-only",
+      "decision": "The Page contains restoration and extraction discussions. A standalone implementation owner was not resolved by exact-name discovery."
+    },
+    {
+      "id": "g-p-6ab7e73ded908191861a61f9f026db4b",
+      "slug": "mavsoleum-a",
+      "title": "mavsoleum-a",
+      "page_id": "page_57dfb2f5671881918d5a0766a07826cf",
+      "page_url": "https://chatgpt.com/space/page_57dfb2f5671881918d5a0766a07826cf",
+      "chatgpt_title": "mausoleum-a",
+      "aliases": [
+        "mausoleum-a",
+        "a-mavs-olevm",
+        "a-mavs-oleum"
+      ],
+      "profile": "historical-web-collection",
+      "repository_keys": [
+        "historical-web"
+      ],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "remote-observed",
+      "decision": "Creative project name and current function-owned repository name are separate. Reuse the existing historical website repository."
+    },
+    {
+      "id": "g-p-6ab7129c37dc8191b25a14aab7d6eae6",
+      "slug": "noonlight",
+      "title": "noonlight",
+      "page_id": "page_ca2f52a028908191a795629ad3469e03",
+      "page_url": "https://chatgpt.com/space/page_ca2f52a028908191a795629ad3469e03",
+      "chatgpt_title": "noonlight",
+      "aliases": [],
+      "profile": "artwork-record",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "page-record-only",
+      "decision": "Page-backed project; implementation location unresolved."
+    },
+    {
+      "id": "g-p-6ab70c12ed348191a2da5c77a9871f93",
+      "slug": "nrcsvs",
+      "title": "NRCSVS",
+      "page_id": "page_6e3b5511f8c481919d3dcb939ac96f00",
+      "page_url": "https://chatgpt.com/space/page_6e3b5511f8c481919d3dcb939ac96f00",
+      "chatgpt_title": "nrcsvs",
+      "aliases": [
+        "reflect-recur",
+        "Narcissus"
+      ],
+      "profile": "research-artwork",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {
+        "archive": "reflect-recur"
+      },
+      "source_state": "local-observed",
+      "decision": "reflect-recur is a local vault association, not independently established proof of a current implementation repository."
+    },
+    {
+      "id": "g-p-6ab7110b24308191adec59e80966f19f",
+      "slug": "nvde",
+      "title": "NVDE",
+      "page_id": "page_7fb475bbb3e48191b39bc621cd33065e",
+      "page_url": "https://chatgpt.com/space/page_7fb475bbb3e48191b39bc621cd33065e",
+      "chatgpt_title": "nvde",
+      "aliases": [],
+      "profile": "artwork-record",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "page-record-only",
+      "decision": "Page-backed project; implementation location unresolved."
+    },
+    {
+      "id": "g-p-6ab7e410fcd881919cf73a5e3e18bc77",
+      "slug": "ogod",
+      "title": "OGOD",
+      "page_id": "page_2b7fd0a952ec81918d344a4eab6c2798",
+      "page_url": "https://chatgpt.com/space/page_2b7fd0a952ec81918d344a4eab6c2798",
+      "chatgpt_title": "ogod",
+      "aliases": [],
+      "profile": "historical-web-collection",
+      "repository_keys": [
+        "historical-web"
+      ],
+      "repository_subpath": "ogod",
+      "local_bindings": {},
+      "source_state": "remote-observed",
+      "decision": "The ogod collection is a subpath of generative-multimedia-spatial-environment; preserve that shared source owner."
+    },
+    {
+      "id": "g-p-6ab7e52f536c81919963442321061397",
+      "slug": "passing-thru",
+      "title": "passing-thru",
+      "page_id": "page_ce463ddae81c8191bb3529fdb3dc7dbc",
+      "page_url": "https://chatgpt.com/space/page_ce463ddae81c8191bb3529fdb3dc7dbc",
+      "chatgpt_title": "passing-thru",
+      "aliases": [],
+      "profile": "artwork-record",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "page-record-only",
+      "decision": "Page-backed project; implementation location unresolved."
+    },
+    {
+      "id": "g-p-6ab710d9b0c08191af651f0b2b4b8c80",
+      "slug": "simvltanea",
+      "title": "SIMVLTANEA",
+      "page_id": "page_46cec916d28c81919eece6dff36c72cf",
+      "page_url": "https://chatgpt.com/space/page_46cec916d28c81919eece6dff36c72cf",
+      "chatgpt_title": "simvltanea",
+      "aliases": [
+        "TripTicks"
+      ],
+      "profile": "packaged-artwork",
+      "repository_keys": [
+        "simvltanea"
+      ],
+      "repository_subpath": null,
+      "local_bindings": {
+        "checkout": "simvltanea"
+      },
+      "source_state": "local-observed",
+      "decision": "Retain its existing Python src layout, editions, fixtures, provenance and independent-loop identity."
+    },
+    {
+      "id": "g-p-6ac31528d2688191a8919259f7ba9820",
+      "slug": "time-moment-brief",
+      "title": "time-moment-brief",
+      "page_id": "page_aaeacfd009008191a763ad2114acf7cc",
+      "page_url": "https://chatgpt.com/space/page_aaeacfd009008191a763ad2114acf7cc",
+      "chatgpt_title": "time-moment-brief",
+      "aliases": [],
+      "profile": "media-playback",
+      "repository_keys": [
+        "time-moment-brief"
+      ],
+      "repository_subpath": null,
+      "local_bindings": {
+        "checkout": "time-moment-brief"
+      },
+      "source_state": "local-observed",
+      "decision": "Private implementation with dirty working state. Shared-playback extraction exists on a linked development branch; it is not an accepted standalone engine release."
+    },
+    {
+      "id": "g-p-6ab712825b40819196bb9fbf53d4d446",
+      "slug": "wrvng-v",
+      "title": "wrvng-v",
+      "page_id": "page_77707a61af28819197facc482b13e887",
+      "page_url": "https://chatgpt.com/space/page_77707a61af28819197facc482b13e887",
+      "chatgpt_title": "wrung-u",
+      "aliases": [
+        "wrung-u"
+      ],
+      "profile": "artwork-record",
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "page-record-only",
+      "decision": "Preserve the Page's project slug and record the ChatGPT spelling as an alias; source media location unresolved."
+    }
+  ],
+  "membership_source": "sources/ace-project-membership-2026-10-10.json"
+}

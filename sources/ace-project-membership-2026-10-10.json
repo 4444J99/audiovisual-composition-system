@@ -1,0 +1,86 @@
+{
+  "source_page_id": "page_12848f3c0cac8191a8e7dec178106188",
+  "observed_date": "2026-10-10",
+  "row_count": 16,
+  "distinct_count": 15,
+  "duplicate_rows": [
+    "god-here"
+  ],
+  "projects": [
+    {
+      "id": "g-p-6ab7e2663fe881919dae29c328e14d72",
+      "slug": "backwards-up-hill",
+      "page_id": "page_c3bcaee35f408191b826eccec64bd80c"
+    },
+    {
+      "id": "g-p-6ab7e5b6ce4c8191991f43045a689276",
+      "slug": "cycles",
+      "page_id": "page_4f875b9b0e688191a8b69f07bc1bd16a"
+    },
+    {
+      "id": "g-p-6a95f0226b2c81919be2e375b79af8db",
+      "slug": "danse",
+      "page_id": "page_0995e695a60c8191a27b7a7594692766"
+    },
+    {
+      "id": "g-p-6ab7e4d0d8e881918e8c2395f70fe272",
+      "slug": "etc",
+      "page_id": "page_0bfe780383e88191954530bdafe1d336"
+    },
+    {
+      "id": "g-p-6ab7e48981d88191ae8b0a658b118c39",
+      "slug": "god-here",
+      "page_id": "page_63ec959cafe881918e05c22c0718b747"
+    },
+    {
+      "id": "g-p-6ab7e5f7ede88191903fcf8149f1b11e",
+      "slug": "hole-loop",
+      "page_id": "page_bb118d8d09b08191abece05e8dde605f"
+    },
+    {
+      "id": "g-p-6ab7e73ded908191861a61f9f026db4b",
+      "slug": "mavsoleum-a",
+      "page_id": "page_57dfb2f5671881918d5a0766a07826cf"
+    },
+    {
+      "id": "g-p-6ab7129c37dc8191b25a14aab7d6eae6",
+      "slug": "noonlight",
+      "page_id": "page_ca2f52a028908191a795629ad3469e03"
+    },
+    {
+      "id": "g-p-6ab70c12ed348191a2da5c77a9871f93",
+      "slug": "nrcsvs",
+      "page_id": "page_6e3b5511f8c481919d3dcb939ac96f00"
+    },
+    {
+      "id": "g-p-6ab7110b24308191adec59e80966f19f",
+      "slug": "nvde",
+      "page_id": "page_7fb475bbb3e48191b39bc621cd33065e"
+    },
+    {
+      "id": "g-p-6ab7e410fcd881919cf73a5e3e18bc77",
+      "slug": "ogod",
+      "page_id": "page_2b7fd0a952ec81918d344a4eab6c2798"
+    },
+    {
+      "id": "g-p-6ab7e52f536c81919963442321061397",
+      "slug": "passing-thru",
+      "page_id": "page_ce463ddae81c8191bb3529fdb3dc7dbc"
+    },
+    {
+      "id": "g-p-6ab710d9b0c08191af651f0b2b4b8c80",
+      "slug": "simvltanea",
+      "page_id": "page_46cec916d28c81919eece6dff36c72cf"
+    },
+    {
+      "id": "g-p-6ac31528d2688191a8919259f7ba9820",
+      "slug": "time-moment-brief",
+      "page_id": "page_aaeacfd009008191a763ad2114acf7cc"
+    },
+    {
+      "id": "g-p-6ab712825b40819196bb9fbf53d4d446",
+      "slug": "wrvng-v",
+      "page_id": "page_77707a61af28819197facc482b13e887"
+    }
+  ]
+}
