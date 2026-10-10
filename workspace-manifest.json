@@ -38,7 +38,7 @@
       "full_name": "4444J99/time-moment-brief",
       "private": true,
       "local_path": "time-moment-brief",
-      "role": "Multicamera playback and current development owner of shared playback modules"
+      "role": "Multicamera playback and tracked authority for the accepted shared playback modules"
     },
     {
       "key": "danse-source",
@@ -61,7 +61,7 @@
     {
       "slug": "spatial-audio",
       "local_path": "engine",
-      "role": "Unversioned spatial-audio/choreography integration workspace; source authority unresolved; do not treat as released reusable engine"
+      "role": "Preserved unversioned spatial-audio/choreography candidate workspace; tracked shared-engine authority is time-moment-brief/shared-engine"
     },
     {
       "slug": "composition-tests",
@@ -344,7 +344,7 @@
         "checkout": "time-moment-brief"
       },
       "source_state": "local-observed",
-      "decision": "Private implementation with dirty working state. Shared-playback extraction exists on a linked development branch; it is not an accepted standalone engine release."
+      "decision": "Private implementation with preserved dirty working state. Current main owns the accepted shared-engine module, consumed by SIMVLTANEA through an exact release and runtime hash pin. No standalone engine repository is required."
     },
     {
       "id": "g-p-6ab712825b40819196bb9fbf53d4d446",

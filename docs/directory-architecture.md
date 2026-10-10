@@ -88,12 +88,12 @@ The old Danse origin `organvm/the-thing-without-a-name` currently resolves to **
 Do not flatten these into one new repository by name alone:
 
 - **Danse's pure engine** stays in its artwork repository, with its `f(seed, t)`, provenance and impure-boundary invariants.
-- **Shared playback modules** currently have a tracked development home at `time-moment-brief/shared-engine` on the linked shared-engine branch. SIMVLTANEA has a consumer resolver and hash pin. This is development-branch evidence, not an accepted independent release.
-- **Spatial audio and choreography staging** currently occupy the unversioned aggregate `engine/` folder. `components/spatial-audio` exposes that location without claiming a second canonical source.
+- **Shared playback modules** have their tracked authority at `time-moment-brief/shared-engine`. Current main includes the accepted module; SIMVLTANEA verifies its accepted release ancestry and exact runtime hashes. This does not require a standalone engine repository.
+- **Spatial audio and choreography staging** occupy the preserved unversioned aggregate `engine/` folder. `components/spatial-audio` exposes the candidate location; the tracked TMB module remains authoritative.
 - **Postproduction primitives** already live in the `amp` package of the postproduction repository.
 - **Composition tests** retain their existing root `tests/` location. Component tests remain with their source owner.
 
-The newer shared-engine provenance warns that spatial-score source has diverged and must not be restaged without owner reconciliation. Do not run the older extraction instructions as a cleanup step. A standalone `audiovisual-composition-engine` repository becomes justified only if the reconciled modules establish an independent API, ownership, release lifecycle and consumers; that threshold is not established here.
+On 2026-10-10, live core and FOA verification matched the candidate sources and tracked runtime graph at TMB `44d815c`. Its provenance prose still narrates an earlier divergence; this is stale commentary, not a reason to overwrite the accepted module. Use the tracked module and reviewed consumer pin. See the [composition verification report](tmb-spatial-integration-report.md) for the real-media integration and remaining acceptance limits.
 
 ## Internal layouts by profile
 
@@ -104,7 +104,7 @@ These are responsibility maps. Existing native names remain unless a separately 
 | System composition | manifest, docs, generated project/source directories, tools, workspace configuration |
 | Packaged artwork: simvltanea | Retain src/simvltanea, tools, tests, editions, examples, fixtures, evidence, docs, archive, ignored var; follow its existing governance |
 | Browser artwork: danse | Retain engine, arrival.js, interaction, render, sound, pipeline, assets, rights, submission, release and native document names |
-| Media playback: time-moment-brief | Retain source manifests, calibration/prototype modules, shared-engine branch, tools/scripts, tests and evidence; private media and custody remain separately handled |
+| Media playback: time-moment-brief | Retain source manifests, calibration/prototype modules, accepted shared-engine module, tools/scripts, tests and evidence; private media and custody remain separately handled |
 | Postproduction artwork: god-here | Existing amp primitives; projects/god-here for scores, intervals, masks and authored styles; web for browser edition; tests and tools stay with that repo |
 | Historical web collection: mavsoleum-a, ogod | Preserve original path graph, collection subpaths, dependencies and source filenames; describe lineage with manifests instead of rewriting historical sources |
 | Source collection: cycles | Project/source manifest and original references; annotations and editions only when produced; preserve original image names |

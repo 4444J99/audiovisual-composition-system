@@ -1,0 +1,129 @@
+{
+  "schema": "tmb-simvltanea-edition/v1",
+  "status": "built; browser acceptance pending",
+  "created_at": "2026-10-10T22:25:17.741069+00:00",
+  "source": {
+    "source_revision": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+    "atlas_revision": "cbce79dcbcf34ce214ba77cd2aa8d8bb9ed32fa5",
+    "observed_head": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+    "audio_manifest": {
+      "path": "synchronized-generation-calibration/media/audio-manifest.json",
+      "sha256": "6995372c8c9bdf75dd1efdc90cd11979a5a5dcd2629b13f1e5a6700ecaca8bb4",
+      "revision": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+      "bytes": 1179
+    },
+    "generations": [
+      {
+        "generation": "G01",
+        "video": {
+          "path": "synchronized-generation-calibration/media/generation-01.mp4",
+          "sha256": "f1095c859c5b89eb0639237ef728fb1b63899337e258c0ffac0e5defa8bddb95",
+          "revision": "cbce79dcbcf34ce214ba77cd2aa8d8bb9ed32fa5",
+          "bytes": 328169
+        },
+        "audio": {
+          "path": "synchronized-generation-calibration/media/generation-01.audio.m4a",
+          "sha256": "620c9201914cf616819beab4cfbc8597e06cd6ce1e827b40d22c3e2593f276f6",
+          "bytes": 130919
+        },
+        "shared_start": 510.0,
+        "shared_end": 518.0
+      },
+      {
+        "generation": "G02",
+        "video": {
+          "path": "synchronized-generation-calibration/media/generation-02.mp4",
+          "sha256": "3ea1c3f537b366c72703ece5ae36e1314da9a864d84f334d024ce2ed4823cc50",
+          "revision": "cbce79dcbcf34ce214ba77cd2aa8d8bb9ed32fa5",
+          "bytes": 299864
+        },
+        "audio": {
+          "path": "synchronized-generation-calibration/media/generation-02.audio.m4a",
+          "sha256": "5dee2e475a906ff0a2f622d1745d1af9602368db7f19d00cd868065225be4910",
+          "bytes": 130811
+        },
+        "shared_start": 518.0,
+        "shared_end": 526.0
+      }
+    ],
+    "audio_provenance": {
+      "recording": "F6 stereo room recording",
+      "channels": 2,
+      "sample_rate": 48000,
+      "upstream_gain_db": 12.0,
+      "rendering": "SIMVLTANEA stereo spatial panning",
+      "ambisonic_recording": false
+    }
+  },
+  "engine": {
+    "module": "time-moment-brief/shared-engine",
+    "entrypoint": "shared-engine/index.js",
+    "release": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+    "release_status": "accepted",
+    "runtime_graph": {
+      "shared-engine/index.js": "7ce10f4fce00cfe6ab727844353628f2eb282cffc01f6b1113ec2c8df269fed0",
+      "shared-engine/src/foa.js": "b927f3c3c54da29a11b537a136cc1f82dc401d130b3cd5fea532d9d7426a0d4b",
+      "shared-engine/src/orientation-controller.js": "344b82f342099437bdc39a255af9c2bc9244f1b797a2f3005e0c26e74c42aeae",
+      "shared-engine/src/panoramic-projection.js": "2c21b58caad2919dc64933c8246097d0e6f42b2d0f49fd394e669d738ce06027",
+      "shared-engine/src/spatial-score.js": "4a324cd5b596686e3957add86a603df163bc088c4c675d75500c1cef4fa3017e",
+      "shared-engine/src/video-texture.js": "196d356c2bc49fd0b8068dac7818e5d262526dbb88055e3456b96274d8b16603"
+    },
+    "accepted_commit": "e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+    "observed_head": "44d815c978fc9b57526ff9b18165cd5b8d777b5c"
+  },
+  "consumer_revision": "f49290f49156091cda4575b74f29cdc5d337d944",
+  "recipe": {
+    "path": "tools/editions/build_tmb_composition.py",
+    "sha256": "a08d548e9d786c26b04027f11af73ee6fc5ec4ef2aaa12f6f3939fd297f0caca"
+  },
+  "scope": "local engineering edition; artistic approval and device acceptance pending",
+  "media": [
+    {
+      "path": "media/generation-01.mp4",
+      "sha256": "b938bcb5b680aab90ca253e323e312120400f635d81d1e9dd531edcdc2175f06",
+      "video_packet_hash": "SHA256=223f84dcce92d9126c19d5a67a906d50e26ef7004d3c2c789fd48eccc617fd66",
+      "audio_packet_hash": "SHA256=306c0c6097e8de3fe5aa4162eb11d1eb29a24dca3e41d7ba3d36bb99bcafb91c",
+      "operation": "stream copy; no reencoding"
+    },
+    {
+      "path": "media/generation-02.mp4",
+      "sha256": "8c2ac713109ae13357a9b3f7afb78728a70a93330a72cb4ede8e8f12bd7c51f3",
+      "video_packet_hash": "SHA256=ab00ec4c4226ef618dca35010a1cf2585cb291e3b544da7d029a86b2f359b934",
+      "audio_packet_hash": "SHA256=b838405d3e0b2292d53aea5201b4095f0df1e5affd15303441d1c58b95e07f9e",
+      "operation": "stream copy; no reencoding"
+    }
+  ],
+  "composition": {
+    "path": "composition.json",
+    "sha256": "b326bef06ee5ca1b187e6ac93d374eef761f4a92f329a149d0148e4e22792091",
+    "schema_version": "1.1",
+    "frames": 384,
+    "fps": 24,
+    "phase_offsets_seconds": [
+      0,
+      1
+    ],
+    "atlas_views": "four aligned source views per atomic generation"
+  },
+  "preview": {
+    "path": "preview/index.html",
+    "state_sha256": "7efa1c537576fdaa787f0d7a2bf7563e3170fbabe31b6e678a10e72f9a06e3b9",
+    "files": {
+      ".simvltanea-preview": "1c1cf6c31e9997b5fba1f670300069b3d484c685210171c21fded08a062845ae",
+      "index.html": "f6316f17f6204d7e6e6ca9509c1260867a5dcd7113b6bfcd69fbb7b0e4c0e1b7",
+      "media/8c2ac713109ae13357a9b3f7afb78728a70a93330a72cb4ede8e8f12bd7c51f3.mp4": "8c2ac713109ae13357a9b3f7afb78728a70a93330a72cb4ede8e8f12bd7c51f3",
+      "media/b938bcb5b680aab90ca253e323e312120400f635d81d1e9dd531edcdc2175f06.mp4": "b938bcb5b680aab90ca253e323e312120400f635d81d1e9dd531edcdc2175f06",
+      "plan.json": "1bc0a5f625bf1cfa479c410e8fbb590c25f3e5b7cce0b81256d0e8be916ae82c",
+      "runtime.js": "913f05c0d5d7807ec0e9543cfaf8bfb09bceca2649efc5dec5c0062bc1586589",
+      "shared-engine/index.js": "7ce10f4fce00cfe6ab727844353628f2eb282cffc01f6b1113ec2c8df269fed0",
+      "shared-engine/src/foa.js": "b927f3c3c54da29a11b537a136cc1f82dc401d130b3cd5fea532d9d7426a0d4b",
+      "shared-engine/src/orientation-controller.js": "344b82f342099437bdc39a255af9c2bc9244f1b797a2f3005e0c26e74c42aeae",
+      "shared-engine/src/panoramic-projection.js": "2c21b58caad2919dc64933c8246097d0e6f42b2d0f49fd394e669d738ce06027",
+      "shared-engine/src/spatial-score.js": "4a324cd5b596686e3957add86a603df163bc088c4c675d75500c1cef4fa3017e",
+      "shared-engine/src/video-texture.js": "196d356c2bc49fd0b8068dac7818e5d262526dbb88055e3456b96274d8b16603",
+      "shared-engine-adapter.js": "b219d71cf39ea26ed32a994fb9605171cb50b7d525a407f5d48b482a53795fda",
+      "shared-engine.js": "33a9c006a4141a21c8035e2f3010d90b261c02a9786c877bcc5e74678107d07b",
+      "state.json": "128518d65d68046c2c418b10a29cedf8ed4f88ec9b4e0254825b8830b67141bf"
+    }
+  }
+}
