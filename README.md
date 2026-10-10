@@ -21,4 +21,3 @@ python3 tools/workspace_layout.py check --workspace ..
 The enclosing workspace remains non-Git. Its `projects/`, `repositories/`, `components/` and `archives/` paths are consolidated navigation views. Physical legacy locations are retained for working consumers. See the migration report for the exact deferred relocation predicates.
 
 This repository is private because solution membership includes private works and source relationships. No media, chat transcripts, recovered binaries or private derivatives belong here. EES informed the design; this is not a claim of EES certification or audiovisual acceptance.
-

@@ -7,4 +7,3 @@ Global /Users/4jp/AGENTS.md applies. This repository owns only the solution mani
 - Never merge source histories, move active checkouts, change source remotes, restage shared-engine code, publish private media or alter original archival filenames as a directory cleanup.
 - Preserve stable project IDs, numeric GitHub IDs, original aliases and native package names. EES controls remain reviewed draft.
 - Use topic branches and review for subsequent contract changes; breaking placement rules need a versioned migration with consumer evidence.
-

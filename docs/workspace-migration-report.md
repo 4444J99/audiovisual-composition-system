@@ -63,4 +63,3 @@ Rollback removes only symlinks whose exact targets match the recorded mapping; i
 ## Evidence limits
 
 This is directory and reference validation. No bulk transfer, source history merge, archive deletion, repository rename, public release or audiovisual reacceptance occurred. No disk recovery is claimed. The existing old editor workspace is retained as a compatibility entry.
-

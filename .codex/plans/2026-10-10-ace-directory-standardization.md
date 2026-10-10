@@ -11,4 +11,3 @@ Scope: the 15 distinct ACE project records in the linked Page, the live audiovis
 7. Commit and push the coordination repository; record concrete owners and acceptance predicates for moves needing source reconciliation.
 
 Execution boundary: directory consolidation through aliases and catalogs is authorized now. Source history merges, bulk media transfers, destructive cleanup, public publication and unverified engine extraction are outside this implementation. No new artwork repositories are created merely because a Page exists.
-

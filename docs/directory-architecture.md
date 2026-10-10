@@ -130,4 +130,3 @@ EES source chapters: [Naming metadata and compatibility](https://chatgpt.com/spa
 Local EES toolkit inspection: revision `1dab672892563537daf6c3a1ed1e66f90d06a60e`, branch `v0.2.0-semantic-review`. Relevant reviewed-draft controls are GES-ID-003, GES-ID-004, GES-ARC-001 and GES-ARC-002. The accompanying brainstorm ES-BS-008 explicitly rejects imposing SIMVLTANEA's layout universally. See [source register](source-register.md).
 
 Directory validation proves membership, syntax, references and local navigation. It does not prove rendered-media fidelity, synchronization, audio quality, WebXR support, engine acceptance, archive completeness or remote custody.
-
