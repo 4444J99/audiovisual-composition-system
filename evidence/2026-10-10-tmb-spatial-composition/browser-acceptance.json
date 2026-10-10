@@ -1,0 +1,1327 @@
+{
+  "schema": "tmb-composition-browser-acceptance/v1",
+  "status": "passed",
+  "created_at": "2026-10-10T22:25:24.000Z",
+  "scope": "real TMB derivatives; headless Chrome; stereo spatial panning",
+  "edition_receipt_sha256": "6c41ab26b70e5a80de053ae397917f5dad34c14a33c0efd6a07dae7f940838e7",
+  "checks": [
+    "two distinct real sources decode with independent one-second phase offset",
+    "rendered poses equal the accepted shared evaluator",
+    "both real audio sources emit stereo signal with layout-derived pan",
+    "orientation preserves media/audio nodes and clocks without reload or seek",
+    "pause freezes composition and silences audio; gesture resume advances",
+    "native eight-second loops wrap with phase preserved and continuing shared poses",
+    "served media, plan and engine bytes match the edition receipt before and after playback"
+  ],
+  "observations": [
+    {
+      "name": "landscape",
+      "snapshot": {
+        "frame": 15,
+        "wall": 1302.7999999970198,
+        "orientation": "landscape",
+        "running": true,
+        "finished": false,
+        "error": null,
+        "compositionTime": 0.6346666666666667,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 0.625,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.0015604496002197266,
+              "elevation": 0.0005350112915039062,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.17656044960021972,
+              "elevation": -0.0005350112915039062,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 0.634631,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 13,
+            "decoded": {
+              "wall": 1299.5,
+              "mediaTime": 0.666667,
+              "presentedFrames": 17
+            },
+            "audio": {
+              "gain": 0.5600000023841858,
+              "pan": -0.47999998927116394
+            },
+            "rect": {
+              "x": 36,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 588,
+              "bottom": 760,
+              "left": 36
+            },
+            "quality": {
+              "totalVideoFrames": 21,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 1.634646,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 14,
+            "decoded": {
+              "wall": 1266.2,
+              "mediaTime": 1.625,
+              "presentedFrames": 17
+            },
+            "audio": {
+              "gain": 0.41999998688697815,
+              "pan": 0.47999998927116394
+            },
+            "rect": {
+              "x": 612,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 1164,
+              "bottom": 760,
+              "left": 612
+            },
+            "quality": {
+              "totalVideoFrames": 49,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 11
+      },
+      "levels": {
+        "loop-1": [
+          0.0043579489926376,
+          0.0018390663002420169
+        ],
+        "loop-2": [
+          0.010327870528021182,
+          0.023438937920583876
+        ]
+      }
+    },
+    {
+      "name": "signal",
+      "snapshot": {
+        "frame": 18,
+        "wall": 1458.2999999970198,
+        "orientation": "landscape",
+        "running": true,
+        "finished": false,
+        "error": null,
+        "compositionTime": 0.7893333333333333,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 0.75,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.0022350311279296874,
+              "elevation": 0.00076629638671875,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.17723503112792968,
+              "elevation": -0.00076629638671875,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 0.789333,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 14,
+            "decoded": {
+              "wall": 1366.2,
+              "mediaTime": 0.75,
+              "presentedFrames": 19
+            },
+            "audio": {
+              "gain": 0.5600000023841858,
+              "pan": -0.47999998927116394
+            },
+            "rect": {
+              "x": 36,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 588,
+              "bottom": 760,
+              "left": 36
+            },
+            "quality": {
+              "totalVideoFrames": 24,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 1.789333,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 17,
+            "decoded": {
+              "wall": 1432.9,
+              "mediaTime": 1.791667,
+              "presentedFrames": 21
+            },
+            "audio": {
+              "gain": 0.41999998688697815,
+              "pan": 0.47999998927116394
+            },
+            "rect": {
+              "x": 612,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 1164,
+              "bottom": 760,
+              "left": 612
+            },
+            "quality": {
+              "totalVideoFrames": 52,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 11
+      },
+      "levels": {
+        "loop-1": [
+          0.02299498707758184,
+          0.00975437286330027
+        ],
+        "loop-2": [
+          0.008701071917897514,
+          0.019679103444310946
+        ]
+      }
+    },
+    {
+      "name": "signal",
+      "snapshot": {
+        "frame": 22,
+        "wall": 1612.5999999940395,
+        "orientation": "landscape",
+        "running": true,
+        "finished": false,
+        "error": null,
+        "compositionTime": 0.9440000000000001,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 0.9166666666666666,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.003314816510235821,
+              "elevation": 0.0011365085177951386,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.1783148165102358,
+              "elevation": -0.0011365085177951386,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 0.944,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 16,
+            "decoded": {
+              "wall": 1532.9,
+              "mediaTime": 0.916667,
+              "presentedFrames": 23
+            },
+            "audio": {
+              "gain": 0.5600000023841858,
+              "pan": -0.47999998927116394
+            },
+            "rect": {
+              "x": 36,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 588,
+              "bottom": 760,
+              "left": 36
+            },
+            "quality": {
+              "totalVideoFrames": 28,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 1.944,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 20,
+            "decoded": {
+              "wall": 1599.5,
+              "mediaTime": 1.958333,
+              "presentedFrames": 25
+            },
+            "audio": {
+              "gain": 0.41999998688697815,
+              "pan": 0.47999998927116394
+            },
+            "rect": {
+              "x": 612,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 1164,
+              "bottom": 760,
+              "left": 612
+            },
+            "quality": {
+              "totalVideoFrames": 56,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 11
+      },
+      "levels": {
+        "loop-1": [
+          0.009911555220668122,
+          0.004169470979737054
+        ],
+        "loop-2": [
+          0.00680100486014163,
+          0.01526667959790812
+        ]
+      }
+    },
+    {
+      "name": "signal",
+      "snapshot": {
+        "frame": 26,
+        "wall": 1767.2999999970198,
+        "orientation": "landscape",
+        "running": true,
+        "finished": false,
+        "error": null,
+        "compositionTime": 1.0986666666666667,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 1.0833333333333333,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.004596356992368344,
+              "elevation": 0.0015758938259548608,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.17959635699236834,
+              "elevation": -0.0015758938259548608,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 1.098667,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 18,
+            "decoded": {
+              "wall": 1699.5,
+              "mediaTime": 1.083333,
+              "presentedFrames": 27
+            },
+            "audio": {
+              "gain": 0.5600000023841858,
+              "pan": -0.47999998927116394
+            },
+            "rect": {
+              "x": 36,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 588,
+              "bottom": 760,
+              "left": 36
+            },
+            "quality": {
+              "totalVideoFrames": 32,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 2.098667,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 23,
+            "decoded": {
+              "wall": 1766.2,
+              "mediaTime": 2.125,
+              "presentedFrames": 29
+            },
+            "audio": {
+              "gain": 0.41999998688697815,
+              "pan": 0.47999998927116394
+            },
+            "rect": {
+              "x": 612,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 1164,
+              "bottom": 760,
+              "left": 612
+            },
+            "quality": {
+              "totalVideoFrames": 60,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 11
+      },
+      "levels": {
+        "loop-1": [
+          0.032741241956685506,
+          0.01384478476831899
+        ],
+        "loop-2": [
+          0.006697353912314781,
+          0.015172374573467835
+        ]
+      }
+    },
+    {
+      "name": "signal",
+      "snapshot": {
+        "frame": 29,
+        "wall": 1922.6999999955297,
+        "orientation": "landscape",
+        "running": true,
+        "finished": false,
+        "error": null,
+        "compositionTime": 1.2533333333333332,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 1.2083333333333333,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.005687058413470232,
+              "elevation": 0.0019498485989040797,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.18068705841347021,
+              "elevation": -0.0019498485989040797,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 1.253333,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 20,
+            "decoded": {
+              "wall": 1866.2,
+              "mediaTime": 1.25,
+              "presentedFrames": 31
+            },
+            "audio": {
+              "gain": 0.5600000023841858,
+              "pan": -0.47999998927116394
+            },
+            "rect": {
+              "x": 36,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 588,
+              "bottom": 760,
+              "left": 36
+            },
+            "quality": {
+              "totalVideoFrames": 35,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 2.253333,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 25,
+            "decoded": {
+              "wall": 1899.6,
+              "mediaTime": 2.25,
+              "presentedFrames": 32
+            },
+            "audio": {
+              "gain": 0.41999998688697815,
+              "pan": 0.47999998927116394
+            },
+            "rect": {
+              "x": 612,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 1164,
+              "bottom": 760,
+              "left": 612
+            },
+            "quality": {
+              "totalVideoFrames": 63,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 11
+      },
+      "levels": {
+        "loop-1": [
+          0.019600647117389076,
+          0.008277502765158564
+        ],
+        "loop-2": [
+          0.0037456156660837154,
+          0.008464846162920153
+        ]
+      }
+    },
+    {
+      "name": "portrait",
+      "snapshot": {
+        "frame": 38,
+        "wall": 2285.39999999851,
+        "orientation": "portrait",
+        "running": true,
+        "finished": false,
+        "error": null,
+        "compositionTime": 1.6159999999999999,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 1.5833333333333333,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.009604037249529802,
+              "elevation": 0.0032928127712673607,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.18460403724952978,
+              "elevation": -0.0032928127712673607,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 1.616,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 24,
+            "decoded": {
+              "wall": 2199.5,
+              "mediaTime": 1.583333,
+              "presentedFrames": 39
+            },
+            "audio": {
+              "gain": 0.5600000023841858,
+              "pan": 0
+            },
+            "rect": {
+              "x": 24,
+              "y": 27,
+              "width": 552,
+              "height": 396,
+              "top": 27,
+              "right": 576,
+              "bottom": 423,
+              "left": 24
+            },
+            "quality": {
+              "totalVideoFrames": 44,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 2.616,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 30,
+            "decoded": {
+              "wall": 2199.5,
+              "mediaTime": 2.583333,
+              "presentedFrames": 40
+            },
+            "audio": {
+              "gain": 0.41999998688697815,
+              "pan": 0
+            },
+            "rect": {
+              "x": 24,
+              "y": 468,
+              "width": 552,
+              "height": 396,
+              "top": 468,
+              "right": 576,
+              "bottom": 864,
+              "left": 24
+            },
+            "quality": {
+              "totalVideoFrames": 72,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 14
+      },
+      "levels": {
+        "loop-1": [
+          0.0037722121592118187,
+          0.0036413721948808622
+        ],
+        "loop-2": [
+          0.0024182235091947226,
+          0.002336172443590622
+        ]
+      }
+    },
+    {
+      "name": "paused",
+      "snapshot": {
+        "frame": 38,
+        "wall": 2292.2999999970198,
+        "orientation": "portrait",
+        "running": false,
+        "finished": false,
+        "error": null,
+        "compositionTime": 1.6213333333333333,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 1.5833333333333333,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.009604037249529802,
+              "elevation": 0.0032928127712673607,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.18460403724952978,
+              "elevation": -0.0032928127712673607,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 1.621333,
+            "rate": 1,
+            "paused": true,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 24,
+            "decoded": {
+              "wall": 2199.5,
+              "mediaTime": 1.583333,
+              "presentedFrames": 39
+            },
+            "audio": {
+              "gain": 0,
+              "pan": 0
+            },
+            "rect": {
+              "x": 24,
+              "y": 27,
+              "width": 552,
+              "height": 396,
+              "top": 27,
+              "right": 576,
+              "bottom": 423,
+              "left": 24
+            },
+            "quality": {
+              "totalVideoFrames": 44,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 2.621333,
+            "rate": 1,
+            "paused": true,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 30,
+            "decoded": {
+              "wall": 2199.5,
+              "mediaTime": 2.583333,
+              "presentedFrames": 40
+            },
+            "audio": {
+              "gain": 0,
+              "pan": 0
+            },
+            "rect": {
+              "x": 24,
+              "y": 468,
+              "width": 552,
+              "height": 396,
+              "top": 468,
+              "right": 576,
+              "bottom": 864,
+              "left": 24
+            },
+            "quality": {
+              "totalVideoFrames": 72,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 15
+      },
+      "levels": {
+        "loop-1": [
+          0.0033589235346955302,
+          0.0032480241518846697
+        ],
+        "loop-2": [
+          0.0022978263335114843,
+          0.00222009389076597
+        ]
+      }
+    },
+    {
+      "name": "still-paused",
+      "snapshot": {
+        "frame": 38,
+        "wall": 2545.1999999955297,
+        "orientation": "portrait",
+        "running": false,
+        "finished": false,
+        "error": null,
+        "compositionTime": 1.6213333333333333,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 1.5833333333333333,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.009604037249529802,
+              "elevation": 0.0032928127712673607,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.18460403724952978,
+              "elevation": -0.0032928127712673607,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 1.621333,
+            "rate": 1,
+            "paused": true,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 25,
+            "decoded": {
+              "wall": 2299.5,
+              "mediaTime": 1.625,
+              "presentedFrames": 40
+            },
+            "audio": {
+              "gain": 0,
+              "pan": 0
+            },
+            "rect": {
+              "x": 24,
+              "y": 27,
+              "width": 552,
+              "height": 396,
+              "top": 27,
+              "right": 576,
+              "bottom": 423,
+              "left": 24
+            },
+            "quality": {
+              "totalVideoFrames": 44,
+              "droppedVideoFrames": 0
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 2.621333,
+            "rate": 1,
+            "paused": true,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 31,
+            "decoded": {
+              "wall": 2299.5,
+              "mediaTime": 2.625,
+              "presentedFrames": 41
+            },
+            "audio": {
+              "gain": 0,
+              "pan": 0
+            },
+            "rect": {
+              "x": 24,
+              "y": 468,
+              "width": 552,
+              "height": 396,
+              "top": 468,
+              "right": 576,
+              "bottom": 864,
+              "left": 24
+            },
+            "quality": {
+              "totalVideoFrames": 72,
+              "droppedVideoFrames": 0
+            }
+          }
+        ],
+        "eventCount": 15
+      },
+      "levels": {
+        "loop-1": [
+          0,
+          0
+        ],
+        "loop-2": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "after-native-wrap",
+      "snapshot": {
+        "frame": 204,
+        "wall": 9469.19999999553,
+        "orientation": "landscape",
+        "running": true,
+        "finished": false,
+        "error": null,
+        "compositionTime": 8.522666666666666,
+        "sharedEngine": {
+          "build": "shared-engine@time-moment-brief/e5900ef98fa7a9644af1708e0e6c6cbbcde5b180",
+          "panels": 2,
+          "error": null,
+          "renderedTime": 8.5,
+          "loops": [
+            "loop-1",
+            "loop-2"
+          ],
+          "poses": [
+            {
+              "azimuth": 0.19138488769531248,
+              "elevation": 0.06561767578125,
+              "fov": 1.04719755
+            },
+            {
+              "azimuth": 0.3663848876953124,
+              "elevation": -0.06561767578125,
+              "fov": 1.04719755
+            }
+          ]
+        },
+        "audio": {
+          "mode": "spatial_loops",
+          "enabled": true,
+          "contextState": "running",
+          "blocked": null,
+          "soundtrackPlaying": false,
+          "gain": null
+        },
+        "loops": [
+          {
+            "id": "loop-1",
+            "source": "generation-01",
+            "kind": "video",
+            "currentTime": 0.496,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 110,
+            "decoded": {
+              "wall": 9399.2,
+              "mediaTime": 0.458333,
+              "presentedFrames": 206
+            },
+            "audio": {
+              "gain": 0.5600000023841858,
+              "pan": -0.47999998927116394
+            },
+            "rect": {
+              "x": 36,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 588,
+              "bottom": 760,
+              "left": 36
+            },
+            "quality": {
+              "totalVideoFrames": 214,
+              "droppedVideoFrames": 1
+            }
+          },
+          {
+            "id": "loop-2",
+            "source": "generation-02",
+            "kind": "video",
+            "currentTime": 1.493333,
+            "rate": 1,
+            "paused": false,
+            "readyState": 4,
+            "busy": false,
+            "callbacks": 119,
+            "decoded": {
+              "wall": 9399.2,
+              "mediaTime": 1.458333,
+              "presentedFrames": 207
+            },
+            "audio": {
+              "gain": 0.41999998688697815,
+              "pan": 0.47999998927116394
+            },
+            "rect": {
+              "x": 612,
+              "y": 40,
+              "width": 552,
+              "height": 720,
+              "top": 40,
+              "right": 1164,
+              "bottom": 760,
+              "left": 612
+            },
+            "quality": {
+              "totalVideoFrames": 242,
+              "droppedVideoFrames": 1
+            }
+          }
+        ],
+        "eventCount": 26
+      },
+      "levels": {
+        "loop-1": [
+          0.004782703655128172,
+          0.00202656992386906
+        ],
+        "loop-2": [
+          0.0017015092799609341,
+          0.003835713988535519
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "154.0.8037.98",
+  "events": [
+    {
+      "type": "source",
+      "id": "loop-1",
+      "frame": 0,
+      "wall": 347.09999999403954,
+      "source": "generation-01"
+    },
+    {
+      "type": "source",
+      "id": "loop-2",
+      "frame": 0,
+      "wall": 347.5,
+      "source": "generation-02"
+    },
+    {
+      "type": "loadstart",
+      "id": "loop-1",
+      "frame": 0,
+      "wall": 363.59999999403954
+    },
+    {
+      "type": "loadstart",
+      "id": "loop-2",
+      "frame": 0,
+      "wall": 364.09999999403954
+    },
+    {
+      "type": "seek-command",
+      "id": "loop-2",
+      "frame": 0,
+      "wall": 493.3999999985099,
+      "target": 1,
+      "reason": "initial"
+    },
+    {
+      "type": "seeking",
+      "id": "loop-2",
+      "frame": 0,
+      "wall": 493.5
+    },
+    {
+      "type": "audio-pan",
+      "id": "loop-1",
+      "frame": 0,
+      "wall": 494.79999999701977,
+      "target": -0.48,
+      "seconds": 0
+    },
+    {
+      "type": "audio-pan",
+      "id": "loop-2",
+      "frame": 0,
+      "wall": 494.79999999701977,
+      "target": 0.48,
+      "seconds": 0
+    },
+    {
+      "type": "layout",
+      "id": null,
+      "frame": 0,
+      "wall": 495.5,
+      "orientation": "landscape",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "type": "layout",
+      "id": null,
+      "frame": 0,
+      "wall": 505.69999999552965,
+      "orientation": "landscape",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "type": "layout",
+      "id": null,
+      "frame": 0,
+      "wall": 506,
+      "orientation": "landscape",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "type": "audio-pan",
+      "id": "loop-1",
+      "frame": 30,
+      "wall": 1933.3999999985099,
+      "target": 0,
+      "seconds": 0.2
+    },
+    {
+      "type": "audio-pan",
+      "id": "loop-2",
+      "frame": 30,
+      "wall": 1933.5,
+      "target": 0,
+      "seconds": 0.2
+    },
+    {
+      "type": "layout",
+      "id": null,
+      "frame": 30,
+      "wall": 1933.5999999940395,
+      "orientation": "portrait",
+      "width": 600,
+      "height": 900
+    },
+    {
+      "type": "paused",
+      "id": null,
+      "frame": 38,
+      "wall": 2291.2999999970198,
+      "time": 1.6213333333333333
+    },
+    {
+      "type": "audio-pan",
+      "id": "loop-1",
+      "frame": 47,
+      "wall": 2933.5999999940395,
+      "target": -0.48,
+      "seconds": 0.2
+    },
+    {
+      "type": "audio-pan",
+      "id": "loop-2",
+      "frame": 47,
+      "wall": 2933.5999999940395,
+      "target": 0.48,
+      "seconds": 0.2
+    },
+    {
+      "type": "layout",
+      "id": null,
+      "frame": 47,
+      "wall": 2933.6999999955297,
+      "orientation": "landscape",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "type": "seeking",
+      "id": "loop-2",
+      "frame": 167,
+      "wall": 7951.29999999702
+    },
+    {
+      "type": "seek-command",
+      "id": "loop-2",
+      "frame": 168,
+      "wall": 7966.69999999553,
+      "target": 0,
+      "reason": "timeline-boundary"
+    },
+    {
+      "type": "seeking",
+      "id": "loop-2",
+      "frame": 168,
+      "wall": 7967.69999999553
+    },
+    {
+      "type": "layout",
+      "id": null,
+      "frame": 168,
+      "wall": 7972.69999999553,
+      "orientation": "landscape",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "type": "seeking",
+      "id": "loop-1",
+      "frame": 191,
+      "wall": 8948.5
+    },
+    {
+      "type": "seek-command",
+      "id": "loop-1",
+      "frame": 192,
+      "wall": 8966.5,
+      "target": 0,
+      "reason": "timeline-boundary"
+    },
+    {
+      "type": "seeking",
+      "id": "loop-1",
+      "frame": 192,
+      "wall": 8967.19999999553
+    },
+    {
+      "type": "layout",
+      "id": null,
+      "frame": 192,
+      "wall": 8970.09999999404,
+      "orientation": "landscape",
+      "width": 1200,
+      "height": 800
+    }
+  ]
+}

@@ -2,6 +2,6 @@
 
 Generated from the solution manifest.
 
-Unversioned spatial-audio/choreography integration workspace; source authority unresolved; do not treat as released reusable engine
+Preserved unversioned spatial-audio/choreography candidate workspace; tracked shared-engine authority is time-moment-brief/shared-engine
 
 [Existing local source](local/source).

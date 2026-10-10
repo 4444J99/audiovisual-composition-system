@@ -1,0 +1,53 @@
+{
+  "source_revision": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+  "atlas_revision": "cbce79dcbcf34ce214ba77cd2aa8d8bb9ed32fa5",
+  "observed_head": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+  "audio_manifest": {
+    "path": "synchronized-generation-calibration/media/audio-manifest.json",
+    "sha256": "6995372c8c9bdf75dd1efdc90cd11979a5a5dcd2629b13f1e5a6700ecaca8bb4",
+    "revision": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+    "bytes": 1179
+  },
+  "generations": [
+    {
+      "generation": "G01",
+      "video": {
+        "path": "synchronized-generation-calibration/media/generation-01.mp4",
+        "sha256": "f1095c859c5b89eb0639237ef728fb1b63899337e258c0ffac0e5defa8bddb95",
+        "revision": "cbce79dcbcf34ce214ba77cd2aa8d8bb9ed32fa5",
+        "bytes": 328169
+      },
+      "audio": {
+        "path": "synchronized-generation-calibration/media/generation-01.audio.m4a",
+        "sha256": "620c9201914cf616819beab4cfbc8597e06cd6ce1e827b40d22c3e2593f276f6",
+        "bytes": 130919
+      },
+      "shared_start": 510.0,
+      "shared_end": 518.0
+    },
+    {
+      "generation": "G02",
+      "video": {
+        "path": "synchronized-generation-calibration/media/generation-02.mp4",
+        "sha256": "3ea1c3f537b366c72703ece5ae36e1314da9a864d84f334d024ce2ed4823cc50",
+        "revision": "cbce79dcbcf34ce214ba77cd2aa8d8bb9ed32fa5",
+        "bytes": 299864
+      },
+      "audio": {
+        "path": "synchronized-generation-calibration/media/generation-02.audio.m4a",
+        "sha256": "5dee2e475a906ff0a2f622d1745d1af9602368db7f19d00cd868065225be4910",
+        "bytes": 130811
+      },
+      "shared_start": 518.0,
+      "shared_end": 526.0
+    }
+  ],
+  "audio_provenance": {
+    "recording": "F6 stereo room recording",
+    "channels": 2,
+    "sample_rate": 48000,
+    "upstream_gain_db": 12.0,
+    "rendering": "SIMVLTANEA stereo spatial panning",
+    "ambisonic_recording": false
+  }
+}

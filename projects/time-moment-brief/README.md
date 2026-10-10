@@ -2,7 +2,7 @@
 
 Generated from `workspace-manifest.json`; update that record and rerender.
 
-Private implementation with dirty working state. Shared-playback extraction exists on a linked development branch; it is not an accepted standalone engine release.
+Private implementation with preserved dirty working state. Current main owns the accepted shared-engine module, consumed by SIMVLTANEA through an exact release and runtime hash pin. No standalone engine repository is required.
 
 - Stable source identity: `g-p-6ac31528d2688191a8919259f7ba9820`
 - Canonical project slug: `time-moment-brief`
