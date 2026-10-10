@@ -1,0 +1,14 @@
+{
+  "schema": "tmb-composition-browser-acceptance/v1",
+  "status": "failed",
+  "attempt_id": "fc0a32b4-bf73-44c7-8ca7-c0e73d72117e",
+  "admission_sha256": "6c41ab26b70e5a80de053ae397917f5dad34c14a33c0efd6a07dae7f940838e7",
+  "verifier_sha256": "a1771e11a43f4c824661f06685bf30c5ad31dd3fff3ee50326a3a18d9c656d30",
+  "created_at": "2026-10-10T22:42:15.126Z",
+  "scope": "real TMB derivatives; headless Chrome; stereo spatial panning",
+  "edition_receipt_sha256": "383f2cb8aa6fcd6d63c8f6aab5d8ff645a79188922bfae1eaf929e38696e86ee",
+  "checks": [],
+  "observations": [],
+  "errors": [],
+  "failure": "Error: browserType.launch: Failed to launch chromium because executable doesn't exist at /nonexistent/tmb-acceptance-browser"
+}
