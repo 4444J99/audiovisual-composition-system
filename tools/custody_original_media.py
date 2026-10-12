@@ -46,6 +46,13 @@ def metadata(path):
             'xattrs': attrs, 'acl': acl}
 
 
+def verified_entry_matches(path, entry, stage):
+    """Reuse only a receipt whose verified object and metadata still match."""
+    return (entry.get(stage + '_verified') is True
+            and identity(path) == entry.get(stage + '_identity')
+            and metadata(path) == entry['metadata'])
+
+
 def enumerate_source(source, roots):
     files, directories = {}, set()
     for root in roots:
@@ -71,21 +78,37 @@ def run(args):
     os.nice(10)
     started = time.monotonic()
     deadline = started + args.wall_seconds
-    private = Path(args.staging) / ('original-media-' + uuid.uuid4().hex[:12])
-    private.mkdir(mode=0o700)
+    private = (Path(args.resume) if args.resume else
+               Path(args.staging) / ('original-media-' + uuid.uuid4().hex[:12]))
+    if not args.resume:
+        private.mkdir(mode=0o700)
     state = {'started_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
              'prior_agent_seconds': args.prior_seconds,
              'wall_limit_seconds': args.wall_seconds,
              'verification_limit_seconds': args.verification_seconds,
              'verification_seconds': 0.0, 'records': [], 'outcome': 'preflight',
              'originals_preserved': True, 'checkout_disposition': 'retained'}
+    attempt_id = uuid.uuid4().hex[:12]
+    if args.resume:
+        previous = json.loads((private / 'receipt.json').read_text())
+        consumed = previous['prior_agent_seconds'] + previous['elapsed_seconds']
+        if args.prior_seconds < consumed:
+            raise RuntimeError('resume understates cumulative usage')
+        state['records'] = previous['records']
+        for key in ['custody_path', 'restore_path', 'inventory_sha256']:
+            if key in previous:
+                state[key] = previous[key]
     lease = None
     last_refresh = started
 
     def save():
         state['elapsed_seconds'] = time.monotonic() - started
         tmp = private / 'receipt.next.json'
-        tmp.write_text(json.dumps(state, indent=2) + '\n')
+        with tmp.open('w') as f:
+            json.dump(state, f, indent=2)
+            f.write('\n')
+            f.flush()
+            os.fsync(f.fileno())
         os.replace(tmp, private / 'receipt.json')
 
     def guard():
@@ -144,12 +167,16 @@ def run(args):
         raise TimeoutError('hard process deadline')
 
     signal.signal(signal.SIGALRM, alarm_handler)
+    signal.signal(signal.SIGTERM, alarm_handler)
     signal.alarm(args.wall_seconds)
     try:
         invpath = Path(args.inventory)
         invbytes = invpath.read_bytes()
         if hashlib.sha256(invbytes).hexdigest() != args.inventory_sha256:
             raise RuntimeError('inventory digest mismatch')
+        if state.get('inventory_sha256', args.inventory_sha256) != args.inventory_sha256:
+            raise RuntimeError('resume inventory changed')
+        state['inventory_sha256'] = args.inventory_sha256
         inventory = json.loads(invbytes)
         expected = {r['path']: [r['bytes'], r['mtime_ns'], r['inode'], r['device']]
                     for r in inventory['files']}
@@ -171,9 +198,13 @@ def run(args):
         state['disks'] = disks
         if disks['Ingress']['parent'] == disks['T7Recovery']['parent']:
             raise RuntimeError('custody device is not independent')
+        previous_by_path = {r['path']: r for r in state['records']}
         total = sum(v[0] for v in expected.values())
         for name in ['T7Recovery', 'Archive4T']:
-            if disks[name]['free_bytes'] < total + RESERVE:
+            stage = 'custody' if name == 'T7Recovery' else 'restore'
+            remaining = sum(v[0] for p, v in expected.items()
+                            if not previous_by_path.get(p, {}).get(stage + '_verified'))
+            if disks[name]['free_bytes'] < remaining + RESERVE:
                 raise RuntimeError('full destination capacity unavailable')
         opened = subprocess.run(['lsof', '-n', '-P', '+f', '--', str(source)],
                                 capture_output=True, timeout=30)
@@ -188,13 +219,13 @@ def run(args):
             raise RuntimeError('host admission refused')
         lease = state['admission']['lease']
         custody_name = private.name
-        custody = Path('/Volumes/T7Recovery/limen-custody') / custody_name
-        restore = Path('/Volumes/Archive4T/limen-custody') / custody_name
+        custody = Path(state.get('custody_path', str(Path('/Volumes/T7Recovery/limen-custody') / custody_name)))
+        restore = Path(state.get('restore_path', str(Path('/Volumes/Archive4T/limen-custody') / custody_name)))
         for p in [custody, restore]:
             p.parent.mkdir(mode=0o700, exist_ok=True)
-            p.mkdir(mode=0o700)
+            p.mkdir(mode=0o700, exist_ok=bool(args.resume))
             for rel in sorted(directories, key=lambda s: (s.count('/'), s)):
-                (p / rel).mkdir(mode=0o700)
+                (p / rel).mkdir(mode=0o700, exist_ok=bool(args.resume))
         state.update(custody_path=str(custody), restore_path=str(restore), outcome='hashing')
         save()
         print(json.dumps({'staging': str(private), 'phase': 'hashing', 'admitted': True}), flush=True)
@@ -203,24 +234,29 @@ def run(args):
             p = source / rel
             if identity(p) != expected[rel]:
                 raise RuntimeError('source drift before hashing')
-            entry = {'path': rel, 'bytes': expected[rel][0], 'metadata': metadata(p),
+            r = previous_by_path.get(rel)
+            if r is None:
+                r = {'path': rel, 'bytes': expected[rel][0], 'metadata': metadata(p),
                      'sha256': digest(p), 'hashed': True}
-            state['records'].append(entry)
+                state['records'].append(r)
+                save()
+            elif metadata(p) != r['metadata']:
+                raise RuntimeError('source metadata changed since checkpoint')
+            for stage, src, dst in [('custody', p, custody / rel),
+                                    ('restore', custody / rel, restore / rel)]:
+                if r.get(stage + '_verified'):
+                    if not verified_entry_matches(dst, r, stage):
+                        raise RuntimeError('verified destination changed since checkpoint')
+                else:
+                    transfer(src, dst, r['sha256'], r['metadata'])
+                    r[stage + '_verified'] = True
+                    r[stage + '_identity'] = identity(dst)
+                    save()
             save()
-            print(json.dumps({'hashed': len(state['records']), 'bytes': sum(r['bytes'] for r in state['records']),
-                              'verification_seconds': round(state['verification_seconds'], 2)}), flush=True)
-        state['outcome'] = 'copying-and-restoring'
-        save()
-        for r in state['records']:
-            rel = r['path']
-            if identity(source / rel) != expected[rel]:
-                raise RuntimeError('source drift before copy')
-            transfer(source / rel, custody / rel, r['sha256'], r['metadata'])
-            r['custody_verified'] = True
-            save()
-            transfer(custody / rel, restore / rel, r['sha256'], r['metadata'])
-            r['restore_verified'] = True
-            save()
+            print(json.dumps({'hashed': len(state['records']),
+                'restored': sum(e.get('restore_verified', False) for e in state['records']),
+                'verified_bytes': sum(e['bytes'] for e in state['records'] if e.get('restore_verified')),
+                'verification_seconds': round(state['verification_seconds'], 2)}), flush=True)
         for destination in [custody, restore]:
             # Apply and verify directory metadata only after children are complete.
             for rel in sorted(directories, key=lambda s: (-s.count('/'), s)):
@@ -246,14 +282,19 @@ def run(args):
     finally:
         signal.alarm(0)
         if lease:
-            released = subprocess.run([sys.executable, str(ADMISSION), 'release',
-                '--lease-id', lease['lease_id'], '--owner', OWNER, '--pid', str(os.getpid())],
-                capture_output=True, timeout=30)
-            state['release'] = json.loads(released.stdout)
+            try:
+                released = subprocess.run([sys.executable, str(ADMISSION), 'release',
+                    '--lease-id', lease['lease_id'], '--owner', OWNER, '--pid', str(os.getpid())],
+                    capture_output=True, timeout=30)
+                state['release'] = json.loads(released.stdout)
+            except Exception as exc:
+                state['release_error'] = str(exc)
         save()
+        with (private / ('attempt-' + attempt_id + '.json')).open('x') as f:
+            json.dump(state, f, indent=2)
         for name in ['custody_path', 'restore_path']:
             if name in state:
-                target = Path(state[name]) / 'custody-receipt.json'
+                target = Path(state[name]) / ('custody-receipt-' + attempt_id + '.json')
                 with target.open('x') as f:
                     json.dump(state, f, indent=2)
         print(json.dumps({'staging': str(private), 'outcome': state['outcome'],
@@ -268,6 +309,7 @@ if __name__ == '__main__':
     parser.add_argument('--inventory', required=True)
     parser.add_argument('--inventory-sha256', required=True)
     parser.add_argument('--staging', required=True)
+    parser.add_argument('--resume', help='Existing private receipt directory; preserves prior attempts')
     parser.add_argument('--prior-seconds', type=int, required=True)
     parser.add_argument('--wall-seconds', type=int, default=1500)
     parser.add_argument('--verification-seconds', type=int, default=540)
