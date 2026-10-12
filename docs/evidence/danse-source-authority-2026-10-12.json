@@ -1,0 +1,181 @@
+{
+  "schema": "ace.danse_source_authority.v1",
+  "observed_at": "2026-10-12T19:37:28Z",
+  "scope": "Danse repository authority and bounded custody reconciliation; no source mutation or payload transfer",
+  "authority": {
+    "status": "resolved",
+    "native_project_id": "danse",
+    "canonical": {
+      "github_id": 1320324017,
+      "full_name": "4444J99/the-thing-without-a-name-screendance",
+      "private": true,
+      "archived": false,
+      "legacy_url": "https://github.com/organvm/the-thing-without-a-name",
+      "legacy_url_resolves_to_same_id": true,
+      "main_sha": "73da6dc1c4339c9cc75c8253c7ef5173e4091256"
+    },
+    "continuation": {
+      "github_id": 1347780050,
+      "full_name": "4444J99/the-thing-without-a-name",
+      "private": false,
+      "archived": true,
+      "main_sha": "2e105c30b69033fa665cfcaacff4c393f94dada3",
+      "archival_pr": 13,
+      "archival_pr_merged_at": "2026-09-01T01:36:41Z",
+      "readme_blob_sha": "b3e8c3308dc194af55c34c9d0e5ba4fc3235043c",
+      "declares_canonical_legacy_url": true
+    }
+  },
+  "lineage": {
+    "local_head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+    "private_main_is_local_ancestor": true,
+    "local_ahead_of_private_main": 4,
+    "local_behind_private_main": 0,
+    "common_base_private_public": "e6dac59730f612a9f6ab035b615c3be6d179aac4",
+    "public_main_is_local_ancestor": false,
+    "public_only_commits": 1,
+    "local_only_relative_to_public_main": 63,
+    "public_only_commit_changes": [
+      "README.md"
+    ],
+    "method": "existing local exact commit objects; live advertised Git refs; no source fetch",
+    "cross_repository_compare_api": "404; no negative ancestry inference taken from API availability"
+  },
+  "custody": {
+    "status": "incomplete",
+    "native_owner_issue": "https://github.com/4444J99/the-thing-without-a-name-screendance/issues/21",
+    "native_owner_issue_state": "open",
+    "ref_reachability": [
+      {
+        "ref": "refs/heads/feat/ambisonic-panoramic-demo",
+        "sha": "e4d2937f09a652d5506e5d902bb4b80b6d31aed6",
+        "same_named_remote_equal": true,
+        "reachable_from_private_advertised_refs": [
+          "refs/heads/feat/ambisonic-panoramic-demo"
+        ],
+        "commits_not_reachable_from_private_advertised_refs": 0
+      },
+      {
+        "ref": "refs/heads/main",
+        "sha": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+        "same_named_remote_equal": false,
+        "reachable_from_private_advertised_refs": [],
+        "commits_not_reachable_from_private_advertised_refs": 1
+      },
+      {
+        "ref": "refs/heads/topic/engine-extraction-integration",
+        "sha": "933bf0035f15f732d6e4d3635c9f848d95fa6679",
+        "same_named_remote_equal": false,
+        "reachable_from_private_advertised_refs": [],
+        "commits_not_reachable_from_private_advertised_refs": 2
+      },
+      {
+        "ref": "refs/stash",
+        "sha": "f6f570a0e9cdeb3118d2aea65e5521fa7a66b261",
+        "same_named_remote_equal": false,
+        "reachable_from_private_advertised_refs": [],
+        "commits_not_reachable_from_private_advertised_refs": 4
+      },
+      {
+        "ref": "refs/tags/archive/danse-alpha-omega-20260803",
+        "sha": "817444bf5f1b649b681ec293fa12b5c30f77531b",
+        "same_named_remote_equal": true,
+        "reachable_from_private_advertised_refs": [
+          "refs/tags/archive/danse-alpha-omega-20260803"
+        ],
+        "commits_not_reachable_from_private_advertised_refs": 0
+      }
+    ],
+    "ignored_metadata_census": {
+      "regular_files": 165,
+      "logical_bytes": 934334052,
+      "symlinks": 0,
+      "stat_errors": 0
+    },
+    "local_asset_lock_present": false,
+    "documented_production_profile_inputs": 487,
+    "private_contents_hashed": false,
+    "independent_copy_performed": false,
+    "restore_performed": false,
+    "cleanup_authorized": false,
+    "scope_exclusions": [
+      "Other historical material roots not rediscovered",
+      "LFS coverage, reflog-only and unreachable objects not audited",
+      "Rights, production readiness and audiovisual acceptance",
+      "TMB/backwards-up-hill receipts do not establish Danse custody"
+    ]
+  },
+  "source_document_sha256": {
+    "AGENTS.md": "e4231faf9004f127fa2c57e48af6f423f2a906c5278f27e6e8bfd0a715745d64",
+    "project-record.yml": "e0b79415b59c27888040edbdbbca5391ec0b955bd7adfb7aa03c2be594515d6f",
+    "LINEAGE.json": "ff5651e732492f88d8b5788ab468ca77542d453bc8a044b3be382401c9c508ff",
+    "docs/private-custody.md": "153116d6619fc4ad0debb6eca69cb5a9ef556e47d25cb9d78da877f155aaaaf1",
+    "docs/continuations/alpha-omega/private-custody-20260804-v2.json": "382f83d67481436f2c4b97667cf377728a3558e36bad521e5f088cbca9f4b2a4",
+    "assets/README.md": "7c516b14df51d0f23093de208588fcda4ee3857b9afb27a08ccf053bfe946669"
+  },
+  "source_preservation": {
+    "before": {
+      "god-here": {
+        "branch": "main",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "head": "37a28eb9eea36f49bf5eda5bc253aa47c4c80dc8",
+        "refs_sha256": "60c1712a68d67d1ce8058dc610c0572ac283e268f9dbbea589d4a06e104ec3e3",
+        "remotes_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status_sha256": "0b469e8634fbc7db3f7b88b5c6fa9a352eb1fddb7aa6cb0fac6386da29526de4",
+        "worktrees_sha256": "640d417887de6655d0e2396b882f370aedbed29a53ae901609b88aad24405ff5"
+      },
+      "simvltanea": {
+        "branch": "refactor/feature-encapsulation-20261002",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "head": "d5b420dcd28f1d91e272b87ff9551a48a41c1042",
+        "refs_sha256": "42122a7436e45e97a433b31f5b2354963ca4093a87ea4638875285cb07b66c69",
+        "remotes_sha256": "b4bb6286731e416627a6d0886b33561de0d85c89b7628387bc744e100f72941e",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "worktrees_sha256": "de7b2e363caccad0d994dbdd434aa21700a9a70a62c693ceb019eafe7cf674a0"
+      },
+      "temporary-work-preservation-2026-10-10": {
+        "branch": "main",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "head": "9f407ca7ac8303c29f20c7e3c332919fb540731c",
+        "refs_sha256": "bc460bcdb52d8d867cc367e6ff38ad61712a9a412e35293d25321b1866aa07eb",
+        "remotes_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "worktrees_sha256": "0f0f54305f91bee3374111d8d0d0959b9cd55c3117bc4bfa8788bed91cc13be7"
+      },
+      "the-thing-without-a-name": {
+        "branch": "main",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+        "refs_sha256": "d407e2de04a65707c765b21b85ec312da3a67b3fe1ab1866ea50dcedeb673bbe",
+        "remotes_sha256": "554522f94513fc3f4643f2d594a4cdcc3a32dd622e8daec4d8a9f70268fbbd2c",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "worktrees_sha256": "acae171493b69cf4a3035db2303642e1b58efa1c0f81654ea9b3a7d4a5b5e343"
+      },
+      "time-moment-brief": {
+        "branch": "agent5-loop-continuity",
+        "diff_sha256": "e22a5519960476f5d933c77c3ab49e4a9591a78fc4a0803376fdfaf1dc1ac0c3",
+        "head": "da10bd9224f3ea3bffad6460156efc0147f0b241",
+        "refs_sha256": "bef7e0a2bea2ec05b7e53fb79b26439cc23045c7067214e9976a4a5f8bf9dc75",
+        "remotes_sha256": "bf8fe12a02ed839c5d14f2efd24db3c123f46b3031a628a9e66ec87a4ec5ea77",
+        "status_sha256": "5bdd16ac810f7f895a17c78482d04bc7ac440353dc95cf223d9660176f2f43fd",
+        "worktrees_sha256": "e044bc5434f99b87d3a3ed14f74d07d3288ffd6819ccafa981348dbe29e9168d"
+      }
+    },
+    "after_matches_before": true,
+    "source_fetch": false,
+    "source_refs_changed": false,
+    "source_remotes_changed": false,
+    "source_payload_writes_performed": false,
+    "coverage": "HEAD, branch, full porcelain status, tracked diff, worktree listing, configured remotes and complete ref listing; ignored payload bytes were not hashed"
+  },
+  "validation": {
+    "catalog_only": "passed in isolated review worktree",
+    "python_safety_tests": 16,
+    "node_acceptance_guards": 12,
+    "diff_check": "passed",
+    "strict_local_baseline": "passed in retained original workspace: 15 projects, 6 repository references, 30 generated files, 16 links",
+    "isolated_worktree_local_source_validation": "Independent source checkouts deliberately absent; source bindings checked against retained original workspace",
+    "source_snapshots_unchanged": true
+  },
+  "checkout_disposition": "Original coordination checkout and isolated review worktree retained; all source checkouts retained; PRs 2 and 3 remain open"
+}
