@@ -1,0 +1,34 @@
+{
+  "outcome": "verified-with-os-security-attribute-differences",
+  "completed_at": "2026-10-12T19:43:43.831486+00:00",
+  "files": 136,
+  "directories": 31,
+  "bytes": 5081400,
+  "encrypted_archive_bytes": 5717560,
+  "encrypted_archive_sha256": "9d47f7d34835f45d3a5bab855a9016c6e71d338f2ac698d00b0d93f88f7467e9",
+  "manifest_sha256": "e6fda2bffd28f19fd467a0be8257a14b6f0b2bf58a44f8fb561f9166c99c4123",
+  "original_xattrs_sha256": "f532b408f55b8e7e838f4eebe756d912ae830b6e0716b7c0668875b6225d0367",
+  "device_readback_verified": true,
+  "restored_content_verified": true,
+  "restored_modes_times_flags_acl_verified": true,
+  "original_xattrs_sidecar_readback_verified": true,
+  "originals_unchanged": true,
+  "originals_retained": true,
+  "key_custody": "Recovery key is retained separately on FileVault-protected internal disk. Independent key escrow is not established.",
+  "scope_exclusions": [
+    "source repositories",
+    "media store",
+    "navigation links",
+    "teamwork state"
+  ],
+  "destination_volume": "T7Recovery",
+  "destination_volume_uuid": "0287E02B-989A-419B-A7CA-B4BCE4ECA1FF",
+  "independent_physical_device": true,
+  "receipt_locator": "ace-unversioned-20261012-25huyo71",
+  "os_security_attribute_differences": 86,
+  "difference_types": [
+    "com.apple.provenance",
+    "com.apple.quarantine"
+  ],
+  "checkout_disposition": "retained"
+}
