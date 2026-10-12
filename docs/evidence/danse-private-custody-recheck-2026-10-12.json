@@ -1,0 +1,45 @@
+{
+  "run_id": "danse-recheck-095fd663f68b48aa9c57dda1fc8d93fc",
+  "inventory_stable": true,
+  "git_state_stable": true,
+  "minimum_observation_seconds": 5,
+  "source_head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+  "ref_count": 14,
+  "stash_entry_count": 2,
+  "ignored_entry_count": 4257,
+  "ignored_bytes": 1212543676,
+  "total_file_and_link_count": 5317,
+  "total_bytes": 1377265060,
+  "writer_probe": {
+    "completed": true,
+    "returncode": 1,
+    "writable_handles": [],
+    "scope": "open descriptor snapshot under current checkout; not a future writer exclusion lock",
+    "stderr_bytes": 0,
+    "observed_at": "2026-10-12T20:22:38.327022+00:00"
+  },
+  "copies_verified": 0,
+  "clean_restore_verified": false,
+  "originals_retained": true,
+  "outcome": "blocked-host-pressure",
+  "host_admission_status": {
+    "allowed": false,
+    "operation": "status",
+    "observed_at": "2026-10-12T20:21:07.400320+00:00",
+    "swap_fraction": 0.6404913329752162,
+    "swap_used_bytes": 11003557314,
+    "disk_mib_per_second_samples": [
+      225.87,
+      677.13
+    ],
+    "vitals_action": "shed",
+    "sensor_errors": [],
+    "reasons": [
+      "swap-fraction",
+      "disk-throughput",
+      "vitals-shed"
+    ]
+  },
+  "heavy_acquire_attempted": false,
+  "payload_hashed_or_copied": false
+}

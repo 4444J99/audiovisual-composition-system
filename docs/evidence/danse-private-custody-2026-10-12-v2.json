@@ -1,0 +1,28 @@
+{
+  "schema": "danse.private-custody-attempt.v1",
+  "run_id": "danse-888d19c7ddf14b6380e6ebe7389f0d51",
+  "observed_at": "2026-10-12T19:53:33.329345+00:00",
+  "outcome": "checkpoint-incomplete",
+  "copies_verified": 0,
+  "clean_restore_verified": false,
+  "source_preserved": true,
+  "checkout_disposition": "retained",
+  "scope": "one current standalone checkout, complete Git store and working tree",
+  "wall_limit_seconds": 1200,
+  "verification_limit_seconds": 600,
+  "source_head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+  "ref_count": 14,
+  "stash_entry_count": 2,
+  "ignored_file_count": 965,
+  "ignored_bytes": 965462667,
+  "total_file_count": 2025,
+  "total_bytes": 1130429433,
+  "native_medium_helper_sha256": "aed197af7e014d6344f079c6fb14bb7777d5c52bb74ee51aaa5aed599bd89d82",
+  "independent_media_sha256": [
+    "360017005c6ca4763540644034acd03f4a09f3fcafbee7cdee9d3336eb8b08a5",
+    "741ed43204f2f1da5dc67f57d099a43475ac3e3e4e0138956ffd6b21dcf1f60f"
+  ],
+  "failure_class": "CustodyError",
+  "git_state_preserved": true,
+  "elapsed_seconds": 1.175
+}

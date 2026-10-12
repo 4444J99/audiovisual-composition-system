@@ -1,0 +1,46 @@
+{
+  "schema": "ace.original_media_custody_attempt.v1",
+  "observed_at": "2026-10-12T19:24:57.463386+00:00",
+  "owner": "codex / audiovisual-composition-system PR #3",
+  "outcome": "blocked_before_payload_io",
+  "admission": {
+    "allowed": false,
+    "exit_code": 3,
+    "reason": "swap-fraction",
+    "observed_at": "2026-10-12T19:24:36.858885+00:00",
+    "swap_fraction": 0.6722790527273901,
+    "limit": 0.25,
+    "swap_used_bytes": 11549666181,
+    "memory_bytes": 17179869184,
+    "lease_acquired": false
+  },
+  "inventory_files": 347,
+  "inventory_bytes": 281534336361,
+  "source_metadata_matches_inventory": true,
+  "enumeration_errors": 0,
+  "disks": {
+    "Ingress": {
+      "uuid": "8E4C5386-7281-4E65-BC65-363C08FAAE50",
+      "parent": "disk7",
+      "free_bytes": 218462941184
+    },
+    "Archive4T": {
+      "uuid": "45C8AA30-307B-41E2-908D-5112E93B4AF5",
+      "parent": "disk7",
+      "free_bytes": 1442331054080
+    },
+    "T7Recovery": {
+      "uuid": "0287E02B-989A-419B-A7CA-B4BCE4ECA1FF",
+      "parent": "disk9",
+      "free_bytes": 315296735232
+    }
+  },
+  "original_files_hashed": 0,
+  "original_files_copied": 0,
+  "original_files_readback_verified": 0,
+  "original_files_restored": 0,
+  "original_files_restore_verified": 0,
+  "originals_preserved": true,
+  "checkout_disposition": "retained",
+  "next_action": "After observed host pressure is within policy, acquire one heavy lease in a persistent bounded runner; hash, copy, independently read back and restore under the existing plan. No unchanged-denial retries."
+}

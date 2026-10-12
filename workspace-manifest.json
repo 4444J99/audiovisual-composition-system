@@ -47,14 +47,25 @@
       "private": true,
       "local_path": "the-thing-without-a-name",
       "configured_origin": "https://github.com/organvm/the-thing-without-a-name.git",
-      "authority_state": "conflict: local canonical declaration and live redirected identity require reconciliation",
-      "role": "Local Danse source origin resolves here; distinct public personal remote retained",
+      "authority_state": "resolved: legacy origin and native canonical declaration identify private GitHub repository 1320324017; public personal repository 1347780050 is an archived non-authoritative continuation",
+      "role": "Canonical private Danse source; legacy origin retained; archived public continuation remains distinct",
       "additional_remote": {
         "configured_name": "personal",
         "github_id": 1347780050,
         "full_name": "4444J99/the-thing-without-a-name",
-        "private": false
-      }
+        "private": false,
+        "archived": true,
+        "role": "Retained non-authoritative historical continuation; no private-source publication target"
+      },
+      "authority_evidence": "docs/evidence/danse-source-authority-2026-10-12.json"
+    },
+    {
+      "key": "hole-loop",
+      "github_id": 1409411055,
+      "full_name": "4444J99/timed-text-navigation-loop",
+      "private": false,
+      "local_path": null,
+      "role": "Standalone hole-loop browser text artwork extracted from ETCETER4"
     }
   ],
   "components": [
@@ -146,7 +157,7 @@
         "checkout": "the-thing-without-a-name"
       },
       "source_state": "local-observed",
-      "decision": "Local project-record.yml supplies project_id danse. The origin URL redirects to a private screendance repository; the personal remote is distinct. Resolve authority before changing either remote or moving the checkout.",
+      "decision": "Native project_id danse and the legacy canonical URL identify private GitHub repository 1320324017. The distinct public personal repository 1347780050 is archived and explicitly defers to that canonical URL. Authority is resolved; source publication parity and independent custody remain incomplete. Preserve both remotes and the existing checkout.",
       "native_identity": {
         "project_id": "danse",
         "authority": "the-thing-without-a-name/project-record.yml"
@@ -197,13 +208,17 @@
       "page_id": "page_bb118d8d09b08191abece05e8dde605f",
       "page_url": "https://chatgpt.com/space/page_bb118d8d09b08191abece05e8dde605f",
       "chatgpt_title": "hole-loop",
-      "aliases": [],
-      "profile": "artwork-record",
-      "repository_keys": [],
+      "aliases": [
+        "timed-text-navigation-loop"
+      ],
+      "profile": "browser-artwork",
+      "repository_keys": [
+        "hole-loop"
+      ],
       "repository_subpath": null,
       "local_bindings": {},
-      "source_state": "page-record-only",
-      "decision": "The Page contains restoration and extraction discussions. A standalone implementation owner was not resolved by exact-name discovery."
+      "source_state": "remote-observed",
+      "decision": "Restoration Pages identify timed-text-navigation-loop as the standalone implementation; GitHub identity 1409411055 verified 2026-10-12. Preserve its native layout and independent history. No local checkout binding is claimed."
     },
     {
       "id": "g-p-6ab7e73ded908191861a61f9f026db4b",
