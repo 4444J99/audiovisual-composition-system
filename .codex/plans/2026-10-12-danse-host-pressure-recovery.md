@@ -21,3 +21,8 @@ candidates retain live services. No process was stopped, restarted or retuned.
 Fresh status at 20:26 UTC remains denied at 67.70% swap and vitals shed. Payload
 copy and restore did not start. Runtime/session lifecycle release, followed by
 changed-pressure admission and fresh source stability, is the recovery predicate.
+
+Review hold discrepancy: PR #2 was merged outside this attempt at 20:28:33 UTC.
+PR #3 remains open. Retained pre-rebase branches preserve prior coordination
+history; only this evidence delta is applied to the current PR #3 history. Do
+not undo the external merge or claim that both PRs are still open.
