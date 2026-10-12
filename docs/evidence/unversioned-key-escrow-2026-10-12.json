@@ -1,0 +1,23 @@
+{
+  "started_at": "2026-10-12T19:48:11.943114+00:00",
+  "completed_at": "2026-10-12T19:48:16.645534+00:00",
+  "outcome": "verified",
+  "vault_name": "Personal",
+  "item_title": "ACE unversioned snapshot 2026-10-12 recovery key - 25huyo71",
+  "item_id": "fxbrasyxmbuiax3sxe7rr6f6uq",
+  "item_url": "https://start.1password.com/open/i?a=I6NHILYPM5EWTORXZ2U3EDZMEY&v=7kuwrcajuvo2fezgr3ywgposcm&i=fxbrasyxmbuiax3sxe7rr6f6uq",
+  "created_new_item": false,
+  "retrieved_key_exact_match": true,
+  "external_backup_decryption_verified": true,
+  "external_manifest_decryption_verified": true,
+  "original_key_retained": true,
+  "backup_copies_retained": true,
+  "original_key_unchanged": true,
+  "encrypted_backup_unchanged": true,
+  "independent_custody": "1Password account Personal vault; distinct from local disk and external backup device",
+  "snapshot_receipt_locator": "ace-unversioned-20261012-25huyo71",
+  "escrow_receipt_locator": "ace-key-escrow-20261012-egiuuwwp",
+  "encrypted_archive_sha256": "9d47f7d34835f45d3a5bab855a9016c6e71d338f2ac698d00b0d93f88f7467e9",
+  "checkout_disposition": "retained",
+  "creation_reconciliation": "Item created during this session; the corrective verification reused the exact listed item after a CLI response-field mismatch. No duplicate item created."
+}
