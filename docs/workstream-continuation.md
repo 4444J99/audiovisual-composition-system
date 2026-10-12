@@ -15,3 +15,9 @@ Remaining work:
 5. Keep desktop/browser acceptance distinct from headset/XR, fourth-camera and full archive acceptance. These changes do not claim a new media acceptance run.
 
 All source checkouts, private media and archival filenames are preserved. EES controls remain reviewed draft.
+
+## Original-media execution attempt — 2026-10-12 19:24 UTC
+
+The user authorized full hashing, copy, readback and restore within the plan bounds. The first heavy-admission acquisition exited 3 with swap-fraction: 11,549,666,181 bytes swap / 17,179,869,184 bytes RAM (67.2%, limit 25%). No lease was acquired and no original-media payload hashing, transfer or restore started. All 347 paths still match the private inventory metadata; mounts and capacity were rechecked. See the [attempt receipt](evidence/ingress-custody-attempt-2026-10-12.json).
+
+Owner: Codex, this repository PR #3; host-pressure predicate belongs to Limen host admission. Next entry command, only after changed pressure evidence: python3 /Users/4jp/Workspace/limen/scripts/host-work-admission.py acquire --kind heavy --owner codex-ace-original-media-20261012 --surface original-media-custody --ttl-seconds 1800. Execute acquisition inside the persistent bounded custody runner, binding its PID/start identity and refreshing/releasing its exact lease. A successful short-lived probe is not a transfer lease. Retain the checkout and every original; no unchanged-denial retry or peer process intervention. PRs #2 and #3 remain open.
