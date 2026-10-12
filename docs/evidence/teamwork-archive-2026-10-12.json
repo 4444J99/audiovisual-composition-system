@@ -1,0 +1,22 @@
+{
+  "outcome": "verified",
+  "completed_at": "2026-10-12T20:14:10.608362+00:00",
+  "original_path": "/Users/4jp/Workspace/audiovisual-composition-system/.agents/teamwork",
+  "archived_original_path": "/Users/4jp/Workspace/limen/.limen-private/custody-staging/ace-teamwork-archive-20261012-org3p0jo/original-tree/.agents/teamwork",
+  "backup_path": "/Volumes/T7Recovery/limen-custody/ace-teamwork-archive-20261012-org3p0jo/snapshot.tar.age",
+  "files": 588,
+  "directories": 124,
+  "bytes": 2755048,
+  "encrypted_archive_sha256": "62acf8dd97ffcc49225250160d6f94591efaa95e9ef1dec5705a836895638f62",
+  "manifest_sha256": "a0e0a042244a358dd2b9a82068bb171db7b6c20d971aabca5f5c08afcda4e570",
+  "external_readback_decryption_verified": true,
+  "restored_paths_bytes_and_metadata_verified_except_os_xattrs": true,
+  "os_xattr_difference_entries": 0,
+  "original_xattrs_preserved_in_encrypted_sidecar": true,
+  "original_tree_unchanged_after_move": true,
+  "no_open_handles_or_process_path_references_before_move": true,
+  "active_agent_work_modified": false,
+  "recovery_key_escrow_item": "fxbrasyxmbuiax3sxe7rr6f6uq",
+  "private_receipt_locator": "ace-teamwork-archive-20261012-org3p0jo",
+  "destination_volume_uuid": "0287E02B-989A-419B-A7CA-B4BCE4ECA1FF"
+}
