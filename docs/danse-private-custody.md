@@ -1,5 +1,40 @@
 # Danse private custody checkpoint
 
+## Safe pressure-recovery investigation at 20:24–20:26 UTC
+
+The [pressure recovery receipt](evidence/danse-host-pressure-recovery-2026-10-12.json)
+records substantial live owners: Codex renderer footprint 2,611 MiB (2,219 MiB
+compressed), app-server footprint 1,700 MiB (1,575 MiB compressed), and a shared
+app-server tree of 377–378 processes including 13 matching MCP server groups.
+The paired tree RSS sums were about 2.1–2.3 GiB; these are overlapping resident
+measurements, not unique physical-memory accounting. Browser renderers and other
+live applications also contribute. Increasing swap and internal-disk activity
+are consistent with paging pressure; complete per-process disk attribution was
+not established.
+
+Active peer deployment work was observed beneath the shared server. Five
+detached candidates were inspected; all retained live service endpoints or
+descendants. A brief Finder sample did not identify a file-copy loop. No process
+was proven safely disposable. No process, application or active workload was
+stopped, restarted or retuned; no memory purge, configuration change, disabled
+tool or admission override was used.
+
+Disk throughput eased without intervention to 75.34 and 35.6 MiB/s, but swap
+rose to **67.70% / 11,630,479,933 bytes**, growing by 241,378,415 bytes/minute.
+Host admission still denied new heavy work for `swap-fraction` and `vitals-shed`.
+No heavy acquire or payload I/O followed the known denial. Custody remains at
+zero verified copies and no verified clean restore. Private samples, process
+ancestry and handle diagnostics are retained outside vendor runtime storage;
+only aggregates and the private run ID are published.
+
+Recovery owner: the Codex runtime and live application/session owners must
+release unused runtime fleets through their normal lifecycle while preserving
+active tasks. A new custody run requires changed pressure, a successful heavy
+acquire and a fresh stable source inventory. The committed command below remains
+the entrypoint; no safely established local reclamation action was available in
+this bounded attempt. The sample does not prove an ongoing fleet leak or a
+vendor fix, and falling disk throughput is not claimed as our repair.
+
 ## Conditional recheck at 20:21 UTC
 
 The [fresh recheck](evidence/danse-private-custody-recheck-2026-10-12.json)
