@@ -6,7 +6,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const http = require('node:http');
 const crypto = require('node:crypto');
-const ADMISSION = path.join(__dirname,'../evidence/2026-10-10-tmb-spatial-composition/edition-receipt.json');
+const ADMISSION = path.join(__dirname,'../docs/evidence/2026-10-10-tmb-spatial-composition/edition-receipt.json');
 const ADMISSION_SHA256 = '6c41ab26b70e5a80de053ae397917f5dad34c14a33c0efd6a07dae7f940838e7';
 const shaBytes = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 
@@ -60,6 +60,64 @@ function assertResizeContinuity(events) {
     'orientation caused a media reload or seek');
 }
 
+async function runAttempt(root, proof, operation, cleanup, {timeoutMs=60000, cleanupTimeoutMs=5000}={}) {
+  const controller = new AbortController();
+  let deadline, cleanupDeadline, failure;
+  try {
+    const expired = new Promise((_, reject) => {
+      deadline = setTimeout(() => {
+        const error = new Error(`browser verification exceeded ${timeoutMs} milliseconds`);
+        error.code = 'ETIMEDOUT';
+        controller.abort(error);
+        reject(error);
+      }, timeoutMs);
+    });
+    await Promise.race([Promise.resolve().then(() => operation(controller.signal)), expired]);
+    controller.signal.throwIfAborted();
+  } catch (error) {
+    proof.status = 'failed';
+    proof.failure = String(error);
+    failure = error;
+  } finally {
+    clearTimeout(deadline);
+    try {
+      await Promise.race([
+        Promise.resolve().then(cleanup),
+        new Promise((_, reject) => {
+          cleanupDeadline = setTimeout(() => reject(new Error('browser/server cleanup exceeded its deadline')), cleanupTimeoutMs);
+        })
+      ]);
+    } catch (error) {
+      proof.status = 'failed';
+      proof.cleanup_errors = [String(error)];
+      proof.failure ??= String(error);
+      failure ??= error;
+    } finally {
+      clearTimeout(cleanupDeadline);
+    }
+    const attempts = path.join(root, 'browser-acceptance-attempts');
+    fs.mkdirSync(attempts, {recursive:true});
+    const attemptPath = path.join(attempts, `${proof.attempt_id}.json`);
+    fs.writeFileSync(attemptPath, JSON.stringify(proof,null,2)+'\n', {flag:'wx', mode:0o444});
+    if (proof.status === 'passed') {
+      const proofPath = path.join(root, 'browser-acceptance.json');
+      const pendingPath = path.join(root, `.browser-acceptance-${proof.attempt_id}.pending`);
+      fs.copyFileSync(attemptPath, pendingPath, fs.constants.COPYFILE_EXCL);
+      const pending = fs.openSync(pendingPath, 'r');
+      try { fs.fsyncSync(pending); fs.fchmodSync(pending, 0o444); }
+      finally { fs.closeSync(pending); }
+      // Publish a complete independent inode exclusively. Interrupted copies remain
+      // under their unique pending name and cannot poison the canonical receipt.
+      fs.linkSync(pendingPath, proofPath);
+      fs.unlinkSync(pendingPath);
+      const directory = fs.openSync(root, 'r');
+      try { fs.fsyncSync(directory); } finally { fs.closeSync(directory); }
+    }
+  }
+  if (failure) throw failure;
+  return proof;
+}
+
 async function verify(edition, playwrightModule, executablePath) {
   const root = fs.realpathSync(edition);
   const preview = path.join(root, 'preview');
@@ -103,7 +161,6 @@ async function verify(edition, playwrightModule, executablePath) {
       res.end(bytes);
     } catch {res.writeHead(404).end();}
   });
-  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   let browser;
   const observations = [];
   const checks = [];
@@ -112,9 +169,17 @@ async function verify(edition, playwrightModule, executablePath) {
     attempt_id:attemptId, admission_sha256:ADMISSION_SHA256, verifier_sha256:sha(__filename),
     created_at:new Date().toISOString(), scope:'real TMB derivatives; headless Chrome; stereo spatial panning',
     edition_receipt_sha256:sha(path.join(root, 'edition-receipt.json')), checks, observations, errors};
-  try {
+  return runAttempt(root, proof, async signal => {
+    await new Promise((resolve, reject) => {
+      server.once('error', reject);
+      server.listen(0, '127.0.0.1', resolve);
+    });
     const {chromium} = require(playwrightModule || 'playwright');
-    browser = await chromium.launch({headless:true, executablePath, args:['--disable-dev-shm-usage']});
+    browser = await chromium.launch({headless:true, executablePath, timeout:30000, args:['--disable-dev-shm-usage']});
+    if (signal.aborted) {
+      await browser.close();
+      signal.throwIfAborted();
+    }
     proof.browser = browser.version();
     const page = await browser.newPage({viewport:{width:1200,height:800}});
     page.on('pageerror', e => errors.push(String(e)));
@@ -221,23 +286,26 @@ async function verify(edition, playwrightModule, executablePath) {
       assert.equal(sha(path.join(preview,relative)),expected,`served file changed during verification: ${relative}`);
     }
     checks.push('served media, plan and engine bytes match the edition receipt before and after playback');
+    signal.throwIfAborted();
     proof.status='passed';
-  } catch (e) {proof.failure=String(e); throw e;}
-  finally {
-    if (browser) await browser.close();
-    await new Promise(resolve=>server.close(resolve));
-    const attemptPath=path.join(attempts,`${attemptId}.json`);
-    fs.writeFileSync(attemptPath,JSON.stringify(proof,null,2)+'\n',{flag:'wx'});
-    if (proof.status==='passed') fs.linkSync(attemptPath,proofPath);
-  }
-  return proof;
+  }, async () => {
+    const results = await Promise.allSettled([
+      browser?.close(),
+      new Promise((resolve, reject) => {
+        server.close(error => error && error.code !== 'ERR_SERVER_NOT_RUNNING' ? reject(error) : resolve());
+        server.closeAllConnections();
+      })
+    ]);
+    const failures = results.filter(result => result.status === 'rejected').map(result => result.reason);
+    if (failures.length) throw new AggregateError(failures, 'browser/server cleanup failed');
+  });
 }
 
 if (require.main === module) {
   const [edition, playwrightModule, browserPath] = process.argv.slice(2);
   if (!edition || !browserPath) throw new Error('Usage: node verify_tmb_composition.cjs EDITION PLAYWRIGHT_MODULE CHROME_EXECUTABLE');
-  const deadline = setTimeout(()=>{console.error('browser verification exceeded 60 seconds');process.exit(124);},60000);
   verify(edition,playwrightModule,browserPath).then(result=>console.log(JSON.stringify({status:result.status,checks:result.checks})))
-    .catch(e=>{console.error(e);process.exitCode=1;}).finally(()=>clearTimeout(deadline));
+    .catch(e=>{console.error(e);process.exitCode=e.code==='ETIMEDOUT'?124:1;})
+    .finally(()=>{if (process.exitCode) process.exit(process.exitCode);});
 }
-module.exports={verify,assertAdmission,assertPoses,assertSignal,assertPanEffect,assertResizeContinuity,ADMISSION,ADMISSION_SHA256};
+module.exports={verify,runAttempt,assertAdmission,assertPoses,assertSignal,assertPanEffect,assertResizeContinuity,ADMISSION,ADMISSION_SHA256};

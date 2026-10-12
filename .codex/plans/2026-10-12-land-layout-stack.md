@@ -1,0 +1,3 @@
+# Land layout and preservation stack
+
+Preserve the previous layout tip, squash layout 2.0.0 onto current main, and include its outstanding receipt/ignore review fixes. Retain the exact historical verifier by matching its SHA-256 to the accepted receipt. Rebase the dependent lifecycle and audit PRs, resolve their actionable findings, and run scoped local checks. Publish exact heads with force-with-lease only for the explicitly authorized history tidy. Submit #2, #3 and #4 in order using the governed merge route; do not bypass required checks or wait synchronously for CI. If blocked, record the exact state and GitHub billing action.

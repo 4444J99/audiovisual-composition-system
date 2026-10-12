@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path, PurePosixPath
 import re
+import subprocess
 import sys
 import tempfile
 
@@ -16,7 +17,7 @@ SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
 def safe_path(value):
     path = PurePosixPath(value)
-    if not value or path.is_absolute() or ".." in path.parts or "\\" in value:
+    if not value or str(path) == "." or path.is_absolute() or ".." in path.parts or "\\" in value:
         raise ValueError(f"Nonportable workspace binding: {value!r}")
     return path
 
@@ -32,8 +33,11 @@ def load_manifest():
 
     manifest = json.loads((REPOSITORY / "workspace-manifest.json").read_text(),
                           object_pairs_hook=unique_pairs)
-    if manifest["schema_version"] != "1.0.0":
+    if manifest["schema_version"] != "2.0.0" or manifest.get("layout") != "workspace-root":
         raise ValueError("Unsupported manifest contract")
+    for entry in manifest["root_entries"] + manifest["preserved_root_files"]:
+        if len(safe_path(entry).parts) != 1:
+            raise ValueError(f"Root entry must be top-level: {entry}")
     projects = manifest["projects"]
     if not SLUG.fullmatch(manifest["legacy_workspace_alias"]):
         raise ValueError("Invalid legacy workspace alias")
@@ -77,6 +81,8 @@ def load_manifest():
             safe_path(target)
     for group in (manifest["repositories"], manifest["components"], manifest["archives"]):
         for item in group:
+            if item.get("version_control", "unversioned") not in ("git", "unversioned"):
+                raise ValueError("Invalid source version_control")
             if item.get("local_path"):
                 safe_path(item["local_path"])
     return manifest
@@ -129,6 +135,8 @@ def rendered_files(manifest):
             body = f"# {name}\n\nGenerated from the solution manifest.\n\n{item['role']}\n\n"
             if item.get("full_name"):
                 body += f"[Repository](https://github.com/{item['full_name']}) · GitHub ID `{item['github_id']}`\n\n"
+            if item.get("version_control"):
+                body += f"Version control: `{item['version_control']}`.\n\n"
             body += ("[Existing local source](local/source).\n" if item.get("local_path")
                      else "Remote source is referenced; no duplicate checkout was created.\n")
             if item.get("authority_state"):
@@ -142,16 +150,13 @@ def rendered_files(manifest):
         "settings": {"search.followSymlinks": False, "files.watcherExclude": {
             "**/local/**": True}, "git.autoRepositoryDetection": "openEditors"}
     }, indent=2) + "\n"
+    files[".gitignore"] = rendered_ignore(manifest)
     return files
 
 
-def planned_links(manifest, workspace):
-    links = []
-    for group in ("projects", "repositories", "components", "archives"):
-        links.append((workspace / group, REPOSITORY / group))
-    links.append((workspace / "audiovisual-composition-system.code-workspace",
-                  REPOSITORY / "audiovisual-composition-system.code-workspace"))
-    links.append((workspace.parent / manifest["legacy_workspace_alias"], workspace))
+def planned_links(manifest):
+    workspace = REPOSITORY
+    links = [(workspace.parent / manifest["legacy_workspace_alias"], workspace)]
     for project in manifest["projects"]:
         for name, target in project["local_bindings"].items():
             links.append((REPOSITORY / "projects" / project["slug"] / "local" / name,
@@ -166,7 +171,13 @@ def planned_links(manifest, workspace):
 
 def inspect_links(links, require_existing):
     missing = []
+    root = REPOSITORY.resolve()
     for link, target in links:
+        legacy = link.parent == root.parent and target == root
+        if not target.resolve().is_relative_to(root):
+            raise ValueError(f"Source escapes workspace root: {target}")
+        if not legacy and not link.absolute().is_relative_to(root):
+            raise ValueError(f"Link escapes workspace root: {link}")
         if not target.exists():
             raise ValueError(f"Missing bound source: {target}")
         if os.path.lexists(link):
@@ -197,16 +208,136 @@ def render_path(relative):
     return path
 
 
+def source_paths(manifest):
+    paths = set(manifest["preserved_root_files"])
+    for project in manifest["projects"]:
+        paths.update(project["local_bindings"].values())
+    for group in ("repositories", "components", "archives"):
+        paths.update(item["local_path"] for item in manifest[group] if item.get("local_path"))
+    for value in paths:
+        if len(safe_path(value).parts) != 1:
+            raise ValueError(f"Source must be top-level: {value}")
+    if paths.intersection(manifest["root_entries"]):
+        raise ValueError("Source overlaps authored or generated root entry")
+    return sorted(paths)
+
+
+def rendered_ignore(manifest):
+    path = render_path(".gitignore")
+    content = path.read_text() if path.exists() else ""
+    begin, end = "# BEGIN generated sources", "# END generated sources"
+    if begin in content or end in content:
+        if content.count(begin) != 1 or content.count(end) != 1:
+            raise ValueError("Malformed generated sources block")
+        before, rest = content.split(begin)
+        _, after = rest.split(end)
+        if after.strip():
+            raise ValueError("Generated sources block must be last")
+        content = before
+    # Literal, anchored Git patterns (including spaces in original archive names).
+    patterns = []
+    for value in source_paths(manifest):
+        escaped = re.sub(r"([\\*?\[\]#! ])", r"\\\1", value)
+        patterns.append("/" + escaped)
+    return content.rstrip() + "\n\n" + begin + "\n" + "\n".join(patterns) + "\n" + end + "\n"
+
+
+def git_output(source, *args):
+    result = subprocess.run(["git", "--no-optional-locks", "-C", str(source), *args], capture_output=True, text=True)
+    if result.returncode:
+        raise ValueError(result.stderr.strip() or f"Git failed: {args}")
+    return result.stdout.strip()
+
+
+def source_status(manifest):
+    records = []
+    for value in source_paths(manifest):
+        source = REPOSITORY / value
+        if not source.resolve().is_relative_to(REPOSITORY):
+            raise ValueError(f"Source escapes workspace root: {value}")
+        record = {"source": value}
+        if not source.exists():
+            record["state"] = "missing"
+        elif not (source / ".git").exists():
+            record["state"] = "unversioned"
+        else:
+            record.update(state="git", branch=git_output(source, "branch", "--show-current") or "DETACHED",
+                          head=git_output(source, "rev-parse", "HEAD"),
+                          uncommitted_files=len(git_output(source, "status", "--porcelain=v1", "--untracked-files=all").splitlines()),
+                          worktrees=git_output(source, "worktree", "list", "--porcelain").count("worktree "))
+            upstream = subprocess.run(["git", "--no-optional-locks", "-C", str(source), "rev-parse", "--verify", "@{upstream}"], capture_output=True)
+            record.update(ahead=None, behind=None)
+            if upstream.returncode == 0:
+                ahead, behind = git_output(source, "rev-list", "--left-right", "--count", "HEAD...@{upstream}").split()
+                record.update(ahead=int(ahead), behind=int(behind))
+        records.append(record)
+    return records
+
+
+def repository_ignored(relative):
+    result = subprocess.run(["git", "-C", str(REPOSITORY), "check-ignore",
+                             "--no-index", "--verbose", "-z", "--stdin"],
+                            input=relative.encode() + b"\0", capture_output=True)
+    fields = result.stdout.split(b"\0")
+    return (result.returncode == 0 and len(fields) >= 4
+            and fields[0] == b".gitignore" and not fields[2].startswith(b"!"))
+
+
+def check_workspace(manifest, catalog_only=False):
+    sources = source_paths(manifest)
+    allowed = set(manifest["root_entries"]) | set(sources)
+    unknown = sorted(p.name for p in REPOSITORY.iterdir() if p.name not in allowed)
+    if unknown:
+        raise ValueError(f"Undeclared root entries: {unknown}")
+    for value in sources:
+        source = REPOSITORY / value
+        if not source.resolve().is_relative_to(REPOSITORY):
+            raise ValueError(f"Source escapes workspace root: {value}")
+        if not catalog_only and not source.exists():
+            raise ValueError(f"Missing declared source: {value}")
+        if not repository_ignored(value):
+            raise ValueError(f"Source is not ignored: {value}")
+    for link, _ in planned_links(manifest):
+        if link.is_relative_to(REPOSITORY):
+            relative = link.relative_to(REPOSITORY).as_posix()
+            if not repository_ignored(relative):
+                raise ValueError(f"Navigation link is not ignored: {relative}")
+    git_sources = {item["local_path"] for group in ("repositories", "components", "archives")
+                   for item in manifest[group] if item.get("local_path") and
+                   (group == "repositories" or item.get("version_control") == "git")}
+    for value in sorted(git_sources):
+        path = REPOSITORY / value
+        if (path.exists() or not catalog_only) and not (path / ".git").exists():
+            raise ValueError(f"Repository source lacks .git: {path}")
+        if path.exists():
+            git_root = Path(git_output(path, "rev-parse", "--show-toplevel")).resolve()
+            if git_root != path.resolve():
+                raise ValueError(f"Repository source has wrong Git root: {path}")
+            source_store = git_output(path, "rev-parse", "--path-format=absolute", "--git-common-dir")
+            coordination_store = git_output(REPOSITORY, "rev-parse", "--path-format=absolute", "--git-common-dir")
+            if Path(source_store).resolve() == Path(coordination_store).resolve():
+                raise ValueError(f"Repository source shares coordination Git history: {path}")
+    tracked = subprocess.check_output(["git", "-C", str(REPOSITORY), "ls-files", "-z"], text=True).split("\0")
+    for value in filter(None, tracked):
+        if PurePosixPath(value).parts[0] in sources:
+            raise ValueError(f"Tracked source content: {value}")
+        render_path(value)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("render", "check", "plan", "apply"))
-    parser.add_argument("--workspace", type=Path)
+    parser.add_argument("command", choices=("render", "check", "plan", "apply", "status"))
+    parser.add_argument("--catalog-only", action="store_true", help="CI: allow absent ignored workstation sources")
     args = parser.parse_args()
+    if args.catalog_only and args.command != "check":
+        parser.error("--catalog-only is only valid with check")
     manifest = load_manifest()
+    if args.command == "status":
+        print(json.dumps(source_status(manifest), indent=2))
+        return
     files = rendered_files(manifest)
+    paths = {relative: render_path(relative) for relative in files}
     if args.command == "render":
-        # Preflight every destination before any write.
-        paths = {relative: render_path(relative) for relative in files}
         for relative, content in files.items():
             path = paths[relative]
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -219,17 +350,13 @@ def main():
         print(f"Rendered {len(files)} catalog files")
         return
     for relative, content in files.items():
-        path = REPOSITORY / relative
+        path = paths[relative]
         if not path.is_file() or path.read_text() != content:
             raise ValueError(f"Stale generated view: {relative}; run render")
-    if args.command in ("apply", "plan") and not args.workspace:
-        raise ValueError("Explicit --workspace is required")
+    check_workspace(manifest, args.catalog_only)
     count = 0
-    if args.workspace:
-        workspace = args.workspace.resolve()
-        if REPOSITORY.parent != workspace or REPOSITORY.name != "system":
-            raise ValueError("Coordination checkout must be WORKSPACE/system")
-        links = planned_links(manifest, workspace)
+    if not args.catalog_only:
+        links = planned_links(manifest)
         missing = inspect_links(links, require_existing=args.command == "check")
         if args.command == "apply":
             for link, target in missing:

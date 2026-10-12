@@ -4,38 +4,28 @@
 
 Use **Audiovisual Composition System** for the whole solution and `audiovisual-composition-system` for its existing workspace. Retain **ACE** and `audiovisual-composition-engine` as historical discovery aliases. “Engine” means a reusable runtime responsibility, not the umbrella of artwork, archives, research, custody and delivery.
 
-Keep a small **private coordination repository** at `system/`. It owns this design, project membership and generated navigation. Keep existing source repositories independent. The workspace itself remains non-Git; no nested source history is absorbed into the coordination repository.
+Keep a small **private coordination repository** at the workspace root. It owns this design, project membership and generated navigation. Existing ignored source repositories retain independent histories at their original paths. See [migration 2.0.0](migrations/2.0.0.md).
 
 This applies EES's classify-before-naming, stable-identity, smallest-justified-boundary and one-authoritative-source principles to ACE. EES's relevant controls remain reviewed draft. This task establishes a specific directory contract, not EES certification or audiovisual acceptance.
 
 ## Directory view applied now
 
 ```text
-audiovisual-composition-system/       non-Git composition workspace
-├── system/                         private coordination Git repository
-│   ├── workspace-manifest.json      authored membership and binding authority
-│   ├── docs/                       design, full catalog, migration evidence
-│   ├── projects/<project>/         generated records for all 15 artworks
-│   │   ├── README.md
-│   │   └── local/                  ignored links to existing source or archives
-│   ├── repositories/<owner>/       generated source-owner directory
-│   ├── components/<capability>/   generated runtime / integration directory
-│   ├── archives/<collection>/     generated preservation directory
-│   ├── tools/workspace_layout.py  generator, collision checks and validator
-│   └── audiovisual-composition-system.code-workspace
-├── projects -> system/projects
-├── repositories -> system/repositories
-├── components -> system/components
-├── archives -> system/archives
+audiovisual-composition-system/       private coordination Git root
+├── workspace-manifest.json          schema 2.0.0, membership and binding authority
+├── AGENTS.md, README.md, .gitignore
+├── docs/                            catalog, architecture, evidence, sources, migrations
+├── tools/                           generator, composition verifier, owned tests/
+├── projects/<project>/README.md     generated artwork records
+│   └── local/                       ignored relative source links
+├── repositories/<owner>/README.md   generated repository records + local/source
+├── components/<capability>/README.md
+├── archives/<collection>/README.md
 ├── audiovisual-composition-system.code-workspace
-├── engine/                         existing spatial-audio staging, retained
-├── tests/                          existing composition tests, retained
-├── simvltanea/                     existing source repository, retained
-├── time-moment-brief/              existing private source repository, retained
-├── the-thing-without-a-name/        existing Danse source checkout, retained
-├── god-here/                       existing preservation repository, retained
-├── reflect-recur/                  existing NRCSVS vault and exports, retained
-└── other historical roots         retained at their existing physical paths
+├── engine/, tests/                  ignored existing unversioned sources
+├── simvltanea/, time-moment-brief/, the-thing-without-a-name/
+├── god-here/, reflect-recur/, Earlier god-here session archive/
+└── temporary-work-preservation-2026-10-10/
 
 ../audiovisual-composition-engine -> audiovisual-composition-system
 ```
@@ -73,7 +63,7 @@ Stable project IDs reuse the original ChatGPT project IDs. Existing native IDs, 
 
 | Responsibility | Existing or new owner | Decision |
 | --- | --- | --- |
-| System composition, membership, naming and migration | New private audiovisual-composition-system repository at system/ | Justified shared coordination responsibility; small metadata and documentation only |
+| System composition, membership, naming and migration | Private audiovisual-composition-system repository at workspace root | Justified shared coordination responsibility; small metadata and documentation only |
 | Offline audiovisual postproduction and God’s Ears studies | 4444J99/audiovisual-media-postproduction-system | Reuse Python amp primitives and projects/god-here; keep this separate from local archival custody |
 | Historical multimedia website, mavsoleum-a and OGOD sources | 4444J99/generative-multimedia-spatial-environment | Reuse existing source history; OGOD is an ogod/ collection in it |
 | Simultaneous independent video-loop artwork | 4444J99/simvltanea | Keep its existing package, rendering, browser, edition and archive layout |
