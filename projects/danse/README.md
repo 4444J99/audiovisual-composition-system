@@ -2,7 +2,7 @@
 
 Generated from `workspace-manifest.json`; update that record and rerender.
 
-Local project-record.yml supplies project_id danse. The origin URL redirects to a private screendance repository; the personal remote is distinct. Resolve authority before changing either remote or moving the checkout.
+Native project_id danse and the legacy canonical URL identify private GitHub repository 1320324017. The distinct public personal repository 1347780050 is archived and explicitly defers to that canonical URL. Authority is resolved; source publication parity and independent custody remain incomplete. Preserve both remotes and the existing checkout.
 
 - Stable source identity: `g-p-6a95f0226b2c81919be2e375b79af8db`
 - Canonical project slug: `danse`

@@ -2,10 +2,10 @@
 
 Generated from the solution manifest.
 
-Local Danse source origin resolves here; distinct public personal remote retained
+Canonical private Danse source; legacy origin retained; archived public continuation remains distinct
 
 [Repository](https://github.com/4444J99/the-thing-without-a-name-screendance) · GitHub ID `1320324017`
 
 [Existing local source](local/source).
 
-conflict: local canonical declaration and live redirected identity require reconciliation.
+resolved: legacy origin and native canonical declaration identify private GitHub repository 1320324017; public personal repository 1347780050 is an archived non-authoritative continuation.
