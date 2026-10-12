@@ -1,0 +1,88 @@
+{
+  "observed_at": "2026-10-12T19:20:48.142445+00:00",
+  "inventory_locator": "ingress-inventory-20261012-56876a482ab8",
+  "inventory_sha256": "9cb729dcf38be13c7faff5e891cbfc9c1e126b833591ef026e773be6010fefe6",
+  "roots": {
+    "time-moment-brief": {
+      "files": 253,
+      "bytes": 181588707123
+    },
+    "backwards-up-hill": {
+      "files": 94,
+      "bytes": 99945629238
+    }
+  },
+  "extensions": {
+    "(none)": {
+      "files": 5,
+      "bytes": 45076
+    },
+    ".360": {
+      "files": 45,
+      "bytes": 113775345712
+    },
+    ".jpg": {
+      "files": 6,
+      "bytes": 19772712
+    },
+    ".lrf": {
+      "files": 11,
+      "bytes": 2537858340
+    },
+    ".lrv": {
+      "files": 76,
+      "bytes": 6453938774
+    },
+    ".mp4": {
+      "files": 115,
+      "bytes": 155304250277
+    },
+    ".thm": {
+      "files": 76,
+      "bytes": 4672826
+    },
+    ".wav": {
+      "files": 13,
+      "bytes": 3438452644
+    }
+  },
+  "regular_files": 347,
+  "logical_bytes": 281534336361,
+  "directories": 12,
+  "symlinks": 0,
+  "special_files": 0,
+  "errors": 0,
+  "changed_on_second_stat": 0,
+  "disk": {
+    "Ingress": {
+      "parent": "disk7",
+      "uuid": "8E4C5386-7281-4E65-BC65-363C08FAAE50",
+      "free_bytes": 218462941184,
+      "total_bytes": 500000002048,
+      "filesystem": "apfs"
+    },
+    "Archive4T": {
+      "parent": "disk7",
+      "uuid": "45C8AA30-307B-41E2-908D-5112E93B4AF5",
+      "free_bytes": 1442331160576,
+      "total_bytes": 4000543715328,
+      "filesystem": "apfs"
+    },
+    "T7Recovery": {
+      "parent": "disk9",
+      "uuid": "0287E02B-989A-419B-A7CA-B4BCE4ECA1FF",
+      "free_bytes": 315296735232,
+      "total_bytes": 999995129856,
+      "filesystem": "apfs"
+    },
+    "local_restore": {
+      "free_bytes": 28596731904,
+      "total_bytes": 494332366848
+    }
+  },
+  "reserve_bytes": 21474836480,
+  "destination_shortfall_bytes": 0,
+  "local_full_restore_shortfall_bytes": 274412440937,
+  "scope": "All entries recursively beneath both user-content roots on Ingress; filesystem service metadata excluded; no symlinks followed; not proof of camera-card completeness",
+  "verification": "metadata enumeration plus second stat pass, no content hashes"
+}
