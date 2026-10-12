@@ -68,11 +68,11 @@ Stable project IDs reuse the original ChatGPT project IDs. Existing native IDs, 
 | Historical multimedia website, mavsoleum-a and OGOD sources | 4444J99/generative-multimedia-spatial-environment | Reuse existing source history; OGOD is an ogod/ collection in it |
 | Simultaneous independent video-loop artwork | 4444J99/simvltanea | Keep its existing package, rendering, browser, edition and archive layout |
 | Multicamera alignment and generation playback | 4444J99/time-moment-brief | Keep private source and derivatives; preserve active branch and worktrees |
-| Danse artwork and delivery | Existing the-thing-without-a-name checkout | Retain source; resolve remote identity conflict before redirecting or moving it |
+| Danse artwork and delivery | Private repository ID 1320324017; existing the-thing-without-a-name checkout | Retain legacy origin; public ID 1347780050 is an archived continuation; publication parity and custody remain open |
 | hole-loop | Standalone timed-text-navigation-loop repository; preserve its native public, provenance, scripts, tests, verification and docs layout | Independent source history |
 | Other Page-backed works | Project records with links to observed Pages | Do not create empty repositories without an implementation responsibility |
 
-The old Danse origin `organvm/the-thing-without-a-name` currently resolves to **private** repository **4444J99/the-thing-without-a-name-screendance**, numeric ID **1320324017**. Its configured personal remote resolves to the distinct **public** **4444J99/the-thing-without-a-name**, numeric ID **1347780050**. The local project record still calls the old origin canonical. This is an authority conflict, not permission to publish the private tree or replace a remote.
+The retained Danse origin `organvm/the-thing-without-a-name` resolves to **private** canonical repository **4444J99/the-thing-without-a-name-screendance**, numeric ID **1320324017**. The native project record and lineage identify that same legacy URL. The configured personal remote is distinct **public archived** repository **4444J99/the-thing-without-a-name**, numeric ID **1347780050**; its merged archival PR and README explicitly defer to the canonical URL. Authority is resolved without changing either remote. Local-only refs, ignored material and independent custody remain open; see the [2026-10-12 reconciliation](danse-source-authority-reconciliation.md).
 
 ## The engine is a set of owned capabilities
 
