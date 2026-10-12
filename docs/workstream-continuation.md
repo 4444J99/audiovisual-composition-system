@@ -9,7 +9,7 @@ hole-loop retains its stable project and Page IDs and now binds to [timed-text-n
 Remaining work:
 
 1. Review the coordination layout PR and stacked evidence/source follow-up; leave both open for review.
-2. Inventory original recordings on Ingress and define full custody before any retirement. This small recovery set does not authorize deletion.
+2. Ingress metadata inventory is complete for both content roots: 347 files / 281,534,336,361 bytes. Execute the [original-media custody plan](../.codex/plans/2026-10-12-ingress-original-media-custody.md) with fresh admission, full hashing, device readback and restore verification before claiming full custody. No deletion is authorized.
 3. Resolve Danse's declared authority versus its redirected private origin and distinct archived personal repository before changing remotes or placement.
 4. Resolve remaining local bindings and Page-backed implementation ownership from source evidence.
 5. Keep desktop/browser acceptance distinct from headset/XR, fourth-camera and full archive acceptance. These changes do not claim a new media acceptance run.
