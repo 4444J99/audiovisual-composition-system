@@ -41,3 +41,7 @@ Next owner/action: Limen host-pressure owner must establish sustained swap at or
 ## Duplicate heartbeat closeout — 2026-10-12 19:37 UTC
 
 The one-time restart continuation was delivered again after its completed post-restart checkpoint. Read-only swap measurement was 9,800 MiB, still above the 4,096 MiB threshold; no admission acquisition or payload operation was retried. Paused the existing restart heartbeat to prevent additional automatic attempts. The published blocker and retained private receipt remain the custody owner; no new automation was created. Originals are retained and PRs #2 and #3 remain open.
+
+## Authorized external custody workaround
+
+The user authorized gracefully closing Codex and executing custody outside the app. The [bounded external attempt](../.codex/plans/2026-10-12-ingress-original-media-custody-v2.md) uses private supervisor locator external-custody-20261012-s2phtu6a, a pinned runner snapshot, fresh heavy admission, per-file complete custody stages and durable resumable receipts. Launch and final completion are separate; the next receipt must establish actual outcome. Originals and PRs remain preserved.
