@@ -44,6 +44,13 @@
   "clean_restore_verified": false,
   "originals_and_partials_retained": true,
   "recovery_owner": "Codex runtime and live application/session owners",
+  "review_state_observed": {
+    "pr_2": "MERGED",
+    "pr_2_merged_at": "2026-10-12T20:28:33Z",
+    "pr_2_merge_commit": "cdd27d53b635ce70a62b30860b591e25aa91cce8",
+    "pr_3": "OPEN",
+    "this_attempt_merged_or_closed_a_pr": false
+  },
   "resume_predicate": "safe lifecycle release of unused owners, changed host pressure, successful heavy acquire and fresh stable source inventory",
   "limitations": [
     "Process footprints and ancestry identify substantial load owners, not complete per-process disk attribution.",

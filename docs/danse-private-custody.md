@@ -35,6 +35,13 @@ the entrypoint; no safely established local reclamation action was available in
 this bounded attempt. The sample does not prove an ongoing fleet leak or a
 vendor fix, and falling disk throughput is not claimed as our repair.
 
+Review-state reconciliation: live GitHub state subsequently showed PR #2 merged
+at 20:28:33 UTC into `cdd27d53b635ce70a62b30860b591e25aa91cce8`, outside this
+attempt's actions. PR #3 remained open and was rebased onto that merged base.
+This attempt issued no merge, close, force-push or revert. The user's requested
+two-open-PR hold can no longer be represented as satisfied; the external merge
+was not undone. Earlier statements below describe their earlier observations.
+
 ## Conditional recheck at 20:21 UTC
 
 The [fresh recheck](evidence/danse-private-custody-recheck-2026-10-12.json)
