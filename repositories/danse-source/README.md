@@ -8,4 +8,4 @@ Local Danse source origin resolves here; distinct public personal remote retaine
 
 [Existing local source](local/source).
 
-conflict: local canonical declaration and live redirected identity require reconciliation.
+resolved: historical origin redirects to this private numeric repository identity; personal remote is the separate archived public duplicate.

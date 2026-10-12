@@ -2,7 +2,7 @@
 
 Generated from `workspace-manifest.json`; update that record and rerender.
 
-Local project-record.yml supplies project_id danse. The origin URL redirects to a private screendance repository; the personal remote is distinct. Resolve authority before changing either remote or moving the checkout.
+Local project-record.yml and LINEAGE.json retain the historical organvm canonical alias, which redirects to private GitHub repository 1320324017. The personal remote is distinct archived repository 1347780050, whose README directs work to the canonical source. Identity reconciled 2026-10-12; source remote configuration and checkouts remain unchanged.
 
 - Stable source identity: `g-p-6a95f0226b2c81919be2e375b79af8db`
 - Canonical project slug: `danse`

@@ -47,7 +47,7 @@
       "private": true,
       "local_path": "the-thing-without-a-name",
       "configured_origin": "https://github.com/organvm/the-thing-without-a-name.git",
-      "authority_state": "conflict: local canonical declaration and live redirected identity require reconciliation",
+      "authority_state": "resolved: historical origin redirects to this private numeric repository identity; personal remote is the separate archived public duplicate",
       "role": "Local Danse source origin resolves here; distinct public personal remote retained",
       "additional_remote": {
         "configured_name": "personal",
@@ -154,7 +154,7 @@
         "checkout": "the-thing-without-a-name"
       },
       "source_state": "local-observed",
-      "decision": "Local project-record.yml supplies project_id danse. The origin URL redirects to a private screendance repository; the personal remote is distinct. Resolve authority before changing either remote or moving the checkout.",
+      "decision": "Local project-record.yml and LINEAGE.json retain the historical organvm canonical alias, which redirects to private GitHub repository 1320324017. The personal remote is distinct archived repository 1347780050, whose README directs work to the canonical source. Identity reconciled 2026-10-12; source remote configuration and checkouts remain unchanged.",
       "native_identity": {
         "project_id": "danse",
         "authority": "the-thing-without-a-name/project-record.yml"
