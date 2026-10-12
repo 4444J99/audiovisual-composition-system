@@ -55,6 +55,14 @@
         "full_name": "4444J99/the-thing-without-a-name",
         "private": false
       }
+    },
+    {
+      "key": "hole-loop",
+      "github_id": 1409411055,
+      "full_name": "4444J99/timed-text-navigation-loop",
+      "private": false,
+      "local_path": null,
+      "role": "Standalone hole-loop browser text artwork extracted from ETCETER4"
     }
   ],
   "components": [
@@ -197,13 +205,17 @@
       "page_id": "page_bb118d8d09b08191abece05e8dde605f",
       "page_url": "https://chatgpt.com/space/page_bb118d8d09b08191abece05e8dde605f",
       "chatgpt_title": "hole-loop",
-      "aliases": [],
-      "profile": "artwork-record",
-      "repository_keys": [],
+      "aliases": [
+        "timed-text-navigation-loop"
+      ],
+      "profile": "browser-artwork",
+      "repository_keys": [
+        "hole-loop"
+      ],
       "repository_subpath": null,
       "local_bindings": {},
-      "source_state": "page-record-only",
-      "decision": "The Page contains restoration and extraction discussions. A standalone implementation owner was not resolved by exact-name discovery."
+      "source_state": "remote-observed",
+      "decision": "Restoration Pages identify timed-text-navigation-loop as the standalone implementation; GitHub identity 1409411055 verified 2026-10-12. Preserve its native layout and independent history. No local checkout binding is claimed."
     },
     {
       "id": "g-p-6ab7e73ded908191861a61f9f026db4b",

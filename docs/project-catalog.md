@@ -9,7 +9,7 @@ Generated from the solution manifest. The source directory's 16 rows represent 1
 | [danse](../projects/danse/README.md) | browser-artwork | [4444J99/the-thing-without-a-name-screendance](https://github.com/4444J99/the-thing-without-a-name-screendance) | the-thing-without-a-name |
 | [etc](../projects/etc/README.md) | artwork-record | Page record | unresolved locally |
 | [god-here](../projects/god-here/README.md) | postproduction-artwork | [4444J99/audiovisual-media-postproduction-system](https://github.com/4444J99/audiovisual-media-postproduction-system/tree/main/projects/god-here) | god-here, Earlier god-here session archive |
-| [hole-loop](../projects/hole-loop/README.md) | artwork-record | Page record | unresolved locally |
+| [hole-loop](../projects/hole-loop/README.md) | browser-artwork | [4444J99/timed-text-navigation-loop](https://github.com/4444J99/timed-text-navigation-loop) | unresolved locally |
 | [mavsoleum-a](../projects/mavsoleum-a/README.md) | historical-web-collection | [4444J99/generative-multimedia-spatial-environment](https://github.com/4444J99/generative-multimedia-spatial-environment) | unresolved locally |
 | [noonlight](../projects/noonlight/README.md) | artwork-record | Page record | unresolved locally |
 | [nrcsvs](../projects/nrcsvs/README.md) | research-artwork | Page record | reflect-recur |

@@ -1,0 +1,78 @@
+{
+  "verified_at": "2026-10-12T19:16:37.387612+00:00",
+  "scope": "Four calibration derivatives and two screenshots; excludes original recordings and full archival estate",
+  "files": 6,
+  "bytes": 1499414,
+  "originals_deleted": false,
+  "device_volume": "T7Recovery",
+  "device_parent": "disk9",
+  "ingress_parent": "disk7",
+  "archive4t_parent": "disk7",
+  "device_readback_verified": true,
+  "restore_from_device_verified": true,
+  "receipt_locator": "6285876619c0",
+  "records": [
+    {
+      "path": "synchronized-generation-calibration/media/generation-01.mp4",
+      "bytes": 328169,
+      "sha256": "f1095c859c5b89eb0639237ef728fb1b63899337e258c0ffac0e5defa8bddb95",
+      "custody_verified": true,
+      "restore_verified": true,
+      "original_retained": true,
+      "device_readback_verified": true,
+      "restore_from_device_verified": true,
+      "prior_custody_retained": true
+    },
+    {
+      "path": "synchronized-generation-calibration/media/generation-01.audio.m4a",
+      "bytes": 130919,
+      "sha256": "620c9201914cf616819beab4cfbc8597e06cd6ce1e827b40d22c3e2593f276f6",
+      "custody_verified": true,
+      "restore_verified": true,
+      "original_retained": true,
+      "device_readback_verified": true,
+      "restore_from_device_verified": true,
+      "prior_custody_retained": true
+    },
+    {
+      "path": "synchronized-generation-calibration/media/generation-02.mp4",
+      "bytes": 299864,
+      "sha256": "3ea1c3f537b366c72703ece5ae36e1314da9a864d84f334d024ce2ed4823cc50",
+      "custody_verified": true,
+      "restore_verified": true,
+      "original_retained": true,
+      "device_readback_verified": true,
+      "restore_from_device_verified": true,
+      "prior_custody_retained": true
+    },
+    {
+      "path": "synchronized-generation-calibration/media/generation-02.audio.m4a",
+      "bytes": 130811,
+      "sha256": "5dee2e475a906ff0a2f622d1745d1af9602368db7f19d00cd868065225be4910",
+      "custody_verified": true,
+      "restore_verified": true,
+      "original_retained": true,
+      "device_readback_verified": true,
+      "restore_from_device_verified": true,
+      "prior_custody_retained": true
+    },
+    {
+      "path": "evidence/agent2-sidebar-idle.png",
+      "sha256": "fb8bcad81f923e7729208943a51477d86395b1afb6eaff771839921ab7a3f1cb",
+      "bytes": 299871,
+      "original_retained": true,
+      "device_readback_verified": true,
+      "restore_from_device_verified": true,
+      "prior_custody_retained": true
+    },
+    {
+      "path": "evidence/agent2-sidebar-promoted.png",
+      "sha256": "575fd3ca3efd89b87311ac60554166a2ddf6d9489773dead325d953ecafd4181",
+      "bytes": 309780,
+      "original_retained": true,
+      "device_readback_verified": true,
+      "restore_from_device_verified": true,
+      "prior_custody_retained": true
+    }
+  ]
+}
