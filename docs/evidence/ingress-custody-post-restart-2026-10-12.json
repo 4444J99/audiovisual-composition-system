@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-10-12T19:35:52.373296+00:00",
+  "restart": {
+    "started_at": "2026-10-12T19:29:42.602423+00:00",
+    "method": "AppleEvent graceful quit, no forced termination",
+    "quit_exit_code": 0,
+    "reopen_exit_code": 0,
+    "finished_at": "2026-10-12T19:29:42.765808+00:00"
+  },
+  "post_restart_initial_swap_mib": 2739.44,
+  "post_restart_processes": 695,
+  "before_restart_processes": 1245,
+  "admission_allowed": false,
+  "admission_reasons": [
+    "swap-fraction",
+    "vitals-shed"
+  ],
+  "pressure": {
+    "backblaze_cpu_percent": 0.0,
+    "backblaze_rss_bytes": 0,
+    "disk_mib_per_second_samples": [
+      56.13,
+      41.34
+    ],
+    "memory_bytes": 17179869184,
+    "observed_at": "2026-10-12T19:35:05.647139+00:00",
+    "observed_epoch": 1791833705.647139,
+    "sensor_errors": [],
+    "swap_fraction": 0.3523406982421875,
+    "swap_growth_bytes_per_minute": null,
+    "swap_used_bytes": 6053167104,
+    "vitals_action": "shed"
+  },
+  "disks": {
+    "Ingress": {
+      "uuid": "8E4C5386-7281-4E65-BC65-363C08FAAE50",
+      "parent": "disk7",
+      "free_bytes": 218462941184
+    },
+    "Archive4T": {
+      "uuid": "45C8AA30-307B-41E2-908D-5112E93B4AF5",
+      "parent": "disk7",
+      "free_bytes": 1442330652672
+    },
+    "T7Recovery": {
+      "uuid": "0287E02B-989A-419B-A7CA-B4BCE4ECA1FF",
+      "parent": "disk9",
+      "free_bytes": 315296735232
+    }
+  },
+  "source_metadata_matches_inventory": true,
+  "source_open_handles_observed": false,
+  "inventory_files": 347,
+  "inventory_bytes": 281534336361,
+  "hashed": 0,
+  "copied": 0,
+  "readback_verified": 0,
+  "restored": 0,
+  "restore_verified": 0,
+  "originals_preserved": true,
+  "attempt_elapsed_seconds": 2.587527042007423,
+  "prior_agent_seconds_conservative": 1200,
+  "private_receipt_locator": "original-media-adce88cab4cc",
+  "private_receipt_sha256": "def7a6b5eb454133d5a5f7ca0d71ec9ea3ceb6c1432907d4958229125649e111",
+  "checkout_disposition": "retained",
+  "tests": [
+    "Python compilation",
+    "fixture ditto bytes/xattrs/mode/mtime/flags preservation",
+    "source symlink refusal"
+  ],
+  "execution_limit": "Bulk paths and successful lease refresh/release were not exercised because acquisition was denied."
+}
