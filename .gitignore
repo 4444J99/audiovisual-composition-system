@@ -1,6 +1,29 @@
+# System & Shadow Caches
 .DS_Store
 __pycache__/
 .pytest_cache/
+.mypy_cache/
+.venv/
+*.pyc
+
+# Agent Coordination Metadata
+.agents/
+
+# Scratch & Temporary Mirrors
+scratch/
+.scratch/
+
+# Archives (Sealed repos and bare backups)
+archives/git/
+archives/god-here/
+archives/engine-recovery-2026-10-10/
+
+# Media Store
+media/*
+!media/README.md
+!media/MANIFEST.json
+
+# Legacy local symlinks (safeguard)
 projects/*/local/
 repositories/*/local/
 components/*/local/
