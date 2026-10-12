@@ -2,7 +2,7 @@
 
 Generated from `workspace-manifest.json`; update that record and rerender.
 
-Native project_id danse and the legacy canonical URL identify private GitHub repository 1320324017. The distinct public personal repository 1347780050 is archived and explicitly defers to that canonical URL. Authority is resolved; source publication parity and independent custody remain incomplete. Preserve both remotes and the existing checkout.
+Native project_id danse and the legacy canonical URL identify private GitHub repository 1320324017. The distinct public personal repository 1347780050 is archived and explicitly defers to that canonical URL. Authority is resolved; all four previously unpushed commits are remotely recoverable through existing feature and private preservation refs. Independent source custody and portable acceptance remain incomplete. Preserve both remotes and the existing checkout.
 
 - Stable source identity: `g-p-6a95f0226b2c81919be2e375b79af8db`
 - Canonical project slug: `danse`

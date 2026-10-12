@@ -1,0 +1,63 @@
+{
+  "observed_at": "2026-10-12T19:55:48.540401+00:00",
+  "scope": "Danse remote reconciliation and SIMVLTANEA docs publication; active TMB and god-here untouched",
+  "danse": {
+    "canonical_repository": "4444J99/the-thing-without-a-name-screendance",
+    "github_id": 1320324017,
+    "private": true,
+    "historical_alias": "organvm/the-thing-without-a-name",
+    "identity_evidence": "GitHub redirects historical alias to the same numeric ID; public duplicate README points back to historical canonical alias",
+    "public_duplicate": {
+      "repository": "4444J99/the-thing-without-a-name",
+      "github_id": 1347780050,
+      "archived": true,
+      "pushed": false
+    },
+    "remote_configuration_changed": false,
+    "local_head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+    "published_ref": "refs/heads/preserve/ambisonic-local-merge-20261012",
+    "remote_readback_matches": true,
+    "main_unchanged": "73da6dc1c4339c9cc75c8253c7ef5173e4091256",
+    "existing_review": "https://github.com/4444J99/the-thing-without-a-name-screendance/pull/68",
+    "review_head": "e4d2937f09a652d5506e5d902bb4b80b6d31aed6",
+    "review_head_already_published": true,
+    "acceptance": "preservation only; no merge or device/media acceptance",
+    "verification": {
+      "portable_gate": "Initial dependency-complete run: FAIL, 62 invariants ran and musical-score contract failed; final corrected-environment run timed out.",
+      "music_score_suite": "33 tests; 3 failures. Includes stale recording fixture digest and nested production-score tests rejecting macOS /var symlink ancestors.",
+      "syntax": "Python compile, Node control syntax and shell syntax passed",
+      "node_suites_passed": {
+        "foa": 20,
+        "panoramic": 24,
+        "orientation-controller": 30,
+        "panoramic-demo": 43,
+        "foa-challenger": 9,
+        "foa-stress": 7,
+        "panoramic-challenger": 24,
+        "orientation-controller-challenger": 11,
+        "orientation-controller-challenger-2": 14
+      },
+      "node_suite_timeout": {
+        "foa-challenger-m1-3": 45
+      },
+      "delivery_suite": "PASS: 163 tests, 1 skip, 12.775 seconds with direct installed interpreter, clean worktree and symlink-free private TMPDIR",
+      "environment": "Declared Python dependencies installed in ignored local .venv; generated uv.lock retained outside source at /tmp/acs-danse-verification-uv.lock. No tracked source modifications.",
+      "portable_gate_corrected_environment": "Unconfirmed: direct installed interpreter with clean source and symlink-free private TMPDIR exceeded 120-second verification bound; no green result claimed."
+    }
+  },
+  "simvltanea": {
+    "repository": "4444J99/simvltanea",
+    "github_id": 1364497735,
+    "branch": "refactor/feature-encapsulation-20261002",
+    "head": "d5b420dcd28f1d91e272b87ff9551a48a41c1042",
+    "remote_readback_matches": true,
+    "ahead": 0,
+    "behind": 0,
+    "delta": "docs/plans/INDEX.md only, 3 additions and 1 removal",
+    "verification": "Both newly indexed plan files exist and titles match; diff whitespace check passed; clean checkout",
+    "main_merged": false
+  },
+  "original_source_branches_retained": true,
+  "checkout_disposition": "retained",
+  "coordination_validation": "Strict local and catalog-only layout checks passed; 16 workspace safety tests passed before concurrent custody test edits"
+}
