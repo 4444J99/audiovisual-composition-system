@@ -41,3 +41,7 @@ Next owner/action: Limen host-pressure owner must establish sustained swap at or
 ## Duplicate heartbeat closeout — 2026-10-12 19:37 UTC
 
 The one-time restart continuation was delivered again after its completed post-restart checkpoint. Read-only swap measurement was 9,800 MiB, still above the 4,096 MiB threshold; no admission acquisition or payload operation was retried. Paused the existing restart heartbeat to prevent additional automatic attempts. The published blocker and retained private receipt remain the custody owner; no new automation was created. Originals are retained and PRs #2 and #3 remain open.
+
+## Helper lifecycle investigation — 2026-10-12
+
+The [investigation](helper-buildup-investigation.md) records 51 new matching helper processes and zero exits in 20 seconds, repeated global MCP status discovery, paired authentication errors and the up-to-date app result. The exact macOS lifecycle defect and a safe owned-source fix remain unproven; no runtime, credential, capability or pressure threshold was changed. Swap remained above admission and original-media execution remains 0/347. The report names the app-owner repair and measured acceptance predicate; no unchanged custody retry was made.
