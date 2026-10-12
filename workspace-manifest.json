@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "name": "audiovisual-composition-system",
   "display_title": "Audiovisual Composition System",
   "legacy_workspace_alias": "audiovisual-composition-engine",
@@ -103,11 +103,9 @@
       "profile": "artwork-record",
       "repository_keys": [],
       "repository_subpath": null,
-      "local_bindings": {
-        "collection": "backwards-up-hill"
-      },
-      "source_state": "local-observed",
-      "decision": "Existing local directory is empty; related footage is referenced by time-moment-brief. The two project identities remain separate."
+      "local_bindings": {},
+      "source_state": "local-binding-missing",
+      "decision": "The previously observed empty backwards-up-hill source directory is absent at migration 2.0.0. Related footage is referenced by time-moment-brief; the two project identities remain separate. No replacement source was fabricated."
     },
     {
       "id": "g-p-6ab7e5b6ce4c8191991f43045a689276",
@@ -364,5 +362,29 @@
       "decision": "Preserve the Page's project slug and record the ChatGPT spelling as an alias; source media location unresolved."
     }
   ],
-  "membership_source": "docs/sources/ace-project-membership-2026-10-10.json"
+  "membership_source": "docs/sources/ace-project-membership-2026-10-10.json",
+  "layout": "workspace-root",
+  "root_entries": [
+    ".git",
+    ".gitignore",
+    ".github",
+    ".codex",
+    ".agents",
+    "AGENTS.md",
+    "README.md",
+    "workspace-manifest.json",
+    "audiovisual-composition-system.code-workspace",
+    "docs",
+    "tools",
+    "projects",
+    "repositories",
+    "components",
+    "archives"
+  ],
+  "preserved_root_files": [
+    "HANDOFF_AMBISONIC_INTEGRATION.md",
+    "PROJECT.md",
+    "TEST_INFRA.md",
+    "TEST_READY.md"
+  ]
 }

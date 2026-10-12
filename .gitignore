@@ -9,22 +9,24 @@ __pycache__/
 # Agent Coordination Metadata
 .agents/
 
-# Scratch & Temporary Mirrors
-scratch/
-.scratch/
-
-# Archives (Sealed repos and bare backups)
-archives/git/
-archives/god-here/
-archives/engine-recovery-2026-10-10/
-
-# Media Store
-media/*
-!media/README.md
-!media/MANIFEST.json
-
-# Legacy local symlinks (safeguard)
+# Generated local navigation
 projects/*/local/
 repositories/*/local/
 components/*/local/
 archives/*/local/
+
+# BEGIN generated sources
+/Earlier\ god-here\ session\ archive
+/HANDOFF_AMBISONIC_INTEGRATION.md
+/PROJECT.md
+/TEST_INFRA.md
+/TEST_READY.md
+/engine
+/god-here
+/reflect-recur
+/simvltanea
+/temporary-work-preservation-2026-10-10
+/tests
+/the-thing-without-a-name
+/time-moment-brief
+# END generated sources

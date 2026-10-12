@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-12",
+  "source_comparison": [
+    {
+      "source": "temporary-work-preservation-2026-10-10",
+      "head": "9f407ca7ac8303c29f20c7e3c332919fb540731c",
+      "branch": "main",
+      "uncommitted_files": 0,
+      "worktrees": 1,
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "before_after_equal": true
+    },
+    {
+      "source": "time-moment-brief",
+      "head": "da10bd9224f3ea3bffad6460156efc0147f0b241",
+      "branch": "agent5-loop-continuity",
+      "uncommitted_files": 37,
+      "worktrees": 8,
+      "status_sha256": "627fe6f73599e47a55a393e3d9746265b7c244f200d60706faed5100d289e50d",
+      "before_after_equal": true
+    },
+    {
+      "source": "god-here",
+      "head": "37a28eb9eea36f49bf5eda5bc253aa47c4c80dc8",
+      "branch": "main",
+      "uncommitted_files": 31,
+      "worktrees": 1,
+      "status_sha256": "73adb44b2b1936343c0841445dad8760a1f3d8a503db00d3d09170eeeda0eefd",
+      "before_after_equal": true
+    },
+    {
+      "source": "simvltanea",
+      "head": "d5b420dcd28f1d91e272b87ff9551a48a41c1042",
+      "branch": "refactor/feature-encapsulation-20261002",
+      "uncommitted_files": 0,
+      "worktrees": 2,
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "before_after_equal": true
+    },
+    {
+      "source": "the-thing-without-a-name",
+      "head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+      "branch": "main",
+      "uncommitted_files": 0,
+      "worktrees": 1,
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "before_after_equal": true
+    }
+  ],
+  "scope": "Exact HEAD, branch, porcelain status and worktree listing compared; no media or archive completeness claim."
+}
