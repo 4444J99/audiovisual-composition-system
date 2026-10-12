@@ -15,19 +15,19 @@ From this repository:
 
 ```sh
 python3 tools/workspace_layout.py check
-python3 tools/workspace_layout.py apply --workspace ..
-python3 tools/workspace_layout.py check --workspace ..
-python3 -m unittest discover -s tests -v
-node --test tests/test_verify_tmb_composition.cjs
+python3 tools/workspace_layout.py apply
+python3 tools/workspace_layout.py status
+python3 -m unittest discover -s tools/tests -v
+node --test tools/tests/test_verify_tmb_composition.cjs
 ```
 
 `apply` only creates missing directories and relative symbolic links after checking all planned destinations for collisions. It does not move or delete source files, fetch media, execute manifest content, rewrite Git history, or modify another repository. Re-running it is idempotent.
 
-CI runs the manifest, generated-directory, preservation and acceptance-guard
+CI uses `check --catalog-only` because ignored workstation sources are absent from a clean checkout. Local `check` additionally requires every declared source and navigation link. `status` reads local Git state and cached upstream ahead/behind counts without fetching. CI runs the manifest, generated-directory, preservation and acceptance-guard
 checks on every pull request and main-branch push. Workstation links and real
 private-media playback are verified locally. Directory names and records are
 enforced by the same manifest validator in both environments.
 
-The enclosing workspace remains non-Git. Its `projects/`, `repositories/`, `components/` and `archives/` paths are consolidated navigation views. Physical legacy locations are retained for working consumers. See the migration report for the exact deferred relocation predicates.
+This repository is the workspace root (schema 2.0.0). Its `projects/`, `repositories/`, `components/` and `archives/` paths are consolidated navigation views. Physical legacy locations are retained for working consumers. See [migration 2.0.0](docs/migrations/2.0.0.md) for placement, consumer evidence and rollback. Every top-level entry is declared; source folders and preserved loose files are ignored through a deterministic generated block.
 
 This repository is private because solution membership includes private works and source relationships. No media, chat transcripts, recovered binaries or private derivatives belong here. EES informed the design; this is not a claim of EES certification or audiovisual acceptance.

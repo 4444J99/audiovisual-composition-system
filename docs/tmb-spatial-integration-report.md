@@ -73,9 +73,9 @@ portrait shifts relative to the original sources were effectively zero.
 These are bounded desktop
 observations, not an endurance, loudspeaker, headset or perceptual listening test.
 
-The [edition receipt](../evidence/2026-10-10-tmb-spatial-composition-v3/edition-receipt.json),
-[source admission](../evidence/2026-10-10-tmb-spatial-composition-v3/source-admission.json)
-and [browser observations](../evidence/2026-10-10-tmb-spatial-composition-v3/browser-acceptance.json)
+The [edition receipt](evidence/2026-10-10-tmb-spatial-composition-v3/edition-receipt.json),
+[source admission](evidence/2026-10-10-tmb-spatial-composition-v3/source-admission.json)
+and [browser observations](evidence/2026-10-10-tmb-spatial-composition-v3/browser-acceptance.json)
 are stored in this private coordination repository. No media is committed here.
 
 ## Reproduction and automated governance
@@ -99,7 +99,10 @@ the initial implementation's full remote CI and package checks passed.
 An intentional missing-browser launch verified the retry path. Its failed attempt
 was retained in a separate file; the corrected executable produced a passed
 canonical receipt without deleting or overwriting the failed evidence. Existing
-passed receipts are immutable.
+passed receipts cannot be replaced by the verifier. The subsequent
+[lifecycle correction](composition-evidence-lifecycle.md) publishes new records
+as independent read-only files and retains timeout failures after bounded cleanup;
+it does not rewrite these historical browser observations.
 
 Naming and structural governance can be enforced by these linters and validators
 after rules are selected. Artwork titles remain independent of stable IDs and

@@ -1,0 +1,71 @@
+{
+  "observed_at": "2026-10-12 18:52:37 UTC",
+  "baseline": "ccb26e58f85e0372dae31f8dee2d4cb665b4919a",
+  "scope": "Review corrections to layout 2.0.0; no source mutation, device acceptance, archive completeness or remote custody claim.",
+  "validation": {
+    "strict_local": "passed",
+    "catalog_only": "passed",
+    "python_safety_tests": 16,
+    "node_acceptance_guards": 6,
+    "diff_check": "passed"
+  },
+  "source_preservation": [
+    {
+      "source": "god-here",
+      "head": "37a28eb9eea36f49bf5eda5bc253aa47c4c80dc8",
+      "branch": "main",
+      "status_sha256": "92b9c10b97b5822038def24e3947849122baf74d6f99f64248be4caa0a9a4e90",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "worktrees_sha256": "640d417887de6655d0e2396b882f370aedbed29a53ae901609b88aad24405ff5",
+      "remotes_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "before_after_equal": true
+    },
+    {
+      "source": "simvltanea",
+      "head": "d5b420dcd28f1d91e272b87ff9551a48a41c1042",
+      "branch": "refactor/feature-encapsulation-20261002",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "worktrees_sha256": "de7b2e363caccad0d994dbdd434aa21700a9a70a62c693ceb019eafe7cf674a0",
+      "remotes_sha256": "b4bb6286731e416627a6d0886b33561de0d85c89b7628387bc744e100f72941e",
+      "before_after_equal": true
+    },
+    {
+      "source": "temporary-work-preservation-2026-10-10",
+      "head": "9f407ca7ac8303c29f20c7e3c332919fb540731c",
+      "branch": "main",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "worktrees_sha256": "0f0f54305f91bee3374111d8d0d0959b9cd55c3117bc4bfa8788bed91cc13be7",
+      "remotes_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "before_after_equal": true
+    },
+    {
+      "source": "the-thing-without-a-name",
+      "head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+      "branch": "main",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "worktrees_sha256": "acae171493b69cf4a3035db2303642e1b58efa1c0f81654ea9b3a7d4a5b5e343",
+      "remotes_sha256": "554522f94513fc3f4643f2d594a4cdcc3a32dd622e8daec4d8a9f70268fbbd2c",
+      "before_after_equal": true
+    },
+    {
+      "source": "time-moment-brief",
+      "head": "da10bd9224f3ea3bffad6460156efc0147f0b241",
+      "branch": "agent5-loop-continuity",
+      "status_sha256": "b112181b5b15460ce4c5924b0339764d2e2d30740b63c049b5169160b9c1410b",
+      "diff_sha256": "e22a5519960476f5d933c77c3ab49e4a9591a78fc4a0803376fdfaf1dc1ac0c3",
+      "worktrees_sha256": "e044bc5434f99b87d3a3ed14f74d07d3288ffd6819ccafa981348dbe29e9168d",
+      "remotes_sha256": "bf8fe12a02ed839c5d14f2efd24db3c123f46b3031a628a9e66ec87a4ec5ea77",
+      "before_after_equal": true
+    }
+  ],
+  "remote_ci": {
+    "run": 38289158052,
+    "state": "not_started",
+    "owner": "GitHub account billing",
+    "reason": "Account payments failed or spending limit requires increase; read from check annotation."
+  },
+  "checkout_disposition": "All coordination/source checkouts retained; PR 2 remains open for review."
+}

@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: '22'
       - name: Verify manifest and generated directory records
-        run: python3 tools/workspace_layout.py check
+        run: python3 tools/workspace_layout.py check --catalog-only
       - name: Verify preservation and naming rules
-        run: python3 -m unittest discover -s tests -v
+        run: python3 -m unittest discover -s tools/tests -v
       - name: Verify composition acceptance guards
-        run: node --test tests/test_verify_tmb_composition.cjs
+        run: node --test tools/tests/test_verify_tmb_composition.cjs

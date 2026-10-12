@@ -4,7 +4,7 @@ Generated from the solution manifest. The source directory's 16 rows represent 1
 
 | Project | Profile | Implementation owner | Current local source |
 | --- | --- | --- | --- |
-| [backwards-up-hill](../projects/backwards-up-hill/README.md) | artwork-record | Page record | backwards-up-hill |
+| [backwards-up-hill](../projects/backwards-up-hill/README.md) | artwork-record | Page record | unresolved locally |
 | [cycles](../projects/cycles/README.md) | source-collection | Page record | unresolved locally |
 | [danse](../projects/danse/README.md) | browser-artwork | [4444J99/the-thing-without-a-name-screendance](https://github.com/4444J99/the-thing-without-a-name-screendance) | the-thing-without-a-name |
 | [etc](../projects/etc/README.md) | artwork-record | Page record | unresolved locally |

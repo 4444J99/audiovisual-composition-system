@@ -1,7 +1,32 @@
+# System & Shadow Caches
 .DS_Store
 __pycache__/
 .pytest_cache/
+.mypy_cache/
+.venv/
+*.pyc
+
+# Agent Coordination Metadata
+.agents/
+
+# Generated local navigation
 projects/*/local/
 repositories/*/local/
 components/*/local/
 archives/*/local/
+
+# BEGIN generated sources
+/Earlier\ god-here\ session\ archive
+/HANDOFF_AMBISONIC_INTEGRATION.md
+/PROJECT.md
+/TEST_INFRA.md
+/TEST_READY.md
+/engine
+/god-here
+/reflect-recur
+/simvltanea
+/temporary-work-preservation-2026-10-10
+/tests
+/the-thing-without-a-name
+/time-moment-brief
+# END generated sources

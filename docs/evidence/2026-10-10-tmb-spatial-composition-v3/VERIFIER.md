@@ -1,0 +1,3 @@
+# Historical verifier provenance
+
+`historical-verifier.cjs` is the exact Git blob `b6efff14925fc33bf5166877fad5f85f46c46565`, recovered from retained repository objects. Its SHA-256 is `a1771e11a43f4c824661f06685bf30c5ad31dd3fff3ee50326a3a18d9c656d30`, matching the accepted browser receipt and failed-launch record. It retains its original admission path as historical evidence; use the maintained `tools/verify_tmb_composition.cjs` for new attempts. The current verifier includes independent atomic publication and bounded cleanup fixes. No acceptance rerun or change to historical receipt bytes is claimed.
