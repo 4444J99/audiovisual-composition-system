@@ -1,0 +1,43 @@
+{
+  "observed_at": "2026-10-12T19:27:59.326199+00:00",
+  "swapusage": "vm.swapusage: total = 15360.00M  used = 13982.00M  free = 1378.00M  (encrypted)",
+  "process_groups": {
+    "other": {
+      "count": 728,
+      "resident_bytes": 7288291328
+    },
+    "node-npm": {
+      "count": 244,
+      "resident_bytes": 2606678016
+    },
+    "computer-use-clients": {
+      "count": 76,
+      "resident_bytes": 1256767488
+    },
+    "python-uv": {
+      "count": 85,
+      "resident_bytes": 830373888
+    },
+    "codex-renderer": {
+      "count": 18,
+      "resident_bytes": 2700771328
+    }
+  },
+  "primary_codex_direct_children": 329,
+  "footprint_sample_mebibytes": {
+    "main_codex_renderer": 3008,
+    "main_codex_cli": 1867,
+    "compressor_system": 6447,
+    "wired_system": 4846
+  },
+  "attribution_limits": "Resident sums omit compressed/swapped pages and can double count shared memory. Footprint samples and process counts implicate concurrent runtime/tool proliferation but do not assign exact swap bytes per process or prove a leak.",
+  "active_other_local_chats": true,
+  "lifecycle_evidence": "Sampled helpers have live parents and stdio pipes; no safe abandoned-process classification established.",
+  "actions_taken": "Read-only diagnosis; no process signaled, app quit, swap deleted, threshold changed or media touched.",
+  "next_safe_action": "Coordinate graceful shared-app restart after active chats are checkpointed and interruption is authorized; then remeasure pressure and acquire a persistent runner heavy lease before media I/O.",
+  "custody_progress": {
+    "hashed": 0,
+    "copied": 0,
+    "restored": 0
+  }
+}
