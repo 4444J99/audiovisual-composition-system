@@ -1,5 +1,24 @@
 # Danse private custody checkpoint
 
+## Conditional recheck at 20:21 UTC
+
+The [fresh recheck](evidence/danse-private-custody-recheck-2026-10-12.json)
+still reports denied host admission: swap 64.05%, disk throughput samples
+225.87 and 677.13 MiB/s, and `vitals-shed`. The source metadata census and Git
+state were stable over a five-second observation. The bounded open-handle
+probe observed no writable descriptors under the checkout; this snapshot is
+not a future writer exclusion lock. The census recorded 4,257 ignored entries
+and 1,212,543,676 logical bytes. All 14 refs and both stash reflog entries
+remain present at the unchanged source HEAD.
+
+The user's condition for copying was not met. No heavy acquire was attempted
+under the known denial; no source payload was hashed or copied. Raw handle
+output and complete source metadata are retained in private mode-0700 staging
+under the receipt's run ID. Two verified copies and a clean restore remain
+outstanding. Originals, prior partials and both review PRs remain retained.
+
+## Earlier custody attempt
+
 **Custody remains incomplete.** The fresh heavy acquire at 2026-10-12 19:54 UTC
 was denied for `swap-fraction`, `disk-throughput` and `vitals-shed`: swap was
 60.76%, growing by 313,289,374 bytes/minute, with sampled disk throughput
