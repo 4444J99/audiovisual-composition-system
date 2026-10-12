@@ -26,3 +26,8 @@ Review hold discrepancy: PR #2 was merged outside this attempt at 20:28:33 UTC.
 PR #3 remains open. Retained pre-rebase branches preserve prior coordination
 history; only this evidence delta is applied to the current PR #3 history. Do
 not undo the external merge or claim that both PRs are still open.
+
+Final remote check: PR #3 also merged outside this attempt at 20:29:37 UTC.
+Retain all previous branches; apply only these three evidence files onto current
+main in docs/danse-pressure-evidence-20261012 and create a successor draft PR.
+Do not request its merge or represent either original PR as open.

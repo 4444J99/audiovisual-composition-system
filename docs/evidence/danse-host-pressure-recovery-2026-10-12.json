@@ -48,7 +48,10 @@
     "pr_2": "MERGED",
     "pr_2_merged_at": "2026-10-12T20:28:33Z",
     "pr_2_merge_commit": "cdd27d53b635ce70a62b30860b591e25aa91cce8",
-    "pr_3": "OPEN",
+    "pr_3": "MERGED",
+    "pr_3_merged_at": "2026-10-12T20:29:37Z",
+    "pr_3_merge_commit": "e719f28b9043ebe825b7b493f047b3c455fb5157",
+    "successor_review": "draft PR from docs/danse-pressure-evidence-20261012",
     "this_attempt_merged_or_closed_a_pr": false
   },
   "resume_predicate": "safe lifecycle release of unused owners, changed host pressure, successful heavy acquire and fresh stable source inventory",

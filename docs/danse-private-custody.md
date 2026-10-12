@@ -42,6 +42,12 @@ This attempt issued no merge, close, force-push or revert. The user's requested
 two-open-PR hold can no longer be represented as satisfied; the external merge
 was not undone. Earlier statements below describe their earlier observations.
 
+The final check also found PR #3 merged externally at 20:29:37 UTC into
+`e719f28b9043ebe825b7b493f047b3c455fb5157`, before this new evidence was included
+in its reviewed head. Both original PRs are now merged. This evidence is placed
+on a new topic branch from current main for a successor draft review; no merge
+is requested. The source custody outcome remains incomplete.
+
 ## Conditional recheck at 20:21 UTC
 
 The [fresh recheck](evidence/danse-private-custody-recheck-2026-10-12.json)
