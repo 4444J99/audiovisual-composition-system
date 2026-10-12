@@ -157,7 +157,7 @@
         "checkout": "the-thing-without-a-name"
       },
       "source_state": "local-observed",
-      "decision": "Native project_id danse and the legacy canonical URL identify private GitHub repository 1320324017. The distinct public personal repository 1347780050 is archived and explicitly defers to that canonical URL. Authority is resolved; source publication parity and independent custody remain incomplete. Preserve both remotes and the existing checkout.",
+      "decision": "Native project_id danse and the legacy canonical URL identify private GitHub repository 1320324017. The distinct public personal repository 1347780050 is archived and explicitly defers to that canonical URL. Authority is resolved; all four previously unpushed commits are remotely recoverable through existing feature and private preservation refs. Independent source custody and portable acceptance remain incomplete. Preserve both remotes and the existing checkout.",
       "native_identity": {
         "project_id": "danse",
         "authority": "the-thing-without-a-name/project-record.yml"
