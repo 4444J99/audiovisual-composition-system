@@ -53,6 +53,30 @@ def verified_entry_matches(path, entry, stage):
             and metadata(path) == entry['metadata'])
 
 
+def destination_parent(path, volume):
+    if not path.is_relative_to(volume) or path.resolve() != path:
+        raise RuntimeError('destination escapes verified volume or traverses a symlink')
+    path.parent.mkdir(mode=0o700, exist_ok=True)
+
+
+def release_lease(lease):
+    released = subprocess.run([sys.executable, str(ADMISSION), 'release',
+        '--lease-id', lease['lease_id'], '--owner', OWNER, '--pid', str(os.getpid())],
+        capture_output=True, timeout=30)
+    result = json.loads(released.stdout)
+    if released.returncode != 0 or result.get('allowed') is not True:
+        raise RuntimeError('lease release rejected')
+    return result
+
+
+def partial_path(destination_root):
+    parent = destination_root / '.custody-partials'
+    parent.mkdir(mode=0o700, exist_ok=True)
+    if parent.is_symlink():
+        raise RuntimeError('linked partial root')
+    return parent / uuid.uuid4().hex
+
+
 def enumerate_source(source, roots):
     files, directories = {}, set()
     for root in roots:
@@ -100,6 +124,7 @@ def run(args):
                 state[key] = previous[key]
     lease = None
     last_refresh = started
+    verification_started = time.monotonic()
 
     def save():
         state['elapsed_seconds'] = time.monotonic() - started
@@ -115,6 +140,9 @@ def run(args):
         nonlocal last_refresh
         if time.monotonic() >= deadline:
             raise TimeoutError('attempt wall deadline')
+        state['verification_seconds'] = time.monotonic() - verification_started
+        if state['verification_seconds'] >= args.verification_seconds:
+            raise TimeoutError('verification time exhausted')
         if lease and time.monotonic() - last_refresh > 60:
             result = json.loads(command([sys.executable, str(ADMISSION), 'refresh',
                 '--lease-id', lease['lease_id'], '--owner', OWNER,
@@ -123,16 +151,19 @@ def run(args):
                 raise RuntimeError('lease refresh refused')
             last_refresh = time.monotonic()
 
+    def checked_metadata(path):
+        guard()
+        result = metadata(path)
+        guard()
+        return result
+
     def digest(path):
-        begin = time.monotonic()
         h = hashlib.sha256()
         before = identity(path)
         try:
             with path.open('rb') as f:
                 while True:
                     guard()
-                    if state['verification_seconds'] + time.monotonic() - begin >= args.verification_seconds:
-                        raise TimeoutError('verification time exhausted')
                     chunk = f.read(4 * 1024**2)
                     if not chunk:
                         break
@@ -141,23 +172,31 @@ def run(args):
                 raise RuntimeError('file changed while hashing')
             return h.hexdigest()
         finally:
-            state['verification_seconds'] += time.monotonic() - begin
+            state['verification_seconds'] = time.monotonic() - verification_started
 
     def transfer(src, dst, expected, expected_metadata):
         guard()
         if dst.exists():
-            raise FileExistsError('destination exists')
+            if digest(dst) == expected and checked_metadata(dst) == expected_metadata:
+                return  # Recover promotion interrupted before its receipt checkpoint.
+            raise FileExistsError('destination exists with unverified content')
         if shutil.disk_usage(dst.parent).free < src.stat().st_size + RESERVE:
             raise RuntimeError('destination reserve unavailable')
-        partial = dst.with_name(dst.name + '.partial-' + uuid.uuid4().hex)
+        destination_root = next(Path(state[k]) for k in ('custody_path', 'restore_path')
+                                if dst.is_relative_to(Path(state[k])))
+        partial = partial_path(destination_root)
         # A fresh exclusive placeholder ensures this invocation owns the temporary name.
         with partial.open('xb'):
             pass
         subprocess.run(['ditto', '--rsrc', '--extattr', '--acl', str(src), str(partial)],
-                       check=True, timeout=min(300, max(1, deadline-time.monotonic())))
+                       check=True, timeout=min(300, deadline-time.monotonic(),
+                           args.verification_seconds-(time.monotonic()-verification_started)))
+        guard()
+        if shutil.disk_usage(dst.parent).free < RESERVE:
+            raise RuntimeError('destination reserve consumed by all-fork copy')
         with partial.open('rb') as f:
             os.fsync(f.fileno())
-        if digest(partial) != expected or metadata(partial) != expected_metadata:
+        if digest(partial) != expected or checked_metadata(partial) != expected_metadata:
             raise RuntimeError('copy readback or metadata mismatch; partial retained')
         # link is exclusive and refuses an existing final name (same filesystem).
         os.link(partial, dst)
@@ -178,6 +217,9 @@ def run(args):
             raise RuntimeError('resume inventory changed')
         state['inventory_sha256'] = args.inventory_sha256
         inventory = json.loads(invbytes)
+        if any(Path(p).is_absolute() or '..' in Path(p).parts or p in ('.', '', '.custody-partials')
+               for p in inventory['roots']):
+            raise RuntimeError('unsafe content root')
         expected = {r['path']: [r['bytes'], r['mtime_ns'], r['inode'], r['device']]
                     for r in inventory['files']}
         if any(Path(p).is_absolute() or '..' in Path(p).parts for p in expected):
@@ -188,6 +230,12 @@ def run(args):
         actual, directories = enumerate_source(source, inventory['roots'])
         if actual != expected:
             raise RuntimeError('source differs from frozen inventory')
+        directory_metadata = {}
+        for rel in directories:
+            m = checked_metadata(source / rel)
+            if m['acl'] or m['xattrs'] or m['flags']:
+                raise RuntimeError('directory metadata requires metadata-only restoration')
+            directory_metadata[rel] = m
         disks = {}
         for name, volume_uuid in VOLUMES.items():
             info = plistlib.loads(command(['diskutil', 'info', '-plist', '/Volumes/' + name]))
@@ -198,6 +246,8 @@ def run(args):
         state['disks'] = disks
         if disks['Ingress']['parent'] == disks['T7Recovery']['parent']:
             raise RuntimeError('custody device is not independent')
+        if disks['Archive4T']['parent'] == disks['T7Recovery']['parent']:
+            raise RuntimeError('restore device is not independent of custody')
         previous_by_path = {r['path']: r for r in state['records']}
         total = sum(v[0] for v in expected.values())
         for name in ['T7Recovery', 'Archive4T']:
@@ -222,7 +272,8 @@ def run(args):
         custody = Path(state.get('custody_path', str(Path('/Volumes/T7Recovery/limen-custody') / custody_name)))
         restore = Path(state.get('restore_path', str(Path('/Volumes/Archive4T/limen-custody') / custody_name)))
         for p in [custody, restore]:
-            p.parent.mkdir(mode=0o700, exist_ok=True)
+            volume = Path('/Volumes/T7Recovery' if p == custody else '/Volumes/Archive4T')
+            destination_parent(p, volume)
             p.mkdir(mode=0o700, exist_ok=bool(args.resume))
             for rel in sorted(directories, key=lambda s: (s.count('/'), s)):
                 (p / rel).mkdir(mode=0o700, exist_ok=bool(args.resume))
@@ -236,16 +287,17 @@ def run(args):
                 raise RuntimeError('source drift before hashing')
             r = previous_by_path.get(rel)
             if r is None:
-                r = {'path': rel, 'bytes': expected[rel][0], 'metadata': metadata(p),
+                r = {'path': rel, 'bytes': expected[rel][0], 'metadata': checked_metadata(p),
                      'sha256': digest(p), 'hashed': True}
                 state['records'].append(r)
                 save()
-            elif metadata(p) != r['metadata']:
+            elif checked_metadata(p) != r['metadata']:
                 raise RuntimeError('source metadata changed since checkpoint')
             for stage, src, dst in [('custody', p, custody / rel),
                                     ('restore', custody / rel, restore / rel)]:
                 if r.get(stage + '_verified'):
-                    if not verified_entry_matches(dst, r, stage):
+                    if (not verified_entry_matches(dst, r, stage)
+                            or digest(dst) != r['sha256']):
                         raise RuntimeError('verified destination changed since checkpoint')
                 else:
                     transfer(src, dst, r['sha256'], r['metadata'])
@@ -263,18 +315,28 @@ def run(args):
                 src, dst = source / rel, destination / rel
                 # ditto directory copies could overwrite files; refuse nontrivial directory
                 # metadata until a dedicated metadata-only method has been verified.
-                m = metadata(src)
+                m = checked_metadata(src)
+                if m != directory_metadata[rel]:
+                    raise RuntimeError('source directory metadata drift')
                 if m['acl'] or m['xattrs'] or m['flags']:
                     raise RuntimeError('directory metadata requires metadata-only restoration')
                 shutil.copystat(src, dst)
-                if metadata(dst) != m:
+                if checked_metadata(dst) != m:
                     raise RuntimeError('directory metadata mismatch')
             found, found_dirs = enumerate_source(destination, inventory['roots'])
             if set(found) != set(expected) or found_dirs != directories:
                 raise RuntimeError('destination membership mismatch')
+            for r in state['records']:
+                if (digest(destination / r['path']) != r['sha256']
+                        or checked_metadata(destination / r['path']) != r['metadata']):
+                    raise RuntimeError('destination changed at completion')
         final, final_dirs = enumerate_source(source, inventory['roots'])
         if final != expected or final_dirs != directories:
             raise RuntimeError('source drift at completion')
+        for r in state['records']:
+            if checked_metadata(source / r['path']) != r['metadata']:
+                raise RuntimeError('source metadata drift at completion')
+        guard()
         state['outcome'] = 'verified-complete'
     except Exception as exc:
         state['outcome'] = 'checkpoint-incomplete'
@@ -283,12 +345,10 @@ def run(args):
         signal.alarm(0)
         if lease:
             try:
-                released = subprocess.run([sys.executable, str(ADMISSION), 'release',
-                    '--lease-id', lease['lease_id'], '--owner', OWNER, '--pid', str(os.getpid())],
-                    capture_output=True, timeout=30)
-                state['release'] = json.loads(released.stdout)
+                state['release'] = release_lease(lease)
             except Exception as exc:
                 state['release_error'] = str(exc)
+                state['outcome'] = 'checkpoint-incomplete'
         save()
         with (private / ('attempt-' + attempt_id + '.json')).open('x') as f:
             json.dump(state, f, indent=2)

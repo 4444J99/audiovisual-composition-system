@@ -78,6 +78,10 @@ def content_signature(root, inventory, guard, durable=False):
                  'flags': s.st_flags, 'uid': s.st_uid, 'gid': s.st_gid}
         if path.is_symlink():
             entry.update(kind='symlink', target=os.readlink(path))
+            names = command(['xattr', '-s', str(path)]).decode().splitlines()
+            entry['xattrs'] = {name: hashlib.sha256(command(
+                ['xattr', '-s', '-px', name, str(path)])).hexdigest() for name in names}
+            entry['acl'] = command(['ls', '-lde', str(path)]).decode().splitlines()[1:]
             result[rel] = entry
             continue
         names = command(['xattr', str(path)]).decode().splitlines()
@@ -220,8 +224,16 @@ def run(args):
             private_directory(parent)
             target = parent / run_id if index < 2 else parent / 'restore'
             target.mkdir(mode=0o700)  # Exclusive name, never overwrite a retained attempt.
+            remaining = min(args.wall_seconds - (time.monotonic() - started),
+                            600 - (time.monotonic() - verification_started))
+            if remaining <= 0:
+                raise TimeoutError('copy deadline exhausted')
             subprocess.run(['ditto', '--rsrc', '--extattr', '--acl', str(previous), str(target)],
-                check=True, timeout=max(1, args.wall_seconds - (time.monotonic() - started)))
+                check=True, timeout=remaining)
+            guard()
+            for reserve_root in [*roots, STAGING]:
+                if shutil.disk_usage(reserve_root).free < RESERVE:
+                    raise RuntimeError('destination reserve consumed by all-fork copy')
             # ditto into an exclusively precreated directory leaves its root mtime.
             shutil.copystat(previous, target)
             restored_inventory = census(target)
@@ -263,10 +275,16 @@ def run(args):
         if not state['source_preserved'] and state['outcome'] == 'verified-complete':
             state['outcome'] = 'checkpoint-incomplete'
         if lease:
-            released = subprocess.run([sys.executable, str(ADMISSION), 'release',
-                '--lease-id', lease['lease_id'], '--owner', OWNER, '--pid', str(os.getpid())],
-                capture_output=True, timeout=30)
-            state['lease_release'] = json.loads(released.stdout)
+            try:
+                released = subprocess.run([sys.executable, str(ADMISSION), 'release',
+                    '--lease-id', lease['lease_id'], '--owner', OWNER, '--pid', str(os.getpid())],
+                    capture_output=True, timeout=30)
+                state['lease_release'] = json.loads(released.stdout)
+                if released.returncode != 0 or state['lease_release'].get('allowed') is not True:
+                    raise RuntimeError('lease release rejected')
+            except Exception as exc:
+                state['outcome'] = 'checkpoint-incomplete'
+                state['cleanup_failure_class'] = type(exc).__name__
         save()
         public = {k: v for k, v in state.items() if not k.startswith('private_')}
         # Admission sensor data is numerical/process metadata, not source content.
