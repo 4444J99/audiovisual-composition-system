@@ -45,3 +45,7 @@ The one-time restart continuation was delivered again after its completed post-r
 ## Helper lifecycle investigation — 2026-10-12
 
 The [investigation](helper-buildup-investigation.md) records 51 new matching helper processes and zero exits in 20 seconds, repeated global MCP status discovery, paired authentication errors and the up-to-date app result. The exact macOS lifecycle defect and a safe owned-source fix remain unproven; no runtime, credential, capability or pressure threshold was changed. Swap remained above admission and original-media execution remains 0/347. The report names the app-owner repair and measured acceptance predicate; no unchanged custody retry was made.
+
+## Authorized external custody workaround
+
+The user authorized gracefully closing Codex and executing custody outside the app. The [bounded external attempt](../.codex/plans/2026-10-12-ingress-original-media-custody-v2.md) uses private supervisor locator external-custody-20261012-s2phtu6a, a pinned runner snapshot, fresh heavy admission, per-file complete custody stages and durable resumable receipts. Launch and final completion are separate; the next receipt must establish actual outcome. Originals and PRs remain preserved.
