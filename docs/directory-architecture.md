@@ -69,6 +69,7 @@ Stable project IDs reuse the original ChatGPT project IDs. Existing native IDs, 
 | Simultaneous independent video-loop artwork | 4444J99/simvltanea | Keep its existing package, rendering, browser, edition and archive layout |
 | Multicamera alignment and generation playback | 4444J99/time-moment-brief | Keep private source and derivatives; preserve active branch and worktrees |
 | Danse artwork and delivery | Existing the-thing-without-a-name checkout | Retain source; resolve remote identity conflict before redirecting or moving it |
+| hole-loop | Standalone timed-text-navigation-loop repository; preserve its native public, provenance, scripts, tests, verification and docs layout | Independent source history |
 | Other Page-backed works | Project records with links to observed Pages | Do not create empty repositories without an implementation responsibility |
 
 The old Danse origin `organvm/the-thing-without-a-name` currently resolves to **private** repository **4444J99/the-thing-without-a-name-screendance**, numeric ID **1320324017**. Its configured personal remote resolves to the distinct **public** **4444J99/the-thing-without-a-name**, numeric ID **1347780050**. The local project record still calls the old origin canonical. This is an authority conflict, not permission to publish the private tree or replace a remote.
@@ -99,7 +100,7 @@ These are responsibility maps. Existing native names remain unless a separately 
 | Historical web collection: mavsoleum-a, ogod | Preserve original path graph, collection subpaths, dependencies and source filenames; describe lineage with manifests instead of rewriting historical sources |
 | Source collection: cycles | Project/source manifest and original references; annotations and editions only when produced; preserve original image names |
 | Research artwork: nrcsvs | Existing chat-vault, exports and scripts with provenance; add research/decision records only as authored, without pretending this archive is its implementation |
-| Page-backed artwork records: backwards-up-hill, etc, hole-loop, noonlight, nvde, passing-thru, wrvng-v | Current project record and source links; future sources, research, scores, editions, implementation and evidence collections only when their material and owners exist |
+| Page-backed artwork records: backwards-up-hill, etc, noonlight, nvde, passing-thru, wrvng-v | Current project record and source links; future sources, research, scores, editions, implementation and evidence collections only when their material and owners exist |
 
 Future project editions refer to a pinned engine/component and a source manifest. They do not copy an independently editable engine into each artwork. A source manifest records original identity/digest, rights, custody reference and derivative lineage; raw media does not enter this coordination repository.
 
