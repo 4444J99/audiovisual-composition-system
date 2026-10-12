@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 
 
-MODULE = Path(__file__).resolve().parents[1] / "tools/workspace_layout.py"
+MODULE = Path(__file__).resolve().parents[1] / "workspace_layout.py"
 SPEC = importlib.util.spec_from_file_location("layout", MODULE)
 layout = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(layout)

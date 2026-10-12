@@ -364,5 +364,5 @@
       "decision": "Preserve the Page's project slug and record the ChatGPT spelling as an alias; source media location unresolved."
     }
   ],
-  "membership_source": "sources/ace-project-membership-2026-10-10.json"
+  "membership_source": "docs/sources/ace-project-membership-2026-10-10.json"
 }

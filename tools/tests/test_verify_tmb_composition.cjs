@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const crypto=require('node:crypto');
 const {assertAdmission,assertPoses,assertSignal,assertPanEffect,assertResizeContinuity,
-  ADMISSION,ADMISSION_SHA256}=require('../tools/verify_tmb_composition.cjs');
+  ADMISSION,ADMISSION_SHA256}=require('../verify_tmb_composition.cjs');
 
 test('independent admission has its pinned digest',()=>{
   assert.equal(crypto.createHash('sha256').update(fs.readFileSync(ADMISSION)).digest('hex'),ADMISSION_SHA256);

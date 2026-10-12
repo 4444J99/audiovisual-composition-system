@@ -1,31 +1,8 @@
 {
-  "folders": [
-    {
-      "name": "Workspace",
-      "path": "."
-    },
-    {
-      "name": "Projects",
-      "path": "projects"
-    },
-    {
-      "name": "Repositories",
-      "path": "repositories"
-    },
-    {
-      "name": "Components",
-      "path": "components"
-    },
-    {
-      "name": "Archives",
-      "path": "archives"
-    }
-  ],
-  "settings": {
-    "search.followSymlinks": false,
-    "files.watcherExclude": {
-      "**/local/**": true
-    },
-    "git.autoRepositoryDetection": "openEditors"
-  }
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
 }
