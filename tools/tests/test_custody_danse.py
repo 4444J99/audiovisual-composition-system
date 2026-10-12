@@ -6,6 +6,7 @@ import shutil
 import os
 import tempfile
 import unittest
+import sys
 
 SPEC = importlib.util.spec_from_file_location('custody_danse',
     Path(__file__).parents[1] / 'custody_danse.py')
@@ -13,6 +14,7 @@ CUSTODY = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CUSTODY)
 
 
+@unittest.skipUnless(sys.platform == 'darwin', 'macOS custody primitives: xattr, stat flags and ditto')
 class CustodyTests(unittest.TestCase):
     def test_links_are_recorded_without_following(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -23,6 +25,9 @@ class CustodyTests(unittest.TestCase):
             self.assertEqual(set(directories), {'.'})
             signature = CUSTODY.content_signature(root, (files, directories), lambda: None)
             self.assertEqual(signature['external']['target'], '/tmp')
+            subprocess.run(['xattr', '-s', '-w', 'user.custody-fixture', 'link-only', str(root / 'external')], check=True)
+            changed = CUSTODY.content_signature(root, CUSTODY.census(root), lambda: None)
+            self.assertNotEqual(signature['external']['xattrs'], changed['external']['xattrs'])
 
     def test_special_nodes_are_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
