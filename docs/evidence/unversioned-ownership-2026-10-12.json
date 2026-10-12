@@ -1,0 +1,984 @@
+{
+  "observed_date": "2026-10-12",
+  "scope": "Regular non-symlink files including hidden/generated files in engine and tests, plus four loose documents. Exact blob matches against full TMB main, local Danse HEAD and local recovery HEAD. No claim of global uniqueness or off-disk custody.",
+  "refs": {
+    "tmb_main": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+    "recovery": "9f407ca7ac8303c29f20c7e3c332919fb540731c",
+    "danse_local": "f6f27c10a4bf617d895b0f0387eb3013aa39913b"
+  },
+  "files": [
+    {
+      "path": "HANDOFF_AMBISONIC_INTEGRATION.md",
+      "bytes": 5583,
+      "sha256": "86d790a11de99cac13161c3b4de040cff75dc37960b2423ab52f789ebb5d7c7a",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "PROJECT.md",
+      "bytes": 12213,
+      "sha256": "56508a82b51ef2ffa28065ac13ddb4c18dfc5b511ff5a068c18e6da71d0544b0",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "TEST_INFRA.md",
+      "bytes": 14795,
+      "sha256": "77550983b5cc50140be29c19af88c8f276931bcf6c9cc457a3708b59b668d2b9",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "TEST_READY.md",
+      "bytes": 7492,
+      "sha256": "59a16673a09685c559952a9e62ccefb9838787c60759ab75551042eb1b664557",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "engine/.DS_Store",
+      "bytes": 6148,
+      "sha256": "565dc97fda8dc55bd525457eb8720410858ce07b4dc5806724d76b885ae7848c",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/examples/audiovisual-choreography.html",
+      "bytes": 22605,
+      "sha256": "67de947bca624d20e0bdb81e2c42c78bd0323a1477b0531e8b641035abf6d4d2",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/examples/audiovisual-choreography.html",
+        "recorded_source_sha256": "67de947bca624d20e0bdb81e2c42c78bd0323a1477b0531e8b641035abf6d4d2",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "1ab503ddc7bd7e40a6ab2c2353fccbc838874ba67aaf947623bf89a40c7b4578",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/examples/spatial-choreography.html",
+      "bytes": 4794,
+      "sha256": "00833cba1bf3c4c8471165611d54c7970dac993379cffe66e6febeb05002c162",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "engine/prototype/bench.template.html",
+      "bytes": 29752,
+      "sha256": "946208d88c5eb4f1e8dace275b672d1a325264c87c7d9a36a512b81214de97df",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/prototype/bench.template.html"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/prototype/bench.template.html"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/prototype/bench.template.html",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/prototype/core.js",
+      "bytes": 3224,
+      "sha256": "4b6135e51869a4d43181eedacb38d51ef7b56b979d334d10291552590b5fb078",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/prototype/core.js"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/prototype/core.js"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/prototype/core.js",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/prototype/software-renderer.js",
+      "bytes": 3465,
+      "sha256": "aed3b729f015a449917735c6fcf263e23556c1c5a62d5a434e3d5783e3a42e73",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/prototype/software-renderer.js"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/prototype/software-renderer.js"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/prototype/software-renderer.js",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/src/.DS_Store",
+      "bytes": 6148,
+      "sha256": "9a30a2f7c4b21b07980035882da3a8b837a2b0a5baf884d87441b21e7effa53f",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/src/choreography/spatial-score.js",
+      "bytes": 11714,
+      "sha256": "4d133ea14884182786f6515f6229d9195a8142fffa92d03a21899336d5699b80",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/src/spatial-score.js",
+        "recorded_source_sha256": "4d133ea14884182786f6515f6229d9195a8142fffa92d03a21899336d5699b80",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "4a324cd5b596686e3957add86a603df163bc088c4c675d75500c1cef4fa3017e",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/src/interaction/adapter.js",
+      "bytes": 16125,
+      "sha256": "980b37d516d6d98a642fce6487d68a2f8c9dd5771598b83c28be89adbe8aae0f",
+      "exact_tracked_matches": {
+        "danse_local": [
+          "interaction/adapter.js"
+        ]
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/src/interaction/orientation-controller.js",
+      "bytes": 28385,
+      "sha256": "b82865a5125a1d2bad33da6fdd54363ad17ae7b4b86975f2d651053f7b763183",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/src/orientation-controller.js",
+        "recorded_source_sha256": "b82865a5125a1d2bad33da6fdd54363ad17ae7b4b86975f2d651053f7b763183",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "344b82f342099437bdc39a255af9c2bc9244f1b797a2f3005e0c26e74c42aeae",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/src/interaction/video-texture.js",
+      "bytes": 7653,
+      "sha256": "9c6564ecf272ef946d72d7cb3634a72fe69fbc8c04b5e5ad55af5a8279dce011",
+      "exact_tracked_matches": {
+        "danse_local": [
+          "interaction/video-texture.js"
+        ]
+      },
+      "shared_engine": {
+        "path": "shared-engine/src/video-texture.js",
+        "recorded_source_sha256": "9c6564ecf272ef946d72d7cb3634a72fe69fbc8c04b5e5ad55af5a8279dce011",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "196d356c2bc49fd0b8068dac7818e5d262526dbb88055e3456b96274d8b16603",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/src/sound/foa.js",
+      "bytes": 24261,
+      "sha256": "44d4675026e47b959eecd6e9283e2e0b74c2a2866ca41fa35b7a5ecdea904c5d",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/src/foa.js",
+        "recorded_source_sha256": "44d4675026e47b959eecd6e9283e2e0b74c2a2866ca41fa35b7a5ecdea904c5d",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "b927f3c3c54da29a11b537a136cc1f82dc401d130b3cd5fea532d9d7426a0d4b",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/src/visual/panoramic.js",
+      "bytes": 12680,
+      "sha256": "2f4a61be8592fce4d2f4e18746a0680edca4f31599dff8880aed2cd7d29f62f8",
+      "exact_tracked_matches": {
+        "danse_local": [
+          "engine/panoramic.js"
+        ]
+      },
+      "shared_engine": {
+        "path": "shared-engine/src/panoramic-projection.js",
+        "recorded_source_sha256": "2f4a61be8592fce4d2f4e18746a0680edca4f31599dff8880aed2cd7d29f62f8",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "2c21b58caad2919dc64933c8246097d0e6f42b2d0f49fd394e669d738ce06027",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/.DS_Store",
+      "bytes": 6148,
+      "sha256": "0c90cd9ad74af753ad1fcfd089031026f3075ce9963dc846694395180e1b0bab",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tests/__pycache__/test_calibration.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 13412,
+      "sha256": "58ea186127f7f5c1cfd46a2cfdd86955fb65415cc04d5f6894a2c2d44429652c",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tests/__pycache__/test_calibration.cpython-314.pyc",
+      "bytes": 13299,
+      "sha256": "d132a641bd3c9332417c78aba86650d8cbf6c545a3557057bddf297985e0c24f",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tests/__pycache__/test_calibration.cpython-315.pyc",
+      "bytes": 13390,
+      "sha256": "cad14e8aa1cc3d4c033dcd738bc805f978cc45f544549a7d74635775df03367d",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tests/browser_smoke.py",
+      "bytes": 5485,
+      "sha256": "14e50b4f305388f20bbf38169689670b2187ceda5caf4920d301ef4bd624946f",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tests/browser_smoke.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tests/browser_smoke.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tests/browser_smoke.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/core.test.cjs",
+      "bytes": 2607,
+      "sha256": "f3bc2df331f90d08a580fbeb4e189d603ace52e2067bb9b15a20c1b9d997ae3b",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tests/core.test.cjs"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tests/core.test.cjs"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tests/core.test.cjs",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/test_calibration.py",
+      "bytes": 5168,
+      "sha256": "dd521f9bcd41d102d032d2979116d1a2bbb008a71a9e3775c5738f7f6311a3a0",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tests/test_calibration.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 2
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/audiovisual-choreography.test.mjs",
+      "bytes": 26750,
+      "sha256": "340c3ea47eae871d45c7ada08117dea030221dc4aaa9448f3b022acce3d51146",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/tests/audiovisual-choreography.test.mjs",
+        "recorded_source_sha256": "340c3ea47eae871d45c7ada08117dea030221dc4aaa9448f3b022acce3d51146",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": false,
+        "tracked_sha256": "abec137155fa91b22f1e984da5c1f348f099bae15bbebc86c48d94e8398e8dd6",
+        "diff_added_lines": 9,
+        "diff_removed_lines": 10
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/foa-challenger.test.mjs",
+      "bytes": 27645,
+      "sha256": "6a325572f94c5748104376dba7e51205e0f10ecb2fae517f76926180771b69cd",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/tests/foa-challenger.test.mjs",
+        "recorded_source_sha256": "6a325572f94c5748104376dba7e51205e0f10ecb2fae517f76926180771b69cd",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "776206d5d87f94b440107de7b5107196658c875878639350337587fdcd1d5655",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/foa.test.mjs",
+      "bytes": 40407,
+      "sha256": "30e311a2a9dc8950f9808befdae8fa7468f83bcb3adae23302ccb75ae868470c",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/tests/foa.test.mjs",
+        "recorded_source_sha256": "30e311a2a9dc8950f9808befdae8fa7468f83bcb3adae23302ccb75ae868470c",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "8acb38790da4db67a7ae87f45245c5b67773b7c4d726ecdf4f99bbb510e9b3ff",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/harness.mjs",
+      "bytes": 32620,
+      "sha256": "89d8c35f8b32454d1b42dde5e32a4de8938a9a2372a5c973c02e6aadb89407aa",
+      "exact_tracked_matches": {
+        "danse_local": [
+          "scripts/tests/harness.mjs"
+        ]
+      },
+      "shared_engine": {
+        "path": "shared-engine/tests/harness.mjs",
+        "recorded_source_sha256": "89d8c35f8b32454d1b42dde5e32a4de8938a9a2372a5c973c02e6aadb89407aa",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "14e94b61831d05f5b287683d09670a3df50d4e451f257b74a08666be78ce40a4",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/orientation-controller.test.mjs",
+      "bytes": 35555,
+      "sha256": "dc9ccac00365507117c95abe17e4cffdabeabcefb4dbbac62c4a149024fec5d1",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/tests/orientation-controller.test.mjs",
+        "recorded_source_sha256": "dc9ccac00365507117c95abe17e4cffdabeabcefb4dbbac62c4a149024fec5d1",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "919eeb52c67c93f901f255de69919c4f3f953f748e6c0f34fae78b7f1d174822",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/panoramic.test.mjs",
+      "bytes": 19857,
+      "sha256": "5817cc434074be60feb4623ed49ed04d2b06dc12a01b2b498f96c1070a896c64",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/tests/panoramic-projection.test.mjs",
+        "recorded_source_sha256": "5817cc434074be60feb4623ed49ed04d2b06dc12a01b2b498f96c1070a896c64",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "0ffe4a5c9e282b8ce1be78760f8626f2727972827612277a882fb7ad41ac0bd1",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/spatial-score-adversarial.test.mjs",
+      "bytes": 19752,
+      "sha256": "75cf3f0aeb7d4fca0538f4a097b79d97617185f81c25c055718b0c1ed89799dc",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/tests/spatial-score-adversarial.test.mjs",
+        "recorded_source_sha256": "75cf3f0aeb7d4fca0538f4a097b79d97617185f81c25c055718b0c1ed89799dc",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "4ca115838db9f8d3be2bea3be0f7d2d6354aa42aadd16df4a0bfc61553e0b599",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/spatial-score-challenger.test.mjs",
+      "bytes": 24850,
+      "sha256": "7f2aa558f1a46577b39174d28dcb9a80ae72133b2c3cf4f57006f7228ec022d0",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/spatial-score-stress-m6.test.mjs",
+      "bytes": 16803,
+      "sha256": "7fbbd19c05b78a8afafe7565b391819fa95ec1768ef07a1a6779c94f1d2112cc",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tests/unit/spatial-score.test.mjs",
+      "bytes": 20431,
+      "sha256": "c5add608a2ec5088caf2b2e98d0cba0df9a80e953802c6d02f039dc5178423a1",
+      "exact_tracked_matches": {},
+      "shared_engine": {
+        "path": "shared-engine/tests/spatial-score.test.mjs",
+        "recorded_source_sha256": "c5add608a2ec5088caf2b2e98d0cba0df9a80e953802c6d02f039dc5178423a1",
+        "matches_import_source": true,
+        "byte_equal": false,
+        "normalized_equal": true,
+        "tracked_sha256": "b9dc74e65f97f9ec422e91c44ace2ad802c7d8d3b1a39145eda099cc23e7e7f8",
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/__pycache__/calibration.cpython-314.pyc",
+      "bytes": 18482,
+      "sha256": "044cd61b51e8aa65b5411bc012f29c9534868be9d2bc604ee6424f12e0bf84d2",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tools/__pycache__/calibration.cpython-315.pyc",
+      "bytes": 18827,
+      "sha256": "1cb4f1424d0183945850748643646799a5f92ef39caa18cd53e55fa3c8185ab5",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tools/__pycache__/probe_sources.cpython-314.pyc",
+      "bytes": 8840,
+      "sha256": "dbf96af3f07d2aedd6a9df15ce7231f0c8bbef34311e7df3a09c03489d695e01",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tools/__pycache__/probe_sources.cpython-315.pyc",
+      "bytes": 8943,
+      "sha256": "3e6d9cd88a6e4d9c4d4befe0c488e3914ac802c6582a0a2e436f7b34b76b4bf7",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "engine/tools/align_audio.py",
+      "bytes": 28898,
+      "sha256": "245e936edbe90af25afaeb22a1926f9c69fe9861ae4b8affa6db0911e0eba38b",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tools/align_audio.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tools/align_audio.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/align_audio.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/audit_ingress.py",
+      "bytes": 3132,
+      "sha256": "6cd872a3d2fb2470539b1f89b54af99958cad6b6bddd9b35337899c684917192",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/audit_ingress.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 1
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/build_bench.py",
+      "bytes": 665,
+      "sha256": "5ad5d2fb8689225bef1eec3020e69440a8922a1e5f9041f6174521c586a9fa5e",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/build_bench.py",
+        "byte_equal": false,
+        "diff_added_lines": 5,
+        "diff_removed_lines": 9
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/build_inventory.py",
+      "bytes": 14933,
+      "sha256": "cbd05256b464fc14004fbeb436cfe9ef2192d5819de0e62a50a2cb19d85ca0db",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/build_inventory.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 2
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/calibration.py",
+      "bytes": 9019,
+      "sha256": "5d00f64852197579470f5d8d8a9c11734afcd7cdf9bcbaa9b4b71d2931550cc4",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tools/calibration.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tools/calibration.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/calibration.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/embed_real_media.py",
+      "bytes": 15107,
+      "sha256": "680437161e86da4ac6918d6cba2f9be8c309beb8c32bf9c06e2c7d30aa22ddb2",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/embed_real_media.py",
+        "byte_equal": false,
+        "diff_added_lines": 9,
+        "diff_removed_lines": 11
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/measure_view_timing.py",
+      "bytes": 10225,
+      "sha256": "0b9d41154f776f3fcb3576da130c2c951e351e411bc00a4c3ce629b2f2d8c7ae",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/measure_view_timing.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 2
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/odf.py",
+      "bytes": 764,
+      "sha256": "7347801fd016e6f41e8c42ff58b9fa2f251e227d5294aed5a3d49f9ecdd9c99d",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tools/odf.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tools/odf.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/odf.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/package_atlas.py",
+      "bytes": 5877,
+      "sha256": "7f3255848ceab7cdc8e7216ae9704cae872634fdc2388179675a1afb9dca4c1a",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/package_atlas.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 2
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/package_audio.py",
+      "bytes": 5323,
+      "sha256": "5500f9271cbab73f1657cc4f4495f4889d8f7c5f2670d683298a60b66079fc50",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/package_audio.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 2
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/package_results.py",
+      "bytes": 18514,
+      "sha256": "0fac405ad786ac5f02b7f956113b9158136050649129bc225289e5c24f5e5848",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/package_results.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 2
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/probe_sources.py",
+      "bytes": 4714,
+      "sha256": "9be6e6bb2959f4370d08fa00b482b7aec4529ff66285eae8b6df8fa3c5b251a5",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tools/probe_sources.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tools/probe_sources.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/probe_sources.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/real_probe.py",
+      "bytes": 1283,
+      "sha256": "a25c14e123b5a9b49113ce9bfe1e3c4dfeda3d30c0c14629fb3a52f9886798f5",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tools/real_probe.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tools/real_probe.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/real_probe.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/update_handoff.py",
+      "bytes": 15356,
+      "sha256": "17018973d686479ebbdeed86800d4b6c132f085acb3cfd76fb4e525ffbbb4fac",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/update_handoff.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 2
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "engine/tools/verify_alignment.py",
+      "bytes": 10465,
+      "sha256": "8d588a7556692b82ff5906fdc380d5ed743abdc2e229efd8c25d0af17dcb7700",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "synchronized-generation-calibration/tools/verify_alignment.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/synchronized-generation-calibration/tools/verify_alignment.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "synchronized-generation-calibration/tools/verify_alignment.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/.DS_Store",
+      "bytes": 6148,
+      "sha256": "06ab0c597d0d5e376d0f398df0148468674f64a5aec8805ed6fcc84d56b9abd6",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/e2e/harness.mjs",
+      "bytes": 19909,
+      "sha256": "e9ae200e7286fa9c5480e8935286923888c7ed3bf4fb6e4011249f48f9d8f8c0",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "tests/e2e/runner.mjs",
+      "bytes": 4384,
+      "sha256": "7a6eacc8ff825efef881af7897f2fa32a3f2640b15531e62d33e8ee75e6ab5a4",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "tests/e2e/tier1-features.test.mjs",
+      "bytes": 20651,
+      "sha256": "68d6fb1efaea7110d0a76cdf6afab90f1e26b813f6101b73ddd0a2583f03d612",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "tests/e2e/tier2-boundaries.test.mjs",
+      "bytes": 8967,
+      "sha256": "04b8a1341ae557110a80df66555c3b1582de5e5f0660b16bf4b5694dd59ee05b",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "tests/e2e/tier3-combinations.test.mjs",
+      "bytes": 9038,
+      "sha256": "aa67a5ac374c586a10819631c3befcb05fd3b05efacac32722c7201270f7a33f",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "tests/e2e/tier4-scenarios.test.mjs",
+      "bytes": 8007,
+      "sha256": "e404bd52a9248e71c706b8840130707663cf03fc48c5724a542979d0574f3156",
+      "exact_tracked_matches": {},
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/__init__.py",
+      "bytes": 72,
+      "sha256": "f81500c305ed52b739e7fbaae056da07135ed3506764cba0be6efc30058171a4",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "tests/e2e/__init__.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/tests/e2e/__init__.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "tests/e2e/__init__.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/__pycache__/__init__.cpython-314.pyc",
+      "bytes": 255,
+      "sha256": "2c6e03c8b5d0a20aed4ef73bb468b6c6c78567cd24dac0646aa50ec84d177c48",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/conftest.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 3626,
+      "sha256": "b09f6c28f68b9dfa16ffeb8a314e82cccfbbcf5fd8ea6ef215700c0e64be2c20",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/test_renderer_backend_parity.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 35756,
+      "sha256": "3940533f40e5f392a65f9451d9b927b94270d9c6b56a19f71b9964f8fc04996c",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/test_tier1_feature_coverage.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 147647,
+      "sha256": "1c0e563dc3b90ae7877fcb9a5ca2432efc06808dd3fbf16164fd8e0de7b78a07",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/test_tier2_boundaries_corners.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 104431,
+      "sha256": "01350dcb6eaeb3a931a8cc5a58732e6c44d5e42cfc5f72bb7ac28787204fdfba",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/test_tier3_cross_feature.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 42478,
+      "sha256": "28701004df11fa8d6af51b67a12dabcedcc39de3d38274158734eb479f2b510e",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/test_tier4_real_world_scenarios.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 53840,
+      "sha256": "dc42ea8a48b41ea1d13cc67a517a254c64340b9573adcf0bc51865b10952b24d",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/test_tier5_audio_zero_reset.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 41501,
+      "sha256": "ec0237cc660a513d1551cfb687be4d4620614746d0204f0d119a1a76f95a4538",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/__pycache__/test_tier6_doc_freshness.cpython-314-pytest-9.1.1.pyc",
+      "bytes": 34651,
+      "sha256": "be9063e1cf1f55d5404981aef177fd12132c37f94c8aa43c0122a9eebd67e504",
+      "exact_tracked_matches": {},
+      "generated_cache": true
+    },
+    {
+      "path": "tests/engine/conftest.py",
+      "bytes": 2234,
+      "sha256": "ad50102797766ccbf9912ae20566d044eb570f08938e863b93532dbf671fd0cc",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "tests/e2e/conftest.py",
+        "byte_equal": false,
+        "diff_added_lines": 123,
+        "diff_removed_lines": 5
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/test_renderer_backend_parity.py",
+      "bytes": 18008,
+      "sha256": "b805535c8e397d94e946a241b723a7e01ce9c666a684fb87b46965f96d478493",
+      "exact_tracked_matches": {
+        "tmb_main": [
+          "tests/e2e/test_renderer_backend_parity.py"
+        ],
+        "recovery": [
+          "corpus/originals/Engine development/time-moment-brief/tests/e2e/test_renderer_backend_parity.py"
+        ]
+      },
+      "tmb_analogue": {
+        "path": "tests/e2e/test_renderer_backend_parity.py",
+        "byte_equal": true,
+        "diff_added_lines": 0,
+        "diff_removed_lines": 0
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/test_tier1_feature_coverage.py",
+      "bytes": 47424,
+      "sha256": "2505599a535f86b43220a5e220f786678e36f446b643695df2761b9db804ee84",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "tests/e2e/test_tier1_feature_coverage.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 3
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/test_tier2_boundaries_corners.py",
+      "bytes": 34637,
+      "sha256": "8be084f046cd82d8a626fc4cb8031e35b0419f744df7bc8bf8e720348f5ab50c",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "tests/e2e/test_tier2_boundaries_corners.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 3
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/test_tier3_cross_feature.py",
+      "bytes": 15996,
+      "sha256": "3c527d05d5005664214db140e0589d806a912319543fc499d7a910fe1d2408fd",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "tests/e2e/test_tier3_cross_feature.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 3
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/test_tier4_real_world_scenarios.py",
+      "bytes": 17900,
+      "sha256": "14e89d54c73820d7828e7b5da5d2f8eb426662e28e1a879ea16b0d3d28484965",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "tests/e2e/test_tier4_real_world_scenarios.py",
+        "byte_equal": false,
+        "diff_added_lines": 2,
+        "diff_removed_lines": 4
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/test_tier5_audio_zero_reset.py",
+      "bytes": 11559,
+      "sha256": "cb44870515ee13aa180629546174c1055914c9ac21b7fb8ead1c84bd25dfd908",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "tests/e2e/test_tier5_audio_zero_reset.py",
+        "byte_equal": false,
+        "diff_added_lines": 11,
+        "diff_removed_lines": 10
+      },
+      "generated_cache": false
+    },
+    {
+      "path": "tests/engine/test_tier6_doc_freshness.py",
+      "bytes": 7753,
+      "sha256": "320ba545c6d00cff93d5d9b60b92d570d2402b8f365afb72f9bae429388ab24c",
+      "exact_tracked_matches": {},
+      "tmb_analogue": {
+        "path": "tests/e2e/test_tier6_doc_freshness.py",
+        "byte_equal": false,
+        "diff_added_lines": 1,
+        "diff_removed_lines": 1
+      },
+      "generated_cache": false
+    }
+  ]
+}
