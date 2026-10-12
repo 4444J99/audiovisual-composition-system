@@ -99,7 +99,10 @@ the initial implementation's full remote CI and package checks passed.
 An intentional missing-browser launch verified the retry path. Its failed attempt
 was retained in a separate file; the corrected executable produced a passed
 canonical receipt without deleting or overwriting the failed evidence. Existing
-passed receipts are immutable.
+passed receipts cannot be replaced by the verifier. The subsequent
+[lifecycle correction](composition-evidence-lifecycle.md) publishes new records
+as independent read-only files and retains timeout failures after bounded cleanup;
+it does not rewrite these historical browser observations.
 
 Naming and structural governance can be enforced by these linters and validators
 after rules are selected. Artwork titles remain independent of stable IDs and

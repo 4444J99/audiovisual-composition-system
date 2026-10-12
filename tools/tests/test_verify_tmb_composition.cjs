@@ -3,8 +3,11 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const crypto=require('node:crypto');
+const os=require('node:os');
+const path=require('node:path');
+const http=require('node:http');
 const {assertAdmission,assertPoses,assertSignal,assertPanEffect,assertResizeContinuity,
-  ADMISSION,ADMISSION_SHA256}=require('../verify_tmb_composition.cjs');
+  runAttempt,ADMISSION,ADMISSION_SHA256}=require('../verify_tmb_composition.cjs');
 
 test('independent admission has its pinned digest',()=>{
   assert.equal(crypto.createHash('sha256').update(fs.readFileSync(ADMISSION)).digest('hex'),ADMISSION_SHA256);
@@ -46,4 +49,85 @@ test('native seeking cannot pass the orientation continuity gate',()=>{
   for (const type of ['source','loadstart','seek-command','seeking','seeked']) {
     assert.throws(()=>assertResizeContinuity([{type}]));
   }
+});
+
+function attemptFixture(t) {
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'composition-attempt-'));
+  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+  const proof={attempt_id:crypto.randomUUID(),status:'failed'};
+  return {root,proof,canonical:path.join(root,'browser-acceptance.json'),
+    attempt:path.join(root,'browser-acceptance-attempts',proof.attempt_id+'.json')};
+}
+
+test('successful receipts are independent read-only files',async t=>{
+  const {root,proof,canonical,attempt}=attemptFixture(t);
+  let cleaned=false;
+  await runAttempt(root,proof,async()=>{proof.status='passed';},async()=>{cleaned=true;});
+  assert(cleaned);
+  assert.equal(fs.readFileSync(canonical,'utf8'),fs.readFileSync(attempt,'utf8'));
+  assert.notEqual(fs.statSync(canonical).ino,fs.statSync(attempt).ino);
+  for (const file of [canonical,attempt]) assert.equal(fs.statSync(file).mode&0o222,0);
+  const historical=fs.readFileSync(attempt,'utf8');
+  fs.chmodSync(canonical,0o644);
+  fs.writeFileSync(canonical,'owner changed canonical');
+  assert.equal(fs.readFileSync(attempt,'utf8'),historical);
+});
+
+test('publication cannot replace an existing canonical receipt',async t=>{
+  const {root,proof,canonical,attempt}=attemptFixture(t);
+  fs.writeFileSync(canonical,'retain existing proof');
+  await assert.rejects(runAttempt(root,proof,async()=>{proof.status='passed';},async()=>{}),{code:'EEXIST'});
+  assert.equal(fs.readFileSync(canonical,'utf8'),'retain existing proof');
+  assert.equal(JSON.parse(fs.readFileSync(attempt)).status,'passed');
+});
+
+test('deadline failure closes resources and retains a read-only failed attempt',async t=>{
+  const {root,proof,canonical,attempt}=attemptFixture(t);
+  const server=http.createServer((req,res)=>res.end('owned test server'));
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  t.after(()=>{server.closeAllConnections();server.close();});
+  let aborted=false,cleaned=false;
+  await assert.rejects(runAttempt(root,proof,signal=>new Promise(()=>{
+    signal.addEventListener('abort',()=>{aborted=true;},{once:true});
+  }),async()=>{
+    await new Promise(resolve=>server.close(resolve));
+    cleaned=true;
+  },{timeoutMs:25,cleanupTimeoutMs:500}),{code:'ETIMEDOUT'});
+  assert(aborted&&cleaned);
+  assert.equal(server.listening,false);
+  const recorded=JSON.parse(fs.readFileSync(attempt));
+  assert.equal(recorded.status,'failed');
+  assert.match(recorded.failure,/exceeded/);
+  assert.equal(fs.statSync(attempt).mode&0o222,0);
+  assert.equal(fs.existsSync(canonical),false);
+});
+
+test('cleanup failures cannot publish passed acceptance',async t=>{
+  const {root,proof,canonical,attempt}=attemptFixture(t);
+  await assert.rejects(runAttempt(root,proof,async()=>{proof.status='passed';},async()=>{
+    throw new Error('browser close failed');
+  }),/browser close failed/);
+  const recorded=JSON.parse(fs.readFileSync(attempt));
+  assert.equal(recorded.status,'failed');
+  assert.match(recorded.cleanup_errors[0],/browser close failed/);
+  assert.equal(fs.existsSync(canonical),false);
+});
+
+test('hung cleanup is bounded and its failure remains recorded',async t=>{
+  const {root,proof,canonical,attempt}=attemptFixture(t);
+  await assert.rejects(runAttempt(root,proof,async()=>{proof.status='passed';},()=>new Promise(()=>{}),
+    {timeoutMs:500,cleanupTimeoutMs:25}),/cleanup exceeded/);
+  const recorded=JSON.parse(fs.readFileSync(attempt));
+  assert.equal(recorded.status,'failed');
+  assert.match(recorded.cleanup_errors[0],/cleanup exceeded/);
+  assert.equal(fs.existsSync(canonical),false);
+});
+
+test('ordinary verification failure retains its cause after cleanup',async t=>{
+  const {root,proof,canonical,attempt}=attemptFixture(t);
+  let cleaned=false;
+  await assert.rejects(runAttempt(root,proof,async()=>{throw new Error('pose mismatch');},async()=>{cleaned=true;}),/pose mismatch/);
+  assert(cleaned);
+  assert.match(JSON.parse(fs.readFileSync(attempt)).failure,/pose mismatch/);
+  assert.equal(fs.existsSync(canonical),false);
 });
