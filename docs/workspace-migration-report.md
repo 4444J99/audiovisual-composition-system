@@ -2,6 +2,11 @@
 
 Observation date: October 10, 2026. Scope: the named local workspace, its direct source repositories and linked worktrees, the 15-project ACE Page catalog, and five resolved source-owner references.
 
+This is the historical 1.0 migration record. [Migration 2.0.0](migrations/2.0.0.md)
+supersedes its `system/` placement and `--workspace ..` invocation. Current checks
+run as `python3 tools/workspace_layout.py check` from the coordination Git root.
+The observations and preservation receipts below retain their original scope.
+
 ## Applied changes
 
 - Established `audiovisual-composition-system` as the solution name; retained the old aggregate name as a compatibility symlink.

@@ -73,9 +73,9 @@ portrait shifts relative to the original sources were effectively zero.
 These are bounded desktop
 observations, not an endurance, loudspeaker, headset or perceptual listening test.
 
-The [edition receipt](../evidence/2026-10-10-tmb-spatial-composition-v3/edition-receipt.json),
-[source admission](../evidence/2026-10-10-tmb-spatial-composition-v3/source-admission.json)
-and [browser observations](../evidence/2026-10-10-tmb-spatial-composition-v3/browser-acceptance.json)
+The [edition receipt](evidence/2026-10-10-tmb-spatial-composition-v3/edition-receipt.json),
+[source admission](evidence/2026-10-10-tmb-spatial-composition-v3/source-admission.json)
+and [browser observations](evidence/2026-10-10-tmb-spatial-composition-v3/browser-acceptance.json)
 are stored in this private coordination repository. No media is committed here.
 
 ## Reproduction and automated governance

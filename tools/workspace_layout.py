@@ -81,6 +81,8 @@ def load_manifest():
             safe_path(target)
     for group in (manifest["repositories"], manifest["components"], manifest["archives"]):
         for item in group:
+            if item.get("version_control", "unversioned") not in ("git", "unversioned"):
+                raise ValueError("Invalid source version_control")
             if item.get("local_path"):
                 safe_path(item["local_path"])
     return manifest
@@ -133,6 +135,8 @@ def rendered_files(manifest):
             body = f"# {name}\n\nGenerated from the solution manifest.\n\n{item['role']}\n\n"
             if item.get("full_name"):
                 body += f"[Repository](https://github.com/{item['full_name']}) · GitHub ID `{item['github_id']}`\n\n"
+            if item.get("version_control"):
+                body += f"Version control: `{item['version_control']}`.\n\n"
             body += ("[Existing local source](local/source).\n" if item.get("local_path")
                      else "Remote source is referenced; no duplicate checkout was created.\n")
             if item.get("authority_state"):
@@ -285,11 +289,28 @@ def check_workspace(manifest, catalog_only=False):
         result = subprocess.run(["git", "-C", str(REPOSITORY), "check-ignore", "--no-index", "--quiet", "--", value], capture_output=True)
         if result.returncode != 0:
             raise ValueError(f"Source is not ignored: {value}")
-    for item in manifest["repositories"]:
-        if item.get("local_path"):
-            path = REPOSITORY / item["local_path"]
-            if (path.exists() or not catalog_only) and not (path / ".git").exists():
-                raise ValueError(f"Repository source lacks .git: {path}")
+    for link, _ in planned_links(manifest):
+        if link.is_relative_to(REPOSITORY):
+            relative = link.relative_to(REPOSITORY).as_posix()
+            result = subprocess.run(["git", "-C", str(REPOSITORY), "check-ignore",
+                                     "--no-index", "--quiet", "--", relative], capture_output=True)
+            if result.returncode != 0:
+                raise ValueError(f"Navigation link is not ignored: {relative}")
+    git_sources = {item["local_path"] for group in ("repositories", "components", "archives")
+                   for item in manifest[group] if item.get("local_path") and
+                   (group == "repositories" or item.get("version_control") == "git")}
+    for value in sorted(git_sources):
+        path = REPOSITORY / value
+        if (path.exists() or not catalog_only) and not (path / ".git").exists():
+            raise ValueError(f"Repository source lacks .git: {path}")
+        if path.exists():
+            git_root = Path(git_output(path, "rev-parse", "--show-toplevel")).resolve()
+            if git_root != path.resolve():
+                raise ValueError(f"Repository source has wrong Git root: {path}")
+            source_store = git_output(path, "rev-parse", "--path-format=absolute", "--git-common-dir")
+            coordination_store = git_output(REPOSITORY, "rev-parse", "--path-format=absolute", "--git-common-dir")
+            if Path(source_store).resolve() == Path(coordination_store).resolve():
+                raise ValueError(f"Repository source shares coordination Git history: {path}")
     tracked = subprocess.check_output(["git", "-C", str(REPOSITORY), "ls-files", "-z"], text=True).split("\0")
     for value in filter(None, tracked):
         if PurePosixPath(value).parts[0] in sources:

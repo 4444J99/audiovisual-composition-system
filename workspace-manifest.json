@@ -73,21 +73,25 @@
     {
       "slug": "god-here",
       "local_path": "god-here",
+      "version_control": "git",
       "role": "Original preservation Git repository; no remote configured"
     },
     {
       "slug": "god-here-sessions",
       "local_path": "Earlier god-here session archive",
+      "version_control": "unversioned",
       "role": "Preserved earlier session archive"
     },
     {
       "slug": "nrcsvs",
       "local_path": "reflect-recur",
+      "version_control": "unversioned",
       "role": "Chat vault, exports and acquisition scripts"
     },
     {
       "slug": "engine-recovery-2026-10-10",
       "local_path": "temporary-work-preservation-2026-10-10",
+      "version_control": "git",
       "role": "Historical recovery snapshot; no remote configured; not active implementation"
     }
   ],

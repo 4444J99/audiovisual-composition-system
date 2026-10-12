@@ -113,9 +113,11 @@ class LayoutSafety(unittest.TestCase):
             (source / "dirty.txt").write_text("preserve me")
             (root / "Archive with spaces").mkdir()
             manifest = {"root_entries": [".git", ".gitignore"], "preserved_root_files": [],
-                        "projects": [], "repositories": [{"local_path": "source"}],
-                        "components": [], "archives": [{"local_path": "Archive with spaces"}]}
+                        "legacy_workspace_alias": "legacy-workspace",
+                        "projects": [], "repositories": [{"key": "source", "local_path": "source"}],
+                        "components": [], "archives": [{"slug": "archive", "local_path": "Archive with spaces"}]}
             with patch.object(layout, "REPOSITORY", root):
+                (root / ".gitignore").write_text("repositories/*/local/\narchives/*/local/\n")
                 generated = layout.rendered_ignore(manifest)
                 (root / ".gitignore").write_text(generated)
                 self.assertEqual(layout.rendered_ignore(manifest), generated)
@@ -154,9 +156,75 @@ class LayoutSafety(unittest.TestCase):
             (root / "link").symlink_to("target")
             subprocess.run(["git", "-C", str(root), "add", "link"], check=True)
             manifest = {"root_entries": [".git", "target", "link"], "preserved_root_files": [],
+                        "legacy_workspace_alias": "legacy-workspace",
                         "projects": [], "repositories": [], "components": [], "archives": []}
             with patch.object(layout, "REPOSITORY", root), self.assertRaisesRegex(ValueError, "symlinked"):
                 layout.check_workspace(manifest)
+
+    def test_git_backed_archives_require_independent_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            archive = root / "archive"
+            subprocess.run(["git", "init", "-q", str(archive)], check=True)
+            manifest = {"root_entries": [".git", ".gitignore"], "preserved_root_files": [],
+                        "legacy_workspace_alias": "legacy-workspace", "projects": [],
+                        "repositories": [], "components": [],
+                        "archives": [{"slug": "archive", "local_path": "archive", "version_control": "git"}]}
+            with patch.object(layout, "REPOSITORY", root):
+                (root / ".gitignore").write_text("archives/*/local/\n")
+                (root / ".gitignore").write_text(layout.rendered_ignore(manifest))
+                for catalog_only in (False, True):
+                    layout.check_workspace(manifest, catalog_only=catalog_only)
+                (archive / ".git").rename(archive / "retained-git")
+                for catalog_only in (False, True):
+                    with self.subTest(catalog_only=catalog_only), self.assertRaisesRegex(ValueError, "lacks .git"):
+                        layout.check_workspace(manifest, catalog_only=catalog_only)
+                # A marker pointing to the containing coordination Git root is not independent history.
+                (archive / ".git").write_text(f"gitdir: {root / '.git'}\n")
+                with self.assertRaisesRegex(ValueError, "coordination Git history"):
+                    layout.check_workspace(manifest)
+
+    def test_navigation_ignores_checked_before_links_exist(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            manifest = {"root_entries": [".git", ".gitignore"], "preserved_root_files": [],
+                        "legacy_workspace_alias": "legacy-workspace",
+                        "projects": [{"slug": "example", "local_bindings": {"source": "source"}}],
+                        "repositories": [{"key": "example", "local_path": "source"}],
+                        "components": [{"slug": "example", "local_path": "source"}],
+                        "archives": [{"slug": "example", "local_path": "source"}]}
+            rules = [f"{group}/*/local/" for group in ("projects", "repositories", "components", "archives")]
+            with patch.object(layout, "REPOSITORY", root):
+                (root / ".gitignore").write_text("\n".join(rules) + "\n")
+                generated = layout.rendered_ignore(manifest)
+                (root / ".gitignore").write_text(generated)
+                layout.check_workspace(manifest, catalog_only=True)
+                for rule in rules:
+                    for edited in (generated.replace(rule + "\n", ""),
+                                   generated.replace("# BEGIN generated sources", "!" + rule + "\n# BEGIN generated sources")):
+                        with self.subTest(rule=rule, edited=edited):
+                            (root / ".gitignore").write_text(edited)
+                            # Regeneration must not hide an unsafe hand-edited prefix.
+                            (root / ".gitignore").write_text(layout.rendered_ignore(manifest))
+                            with self.assertRaisesRegex(ValueError, "Navigation link is not ignored"):
+                                layout.check_workspace(manifest, catalog_only=True)
+
+    def test_catalog_allows_missing_git_archive_but_strict_requires_it(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            manifest = {"root_entries": [".git", ".gitignore"], "preserved_root_files": [],
+                        "legacy_workspace_alias": "legacy-workspace", "projects": [],
+                        "repositories": [], "components": [],
+                        "archives": [{"slug": "archive", "local_path": "archive", "version_control": "git"}]}
+            with patch.object(layout, "REPOSITORY", root):
+                (root / ".gitignore").write_text("archives/*/local/\n")
+                (root / ".gitignore").write_text(layout.rendered_ignore(manifest))
+                layout.check_workspace(manifest, catalog_only=True)
+                with self.assertRaisesRegex(ValueError, "Missing declared source"):
+                    layout.check_workspace(manifest)
 
 
 if __name__ == "__main__":
