@@ -1,0 +1,15 @@
+{
+  "schema": "danse.private-custody-attempt.v1",
+  "run_id": "danse-f440a03eb99144ecb3c3c59a67eb1ef0",
+  "observed_at": "2026-10-12T19:52:49.147401+00:00",
+  "outcome": "checkpoint-incomplete",
+  "copies_verified": 0,
+  "clean_restore_verified": false,
+  "source_preserved": false,
+  "checkout_disposition": "retained",
+  "scope": "one current standalone checkout, complete Git store and working tree",
+  "wall_limit_seconds": 1200,
+  "verification_limit_seconds": 600,
+  "failure_class": "RuntimeError",
+  "elapsed_seconds": 0.144
+}

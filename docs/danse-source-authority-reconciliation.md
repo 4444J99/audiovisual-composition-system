@@ -55,8 +55,11 @@ Although main is four commits ahead of remote main, its three feature commits
 already exist on the advertised feature branch. Only its merge commit remains
 unreachable from the complete advertised private head/tag set.
 
-The current local checkout contains **165 ignored regular files / 934,334,052
-logical bytes**, with zero symlinks or stat errors in this bounded metadata pass.
+The earlier local checkout census recorded **165 ignored regular files / 934,334,052
+logical bytes**, with zero symlinks or stat errors in that bounded metadata pass.
+The subsequent [private custody preflight](danse-private-custody.md) supersedes
+that count with a recursive, changing inventory and records the denied heavy
+acquire. It does not establish completed custody.
 No filenames or private contents are copied into this report. This is a census
 of this checkout's ignored files, not a complete Danse archive census, digest
 inventory, independent copy, or restore proof. `assets/lock.v1.json` is absent.
@@ -82,12 +85,12 @@ Neither can be reused as Danse copy or restore evidence.
    root, then issues a fresh complete private checksum inventory. Include Git
    refs/stashes, ignored material and any required LFS/reflog/unreachable-object
    coverage; advertised-ref checks alone are insufficient.
-3. Under fresh admission and exclusive I/O ownership, use the existing source
-   snapshot/restore tool on disjoint, verified independent media. The snapshot
-   contract's remote-equality predicate currently fails for local main. Reviewed
-   source delivery and preservation of every local-only ref must be resolved
-   first. Historical-ancestor mode applies only to commits already reachable
-   from the chosen remote; it cannot admit the local-only tips recorded here.
+3. Under fresh admission and exclusive I/O ownership, review and use the full-store
+   custody runner described in [the custody checkpoint](danse-private-custody.md).
+   The native HEAD-only snapshot and remote-equality predicate do not cover this
+   preservation scope. The runner preserves the complete standalone Git store
+   and both stash reflog entries without changing source publication parity.
+   The current heavy acquire is denied; no copies or restore are verified.
 4. Verify both copies and a clean restore, publish only the redacted receipt,
    and retain originals. Publication rights, final release, physical acceptance
    and any future reclamation remain separate source-owner decisions.

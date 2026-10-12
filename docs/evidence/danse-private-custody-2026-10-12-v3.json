@@ -1,0 +1,59 @@
+{
+  "schema": "danse.private-custody-attempt.v1",
+  "run_id": "danse-37fe02f6d42b44a79713b8bfe879b4d2",
+  "observed_at": "2026-10-12T19:54:37.418309+00:00",
+  "outcome": "blocked-admission",
+  "copies_verified": 0,
+  "clean_restore_verified": false,
+  "source_preserved": true,
+  "checkout_disposition": "retained",
+  "scope": "one current standalone checkout, complete Git store and working tree",
+  "wall_limit_seconds": 1200,
+  "verification_limit_seconds": 600,
+  "source_head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+  "ref_count": 14,
+  "stash_entry_count": 2,
+  "ignored_file_count": 4256,
+  "ignored_bytes": 1209577527,
+  "total_file_count": 5317,
+  "total_bytes": 1374544418,
+  "native_medium_helper_sha256": "aed197af7e014d6344f079c6fb14bb7777d5c52bb74ee51aaa5aed599bd89d82",
+  "independent_media_sha256": [
+    "360017005c6ca4763540644034acd03f4a09f3fcafbee7cdee9d3336eb8b08a5",
+    "741ed43204f2f1da5dc67f57d099a43475ac3e3e4e0138956ffd6b21dcf1f60f"
+  ],
+  "capacity_and_medium_preflight": true,
+  "admission": {
+    "allowed": false,
+    "inherited": false,
+    "lease": null,
+    "leases": [],
+    "operation": "acquire",
+    "pressure": {
+      "backblaze_cpu_percent": 0.0,
+      "backblaze_rss_bytes": 0,
+      "disk_mib_per_second_samples": [
+        168.09,
+        216.04
+      ],
+      "memory_bytes": 17179869184,
+      "observed_at": "2026-10-12T19:54:44.911326+00:00",
+      "observed_epoch": 1791834884.911326,
+      "sensor_errors": [],
+      "swap_fraction": 0.6076165771228261,
+      "swap_growth_bytes_per_minute": 313289373.72,
+      "swap_used_bytes": 10438773309,
+      "vitals_action": "shed"
+    },
+    "reaped": [],
+    "reasons": [
+      "swap-fraction",
+      "disk-throughput",
+      "vitals-shed"
+    ],
+    "schema": "limen.host_admission_decision.v1"
+  },
+  "failure_class": "RuntimeError",
+  "git_state_preserved": true,
+  "elapsed_seconds": 12.807
+}
