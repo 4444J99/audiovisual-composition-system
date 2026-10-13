@@ -1,7 +1,10 @@
 # Functional identity rollout, 2026-10-13
 
-The migration is implemented in existing owners and submitted as connected draft
-PRs. It is not yet merged or an assertion of media/artistic acceptance.
+The migration is implemented in existing owners and submitted as connected PRs.
+The postproduction companion, PR 59, merged on October 13 at `664a47a`.
+Coordination is reviewed in PR 9; each other implementation retains its own
+review and adoption record. These software changes do not assert media/artistic
+acceptance.
 
 | Public implementation | Review | Applied responsibility boundary |
 | --- | --- | --- |

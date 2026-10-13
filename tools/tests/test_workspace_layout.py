@@ -88,6 +88,24 @@ class LayoutSafety(unittest.TestCase):
                          layout.REPOSITORY)
         self.assertNotIn(layout.REPOSITORY / "projects", links)
 
+    def test_finder_metadata_does_not_hide_undeclared_root_entries(self):
+        root_entries = layout.load_manifest()["root_entries"]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            (root / ".gitignore").write_text(".DS_Store\n")
+            metadata = root / ".DS_Store"
+            metadata.write_bytes(b"Finder metadata")
+            manifest = {"root_entries": root_entries, "preserved_root_files": [],
+                        "legacy_workspace_alias": "legacy-workspace", "projects": [],
+                        "repositories": [], "components": [], "archives": []}
+            with patch.object(layout, "REPOSITORY", root):
+                layout.check_workspace(manifest)
+                self.assertEqual(metadata.read_bytes(), b"Finder metadata")
+                (root / "unexpected").mkdir()
+                with self.assertRaisesRegex(ValueError, "Undeclared.*unexpected"):
+                    layout.check_workspace(manifest)
+
     def test_target_symlink_escape_rejected(self):
         with tempfile.TemporaryDirectory() as directory, tempfile.TemporaryDirectory() as outside:
             root = Path(directory).resolve()

@@ -480,6 +480,7 @@
   "layout": "workspace-root",
   "root_entries": [
     ".git",
+    ".DS_Store",
     ".gitignore",
     ".github",
     ".codex",
