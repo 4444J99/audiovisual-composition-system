@@ -111,6 +111,12 @@
             "workspace-manifest.json"
           ],
           "owner_url": "https://github.com/4444J99/simvltanea/issues/27"
+        },
+        {
+          "paths": [
+            "docs/evidence/native-session-closeout-attempt-2026-10-12.json"
+          ],
+          "owner_url": "https://github.com/4444J99/simvltanea/issues/27"
         }
       ]
     },
@@ -186,5 +192,12 @@
     "sha256": "fe690c7b94e8ef15373b13488ff0c8550c56efdffd115339c56fa0ba1c499754"
   },
   "external_effects": [],
-  "scope_notes": "Retained coordination paths follow the published continuation and solution acceptance owner; no authorship claim or checkout retirement is made. The engine source was consumed read-only. Historical demo serving is stopped; private captures remain retained."
+  "scope_notes": "Retained coordination paths follow the published continuation and solution acceptance owner; no authorship claim or checkout retirement is made. The engine source was consumed read-only. Historical demo serving is stopped; private captures remain retained.",
+  "last_release_attempt": {
+    "evidence": "docs/evidence/native-session-closeout-attempt-2026-10-12.json",
+    "sha256": "c0971891431098b58c68cdd2b88cdc44540ccb9d26b453304ba8208e008f0260",
+    "exit_code": 124,
+    "status": "unmeasured",
+    "owner_url": "https://github.com/4444J99/simvltanea/issues/27"
+  }
 }
