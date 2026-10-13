@@ -1,0 +1,12 @@
+{
+  "schema": "ace.native_closeout_attempt.v1",
+  "session_id": "01a127c7-298f-7312-848c-447f2f4ddd97",
+  "head": "60f6f27a2de6ca8501288ea46a11fcdab5c792ee",
+  "exit_code": 124,
+  "observation": {
+    "status": "unmeasured",
+    "session_released": false,
+    "task_completed": false,
+    "reason": "Installed exact-session predicate exceeded its 150-second closeout attempt deadline."
+  }
+}
