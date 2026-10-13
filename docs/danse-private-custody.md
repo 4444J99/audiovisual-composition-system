@@ -1,5 +1,22 @@
 # Danse private custody checkpoint
 
+## Evening continuation: runtime attribution and destination availability
+
+The [runtime lifecycle owner packet](danse-runtime-lifecycle-owner-packet.md)
+and [redacted receipt](evidence/danse-runtime-lifecycle-2026-10-12.json)
+record the next authorized continuation. A large launch-attribution wrapper CPU
+burst subsided without intervention by this agent. Source state was stable, but
+final host status still denied heavy work at 68.25% swap and `vitals-shed`.
+Neither expected custody volume is currently attached. No source payload was
+hashed, copied or uploaded; copies and restore remain unverified.
+
+A private repository is a viable alternative for one off-device archive copy,
+subject to complete Git/material capture, actual object-size/storage limits,
+remote readback, restore proof and a second independent custody destination.
+The current disk-oriented runner does not implement that alternate route.
+The alternate workflow and destinations remain to be resolved; the current
+published artifacts contain redacted evidence only.
+
 ## Safe pressure-recovery investigation at 20:24–20:26 UTC
 
 The [pressure recovery receipt](evidence/danse-host-pressure-recovery-2026-10-12.json)
