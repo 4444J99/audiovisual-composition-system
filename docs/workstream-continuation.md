@@ -8,13 +8,15 @@ hole-loop retains its stable project and Page IDs and now binds to [timed-text-n
 
 Remaining work:
 
-1. Land the coordination layout PR and stacked evidence/source follow-ups in order after review fixes and scoped verification, as subsequently authorized.
+1. **Resolved:** coordination PRs #2 → #3 → #4 merged as `cdd27d53b635ce70a62b30860b591e25aa91cce8`, `e719f28b9043ebe825b7b493f047b3c455fb5157` and `e5671673cbb33fc7488023825816ce6b94a92e1a`. Main's [hosted verification attempt 2](https://github.com/4444J99/audiovisual-composition-system/actions/runs/38304751447/attempts/2) passed on the final revision; see [the receipt](evidence/hosted-ci-main-2026-10-12.json). This closes the observed merge/hosted-verification blocker for that revision, not source acceptance or custody.
 2. Ingress metadata inventory is complete for both content roots: 347 files / 281,534,336,361 bytes. Execute the [original-media custody plan](../.codex/plans/2026-10-12-ingress-original-media-custody.md) with fresh admission, full hashing, device readback and restore verification before claiming full custody. No deletion is authorized.
 3. Danse authority is resolved to private repository 1320324017; the public personal duplicate is archived. Retain source remotes and placement; independent source custody and portable acceptance remain open.
 4. Resolve remaining local bindings and Page-backed implementation ownership from source evidence.
 5. Keep desktop/browser acceptance distinct from headset/XR, fourth-camera and full archive acceptance. These changes do not claim a new media acceptance run.
 
 All source checkouts, private media and archival filenames are preserved. EES controls remain reviewed draft.
+
+**Public/private follow-up — implementation pending:** “Repositories need to be split into public and private” is the user-directed architectural solution. Retain private coordination/source/archive custody and existing public implementations; keep the archived public Danse duplicate non-authoritative. No split or visibility change is claimed or attributed as the cause of CI recovery. [The closeout](four-step-closeout-2026-10-12.md) lists the remaining source acceptance, unique-candidate admission, whole-source and original-media custody, historical material and device/media gaps. The dated attempts below retain their contemporaneous PR and billing state as historical records.
 
 ## Original-media execution attempt — 2026-10-12 19:24 UTC
 
