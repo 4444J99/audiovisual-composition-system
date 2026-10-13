@@ -1,7 +1,7 @@
 # composition-tests
 
-Generated from the solution manifest.
+Generated public navigation.
 
-Existing cross-workspace tests; historical runtime assumptions retained
+Existing component; no duplicate implementation is created.
 
-[Existing local source](local/source).
+Original source placement, interfaces and independent histories are retained.

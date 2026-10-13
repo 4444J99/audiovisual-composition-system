@@ -1,0 +1,1543 @@
+{
+  "schema_version": "2.1.0",
+  "name": "audiovisual-composition-system",
+  "display_title": "Audiovisual Composition System",
+  "repositories": [
+    {
+      "key": "postproduction",
+      "github_id": 1409689012,
+      "private": false,
+      "directory_slug": "audiovisual-media-postproduction-system",
+      "full_name": "4444J99/audiovisual-media-postproduction-system",
+      "role": "Source-addressed audio processing, spatial compositing, directed revisions, source-unit scheduling and hash-bound native execution. The amp package retains its existing public interfaces.",
+      "software_ref": {
+        "type": "software_system",
+        "id": "audiovisual-media-postproduction-system"
+      }
+    },
+    {
+      "key": "historical-web",
+      "github_id": 924834822,
+      "private": false,
+      "directory_slug": "generative-multimedia-spatial-environment",
+      "full_name": "4444J99/generative-multimedia-spatial-environment",
+      "role": "Compose browser scenes, analyze audio features, mix spatial stems and sequence image-grid frames within existing authored web environments.",
+      "software_ref": {
+        "type": "software_system",
+        "id": "generative-multimedia-spatial-environment"
+      }
+    },
+    {
+      "key": "simvltanea",
+      "github_id": 1364497735,
+      "private": false,
+      "directory_slug": "independent-loop-compositor",
+      "full_name": "4444J99/simvltanea",
+      "role": "Compile independently clocked video-loop compositions with authored orientation layouts, stage browser previews, render audiovisual exports, and adapt authenticated shared playback generations.",
+      "software_ref": {
+        "type": "software_system",
+        "id": "independent-loop-compositor"
+      }
+    },
+    {
+      "key": "time-moment-brief",
+      "github_id": 1408128309,
+      "private": true,
+      "directory_slug": "synchronized-generation-playback",
+      "role": "Restricted implementation; source relationships are withheld."
+    },
+    {
+      "key": "danse-source",
+      "github_id": 1320324017,
+      "private": true,
+      "directory_slug": "deterministic-performance-engine",
+      "role": "Restricted implementation; source relationships are withheld."
+    },
+    {
+      "key": "hole-loop",
+      "github_id": 1409411055,
+      "private": false,
+      "directory_slug": "timed-text-navigation-loop",
+      "full_name": "4444J99/timed-text-navigation-loop",
+      "role": "Schedule configured text encounters and count visible, ready, unpaused exposure; compose this capability with separately authored browser scores.",
+      "software_ref": {
+        "type": "software_system",
+        "id": "timed-text-navigation-loop"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "g-p-6ab7e2663fe881919dae29c328e14d72",
+      "slug": "backwards-up-hill",
+      "title": "backwards-up-hill",
+      "profile": "artwork-record",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7e2663fe881919dae29c328e14d72"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7e5b6ce4c8191991f43045a689276",
+      "slug": "cycles",
+      "title": "cycles",
+      "profile": "source-collection",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6a95f0226b2c81919be2e375b79af8db",
+      "slug": "danse",
+      "title": "Danse Macabre",
+      "profile": "browser-artwork",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6a95f0226b2c81919be2e375b79af8db"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7e4d0d8e881918e8c2395f70fe272",
+      "slug": "etc",
+      "title": "etc",
+      "profile": "artwork-record",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7e4d0d8e881918e8c2395f70fe272"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7e48981d88191ae8b0a658b118c39",
+      "slug": "god-here",
+      "title": "God’s Ears",
+      "profile": "postproduction-artwork",
+      "aliases": [
+        "God's Ears",
+        "god-here"
+      ],
+      "repository_keys": [
+        "postproduction"
+      ],
+      "repository_subpath": "compositions/comp-001",
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7e48981d88191ae8b0a658b118c39"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7e5f7ede88191903fcf8149f1b11e",
+      "slug": "hole-loop",
+      "title": "hole-loop",
+      "profile": "browser-artwork",
+      "aliases": [
+        "timed-text-navigation-loop"
+      ],
+      "repository_keys": [
+        "hole-loop"
+      ],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7e5f7ede88191903fcf8149f1b11e"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7e73ded908191861a61f9f026db4b",
+      "slug": "mavsoleum-a",
+      "title": "mavsoleum-a",
+      "profile": "historical-web-collection",
+      "aliases": [
+        "mausoleum-a",
+        "a-mavs-olevm",
+        "a-mavs-oleum"
+      ],
+      "repository_keys": [
+        "historical-web"
+      ],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7e73ded908191861a61f9f026db4b"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7129c37dc8191b25a14aab7d6eae6",
+      "slug": "noonlight",
+      "title": "noonlight",
+      "profile": "artwork-record",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7129c37dc8191b25a14aab7d6eae6"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab70c12ed348191a2da5c77a9871f93",
+      "slug": "nrcsvs",
+      "title": "NRCSVS",
+      "profile": "research-artwork",
+      "aliases": [
+        "reflect-recur",
+        "Narcissus"
+      ],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab70c12ed348191a2da5c77a9871f93"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7110b24308191adec59e80966f19f",
+      "slug": "nvde",
+      "title": "NVDE",
+      "profile": "artwork-record",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7110b24308191adec59e80966f19f"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7e410fcd881919cf73a5e3e18bc77",
+      "slug": "ogod",
+      "title": "OGOD",
+      "profile": "historical-web-collection",
+      "aliases": [],
+      "repository_keys": [
+        "historical-web"
+      ],
+      "repository_subpath": "ogod",
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7e410fcd881919cf73a5e3e18bc77"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab7e52f536c81919963442321061397",
+      "slug": "passing-thru",
+      "title": "passing-thru",
+      "profile": "artwork-record",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab7e52f536c81919963442321061397"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab710d9b0c08191af651f0b2b4b8c80",
+      "slug": "simvltanea",
+      "title": "SIMVLTANEA",
+      "profile": "packaged-artwork",
+      "aliases": [
+        "TripTicks"
+      ],
+      "repository_keys": [
+        "simvltanea"
+      ],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab710d9b0c08191af651f0b2b4b8c80"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ac31528d2688191a8919259f7ba9820",
+      "slug": "time-moment-brief",
+      "title": "time-moment-brief",
+      "profile": "media-playback",
+      "aliases": [],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    },
+    {
+      "id": "g-p-6ab712825b40819196bb9fbf53d4d446",
+      "slug": "wrvng-v",
+      "title": "wrvng-v",
+      "profile": "artwork-record",
+      "aliases": [
+        "wrung-u"
+      ],
+      "repository_keys": [],
+      "repository_subpath": null,
+      "local_bindings": {},
+      "identity_ref": {
+        "type": "artwork",
+        "id": "art-6ab712825b40819196bb9fbf53d4d446"
+      },
+      "source_state": "metadata-only",
+      "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
+    }
+  ],
+  "components": [
+    {
+      "slug": "spatial-audio",
+      "directory_slug": "spatial-audio",
+      "role": "Existing component; no duplicate implementation is created."
+    },
+    {
+      "slug": "composition-tests",
+      "directory_slug": "composition-tests",
+      "role": "Existing component; no duplicate implementation is created."
+    }
+  ],
+  "archives": [
+    {
+      "slug": "god-here",
+      "directory_slug": "preservation-repository-001",
+      "version_control": "git",
+      "role": "Preserved source; custody details remain in the existing owner."
+    },
+    {
+      "slug": "god-here-sessions",
+      "directory_slug": "session-archive-001",
+      "version_control": "unversioned",
+      "role": "Preserved source; custody details remain in the existing owner."
+    },
+    {
+      "slug": "nrcsvs",
+      "directory_slug": "research-vault-001",
+      "version_control": "unversioned",
+      "role": "Preserved source; custody details remain in the existing owner."
+    },
+    {
+      "slug": "engine-recovery-2026-10-10",
+      "directory_slug": "engine-recovery-2026-10-10",
+      "version_control": "git",
+      "role": "Preserved source; custody details remain in the existing owner."
+    }
+  ],
+  "identity_registry": {
+    "schema_version": "1.0.0",
+    "software_systems": [
+      {
+        "id": "audiovisual-composition-system",
+        "name": "Audiovisual Composition System",
+        "responsibility": "Coordinate stable identities, implementation responsibilities, typed relationships and generated workspace navigation without absorbing source histories.",
+        "type": "software_system",
+        "visibility": "public"
+      },
+      {
+        "id": "audiovisual-media-postproduction-system",
+        "implementation_contract": "ace-manifest.json",
+        "integration_status": "migration-review-pending",
+        "name": "Audiovisual Media Postproduction System",
+        "repository_github_id": 1409689012,
+        "responsibility": "Source-addressed audio processing, spatial compositing, directed revisions, source-unit scheduling and hash-bound native execution. The amp package retains its existing public interfaces.",
+        "type": "software_system",
+        "visibility": "public"
+      },
+      {
+        "id": "independent-loop-compositor",
+        "implementation_contract": "ace-manifest.json",
+        "integration_status": "migration-review-pending",
+        "name": "Independent Loop Compositor",
+        "repository_github_id": 1364497735,
+        "responsibility": "Compile independently clocked video-loop compositions with authored orientation layouts, stage browser previews, render audiovisual exports, and adapt authenticated shared playback generations.",
+        "type": "software_system",
+        "visibility": "public"
+      },
+      {
+        "id": "timed-text-navigation-loop",
+        "implementation_contract": "ace-manifest.json",
+        "integration_status": "migration-review-pending",
+        "name": "Timed Text Navigation Loop",
+        "repository_github_id": 1409411055,
+        "responsibility": "Schedule configured text encounters and count visible, ready, unpaused exposure; compose this capability with separately authored browser scores.",
+        "type": "software_system",
+        "visibility": "public"
+      },
+      {
+        "id": "generative-multimedia-spatial-environment",
+        "implementation_contract": "ace-manifest.json",
+        "integration_status": "migration-review-pending",
+        "name": "Generative Multimedia Spatial Environment",
+        "repository_github_id": 924834822,
+        "responsibility": "Compose browser scenes, analyze audio features, mix spatial stems and sequence image-grid frames within existing authored web environments.",
+        "type": "software_system",
+        "visibility": "public"
+      }
+    ],
+    "capabilities": [
+      {
+        "description": "Resolve explicit composition configuration independently from software identity.",
+        "id": "cap-composition-resolution",
+        "native_id": "composition-resolution",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Create dialogue-processing candidates and expressive audio returns.",
+        "id": "cap-audio-processing",
+        "native_id": "audio-processing",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Apply source-timed effects to authored spatial regions and layers.",
+        "id": "cap-region-compositing",
+        "native_id": "region-compositing",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Associate learned person-mask candidates with authored spatial regions.",
+        "id": "cap-person-segmentation",
+        "native_id": "person-segmentation",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Render source-addressed camera, typography, retiming and attention-score edits.",
+        "id": "cap-directed-revision",
+        "native_id": "directed-revision",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Assemble bounded source-unit schedules with explicit listened-review admission.",
+        "id": "cap-source-unit-scheduling",
+        "native_id": "source-unit-scheduling",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Verify hash-bound inputs and dispatch retained native recipe formats.",
+        "id": "cap-native-execution",
+        "native_id": "native-execution",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Evaluate typed audiovisual effect graphs and controls.",
+        "id": "cap-audiovisual-effects",
+        "native_id": "audiovisual-effects",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Build, refine and stretch room-audio material from source intervals.",
+        "id": "cap-room-audio-processing",
+        "native_id": "room-audio-processing",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Export editable timing and media-comparison handoffs.",
+        "id": "cap-workstation-export",
+        "native_id": "workstation-export",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Validate independent loop identities, clocks, events, and paired authored layouts.",
+        "id": "cap-independent-loop-authoring",
+        "native_id": "independent-loop-authoring",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Compile and stage bounded browser previews without resetting loops on orientation changes.",
+        "id": "cap-independent-loop-preview",
+        "native_id": "independent-loop-preview",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Render loop compositions and explicitly authored audio through FFmpeg.",
+        "id": "cap-independent-loop-rendering",
+        "native_id": "independent-loop-rendering",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Generate synthetic engineering media and composition fixtures.",
+        "id": "cap-synthetic-loop-fixtures",
+        "native_id": "synthetic-loop-fixtures",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Verify and adapt pinned external playback generations without copying or replacing the shared engine.",
+        "id": "cap-shared-playback-adaptation",
+        "native_id": "shared-playback-adaptation",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Configurable encounter transitions, session memory and monotonic eligible-exposure timing without artwork content or DOM dependencies.",
+        "id": "cap-timed-navigation",
+        "native_id": "timed-navigation",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Manage Three.js scene, camera, renderer, postprocessing and adaptive quality lifecycle.",
+        "id": "cap-spatial-scene-composition",
+        "native_id": "spatial-scene-composition",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Analyze frequency bands and beat events for audiovisual reactivity.",
+        "id": "cap-audio-feature-analysis",
+        "native_id": "audio-feature-analysis",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Play and spatially mix configured audio stems with existing legacy defaults and fallback paths.",
+        "id": "cap-stem-playback",
+        "native_id": "stem-playback",
+        "type": "capability",
+        "visibility": "public"
+      },
+      {
+        "description": "Advance image-grid frames using configured order and loop rules.",
+        "id": "cap-frame-sequencing",
+        "native_id": "frame-sequencing",
+        "type": "capability",
+        "visibility": "public"
+      }
+    ],
+    "modules": [
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-composition-resolution"
+          }
+        ],
+        "id": "module-1409689012-composition-resolver",
+        "interfaces": [
+          "amp.composition.resolve_composition",
+          "amp --composition / --project"
+        ],
+        "native_id": "composition-resolver",
+        "path": "amp/composition.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-audio-processing"
+          }
+        ],
+        "id": "module-1409689012-dialogue-processing",
+        "interfaces": [
+          "amp audio",
+          "amp.audio"
+        ],
+        "native_id": "dialogue-processing",
+        "path": "amp/audio.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-region-compositing"
+          }
+        ],
+        "id": "module-1409689012-region-compositor",
+        "interfaces": [
+          "amp.core.validate",
+          "amp.core.composite"
+        ],
+        "native_id": "region-compositor",
+        "path": "amp/core.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-region-compositing"
+          }
+        ],
+        "compatibility_note": "Retains historical defaults; use explicit render interval or review exported filenames. See functional-identities.md.",
+        "id": "module-1409689012-source-timed-renderer",
+        "interfaces": [
+          "amp render",
+          "amp.render.render",
+          "amp.render.remix"
+        ],
+        "native_id": "source-timed-renderer",
+        "path": "amp/render.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-person-segmentation"
+          }
+        ],
+        "id": "module-1409689012-person-mask-segmentation",
+        "interfaces": [
+          "amp.segmentation"
+        ],
+        "native_id": "person-mask-segmentation",
+        "path": "amp/segmentation.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-directed-revision"
+          }
+        ],
+        "id": "module-1409689012-directed-recipe-renderer",
+        "interfaces": [
+          "python -m amp.direction",
+          "amps.direction.v1"
+        ],
+        "native_id": "directed-recipe-renderer",
+        "path": "amp/direction.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-directed-revision"
+          }
+        ],
+        "id": "module-1409689012-directed-revision-renderer",
+        "interfaces": [
+          "amp revision",
+          "amp replay",
+          "amp track"
+        ],
+        "native_id": "directed-revision-renderer",
+        "path": "amp/revision.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-source-unit-scheduling"
+          }
+        ],
+        "id": "module-1409689012-source-unit-scheduler",
+        "interfaces": [
+          "amp generate",
+          "amp.generation.generate_schedule"
+        ],
+        "native_id": "source-unit-scheduler",
+        "path": "amp/generation.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-source-unit-scheduling"
+          }
+        ],
+        "id": "module-1409689012-source-unit-qualification",
+        "interfaces": [
+          "amp qualify",
+          "amp.qualification.audit_qualification"
+        ],
+        "native_id": "source-unit-qualification",
+        "path": "amp/qualification.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-native-execution"
+          }
+        ],
+        "id": "module-1409689012-native-execution-dispatcher",
+        "interfaces": [
+          "amp execute",
+          "amps.execution.v1"
+        ],
+        "native_id": "native-execution-dispatcher",
+        "path": "amp/execution.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-audiovisual-effects"
+          }
+        ],
+        "id": "module-1409689012-audiovisual-effects-workbench",
+        "interfaces": [
+          "fx.rack.v1"
+        ],
+        "native_id": "audiovisual-effects-workbench",
+        "path": "web/fx",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-room-audio-processing"
+          }
+        ],
+        "id": "module-1409689012-room-stretch-renderer",
+        "interfaces": [
+          "amp.roomstretch.v1"
+        ],
+        "native_id": "room-stretch-renderer",
+        "path": "amp/roomstretch.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-workstation-export"
+          }
+        ],
+        "compatibility_note": "Filenames follow composition_id or the existing native project ID; filename_prefix can select an explicit neutral name. Legacy composition retains identical filenames.",
+        "id": "module-1409689012-workstation-handoff",
+        "interfaces": [
+          "amp.workstation.export_workstation"
+        ],
+        "native_id": "workstation-handoff",
+        "path": "amp/workstation.py",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-audio-processing"
+          }
+        ],
+        "description": "Existing source-specific timing or authored events remain compatibility behavior; explicit extraction is required before treating this module as a neutral recipe.",
+        "id": "module-1409689012-authored-foley-study",
+        "interfaces": [
+          "amp.foley"
+        ],
+        "native_id": "authored-foley-study",
+        "path": "amp/foley.py",
+        "reuse_status": "retained-composition-specific-defaults",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-audio-processing"
+          }
+        ],
+        "description": "Existing source-specific timing or authored events remain compatibility behavior; explicit extraction is required before treating this module as a neutral recipe.",
+        "id": "module-1409689012-authored-soundstage-study",
+        "interfaces": [
+          "amp.soundstage"
+        ],
+        "native_id": "authored-soundstage-study",
+        "path": "amp/soundstage.py",
+        "reuse_status": "retained-composition-specific-defaults",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-room-audio-processing"
+          }
+        ],
+        "description": "Existing source-specific timing or authored events remain compatibility behavior; explicit extraction is required before treating this module as a neutral recipe.",
+        "id": "module-1409689012-room-refinement-study",
+        "interfaces": [
+          "amp.roomrefine"
+        ],
+        "native_id": "room-refinement-study",
+        "path": "amp/roomrefine.py",
+        "reuse_status": "retained-composition-specific-defaults",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-room-audio-processing"
+          }
+        ],
+        "description": "Existing source-specific timing or authored events remain compatibility behavior; explicit extraction is required before treating this module as a neutral recipe.",
+        "id": "module-1409689012-room-rack-study",
+        "interfaces": [
+          "amp.roomrack"
+        ],
+        "native_id": "room-rack-study",
+        "path": "amp/roomrack.py",
+        "reuse_status": "retained-composition-specific-defaults",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-room-audio-processing"
+          }
+        ],
+        "description": "Existing source-specific timing or authored events remain compatibility behavior; explicit extraction is required before treating this module as a neutral recipe.",
+        "id": "module-1409689012-roomtone-study",
+        "interfaces": [
+          "amp.roomtone"
+        ],
+        "native_id": "roomtone-study",
+        "path": "amp/roomtone.py",
+        "reuse_status": "retained-composition-specific-defaults",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-independent-loop-authoring"
+          },
+          {
+            "type": "capability",
+            "id": "cap-independent-loop-preview"
+          },
+          {
+            "type": "capability",
+            "id": "cap-independent-loop-rendering"
+          }
+        ],
+        "id": "module-1364497735-functional-public-api",
+        "interfaces": [
+          "python:independent_loop_compositor",
+          "cli:independent-loop-compositor"
+        ],
+        "native_id": "functional-public-api",
+        "path": "src/independent_loop_compositor",
+        "software_ref": {
+          "type": "software_system",
+          "id": "independent-loop-compositor"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-independent-loop-authoring"
+          }
+        ],
+        "id": "module-1364497735-loop-authoring",
+        "interfaces": [
+          "python:simvltanea.authoring"
+        ],
+        "native_id": "loop-authoring",
+        "path": "src/simvltanea/authoring",
+        "software_ref": {
+          "type": "software_system",
+          "id": "independent-loop-compositor"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-independent-loop-preview"
+          },
+          {
+            "type": "capability",
+            "id": "cap-shared-playback-adaptation"
+          }
+        ],
+        "id": "module-1364497735-loop-browser-preview",
+        "interfaces": [
+          "python:simvltanea.browser",
+          "python:independent_loop_compositor.browser"
+        ],
+        "native_id": "loop-browser-preview",
+        "path": "src/simvltanea/browser",
+        "software_ref": {
+          "type": "software_system",
+          "id": "independent-loop-compositor"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-independent-loop-rendering"
+          }
+        ],
+        "id": "module-1364497735-loop-rendering",
+        "interfaces": [
+          "python:simvltanea.rendering",
+          "python:independent_loop_compositor.rendering"
+        ],
+        "native_id": "loop-rendering",
+        "path": "src/simvltanea/rendering",
+        "software_ref": {
+          "type": "software_system",
+          "id": "independent-loop-compositor"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-synthetic-loop-fixtures"
+          }
+        ],
+        "id": "module-1364497735-loop-fixture-generation",
+        "interfaces": [
+          "python:simvltanea.generators"
+        ],
+        "native_id": "loop-fixture-generation",
+        "path": "src/simvltanea/generators",
+        "software_ref": {
+          "type": "software_system",
+          "id": "independent-loop-compositor"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-timed-navigation"
+          }
+        ],
+        "id": "module-1409411055-timed-navigation",
+        "interfaces": [
+          "ACETimedNavigation.Session",
+          "ACETimedNavigation.ExposureClock",
+          "HLEngine (compatibility alias)",
+          "CommonJS require(engine.js)"
+        ],
+        "native_id": "timed-navigation",
+        "path": "experimental/six-encounters/engine.js",
+        "software_ref": {
+          "type": "software_system",
+          "id": "timed-text-navigation-loop"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-spatial-scene-composition"
+          }
+        ],
+        "id": "module-924834822-spatial-scene-compositor",
+        "interfaces": [
+          "SceneManager"
+        ],
+        "native_id": "spatial-scene-compositor",
+        "path": "js/3d/core/SceneManager.js",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-audio-feature-analysis"
+          }
+        ],
+        "id": "module-924834822-frequency-analyzer",
+        "interfaces": [
+          "AudioAnalyzer"
+        ],
+        "native_id": "frequency-analyzer",
+        "path": "js/3d/audio/AudioAnalyzer.js",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-audio-feature-analysis"
+          }
+        ],
+        "id": "module-924834822-beat-detector",
+        "interfaces": [
+          "BeatDetector"
+        ],
+        "native_id": "beat-detector",
+        "path": "js/3d/audio/BeatDetector.js",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-stem-playback"
+          }
+        ],
+        "id": "module-924834822-spatial-stem-player",
+        "interfaces": [
+          "OGODAudioEngine (legacy global; artwork defaults remain)"
+        ],
+        "native_id": "spatial-stem-player",
+        "path": "js/3d/ogod/OGODAudioEngine.js",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "type": "module",
+        "visibility": "public"
+      },
+      {
+        "capability_refs": [
+          {
+            "type": "capability",
+            "id": "cap-frame-sequencing"
+          }
+        ],
+        "id": "module-924834822-image-grid-sequencer",
+        "interfaces": [
+          "OGODFrameSequencer (legacy global; artwork defaults remain)"
+        ],
+        "native_id": "image-grid-sequencer",
+        "path": "js/ogod/OGODFrameSequencer.js",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "type": "module",
+        "visibility": "public"
+      }
+    ],
+    "source_media": [
+      {
+        "content_digest": "sha256:288b42930883f9f9d3b9051571b708884dee806c62cc901342281f651700ea67",
+        "description": "Supplied first-draft script text; date label retained in original filename, chronology unresolved.",
+        "id": "source-1409689012-src-001",
+        "label": "draft-script-text",
+        "native_id": "SRC-001",
+        "provenance": {
+          "original_name": "God‘s Ears (First Draft) May 21 2020.txt",
+          "record_path": "compositions/comp-001/planning-source-manifest.json",
+          "repository_github_id": 1409689012,
+          "source_id": "SRC-001",
+          "status": "existing-public-registration-unchanged"
+        },
+        "type": "source_media",
+        "visibility": "public"
+      },
+      {
+        "content_digest": "sha256:bde1c7e0910941f8ca3bce06e8c2ddb3a31da4335b544fd041d84e97d1060225",
+        "description": "Supplied edited dialogue recording with two principal camera views and mixed stereo audio; original camera tracks are not registered.",
+        "id": "source-1409689012-src-002",
+        "label": "edited-two-view-dialogue-recording",
+        "native_id": "SRC-002",
+        "provenance": {
+          "original_name": "2020 04 26   god's ears   second draft.mp4",
+          "record_path": "compositions/comp-001/planning-source-manifest.json",
+          "repository_github_id": 1409689012,
+          "source_id": "SRC-002",
+          "status": "existing-public-registration-unchanged"
+        },
+        "type": "source_media",
+        "visibility": "public"
+      },
+      {
+        "content_digest": "sha256:d5deb50824888de14e92d2dde9077643dc405c7c1a1e2121848874f38dffd7f4",
+        "description": "Supplied JPEG image used to register the authored spatial field layout.",
+        "id": "source-1409689012-src-003",
+        "label": "annotated-field-layout-image",
+        "native_id": "SRC-003",
+        "provenance": {
+          "original_name": "IMG_6971.jpeg",
+          "record_path": "compositions/comp-001/planning-source-manifest.json",
+          "repository_github_id": 1409689012,
+          "source_id": "SRC-003",
+          "status": "existing-public-registration-unchanged"
+        },
+        "type": "source_media",
+        "visibility": "public"
+      }
+    ],
+    "compositions": [
+      {
+        "artwork_ref": {
+          "type": "artwork",
+          "id": "art-6ab7e48981d88191ae8b0a658b118c39"
+        },
+        "description": "Five-performer spatial score, directed revisions, dialogue qualification and source-unit studies. Existing native project and source fields remain unchanged.",
+        "id": "composition-1409689012-comp-001",
+        "native_id": "comp-001",
+        "path": "compositions/comp-001",
+        "software_ref": {
+          "type": "software_system",
+          "id": "audiovisual-media-postproduction-system"
+        },
+        "source_media_refs": [
+          {
+            "type": "source_media",
+            "id": "source-1409689012-src-001"
+          },
+          {
+            "type": "source_media",
+            "id": "source-1409689012-src-002"
+          },
+          {
+            "type": "source_media",
+            "id": "source-1409689012-src-003"
+          }
+        ],
+        "status": "existing-score-acceptance-unverified",
+        "type": "composition",
+        "visibility": "public"
+      },
+      {
+        "artwork_ref": {
+          "type": "artwork",
+          "id": "art-6ab710d9b0c08191af651f0b2b4b8c80"
+        },
+        "description": "Existing inaugural simultaneous-field composition declaration embedded in the edition registry.",
+        "id": "composition-1364497735-simultaneous-field-inaugural",
+        "json_pointer": "/editions/1/composition",
+        "native_id": "simultaneous-field-inaugural",
+        "path": "editions/registry.json",
+        "software_ref": {
+          "type": "software_system",
+          "id": "independent-loop-compositor"
+        },
+        "source_media_refs": [],
+        "status": "existing-score-acceptance-unverified",
+        "type": "composition",
+        "visibility": "public"
+      },
+      {
+        "artwork_ref": {
+          "type": "artwork",
+          "id": "art-6ab7e5f7ede88191903fcf8149f1b11e"
+        },
+        "id": "composition-1409411055-six-encounter-text-score",
+        "native_id": "six-encounter-text-score",
+        "path": "experimental/six-encounters",
+        "software_ref": {
+          "type": "software_system",
+          "id": "timed-text-navigation-loop"
+        },
+        "source_media_refs": [],
+        "status": "existing-score-acceptance-unverified",
+        "type": "composition",
+        "visibility": "public"
+      },
+      {
+        "artwork_ref": {
+          "type": "artwork",
+          "id": "art-6ab7e73ded908191861a61f9f026db4b"
+        },
+        "id": "composition-924834822-chamber-web-composition",
+        "native_id": "chamber-web-composition",
+        "path": "index.html",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "source_media_refs": [],
+        "status": "existing-score-acceptance-unverified",
+        "type": "composition",
+        "visibility": "public"
+      },
+      {
+        "artwork_ref": {
+          "type": "artwork",
+          "id": "art-6ab7e410fcd881919cf73a5e3e18bc77"
+        },
+        "id": "composition-924834822-image-grid-album-composition",
+        "native_id": "image-grid-album-composition",
+        "path": "OGOD.html",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "source_media_refs": [],
+        "status": "existing-score-acceptance-unverified",
+        "type": "composition",
+        "visibility": "public"
+      },
+      {
+        "artwork_ref": {
+          "type": "artwork",
+          "id": "art-6ab7e410fcd881919cf73a5e3e18bc77"
+        },
+        "id": "composition-924834822-spatial-album-composition",
+        "native_id": "spatial-album-composition",
+        "path": "ogod-3d.html",
+        "software_ref": {
+          "type": "software_system",
+          "id": "generative-multimedia-spatial-environment"
+        },
+        "source_media_refs": [],
+        "status": "existing-score-acceptance-unverified",
+        "type": "composition",
+        "visibility": "public"
+      }
+    ],
+    "artworks": [
+      {
+        "aliases": [],
+        "id": "art-6ab7e2663fe881919dae29c328e14d72",
+        "project_id": "g-p-6ab7e2663fe881919dae29c328e14d72",
+        "publication_status": "unverified",
+        "title": "backwards-up-hill",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [],
+        "id": "art-6a95f0226b2c81919be2e375b79af8db",
+        "project_id": "g-p-6a95f0226b2c81919be2e375b79af8db",
+        "publication_status": "unverified",
+        "title": "Danse Macabre",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [],
+        "id": "art-6ab7e4d0d8e881918e8c2395f70fe272",
+        "project_id": "g-p-6ab7e4d0d8e881918e8c2395f70fe272",
+        "publication_status": "unverified",
+        "title": "etc",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [
+          "God's Ears",
+          "god-here"
+        ],
+        "id": "art-6ab7e48981d88191ae8b0a658b118c39",
+        "project_id": "g-p-6ab7e48981d88191ae8b0a658b118c39",
+        "publication_status": "unverified",
+        "title": "God’s Ears",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [
+          "timed-text-navigation-loop"
+        ],
+        "id": "art-6ab7e5f7ede88191903fcf8149f1b11e",
+        "project_id": "g-p-6ab7e5f7ede88191903fcf8149f1b11e",
+        "publication_status": "unverified",
+        "title": "hole-loop",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [
+          "mausoleum-a",
+          "a-mavs-olevm",
+          "a-mavs-oleum"
+        ],
+        "id": "art-6ab7e73ded908191861a61f9f026db4b",
+        "project_id": "g-p-6ab7e73ded908191861a61f9f026db4b",
+        "publication_status": "unverified",
+        "title": "mavsoleum-a",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [],
+        "id": "art-6ab7129c37dc8191b25a14aab7d6eae6",
+        "project_id": "g-p-6ab7129c37dc8191b25a14aab7d6eae6",
+        "publication_status": "unverified",
+        "title": "noonlight",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [
+          "reflect-recur",
+          "Narcissus"
+        ],
+        "id": "art-6ab70c12ed348191a2da5c77a9871f93",
+        "project_id": "g-p-6ab70c12ed348191a2da5c77a9871f93",
+        "publication_status": "unverified",
+        "title": "NRCSVS",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [],
+        "id": "art-6ab7110b24308191adec59e80966f19f",
+        "project_id": "g-p-6ab7110b24308191adec59e80966f19f",
+        "publication_status": "unverified",
+        "title": "NVDE",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [],
+        "id": "art-6ab7e410fcd881919cf73a5e3e18bc77",
+        "project_id": "g-p-6ab7e410fcd881919cf73a5e3e18bc77",
+        "publication_status": "unverified",
+        "title": "OGOD",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [],
+        "id": "art-6ab7e52f536c81919963442321061397",
+        "project_id": "g-p-6ab7e52f536c81919963442321061397",
+        "publication_status": "unverified",
+        "title": "passing-thru",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [
+          "TripTicks"
+        ],
+        "id": "art-6ab710d9b0c08191af651f0b2b4b8c80",
+        "project_id": "g-p-6ab710d9b0c08191af651f0b2b4b8c80",
+        "publication_status": "unverified",
+        "title": "SIMVLTANEA",
+        "type": "artwork",
+        "visibility": "public"
+      },
+      {
+        "aliases": [
+          "wrung-u"
+        ],
+        "id": "art-6ab712825b40819196bb9fbf53d4d446",
+        "project_id": "g-p-6ab712825b40819196bb9fbf53d4d446",
+        "publication_status": "unverified",
+        "title": "wrvng-v",
+        "type": "artwork",
+        "visibility": "public"
+      }
+    ],
+    "editions": [
+      {
+        "artwork_ref": {
+          "type": "artwork",
+          "id": "art-6ab710d9b0c08191af651f0b2b4b8c80"
+        },
+        "composition_ref": {
+          "type": "composition",
+          "id": "composition-1364497735-simultaneous-field-inaugural"
+        },
+        "id": "edition-1364497735-simvltanea-inaugural",
+        "json_pointer": "/editions/1",
+        "native_id": "simvltanea-inaugural",
+        "path": "editions/registry.json",
+        "provenance": {
+          "record_path": "editions/registry.json",
+          "repository_github_id": 1364497735,
+          "status": "existing-edition-declaration-publication-unverified"
+        },
+        "publication_status": "unverified",
+        "type": "edition",
+        "visibility": "public"
+      }
+    ],
+    "archives": [
+      {
+        "description": "Retained preservation source; original filenames, custody and history remain authoritative.",
+        "id": "archive-preservation-repository-001",
+        "legacy_slug": "god-here",
+        "type": "archive",
+        "visibility": "public"
+      },
+      {
+        "description": "Retained preservation source; original filenames, custody and history remain authoritative.",
+        "id": "archive-session-archive-001",
+        "legacy_slug": "god-here-sessions",
+        "type": "archive",
+        "visibility": "public"
+      },
+      {
+        "description": "Retained preservation source; original filenames, custody and history remain authoritative.",
+        "id": "archive-research-vault-001",
+        "legacy_slug": "nrcsvs",
+        "type": "archive",
+        "visibility": "public"
+      },
+      {
+        "description": "Retained preservation source; original filenames, custody and history remain authoritative.",
+        "id": "archive-engine-recovery-2026-10-10",
+        "legacy_slug": "engine-recovery-2026-10-10",
+        "type": "archive",
+        "visibility": "public"
+      }
+    ]
+  }
+}

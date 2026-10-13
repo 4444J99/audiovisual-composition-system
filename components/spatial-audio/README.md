@@ -1,7 +1,7 @@
 # spatial-audio
 
-Generated from the solution manifest.
+Generated public navigation.
 
-Preserved unversioned spatial-audio/choreography candidate workspace; tracked shared-engine authority is time-moment-brief/shared-engine
+Existing component; no duplicate implementation is created.
 
-[Existing local source](local/source).
+Original source placement, interfaces and independent histories are retained.

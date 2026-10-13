@@ -1,9 +1,5 @@
-# historical-web
+# Compatibility navigation
 
-Generated from the solution manifest.
+[Canonical functional record](../generative-multimedia-spatial-environment/README.md).
 
-Historical website source; mavsoleum-a and OGOD share this owner
-
-[Repository](https://github.com/4444J99/generative-multimedia-spatial-environment) · GitHub ID `924834822`
-
-Remote source is referenced; no duplicate checkout was created.
+Legacy key `historical-web` is retained for existing consumers. No source media or repository history moved.

@@ -4,15 +4,15 @@
 
 Use **Audiovisual Composition System** for the whole solution and `audiovisual-composition-system` for its existing workspace. Retain **ACE** and `audiovisual-composition-engine` as historical discovery aliases. “Engine” means a reusable runtime responsibility, not the umbrella of artwork, archives, research, custody and delivery.
 
-Keep a small **private coordination repository** at the workspace root. It owns this design, project membership and generated navigation. Existing ignored source repositories retain independent histories at their original paths. See [migration 2.0.0](migrations/2.0.0.md).
+Keep a small coordination repository at the workspace root. Authenticated metadata verified 2026-10-13 reports it **public**; the earlier private description was incorrect. The [2.1.0 functional identity contract](naming-responsibility-contract.md) governs current names and publication boundaries. It owns this design, project membership and generated navigation. Existing ignored source repositories retain independent histories at their original paths. See [migration 2.0.0](migrations/2.0.0.md).
 
 This applies EES's classify-before-naming, stable-identity, smallest-justified-boundary and one-authoritative-source principles to ACE. EES's relevant controls remain reviewed draft. This task establishes a specific directory contract, not EES certification or audiovisual acceptance.
 
 ## Directory view applied now
 
 ```text
-audiovisual-composition-system/       private coordination Git root
-├── workspace-manifest.json          schema 2.0.0, membership and binding authority
+audiovisual-composition-system/       public coordination Git root
+├── workspace-manifest.json          schema 2.1.0, membership and typed identity authority
 ├── AGENTS.md, README.md, .gitignore
 ├── docs/                            catalog, architecture, evidence, sources, migrations
 ├── tools/                           generator, composition verifier, owned tests/
@@ -34,9 +34,9 @@ These are consolidated views of existing authorities. They do not duplicate the 
 
 The physical workspace authority remains Portvs's `governance/workspace-manifest.yaml`. That manifest declares the shelf and runtime topology but had no ACE-specific bindings in this inspection. This solution manifest declares ACE membership, not estate-wide placement. A later physical move must be reconciled with that existing owner.
 
-## All project names
+## Preserved artwork and project aliases
 
-The canonical project directories are:
+The legacy project navigation directories below remain compatibility records. Functional software identities and canonical directory views are generated from the typed registry; an artwork alias does not name a reusable engine.
 
 ```text
 backwards-up-hill/  cycles/        danse/          etc/
@@ -63,7 +63,7 @@ Stable project IDs reuse the original ChatGPT project IDs. Existing native IDs, 
 
 | Responsibility | Existing or new owner | Decision |
 | --- | --- | --- |
-| System composition, membership, naming and migration | Private audiovisual-composition-system repository at workspace root | Justified shared coordination responsibility; small metadata and documentation only |
+| System composition, membership, naming and migration | audiovisual-composition-system repository at workspace root (public) | Justified shared coordination responsibility; small metadata and documentation only |
 | Offline audiovisual postproduction and God’s Ears studies | 4444J99/audiovisual-media-postproduction-system | Reuse Python amp primitives and projects/god-here; keep this separate from local archival custody |
 | Historical multimedia website, mavsoleum-a and OGOD sources | 4444J99/generative-multimedia-spatial-environment | Reuse existing source history; OGOD is an ogod/ collection in it |
 | Simultaneous independent video-loop artwork | 4444J99/simvltanea | Keep its existing package, rendering, browser, edition and archive layout |
@@ -110,7 +110,7 @@ Project-controlled directory names use lowercase ASCII words with single ordinar
 
 Living authored documents use `subject-document-type.ext`, such as `directory-architecture.md` and `workspace-migration-report.md`. Chronological evidence records carry their actual event date. Lifecycle, ownership and verification state belong in metadata, not names such as final, latest, temp or new.
 
-Native names such as README.md, AGENTS.md, pyproject.toml, Python underscores, existing package names, hashes, media source names and original archival titles are deliberate exceptions. This is not a blanket rename of imported material.
+Native names such as README.md, AGENTS.md, pyproject.toml, Python underscores, compatibility package names, hashes, media source names and original archival titles are deliberate exceptions. New reusable entrypoints use functional names while retained native names are explicit compatibility interfaces. This is not a blanket rename of imported material.
 
 Aliases are discovery and compatibility surfaces. They may not reclassify unrelated things as one work, silently collapse distinct repositories, or weaken handling restrictions.
 

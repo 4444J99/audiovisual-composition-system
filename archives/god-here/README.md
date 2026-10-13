@@ -1,9 +1,5 @@
-# god-here
+# Compatibility navigation
 
-Generated from the solution manifest.
+[Canonical functional record](../preservation-repository-001/README.md).
 
-Original preservation Git repository; no remote configured
-
-Version control: `git`.
-
-[Existing local source](local/source).
+Legacy key `god-here` is retained for existing consumers. No source media or repository history moved.
