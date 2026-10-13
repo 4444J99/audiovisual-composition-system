@@ -65,6 +65,10 @@ matches this build.
 
 ## Remaining composition work
 
+The [Site carryover record](god-here-touchdesigner-carryover-2026-10-13.md)
+tracks the larger creative system and the newly observed published version 24.
+The five performer fields below are one part of that scope.
+
 This stage is the verified source basis for the native composition. It does
 not implement the five performer treatments, source-synchronous masks,
 micro/meso/macro containers, edition routing or generative instrument.
