@@ -1,9 +1,5 @@
-# god-here-sessions
+# Compatibility navigation
 
-Generated from the solution manifest.
+[Canonical functional record](../session-archive-001/README.md).
 
-Preserved earlier session archive
-
-Version control: `unversioned`.
-
-[Existing local source](local/source).
+Legacy key `god-here-sessions` is retained for existing consumers. No source media or repository history moved.

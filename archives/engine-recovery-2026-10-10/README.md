@@ -1,9 +1,7 @@
 # engine-recovery-2026-10-10
 
-Generated from the solution manifest.
+Generated public navigation.
 
-Historical recovery snapshot; no remote configured; not active implementation
+Preserved source; custody details remain in the existing owner.
 
-Version control: `git`.
-
-[Existing local source](local/source).
+Original source placement, interfaces and independent histories are retained.

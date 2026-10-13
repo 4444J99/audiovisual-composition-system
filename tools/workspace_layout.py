@@ -10,6 +10,10 @@ import subprocess
 import sys
 import tempfile
 
+# Also support importlib-based safety tests loading this file directly.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from identity_contract import public_catalog, validate_manifest
+
 
 REPOSITORY = Path(__file__).resolve().parents[1]
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
@@ -33,7 +37,7 @@ def load_manifest():
 
     manifest = json.loads((REPOSITORY / "workspace-manifest.json").read_text(),
                           object_pairs_hook=unique_pairs)
-    if manifest["schema_version"] != "2.0.0" or manifest.get("layout") != "workspace-root":
+    if manifest["schema_version"] != "2.1.0" or manifest.get("layout") != "workspace-root":
         raise ValueError("Unsupported manifest contract")
     for entry in manifest["root_entries"] + manifest["preserved_root_files"]:
         if len(safe_path(entry).parts) != 1:
@@ -85,71 +89,102 @@ def load_manifest():
                 raise ValueError("Invalid source version_control")
             if item.get("local_path"):
                 safe_path(item["local_path"])
+    validate_manifest(manifest)
     return manifest
 
 
 def rendered_files(manifest):
+    """Generate only the conservative public projection; local bindings stay ignored."""
+    catalog = public_catalog(manifest)
     files = {}
+    repos = {repo["key"]: repo for repo in catalog["repositories"]}
+    registry = catalog["identity_registry"]
+    entities = {item["id"]: item for group, items in registry.items()
+                if isinstance(items, list) for item in items}
     rows = []
-    repos = {repo["key"]: repo for repo in manifest["repositories"]}
-    for project in manifest["projects"]:
+    for project in catalog["projects"]:
         slug = project["slug"]
-        source_links = []
+        identity = project.get("identity_ref")
+        canonical = f"artworks/{identity['id']}" if identity and identity["type"] == "artwork" else f"projects/{slug}"
+        links = []
         for key in project["repository_keys"]:
             repo = repos[key]
             url = "https://github.com/" + repo["full_name"]
-            if project["repository_subpath"]:
-                url += "/tree/main/" + project["repository_subpath"]
-            source_links.append(f"[{repo['full_name']}]({url})")
-        local = [f"[{name}](local/{name})" for name in project["local_bindings"]]
-        files[f"projects/{slug}/README.md"] = (
-            f"# {project['title']}\n\n"
-            "Generated from `workspace-manifest.json`; update that record and rerender.\n\n"
-            f"{project['decision']}\n\n"
-            f"- Stable source identity: `{project['id']}`\n"
-            f"- Canonical project slug: `{slug}`\n"
-            f"- Profile: `{project['profile']}`\n"
-            f"- Observed source state: `{project['source_state']}`\n"
-            f"- Aliases: {', '.join(project['aliases']) or 'none recorded'}\n"
-            f"- [Project Page]({project['page_url']})\n"
-            f"- [Original ChatGPT project](https://chatgpt.com/g/{project['id']}/project)\n"
-            f"- Implementation: {'; '.join(source_links) or 'not resolved in the bounded inventory'}\n"
-            f"- Local navigation: {', '.join(local) or 'no local binding; use the source Page'}\n\n"
-            "Local links are generated, ignored navigation only. The linked source retains "
-            "its Git history, handling restrictions and authoritative metadata.\n"
-        )
-        rows.append(f"| [{slug}](../projects/{slug}/README.md) | {project['profile']} | "
-                    f"{'; '.join(source_links) or 'Page record'} | "
-                    f"{', '.join(project['local_bindings'].values()) or 'unresolved locally'} |")
+            links.append(f"[{repo.get('directory_slug', key)}]({url})")
+        body = (f"# {project['title']}\n\n"
+                "Generated from the public identity catalog.\n\n"
+                f"- Stable project ID: `{project['id']}`\n"
+                f"- Legacy project alias: `{slug}`\n"
+                f"- Record profile: `{project['profile']}`\n"
+                f"- Public implementation: {'; '.join(links) or 'not disclosed or not resolved'}\n")
+        if identity and identity["type"] == "artwork":
+            body += (f"- Artwork ID: `{identity['id']}`\n"
+                     f"- Publication status: `{entities[identity['id']]['publication_status']}`\n\n"
+                     "Artistic titles identify works. Reusable software uses its own functional identity.\n")
+            files[f"{canonical}/README.md"] = body
+            files[f"projects/{slug}/README.md"] = (
+                f"# {project['title']}\n\nLegacy project navigation, retained for compatibility.\n\n"
+                f"[Canonical artwork record](../../{canonical}/README.md) · "
+                f"Stable project ID `{project['id']}`.\n\n"
+                "This alias is not a software module or a source-media identifier.\n")
+        else:
+            files[f"projects/{slug}/README.md"] = body + "\nThis membership record is not asserted to be an artwork.\n"
+        rows.append(f"| [{project['title']}](../{canonical}/README.md) | `{project['id']}` | "
+                    f"{project['profile']} | {'; '.join(links) or 'not disclosed or unresolved'} |")
     files["docs/project-catalog.md"] = (
-        "# ACE project catalog\n\n"
-        "Generated from the solution manifest. The source directory's 16 rows represent "
-        "15 distinct project IDs; its repeated god-here row is one record. "
-        "An unresolved local binding is not evidence that no source exists elsewhere.\n\n"
-        "| Project | Profile | Implementation owner | Current local source |\n"
-        "| --- | --- | --- | --- |\n" + "\n".join(rows) + "\n"
-    )
+        "# ACE project catalog\n\nGenerated public projection of 15 stable project records. "
+        "Artistic titles and legacy project aliases identify works and membership records. "
+        "Private source relationships, Page links and workstation bindings are excluded. "
+        "Unverified publication status does not assert release acceptance.\n\n"
+        "| Work or project | Stable project ID | Record profile | Public implementation |\n"
+        "| --- | --- | --- | --- |\n" + "\n".join(rows) + "\n")
     for group, keyfield in (("repositories", "key"), ("components", "slug"), ("archives", "slug")):
-        for item in manifest[group]:
-            name = item[keyfield]
-            body = f"# {name}\n\nGenerated from the solution manifest.\n\n{item['role']}\n\n"
+        for item in catalog[group]:
+            legacy = item[keyfield]
+            canonical = item.get("directory_slug", legacy)
+            body = f"# {canonical}\n\nGenerated public navigation.\n\n{item['role']}\n\n"
             if item.get("full_name"):
-                body += f"[Repository](https://github.com/{item['full_name']}) · GitHub ID `{item['github_id']}`\n\n"
-            if item.get("version_control"):
-                body += f"Version control: `{item['version_control']}`.\n\n"
-            body += ("[Existing local source](local/source).\n" if item.get("local_path")
-                     else "Remote source is referenced; no duplicate checkout was created.\n")
-            if item.get("authority_state"):
-                body += "\n" + item["authority_state"] + ".\n"
-            files[f"{group}/{name}/README.md"] = body
+                body += f"[Repository](https://github.com/{item['full_name']}) · Stable GitHub ID `{item['github_id']}`.\n\n"
+            if item.get("software_ref"):
+                body += f"Software identity: `{item['software_ref']['id']}`.\n\n"
+            body += "Original source placement, interfaces and independent histories are retained.\n"
+            files[f"{group}/{canonical}/README.md"] = body
+            if canonical != legacy:
+                files[f"{group}/{legacy}/README.md"] = (
+                    f"# Compatibility navigation\n\n"
+                    f"[Canonical functional record](../{canonical}/README.md).\n\n"
+                    f"Legacy key `{legacy}` is retained for existing consumers. "
+                    "No source media or repository history moved.\n")
+    software_rows = []
+    for software in registry["software_systems"]:
+        software_rows.append(f"| `{software['id']}` | {software['responsibility']} |")
+    module_rows = []
+    for module in registry["modules"]:
+        capabilities = ", ".join(f"`{ref['id']}`" for ref in module["capability_refs"])
+        module_rows.append(f"| `{module['software_ref']['id']}` | `{module['native_id']}` | "
+                           f"`{module['path']}` | {capabilities} | "
+                           f"{module.get('reuse_status', 'interfaces-preserved')} |")
+    files["docs/software-catalog.md"] = (
+        "# ACE software and capability catalog\n\nGenerated from public identity records. "
+        "Implementation paths and interfaces remain owned by their repositories. Migration "
+        "contracts are review-pending until their implementation branches are merged; "
+        "this catalog does not assert deployment or media acceptance. Private implementation "
+        "details remain in their private owners.\n\n"
+        "| Software system | Processing responsibility |\n| --- | --- |\n" +
+        "\n".join(software_rows) + "\n\n"
+        "| Software owner | Module | Existing or compatibility path | Capabilities | Reuse status |\n"
+        "| --- | --- | --- | --- | --- |\n" + "\n".join(module_rows) + "\n")
+    files["docs/public-catalog.json"] = json.dumps(catalog, indent=2, ensure_ascii=False) + "\n"
     folders = [{"name": "Workspace", "path": "."}]
     folders += [{"name": group.title(), "path": group}
-                for group in ("projects", "repositories", "components", "archives")]
+                for group in ("artworks", "projects", "repositories", "components", "archives")]
     files["audiovisual-composition-system.code-workspace"] = json.dumps({
         "folders": folders,
         "settings": {"search.followSymlinks": False, "files.watcherExclude": {
             "**/local/**": True}, "git.autoRepositoryDetection": "openEditors"}
     }, indent=2) + "\n"
+    # Existing ignore rules preserve custody of already-declared workstation
+    # sources. They are not part of the portable public JSON/catalog projection.
     files[".gitignore"] = rendered_ignore(manifest)
     return files
 
@@ -164,8 +199,10 @@ def planned_links(manifest):
     for group, keyfield in (("repositories", "key"), ("components", "slug"), ("archives", "slug")):
         for item in manifest[group]:
             if item.get("local_path"):
-                links.append((REPOSITORY / group / item[keyfield] / "local/source",
-                              workspace / str(safe_path(item["local_path"]))))
+                names = {item[keyfield], item.get("directory_slug", item[keyfield])}
+                for name in sorted(names):
+                    links.append((REPOSITORY / group / name / "local/source",
+                                  workspace / str(safe_path(item["local_path"]))))
     return links
 
 

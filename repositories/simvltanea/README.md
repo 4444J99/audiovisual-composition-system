@@ -1,9 +1,5 @@
-# simvltanea
+# Compatibility navigation
 
-Generated from the solution manifest.
+[Canonical functional record](../independent-loop-compositor/README.md).
 
-Simultaneous independent-loop artwork
-
-[Repository](https://github.com/4444J99/simvltanea) · GitHub ID `1364497735`
-
-[Existing local source](local/source).
+Legacy key `simvltanea` is retained for existing consumers. No source media or repository history moved.

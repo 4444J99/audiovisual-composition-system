@@ -22,6 +22,10 @@ jobs:
           node-version: '22'
       - name: Verify manifest and generated directory records
         run: python3 tools/workspace_layout.py check --catalog-only
+      - name: Verify live coordination identity and visibility
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/verify_repository_access.py --github
       - name: Verify preservation and naming rules
         run: python3 -m unittest discover -s tools/tests -v
       - name: Verify composition acceptance guards

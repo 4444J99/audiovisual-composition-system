@@ -1,9 +1,5 @@
-# nrcsvs
+# Compatibility navigation
 
-Generated from the solution manifest.
+[Canonical functional record](../research-vault-001/README.md).
 
-Chat vault, exports and acquisition scripts
-
-Version control: `unversioned`.
-
-[Existing local source](local/source).
+Legacy key `nrcsvs` is retained for existing consumers. No source media or repository history moved.

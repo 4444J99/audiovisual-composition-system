@@ -5,6 +5,10 @@
       "path": "."
     },
     {
+      "name": "Artworks",
+      "path": "artworks"
+    },
+    {
       "name": "Projects",
       "path": "projects"
     },
