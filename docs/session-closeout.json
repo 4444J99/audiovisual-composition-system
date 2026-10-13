@@ -1,0 +1,190 @@
+{
+  "schema": "limen.session_closeout.v2",
+  "session_id": "01a127c7-298f-7312-848c-447f2f4ddd97",
+  "session_root_path_sha256": "d26c6a801d554078ae396dccb5c5a5507a6f7e62ca58e0a722f70bd5e4b0200f",
+  "receipt_root_id": "coordination",
+  "owner_url": "https://github.com/4444J99/simvltanea/issues/27",
+  "disposition": "handoff",
+  "scope_roots": [
+    {
+      "id": "coordination",
+      "kind": "git",
+      "path_sha256": "d26c6a801d554078ae396dccb5c5a5507a6f7e62ca58e0a722f70bd5e4b0200f",
+      "repository": "4444J99/audiovisual-composition-system",
+      "repository_id": 1413700288,
+      "base_head": "5be8ca59b5ebc12faca41348ceb075f6a37bdb1d",
+      "publication_branch": "codex/session-closeout-20261012",
+      "owned_paths": [
+        "tools/workspace_layout.py",
+        "tools/verify_tmb_composition.cjs",
+        "tools/tests/test_workspace_layout.py",
+        "tools/tests/test_verify_tmb_composition.cjs",
+        ".codex/plans/2026-10-12-native-session-closeout.md",
+        "docs/native-session-closeout-2026-10-12.md"
+      ],
+      "retained_work": [
+        {
+          "paths": [
+            ".codex/plans/2026-10-10-tmb-spatial-integration-v2.md",
+            ".codex/plans/2026-10-10-tmb-spatial-integration.md",
+            ".codex/plans/2026-10-12-audit-preservation-pr.md",
+            ".codex/plans/2026-10-12-closeout-hosted-ci.md",
+            ".codex/plans/2026-10-12-danse-private-custody-v2.md",
+            ".codex/plans/2026-10-12-danse-private-custody.md",
+            ".codex/plans/2026-10-12-danse-source-authority.md",
+            ".codex/plans/2026-10-12-independent-key-escrow.md",
+            ".codex/plans/2026-10-12-ingress-original-media-custody-v2.md",
+            ".codex/plans/2026-10-12-ingress-original-media-custody.md",
+            ".codex/plans/2026-10-12-land-layout-stack.md",
+            ".codex/plans/2026-10-12-private-unversioned-backup.md",
+            ".codex/plans/2026-10-12-reconcile-layout-pr.md",
+            ".codex/plans/2026-10-12-root-to-leaf-continuation.md",
+            ".codex/plans/2026-10-12-source-remote-publication.md",
+            ".codex/plans/2026-10-12-teamwork-archive.md",
+            ".codex/plans/2026-10-12-unversioned-ownership-audit.md",
+            ".codex/plans/2026-10-12-workspace-layout-2.md",
+            ".github/workflows/verify.yml",
+            ".gitignore",
+            "AGENTS.md",
+            "README.md",
+            "archives/engine-recovery-2026-10-10/README.md",
+            "archives/god-here-sessions/README.md",
+            "archives/god-here/README.md",
+            "archives/nrcsvs/README.md",
+            "components/spatial-audio/README.md",
+            "docs/composition-evidence-lifecycle.md",
+            "docs/danse-private-custody.md",
+            "docs/danse-source-authority-reconciliation.md",
+            "docs/directory-architecture.md",
+            "docs/evidence/2026-10-10-tmb-spatial-composition-v3/VERIFIER.md",
+            "docs/evidence/2026-10-10-tmb-spatial-composition-v3/browser-acceptance.json",
+            "docs/evidence/2026-10-10-tmb-spatial-composition-v3/edition-receipt.json",
+            "docs/evidence/2026-10-10-tmb-spatial-composition-v3/failed-browser-launch.json",
+            "docs/evidence/2026-10-10-tmb-spatial-composition-v3/historical-verifier.cjs",
+            "docs/evidence/2026-10-10-tmb-spatial-composition-v3/source-admission.json",
+            "docs/evidence/2026-10-10-tmb-spatial-composition/browser-acceptance.json",
+            "docs/evidence/2026-10-10-tmb-spatial-composition/edition-receipt.json",
+            "docs/evidence/2026-10-10-tmb-spatial-composition/source-admission.json",
+            "docs/evidence/danse-private-custody-2026-10-12-v2.json",
+            "docs/evidence/danse-private-custody-2026-10-12-v3.json",
+            "docs/evidence/danse-private-custody-2026-10-12.json",
+            "docs/evidence/danse-private-custody-recheck-2026-10-12.json",
+            "docs/evidence/danse-source-authority-2026-10-12.json",
+            "docs/evidence/host-swap-diagnosis-2026-10-12.json",
+            "docs/evidence/hosted-ci-main-2026-10-12.json",
+            "docs/evidence/ingress-custody-attempt-2026-10-12.json",
+            "docs/evidence/ingress-custody-post-restart-2026-10-12.json",
+            "docs/evidence/ingress-original-media-inventory-2026-10-12.json",
+            "docs/evidence/layout-review-corrections-2026-10-12.json",
+            "docs/evidence/source-remote-publication-2026-10-12.json",
+            "docs/evidence/t7recovery-custody-2026-10-12.json",
+            "docs/evidence/teamwork-archive-2026-10-12.json",
+            "docs/evidence/unversioned-backup-2026-10-12.json",
+            "docs/evidence/unversioned-key-escrow-2026-10-12.json",
+            "docs/evidence/unversioned-ownership-2026-10-12.json",
+            "docs/evidence/workspace-layout-2.0.0.json",
+            "docs/four-step-closeout-2026-10-12.md",
+            "docs/github-actions-billing-follow-up-2026-10-12.md",
+            "docs/helper-buildup-investigation.md",
+            "docs/migrations/2.0.0.md",
+            "docs/project-catalog.md",
+            "docs/review-resolution-2026-10-12.md",
+            "docs/source-remote-publication-2026-10-12.md",
+            "docs/sources/ace-project-membership-2026-10-10.json",
+            "docs/teamwork-archive-2026-10-12.md",
+            "docs/tmb-spatial-integration-report.md",
+            "docs/unversioned-material-ownership-2026-10-12.md",
+            "docs/workspace-migration-report.md",
+            "docs/workstream-continuation.md",
+            "projects/backwards-up-hill/README.md",
+            "projects/danse/README.md",
+            "projects/hole-loop/README.md",
+            "projects/time-moment-brief/README.md",
+            "repositories/danse-source/README.md",
+            "repositories/hole-loop/README.md",
+            "repositories/time-moment-brief/README.md",
+            "tests/test_workspace_layout.py",
+            "tools/custody_danse.py",
+            "tools/custody_original_media.py",
+            "tools/tests/test_custody_danse.py",
+            "tools/tests/test_custody_original_media.py",
+            "workspace-manifest.json"
+          ],
+          "owner_url": "https://github.com/4444J99/simvltanea/issues/27"
+        }
+      ]
+    },
+    {
+      "id": "composition",
+      "kind": "git",
+      "path_sha256": "66934228852989742ca81776e9eeaeb59f5f11e2e79fba7454d63b50ffe9c74b",
+      "repository": "4444J99/simvltanea",
+      "repository_id": 1364497735,
+      "base_head": "3829be80015a847ba2447b7519a62c98573f3861",
+      "subject_head": "fbd9c9d95d29635d504cf3fa0b38799c58c2d42c",
+      "publication_branch": "feat/tmb-spatial-composition",
+      "owned_paths": [
+        "docs/authoring/TMB_COMPOSITION.md",
+        "tools/editions/build_tmb_composition.py",
+        "tools/editions/test_tmb_composition.py"
+      ],
+      "retained_work": []
+    },
+    {
+      "id": "engine-source",
+      "kind": "git",
+      "path_sha256": "7a9686d933e516d15e8aad807dedb337008bf175c371e2f9e7dd349a55dcdd5c",
+      "repository": "4444J99/time-moment-brief",
+      "repository_id": 1408128309,
+      "base_head": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+      "subject_head": "44d815c978fc9b57526ff9b18165cd5b8d777b5c",
+      "publication_branch": "feat/tmb-spatial-composition",
+      "owned_paths": [],
+      "retained_work": [
+        {
+          "paths": [
+            "exports/time-moment-brief-chat-vault-2026-10-06"
+          ],
+          "owner_url": "https://github.com/4444J99/simvltanea/issues/27"
+        }
+      ]
+    },
+    {
+      "id": "demo-tour",
+      "kind": "retained",
+      "path_sha256": "5599e0a13ac8aa2696688ee91ae9903adb5ea11ddd884f0860b6d64394334adf",
+      "owner_url": "https://github.com/4444J99/simvltanea/issues/27"
+    }
+  ],
+  "verification": [
+    {
+      "root_id": "coordination",
+      "command": "python3 tools/workspace_layout.py check",
+      "head": "bbb0c0589e50ee125d39cf1f2a40fe7ad6cd55ad",
+      "exit_code": 0,
+      "evidence": "docs/evidence/native-session-closeout-layout-2026-10-12.json",
+      "sha256": "763d51158de2ff9398432d55e933819b3594261ff8d55cc9d78267ac6b7d9ed8"
+    },
+    {
+      "root_id": "composition",
+      "command": "Reuse unchanged admitted v3 browser verification recorded in the integration report",
+      "head": "fbd9c9d95d29635d504cf3fa0b38799c58c2d42c",
+      "exit_code": 0,
+      "evidence": "docs/evidence/2026-10-10-tmb-spatial-composition-v3/browser-acceptance.json",
+      "sha256": "8225e63e33c7ca046bda7c1e81fbb4f7c03e59feb578d48b24bf575f8620e2dc"
+    }
+  ],
+  "custody": {
+    "verified": false,
+    "root_ids": [
+      "coordination",
+      "composition",
+      "engine-source",
+      "demo-tour"
+    ],
+    "evidence": "docs/evidence/native-session-closeout-custody-2026-10-12.json",
+    "sha256": "fe690c7b94e8ef15373b13488ff0c8550c56efdffd115339c56fa0ba1c499754"
+  },
+  "external_effects": [],
+  "scope_notes": "Retained coordination paths follow the published continuation and solution acceptance owner; no authorship claim or checkout retirement is made. The engine source was consumed read-only. Historical demo serving is stopped; private captures remain retained."
+}

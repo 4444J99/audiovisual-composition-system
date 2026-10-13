@@ -1,0 +1,31 @@
+{
+  "session_id": "01a127c7-298f-7312-848c-447f2f4ddd97",
+  "verified": false,
+  "owner_url": "https://github.com/4444J99/simvltanea/issues/27",
+  "checkout_disposition": "retained",
+  "originals_deleted": false,
+  "tour_artifacts": {
+    "files": 11,
+    "bytes": 2805448,
+    "manifest_sha256": "01ff644b9c9ce9753d5079639dba53fa0738f3c7b20d7920af89c706c6d76e01",
+    "independent_restore_verified": false
+  },
+  "existing_bounded_evidence": [
+    "docs/evidence/t7recovery-custody-2026-10-12.json",
+    "docs/evidence/unversioned-backup-2026-10-12.json"
+  ],
+  "missing_coverage": [
+    "Whole-source and original-recording recovery",
+    "Private proof-edition and retained tour recovery"
+  ],
+  "loopback_preview": {
+    "port": 54453,
+    "listener_observed": false,
+    "observation_command": "lsof -nP -iTCP:54453 -sTCP:LISTEN",
+    "exit_code": 1
+  },
+  "process_observation": {
+    "complete": false,
+    "detail": "Standalone observation did not return within its bounded attempt; only that attempt-owned observer was terminated. No peer process was signaled."
+  }
+}

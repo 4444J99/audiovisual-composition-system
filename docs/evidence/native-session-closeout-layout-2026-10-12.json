@@ -1,0 +1,13 @@
+{
+  "session_id": "01a127c7-298f-7312-848c-447f2f4ddd97",
+  "head": "bbb0c0589e50ee125d39cf1f2a40fe7ad6cd55ad",
+  "command": "python3 tools/workspace_layout.py check",
+  "exit_code": 0,
+  "result": {
+    "projects": 15,
+    "repository_references": 6,
+    "generated_files": 30,
+    "local_links": 16
+  },
+  "scope": "Current manifest and generated directory contract; no media acceptance or custody claim."
+}
