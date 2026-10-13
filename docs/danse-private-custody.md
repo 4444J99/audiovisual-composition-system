@@ -1,5 +1,15 @@
 # Danse private custody checkpoint
 
+## Private remote destinations prepared
+
+The [private remote custody checkpoint](danse-private-remote-custody.md) records
+the dedicated private GitHub repository and verified unshared Google Drive
+folder prepared after the user's completion instruction. Only the GitHub
+control README has been committed and read back; no private source archive was
+uploaded. Host admission remains denied, the current staging reserve is unmet,
+and the remote archive transport still requires implementation and validation.
+Two verified source copies and a clean restore remain incomplete.
+
 ## Evening continuation: runtime attribution and destination availability
 
 The [runtime lifecycle owner packet](danse-runtime-lifecycle-owner-packet.md)
