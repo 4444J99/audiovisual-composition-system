@@ -1,0 +1,108 @@
+{
+  "repository": "4444J99/audiovisual-composition-system",
+  "branch": "main",
+  "tested_commit": "e5671673cbb33fc7488023825816ce6b94a92e1a",
+  "workflow": "Verify composition system",
+  "run_id": 38304751447,
+  "run_attempt": 2,
+  "job_id": 115067270232,
+  "job_name": "verify",
+  "status": "completed",
+  "conclusion": "success",
+  "completed_at": "2026-10-13T00:21:23Z",
+  "attempt_url": "https://github.com/4444J99/audiovisual-composition-system/actions/runs/38304751447/attempts/2",
+  "job_url": "https://github.com/4444J99/audiovisual-composition-system/actions/runs/38304751447/job/115067270232",
+  "merged_prs": [
+    {
+      "number": 2,
+      "merge_commit": "cdd27d53b635ce70a62b30860b591e25aa91cce8",
+      "merged_at": "2026-10-12T20:28:33Z",
+      "url": "https://github.com/4444J99/audiovisual-composition-system/pull/2"
+    },
+    {
+      "number": 3,
+      "merge_commit": "e719f28b9043ebe825b7b493f047b3c455fb5157",
+      "merged_at": "2026-10-12T20:29:37Z",
+      "url": "https://github.com/4444J99/audiovisual-composition-system/pull/3"
+    },
+    {
+      "number": 4,
+      "merge_commit": "e5671673cbb33fc7488023825816ce6b94a92e1a",
+      "merged_at": "2026-10-12T20:31:10Z",
+      "url": "https://github.com/4444J99/audiovisual-composition-system/pull/4"
+    }
+  ],
+  "verification_steps": [
+    {
+      "name": "Verify manifest and generated directory records",
+      "conclusion": "success"
+    },
+    {
+      "name": "Verify preservation and naming rules",
+      "conclusion": "success"
+    },
+    {
+      "name": "Verify composition acceptance guards",
+      "conclusion": "success"
+    }
+  ],
+  "results": {
+    "layout": {
+      "conclusion": "passed",
+      "projects": 15,
+      "repository_references": 6,
+      "generated_files": 30,
+      "local_links": 0,
+      "scope": "catalog-only hosted checkout"
+    },
+    "python": {
+      "discovered": 26,
+      "passed": 21,
+      "skipped": 5,
+      "skip_reason": "macOS-only fixtures on Ubuntu",
+      "failed": 0
+    },
+    "node": {
+      "passed": 14,
+      "skipped": 0,
+      "failed": 0
+    }
+  },
+  "github_metadata_and_log_summaries_verified": true,
+  "observed_merge_hosted_verification_blocker": "resolved for this exact revision and run",
+  "account_wide_billing_repair": "not established",
+  "repository_separation": {
+    "requirement": "Repositories need to be split into public and private",
+    "implementation": "pending",
+    "caused_ci_recovery": "not established"
+  },
+  "remaining_gaps": [
+    {
+      "gap": "Danse portable acceptance and PR 68 integration",
+      "evidence": "docs/source-remote-publication-2026-10-12.md"
+    },
+    {
+      "gap": "Admission of thirteen unique engine/test/document candidates",
+      "evidence": "docs/unversioned-material-ownership-2026-10-12.md"
+    },
+    {
+      "gap": "Independent whole-source custody, refs, stash history and ignored material; last recorded Danse attempt has no payload copies or clean restore",
+      "evidence": "docs/danse-private-custody.md"
+    },
+    {
+      "gap": "Original-media estate recovery",
+      "evidence": "docs/workstream-continuation.md"
+    },
+    {
+      "gap": "Historical missing material roots and absent production asset lock",
+      "evidence": "docs/danse-source-authority-reconciliation.md"
+    },
+    {
+      "gap": "Device, headset/XR, fourth-camera and broader media acceptance",
+      "evidence": "docs/tmb-spatial-integration-report.md"
+    }
+  ],
+  "historical_receipts_modified": false,
+  "source_checkouts_modified": false,
+  "repository_visibility_or_remotes_changed": false
+}
