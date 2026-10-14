@@ -1,5 +1,80 @@
 # Danse private custody checkpoint
 
+## Private remote destinations prepared
+
+The [private remote custody checkpoint](danse-private-remote-custody.md) records
+the dedicated private GitHub repository and verified unshared Google Drive
+folder prepared after the user's completion instruction. Only the GitHub
+control README has been committed and read back; no private source archive was
+uploaded. Host admission remains denied, the current staging reserve is unmet,
+and the remote archive transport still requires implementation and validation.
+Two verified source copies and a clean restore remain incomplete.
+
+## Evening continuation: runtime attribution and destination availability
+
+The [runtime lifecycle owner packet](danse-runtime-lifecycle-owner-packet.md)
+and [redacted receipt](evidence/danse-runtime-lifecycle-2026-10-12.json)
+record the next authorized continuation. A large launch-attribution wrapper CPU
+burst subsided without intervention by this agent. Source state was stable, but
+final host status still denied heavy work at 68.25% swap and `vitals-shed`.
+Neither expected custody volume is currently attached. No source payload was
+hashed, copied or uploaded; copies and restore remain unverified.
+
+A private repository is a viable alternative for one off-device archive copy,
+subject to complete Git/material capture, actual object-size/storage limits,
+remote readback, restore proof and a second independent custody destination.
+The current disk-oriented runner does not implement that alternate route.
+The alternate workflow and destinations remain to be resolved; the current
+published artifacts contain redacted evidence only.
+
+## Safe pressure-recovery investigation at 20:24–20:26 UTC
+
+The [pressure recovery receipt](evidence/danse-host-pressure-recovery-2026-10-12.json)
+records substantial live owners: Codex renderer footprint 2,611 MiB (2,219 MiB
+compressed), app-server footprint 1,700 MiB (1,575 MiB compressed), and a shared
+app-server tree of 377–378 processes including 13 matching MCP server groups.
+The paired tree RSS sums were about 2.1–2.3 GiB; these are overlapping resident
+measurements, not unique physical-memory accounting. Browser renderers and other
+live applications also contribute. Increasing swap and internal-disk activity
+are consistent with paging pressure; complete per-process disk attribution was
+not established.
+
+Active peer deployment work was observed beneath the shared server. Five
+detached candidates were inspected; all retained live service endpoints or
+descendants. A brief Finder sample did not identify a file-copy loop. No process
+was proven safely disposable. No process, application or active workload was
+stopped, restarted or retuned; no memory purge, configuration change, disabled
+tool or admission override was used.
+
+Disk throughput eased without intervention to 75.34 and 35.6 MiB/s, but swap
+rose to **67.70% / 11,630,479,933 bytes**, growing by 241,378,415 bytes/minute.
+Host admission still denied new heavy work for `swap-fraction` and `vitals-shed`.
+No heavy acquire or payload I/O followed the known denial. Custody remains at
+zero verified copies and no verified clean restore. Private samples, process
+ancestry and handle diagnostics are retained outside vendor runtime storage;
+only aggregates and the private run ID are published.
+
+Recovery owner: the Codex runtime and live application/session owners must
+release unused runtime fleets through their normal lifecycle while preserving
+active tasks. A new custody run requires changed pressure, a successful heavy
+acquire and a fresh stable source inventory. The committed command below remains
+the entrypoint; no safely established local reclamation action was available in
+this bounded attempt. The sample does not prove an ongoing fleet leak or a
+vendor fix, and falling disk throughput is not claimed as our repair.
+
+Review-state reconciliation: live GitHub state subsequently showed PR #2 merged
+at 20:28:33 UTC into `cdd27d53b635ce70a62b30860b591e25aa91cce8`, outside this
+attempt's actions. PR #3 remained open and was rebased onto that merged base.
+This attempt issued no merge, close, force-push or revert. The user's requested
+two-open-PR hold can no longer be represented as satisfied; the external merge
+was not undone. Earlier statements below describe their earlier observations.
+
+The final check also found PR #3 merged externally at 20:29:37 UTC into
+`e719f28b9043ebe825b7b493f047b3c455fb5157`, before this new evidence was included
+in its reviewed head. Both original PRs are now merged. This evidence is placed
+on a new topic branch from current main for a successor draft review; no merge
+is requested. The source custody outcome remains incomplete.
+
 ## Conditional recheck at 20:21 UTC
 
 The [fresh recheck](evidence/danse-private-custody-recheck-2026-10-12.json)

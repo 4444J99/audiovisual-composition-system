@@ -1,0 +1,64 @@
+{
+  "schema": "danse.host-pressure-recovery.v1",
+  "observed_date": "2026-10-12",
+  "private_diagnostic_run_id": "danse-pressure-e8d6727744524384980a3032bdb27778",
+  "outcome": "blocked-no-safe-pressure-reclamation",
+  "process_observations": {
+    "codex_renderer_footprint_mib": 2611,
+    "codex_renderer_compressed_mib": 2219,
+    "codex_appserver_footprint_mib": 1700,
+    "codex_appserver_compressed_mib": 1575,
+    "shared_appserver_tree_samples": [
+      {"process_count": 378, "rss_kib_sum": 2400112, "cpu_percent_sum": 99.0},
+      {"process_count": 377, "rss_kib_sum": 2184656, "cpu_percent_sum": 93.3}
+    ],
+    "shared_appserver_tree_interval_seconds_minimum": 18,
+    "matching_mcp_server_groups_in_paired_samples": 13,
+    "active_peer_deployment_observed": true,
+    "rss_sum_is_unique_physical_memory": false,
+    "detached_candidates_examined": 5,
+    "detached_candidates_with_live_services_or_descendants": 5,
+    "finder_sample_seconds": 3,
+    "finder_sample_identified_file_copy_loop": false
+  },
+  "host_admission_status": {
+    "operation": "status",
+    "allowed": false,
+    "observed_at": "2026-10-12T20:26:13.567397+00:00",
+    "memory_bytes": 17179869184,
+    "swap_fraction": 0.6769830322009511,
+    "swap_used_bytes": 11630479933,
+    "swap_growth_bytes_per_minute": 241378414.768,
+    "disk_mib_per_second_samples": [75.34, 35.6],
+    "vitals_action": "shed",
+    "sensor_errors": [],
+    "reasons": ["swap-fraction", "vitals-shed"]
+  },
+  "interventions": [],
+  "existing_work_stopped_restarted_or_retuned": false,
+  "admission_policy_modified": false,
+  "credentials_or_declared_tools_modified": false,
+  "heavy_acquire_attempted": false,
+  "payload_hashed_or_copied": false,
+  "copies_verified": 0,
+  "clean_restore_verified": false,
+  "originals_and_partials_retained": true,
+  "recovery_owner": "Codex runtime and live application/session owners",
+  "review_state_observed": {
+    "pr_2": "MERGED",
+    "pr_2_merged_at": "2026-10-12T20:28:33Z",
+    "pr_2_merge_commit": "cdd27d53b635ce70a62b30860b591e25aa91cce8",
+    "pr_3": "MERGED",
+    "pr_3_merged_at": "2026-10-12T20:29:37Z",
+    "pr_3_merge_commit": "e719f28b9043ebe825b7b493f047b3c455fb5157",
+    "successor_review": "draft PR from docs/danse-pressure-evidence-20261012",
+    "this_attempt_merged_or_closed_a_pr": false
+  },
+  "resume_predicate": "safe lifecycle release of unused owners, changed host pressure, successful heavy acquire and fresh stable source inventory",
+  "limitations": [
+    "Process footprints and ancestry identify substantial load owners, not complete per-process disk attribution.",
+    "No examined helper was proven abandoned; no app-wide shutdown was safe under the active-work constraint.",
+    "The paired sample does not establish ongoing helper-fleet growth or a confirmed vendor defect.",
+    "Lower disk activity happened without intervention and is not claimed as a repair."
+  ]
+}
