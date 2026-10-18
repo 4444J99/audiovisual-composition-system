@@ -1,0 +1,127 @@
+{
+  "schema": "ace.camera_coverage_sensor_proof.v1",
+  "generated_at_utc": "2026-10-18T05:35:00Z",
+  "project_id": "backwards-up-hill",
+  "master_audio_anchor": {
+    "relative_path": "backwards-up-hill/2022FEB-F6/220218_012.WAV",
+    "duration_seconds": 1722.987958,
+    "channels": 5,
+    "sample_rate_hz": 48000,
+    "sha256": "6041a38fb946dd7342e2f12e2f6c2abd9e2f826810702382633ba15f9ad02616"
+  },
+  "take_48_camera_coverage": {
+    "take_id": "Take 48",
+    "master_overlap_interval": [497.7554, 684.8983],
+    "master_overlap_duration_seconds": 187.1429,
+    "cameras": [
+      {
+        "role": "panorama",
+        "sensor_id": "gopro-360",
+        "hardware": "GoPro MAX",
+        "relative_path": "backwards-up-hill/2022FEB-360GOPRO/GS010048.360",
+        "duration_seconds": 482.496,
+        "timecode_start": "16:38:26:20",
+        "anchor_start_offset_seconds": 252.1868,
+        "anchor_coverage_interval": [252.1868, 734.6828],
+        "projection": "equirectangular_stitched_dual_fisheye"
+      },
+      {
+        "role": "cam1",
+        "sensor_id": "panasonic-g100",
+        "hardware": "Panasonic Lumix G100",
+        "relative_path": "backwards-up-hill/2022FEB-PANASONIC/P1000096.MP4",
+        "duration_seconds": 359.8595,
+        "timecode_start": null,
+        "anchor_start_offset_seconds": 325.0388,
+        "anchor_coverage_interval": [325.0388, 684.8983],
+        "projection": "rectilinear_native"
+      },
+      {
+        "role": "cam2",
+        "sensor_id": "dji",
+        "hardware": "DJI Action 2",
+        "relative_path": "backwards-up-hill/2022FEB-DJI/DJI_0066.MP4",
+        "duration_seconds": 409.0,
+        "timecode_start": null,
+        "anchor_start_offset_seconds": 497.7554,
+        "anchor_coverage_interval": [497.7554, 906.7554],
+        "projection": "rectilinear_native"
+      },
+      {
+        "role": "cam3",
+        "sensor_id": "gopro-360",
+        "hardware": "GoPro MAX (shared with panorama)",
+        "relative_path": "backwards-up-hill/2022FEB-360GOPRO/GS010048.360",
+        "duration_seconds": 482.496,
+        "timecode_start": "16:38:26:20",
+        "anchor_start_offset_seconds": 252.1868,
+        "anchor_coverage_interval": [252.1868, 734.6828],
+        "projection": "rectilinear_perspective_reprojection",
+        "filter": "v360=equirect:rectilinear:h_fov=90:v_fov=50:interp=linear"
+      }
+    ],
+    "approved_generation_windows": [
+      {
+        "generation": "generation_01",
+        "interval": [510.0, 518.0],
+        "duration_seconds": 8.0,
+        "inside_overlap": true
+      },
+      {
+        "generation": "generation_02",
+        "interval": [518.0, 526.0],
+        "duration_seconds": 8.0,
+        "inside_overlap": true
+      }
+    ]
+  },
+  "gopro_100_temporal_isolation_proof": {
+    "collection": "backwards-up-hill/2022FEB-100GOPRO",
+    "clips": [
+      {
+        "filename": "GH010043.MP4",
+        "duration_seconds": 69.819,
+        "creation_time": "2022-02-18T16:14:42.000000Z",
+        "timecode_start": "16:13:43:49",
+        "timecode_end": "16:14:53:31"
+      },
+      {
+        "filename": "GH010044.MP4",
+        "duration_seconds": 139.121,
+        "creation_time": "2022-02-18T16:16:32.000000Z",
+        "timecode_start": "16:15:34:19",
+        "timecode_end": "16:17:53:23"
+      }
+    ],
+    "latest_gopro100_recording_timecode": "16:17:53:23",
+    "earliest_take48_recording_timecode": "16:38:26:20",
+    "temporal_offset_seconds": 1233.0,
+    "temporal_offset_formatted": "20 minutes, 33 seconds",
+    "overlap_with_take48": false,
+    "nearest_prior_360_clip": {
+      "filename": "GS010042.360",
+      "timecode_start": "14:32:44:19",
+      "duration_seconds": 8.6186,
+      "conclusion": "ended over 1 hour 40 minutes prior to 100GOPRO"
+    },
+    "nearest_subsequent_360_clip": {
+      "filename": "GS010047.360",
+      "timecode_start": "16:36:17:28",
+      "duration_seconds": 28.821,
+      "conclusion": "started over 18 minutes after 100GOPRO concluded"
+    },
+    "acoustic_cross_correlation_verdict": "negative_zero_overlap"
+  },
+  "sensor_designation_conclusion": {
+    "designation": "four views / three sensors",
+    "physical_sensors_count": 3,
+    "views_count": 4,
+    "audio_anchor_count": 1,
+    "sensors": [
+      { "id": "gopro-360", "views": ["panorama", "cam3"] },
+      { "id": "panasonic-g100", "views": ["cam1"] },
+      { "id": "dji", "views": ["cam2"] }
+    ],
+    "verification_verdict": "empirically_and_mathematically_proven"
+  }
+}
