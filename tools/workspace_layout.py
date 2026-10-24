@@ -17,9 +17,14 @@ from identity_contract import public_catalog, validate_manifest
 
 REPOSITORY = Path(__file__).resolve().parents[1]
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+CONTROL = re.compile(r"[\x00-\x1f\x7f]")
 
 
 def safe_path(value):
+    # A control character (LF/CR above all) would split one manifest value into
+    # several generated .gitignore directives, so reject it before building a path.
+    if CONTROL.search(value):
+        raise ValueError(f"Nonportable workspace binding: {value!r}")
     path = PurePosixPath(value)
     if not value or str(path) == "." or path.is_absolute() or ".." in path.parts or "\\" in value:
         raise ValueError(f"Nonportable workspace binding: {value!r}")
