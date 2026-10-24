@@ -109,7 +109,7 @@ class CustodyTests(unittest.TestCase):
                 def __init__(self, dev):
                     self.st_dev = dev
 
-            def fake_stat(path_obj):
+            def fake_stat(path_obj, *, follow_symlinks=True):
                 if path_obj == src:
                     return MockStat(1001)
                 return MockStat(2002)
