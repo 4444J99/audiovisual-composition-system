@@ -77,31 +77,132 @@ def partial_path(destination_root):
     return parent / uuid.uuid4().hex
 
 
+def validate_device_separation(source, destination):
+    src_p = Path(source)
+    dst_p = Path(destination)
+    while not src_p.exists() and src_p != src_p.parent:
+        src_p = src_p.parent
+    while not dst_p.exists() and dst_p != dst_p.parent:
+        dst_p = dst_p.parent
+    if not src_p.exists() or not dst_p.exists():
+        raise RuntimeError('Source or destination mount point unavailable')
+    if src_p.stat().st_dev == dst_p.stat().st_dev:
+        raise RuntimeError(f'Source and destination are on the same physical device (st_dev={src_p.stat().st_dev})')
+
+
+class PhaseDeadlineTracker:
+    def __init__(self, wall_budget_s, verify_budget_s):
+        self.wall_budget_s = float(wall_budget_s)
+        self.verify_budget_s = float(verify_budget_s)
+        self.started_at = time.monotonic()
+        self.verification_seconds = 0.0
+        self._active_verification_start = None
+
+    @property
+    def wall_elapsed(self):
+        return time.monotonic() - self.started_at
+
+    @property
+    def current_verification_seconds(self):
+        extra = 0.0
+        if self._active_verification_start is not None:
+            extra = time.monotonic() - self._active_verification_start
+        return self.verification_seconds + extra
+
+    def check_wall(self):
+        if self.wall_elapsed >= self.wall_budget_s:
+            raise TimeoutError('attempt wall deadline')
+
+    def check_verify(self):
+        if self.current_verification_seconds >= self.verify_budget_s:
+            raise TimeoutError('verification time exhausted')
+
+    def guard(self):
+        self.check_wall()
+        self.check_verify()
+
+    def start_verification(self):
+        self.check_wall()
+        self.check_verify()
+        if self._active_verification_start is None:
+            self._active_verification_start = time.monotonic()
+
+    def stop_verification(self):
+        if self._active_verification_start is not None:
+            self.verification_seconds += (time.monotonic() - self._active_verification_start)
+            self._active_verification_start = None
+
+    def measuring_verification(self):
+        class _MeasureScope:
+            def __init__(self, tracker):
+                self.tracker = tracker
+            def __enter__(self):
+                self.tracker.start_verification()
+                return self.tracker
+            def __exit__(self, exc_type, exc_val, exc_tb):
+                self.tracker.stop_verification()
+        return _MeasureScope(self)
+
+
 def enumerate_source(source, roots):
     files, directories = {}, set()
     for root in roots:
-        start = source / root
-        if not start.is_dir() or start.is_symlink():
+        root_path = Path(root)
+        if root_path.is_absolute() or '..' in root_path.parts or root in ('.', '', '.custody-partials'):
+            raise RuntimeError('Path escape detected or unsafe root')
+        start = source / root_path
+        curr = start
+        while curr != source and curr != curr.parent:
+            if curr.is_symlink():
+                raise RuntimeError('Unexpected source symlink in path')
+            curr = curr.parent
+        if not start.exists():
             raise RuntimeError('Source root unavailable or linked')
-        directories.add(root)
-        for current, dirs, names in os.walk(start, followlinks=False,
-                                            onerror=lambda e: (_ for _ in ()).throw(e)):
-            for name in dirs:
-                p = Path(current) / name
-                if p.is_symlink():
-                    raise RuntimeError('Unexpected source directory symlink')
-                directories.add(str(p.relative_to(source)))
-            for name in names:
-                p = Path(current) / name
-                files[str(p.relative_to(source))] = identity(p)
+        if start.is_dir():
+            rel_dir = str(root_path)
+            if rel_dir in directories or rel_dir in files:
+                raise RuntimeError(f'Duplicate destination directory: {rel_dir}')
+            directories.add(rel_dir)
+            for current, dirs, names in os.walk(start, followlinks=False,
+                                                onerror=lambda e: (_ for _ in ()).throw(e)):
+                for name in dirs:
+                    p = Path(current) / name
+                    if p.is_symlink():
+                        raise RuntimeError('Unexpected source directory symlink')
+                    d_rel = str(p.relative_to(source))
+                    if d_rel in files:
+                        raise RuntimeError(f'Duplicate destination: {d_rel}')
+                    directories.add(d_rel)
+                for name in names:
+                    p = Path(current) / name
+                    if p.is_symlink():
+                        raise RuntimeError('Unexpected source symlink')
+                    f_rel = str(p.relative_to(source))
+                    if f_rel in files or f_rel in directories:
+                        raise RuntimeError(f'Duplicate destination file: {f_rel}')
+                    files[f_rel] = identity(p)
+        elif start.is_file():
+            s = start.lstat()
+            if not stat.S_ISREG(s.st_mode):
+                raise RuntimeError('Source is not a regular file')
+            f_rel = str(root_path)
+            if f_rel in files or f_rel in directories:
+                raise RuntimeError(f'Duplicate destination file: {f_rel}')
+            files[f_rel] = identity(start)
+            for parent in root_path.parents:
+                if str(parent) != '.':
+                    directories.add(str(parent))
+        else:
+            raise RuntimeError('Source root is not a regular file or directory')
     return files, directories
 
 
 def run(args):
     os.umask(0o077)
     os.nice(10)
-    started = time.monotonic()
-    deadline = started + args.wall_seconds
+    args.wall_budget_s = getattr(args, 'wall_budget_s', args.wall_seconds)
+    args.verify_budget_s = getattr(args, 'verify_budget_s', args.verification_seconds)
+    tracker = PhaseDeadlineTracker(args.wall_budget_s, args.verify_budget_s)
     private = (Path(args.resume) if args.resume else
                Path(args.staging) / ('original-media-' + uuid.uuid4().hex[:12]))
     if not args.resume:
@@ -109,7 +210,9 @@ def run(args):
     state = {'started_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
              'prior_agent_seconds': args.prior_seconds,
              'wall_limit_seconds': args.wall_seconds,
+             'wall_budget_s': args.wall_seconds,
              'verification_limit_seconds': args.verification_seconds,
+             'verify_budget_s': args.verification_seconds,
              'verification_seconds': 0.0, 'records': [], 'outcome': 'preflight',
              'originals_preserved': True, 'checkout_disposition': 'retained'}
     attempt_id = uuid.uuid4().hex[:12]
@@ -123,11 +226,11 @@ def run(args):
             if key in previous:
                 state[key] = previous[key]
     lease = None
-    last_refresh = started
-    verification_started = time.monotonic()
+    last_refresh = tracker.started_at
 
     def save():
-        state['elapsed_seconds'] = time.monotonic() - started
+        state['elapsed_seconds'] = tracker.wall_elapsed
+        state['verification_seconds'] = tracker.current_verification_seconds
         tmp = private / 'receipt.next.json'
         with tmp.open('w') as f:
             json.dump(state, f, indent=2)
@@ -138,11 +241,8 @@ def run(args):
 
     def guard():
         nonlocal last_refresh
-        if time.monotonic() >= deadline:
-            raise TimeoutError('attempt wall deadline')
-        state['verification_seconds'] = time.monotonic() - verification_started
-        if state['verification_seconds'] >= args.verification_seconds:
-            raise TimeoutError('verification time exhausted')
+        tracker.guard()
+        state['verification_seconds'] = tracker.current_verification_seconds
         if lease and time.monotonic() - last_refresh > 60:
             result = json.loads(command([sys.executable, str(ADMISSION), 'refresh',
                 '--lease-id', lease['lease_id'], '--owner', OWNER,
@@ -153,14 +253,15 @@ def run(args):
 
     def checked_metadata(path):
         guard()
-        result = metadata(path)
+        with tracker.measuring_verification():
+            result = metadata(path)
         guard()
         return result
 
     def digest(path):
         h = hashlib.sha256()
-        before = identity(path)
-        try:
+        with tracker.measuring_verification():
+            before = identity(path)
             with path.open('rb') as f:
                 while True:
                     guard()
@@ -171,8 +272,6 @@ def run(args):
             if identity(path) != before:
                 raise RuntimeError('file changed while hashing')
             return h.hexdigest()
-        finally:
-            state['verification_seconds'] = time.monotonic() - verification_started
 
     def transfer(src, dst, expected, expected_metadata):
         guard()
@@ -188,9 +287,9 @@ def run(args):
         # A fresh exclusive placeholder ensures this invocation owns the temporary name.
         with partial.open('xb'):
             pass
+        remaining_wall = max(0.1, tracker.wall_budget_s - tracker.wall_elapsed)
         subprocess.run(['ditto', '--rsrc', '--extattr', '--acl', str(src), str(partial)],
-                       check=True, timeout=min(300, deadline-time.monotonic(),
-                           args.verification_seconds-(time.monotonic()-verification_started)))
+                       check=True, timeout=min(300, remaining_wall))
         guard()
         if shutil.disk_usage(dst.parent).free < RESERVE:
             raise RuntimeError('destination reserve consumed by all-fork copy')
@@ -248,6 +347,8 @@ def run(args):
             raise RuntimeError('custody device is not independent')
         if disks['Archive4T']['parent'] == disks['T7Recovery']['parent']:
             raise RuntimeError('restore device is not independent of custody')
+        validate_device_separation(source, Path('/Volumes/T7Recovery'))
+        validate_device_separation(Path('/Volumes/T7Recovery'), Path('/Volumes/Archive4T'))
         previous_by_path = {r['path']: r for r in state['records']}
         total = sum(v[0] for v in expected.values())
         for name in ['T7Recovery', 'Archive4T']:
@@ -371,8 +472,8 @@ if __name__ == '__main__':
     parser.add_argument('--staging', required=True)
     parser.add_argument('--resume', help='Existing private receipt directory; preserves prior attempts')
     parser.add_argument('--prior-seconds', type=int, required=True)
-    parser.add_argument('--wall-seconds', type=int, default=1500)
-    parser.add_argument('--verification-seconds', type=int, default=540)
+    parser.add_argument('--wall-seconds', '--wall-budget-s', dest='wall_seconds', type=int, default=1500)
+    parser.add_argument('--verification-seconds', '--verify-budget-s', dest='verification_seconds', type=int, default=540)
     args = parser.parse_args()
     if not (0 < args.wall_seconds <= 1800 and 0 < args.verification_seconds <= 600
             and 0 <= args.prior_seconds and args.prior_seconds + args.wall_seconds <= 7200):

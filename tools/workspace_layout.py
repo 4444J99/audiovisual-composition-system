@@ -98,6 +98,25 @@ def load_manifest():
     return manifest
 
 
+BOUNDARIES = {
+    "backwards-up-hill": "Source binding missing; related footage referenced by time-moment-brief; independent source custody preservation required.",
+    "cycles": "Verified Page image inventory; no public implementation repository resolved; preserve source collection.",
+    "danse": "Canonical source in private repository with deterministic performance engine; archived public continuation distinct; verify engine test suite and maintain custody.",
+    "etc": "Artwork record preserved; historical etceter4 site association unresolved; maintain separate identity.",
+    "god-here": "Active implementation in audiovisual-media-postproduction-system; local preservation git repository retained separately.",
+    "hole-loop": "Active implementation in timed-text-navigation-loop; compose timed text encounter with browser score.",
+    "mavsoleum-a": "Active implementation in generative-multimedia-spatial-environment; historical website composition.",
+    "noonlight": "Source-led artwork record; unversioned media custody required; implementation location unresolved.",
+    "nrcsvs": "Research archive and chat vault (reflect-recur); local unversioned preservation; no public implementation repository.",
+    "nvde": "Source-led artwork record; unversioned media custody required; implementation location unresolved.",
+    "ogod": "Active implementation in generative-multimedia-spatial-environment; preserve shared source owner.",
+    "passing-thru": "Source-led artwork record; unversioned media custody required; implementation location unresolved.",
+    "simvltanea": "Active implementation in independent-loop-compositor; retain Python layout, editions, and loop composition.",
+    "time-moment-brief": "Authoritative shared-engine and multicamera playback repository; restricted implementation; independent custody required.",
+    "wrvng-v": "Source-led artwork record; unversioned media custody required; implementation location unresolved.",
+}
+
+
 def rendered_files(manifest):
     """Generate only the conservative public projection; local bindings stay ignored."""
     catalog = public_catalog(manifest)
@@ -106,10 +125,18 @@ def rendered_files(manifest):
     registry = catalog["identity_registry"]
     entities = {item["id"]: item for group, items in registry.items()
                 if isinstance(items, list) for item in items}
+    manifest_by_slug = {p["slug"]: p for p in manifest["projects"]}
     rows = []
     for project in catalog["projects"]:
         slug = project["slug"]
-        identity = project.get("identity_ref")
+        orig_project = manifest_by_slug.get(slug, project)
+        source_state = orig_project.get("source_state", project.get("source_state", "metadata-only"))
+        identity = project.get("identity_ref") or orig_project.get("identity_ref")
+        if identity:
+            ref_display = f"`{identity['type']}:{identity['id']}`"
+        else:
+            ref_display = "none (unresolved)"
+        boundary = BOUNDARIES.get(slug, "Public continuation boundary defined by owning repository or custody plan.")
         canonical = f"artworks/{identity['id']}" if identity and identity["type"] == "artwork" else f"projects/{slug}"
         links = []
         for key in project["repository_keys"]:
@@ -121,7 +148,10 @@ def rendered_files(manifest):
                 f"- Stable project ID: `{project['id']}`\n"
                 f"- Legacy project alias: `{slug}`\n"
                 f"- Record profile: `{project['profile']}`\n"
-                f"- Public implementation: {'; '.join(links) or 'not disclosed or not resolved'}\n")
+                f"- Source state: `{source_state}`\n"
+                f"- Identity / reference: {ref_display}\n"
+                f"- Public implementation: {'; '.join(links) or 'not disclosed or not resolved'}\n"
+                f"- Start Here / Continuation: {boundary}\n")
         if identity and identity["type"] == "artwork":
             body += (f"- Artwork ID: `{identity['id']}`\n"
                      f"- Publication status: `{entities[identity['id']]['publication_status']}`\n\n"
@@ -135,14 +165,23 @@ def rendered_files(manifest):
         else:
             files[f"projects/{slug}/README.md"] = body + "\nThis membership record is not asserted to be an artwork.\n"
         rows.append(f"| [{project['title']}](../{canonical}/README.md) | `{project['id']}` | "
-                    f"{project['profile']} | {'; '.join(links) or 'not disclosed or unresolved'} |")
+                    f"{project['profile']} | `{source_state}` | {ref_display} | "
+                    f"{'; '.join(links) or 'not disclosed or unresolved'} | {boundary} |")
     files["docs/project-catalog.md"] = (
         "# ACE project catalog\n\nGenerated public projection of 15 stable project records. "
         "Artistic titles and legacy project aliases identify works and membership records. "
         "Private source relationships, Page links and workstation bindings are excluded. "
         "Unverified publication status does not assert release acceptance.\n\n"
-        "| Work or project | Stable project ID | Record profile | Public implementation |\n"
-        "| --- | --- | --- | --- |\n" + "\n".join(rows) + "\n")
+        "## Start Here / Continuation Summary\n\n"
+        "- **Source-led works (T12)**: `backwards-up-hill`, `cycles`, `noonlight`, `nrcsvs`, `nvde`, `passing-thru`, and `wrvng-v` "
+        "represent source-media-led artworks and research vaults. Where local bindings are missing or page-record-only, custody preservation "
+        "and independent asset tracking govern continuation rather than code implementation.\n"
+        "- **Public implementations**: `god-here` (audiovisual-media-postproduction-system), `hole-loop` (timed-text-navigation-loop), "
+        "`mavsoleum-a` and `ogod` (generative-multimedia-spatial-environment), and `simvltanea` (independent-loop-compositor) possess active public implementation repositories.\n"
+        "- **Restricted implementations**: `danse` (deterministic-performance-engine) and `time-moment-brief` (synchronized-generation-playback) "
+        "remain in private repositories with independent custody and verification gates.\n\n"
+        "| Work or project | Stable project ID | Record profile | Source state | Identity / reference | Public implementation | Start Here / Continuation |\n"
+        "| --- | --- | --- | --- | --- | --- | --- |\n" + "\n".join(rows) + "\n")
     for group, keyfield in (("repositories", "key"), ("components", "slug"), ("archives", "slug")):
         for item in catalog[group]:
             legacy = item[keyfield]
