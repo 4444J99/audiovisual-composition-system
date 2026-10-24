@@ -495,7 +495,8 @@
     "repositories",
     "components",
     "archives",
-    "artworks"
+    "artworks",
+    "manifests"
   ],
   "preserved_root_files": [
     "HANDOFF_AMBISONIC_INTEGRATION.md",
