@@ -116,6 +116,95 @@ BOUNDARIES = {
     "wrvng-v": "Source-led artwork record; unversioned media custody required; implementation location unresolved.",
 }
 
+REQUIRED_BASELINE_PRS = {
+    "audiovisual-composition-system": (15, 16),
+    "audiovisual-media-postproduction-system": (118,),
+    "simvltanea": (34,),
+    "time-moment-brief": (18,),
+    "timed-text-navigation-loop": (65,),
+    "generative-multimedia-spatial-environment": (183,),
+    "the-thing-without-a-name-screendance": (72,),
+}
+
+
+def verify_native_admission_status(manifest_data=None):
+    """Verify operator-authorized native admission override and Wave 1-2 merged baseline."""
+    if manifest_data is None:
+        continuation_path = REPOSITORY / "manifests" / "project-continuation.json"
+        if not continuation_path.is_file():
+            return {
+                "status": "FAIL",
+                "admission_status": "missing",
+                "external_broker_waived": False,
+                "policy_priority_override": False,
+                "baseline_repositories_verified": 0,
+                "baseline_prs_verified": 0,
+                "errors": [f"Missing continuation manifest: {continuation_path}"],
+            }
+        manifest_data = json.loads(continuation_path.read_text(encoding="utf-8"))
+    elif isinstance(manifest_data, (str, Path)):
+        p = Path(manifest_data)
+        if not p.is_file():
+            return {
+                "status": "FAIL",
+                "admission_status": "missing",
+                "external_broker_waived": False,
+                "policy_priority_override": False,
+                "baseline_repositories_verified": 0,
+                "baseline_prs_verified": 0,
+                "errors": [f"Missing continuation manifest: {p}"],
+            }
+        manifest_data = json.loads(p.read_text(encoding="utf-8"))
+
+    errors = []
+    admission = manifest_data.get("native_admission", {})
+    adm_status = admission.get("admission_status")
+    broker_waived = bool(admission.get("external_broker_waived", False))
+    priority_override = bool(admission.get("policy_priority_override", False))
+
+    if adm_status != "admitted_operator_override":
+        errors.append(f"Invalid admission_status: expected 'admitted_operator_override', got '{adm_status}'")
+    if not broker_waived:
+        errors.append("external_broker_waived must be true")
+    if not priority_override:
+        errors.append("policy_priority_override must be true")
+
+    baseline = manifest_data.get("merged_trunk_baseline", {})
+    verified_repos = {}
+    total_prs = 0
+    for repo_name, expected_prs in REQUIRED_BASELINE_PRS.items():
+        repo_data = baseline.get(repo_name)
+        if not repo_data:
+            errors.append(f"Missing merged baseline record for repository: {repo_name}")
+            continue
+        merged_prs = tuple(repo_data.get("merged_prs", ()))
+        if merged_prs != expected_prs:
+            errors.append(
+                f"Merged PR mismatch for {repo_name}: expected {list(expected_prs)}, got {list(merged_prs)}"
+            )
+        else:
+            verified_repos[repo_name] = {
+                "full_name": repo_data.get("full_name"),
+                "merged_prs": list(merged_prs),
+                "baseline_status": repo_data.get("baseline_status"),
+            }
+            total_prs += len(merged_prs)
+
+    is_valid = len(errors) == 0
+    return {
+        "status": "PASS" if is_valid else "FAIL",
+        "admission_status": adm_status,
+        "external_broker_waived": broker_waived,
+        "policy_priority_override": priority_override,
+        "baseline_repositories_verified": len(verified_repos),
+        "baseline_prs_verified": total_prs,
+        "details": {
+            "admission": admission,
+            "repositories": verified_repos,
+        },
+        "errors": errors,
+    }
+
 
 def rendered_files(manifest):
     """Generate only the conservative public projection; local bindings stay ignored."""
@@ -179,7 +268,10 @@ def rendered_files(manifest):
         "- **Public implementations**: `god-here` (audiovisual-media-postproduction-system), `hole-loop` (timed-text-navigation-loop), "
         "`mavsoleum-a` and `ogod` (generative-multimedia-spatial-environment), and `simvltanea` (independent-loop-compositor) possess active public implementation repositories.\n"
         "- **Restricted implementations**: `danse` (deterministic-performance-engine) and `time-moment-brief` (synchronized-generation-playback) "
-        "remain in private repositories with independent custody and verification gates.\n\n"
+        "remain in private repositories with independent custody and verification gates.\n"
+        "- **Native admission & merged trunk baseline**: Operator-authorized native admission override (`admitted_operator_override`, external broker waived, policy priority override). "
+        "Wave 1–2 trunk baseline merged across all 6 implementation repositories (`audiovisual-composition-system` PRs #15/#16, `audiovisual-media-postproduction-system` PR #118, "
+        "`simvltanea` PR #34, `time-moment-brief` PR #18, `timed-text-navigation-loop` PR #65, `generative-multimedia-spatial-environment` PR #183, `the-thing-without-a-name-screendance` PR #72).\n\n"
         "| Work or project | Stable project ID | Record profile | Source state | Identity / reference | Public implementation | Start Here / Continuation |\n"
         "| --- | --- | --- | --- | --- | --- | --- |\n" + "\n".join(rows) + "\n")
     for group, keyfield in (("repositories", "key"), ("components", "slug"), ("archives", "slug")):
