@@ -1,0 +1,3 @@
+# God-here native carryover — v2
+
+Retain the full evolution roadmap and Site-to-native inventory. The first editable A/source versus E/Message impact slice is now implemented and technically verified; see `docs/god-here-touchdesigner-message-impact-2026-10-13.md`. Continue with human listening/word and seam qualification, admitted B/repair assets, C/attention and D/reduction, then the remaining rack/patches and qualified containers. Do not turn the native workprint into an artistic acceptance or Site-parity claim. Preserve the existing native source and manual nodes. Keep the implementation in its independent repository and retain its checkout for native code bindings.

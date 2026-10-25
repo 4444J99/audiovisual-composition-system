@@ -1,0 +1,206 @@
+{
+  "schema": "ace.pr_evidence_recovery.v1",
+  "observed_at": "2026-10-25T17:47:30Z",
+  "owner": "https://github.com/4444J99/audiovisual-composition-system/issues/12",
+  "source_prs": [
+    5,
+    10
+  ],
+  "files": [
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": ".codex/plans/2026-10-12-danse-host-pressure-recovery.md",
+      "source_blob": "54b464dbdf3edaa3d2b9a8e54e3be7fa2fa077b0",
+      "recovered_path": ".codex/plans/2026-10-12-danse-host-pressure-recovery.md",
+      "recovered_sha256": "5d9f9481d1e0937dbc658e712b766da9b776aa05160213167c50823926be9903"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": ".codex/plans/2026-10-12-danse-private-remote-custody.md",
+      "source_blob": "957dd7ad0f2603e982d3506517875b96caff7803",
+      "recovered_path": ".codex/plans/2026-10-12-danse-private-remote-custody.md",
+      "recovered_sha256": "97cff6166bebae5a3627585232492369a82b3a15dd428629a14191c132c1bc7e"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": ".codex/plans/2026-10-12-danse-runtime-lifecycle-recheck.md",
+      "source_blob": "1db5e7bf26cf53e6d1e0900608fcb8aea978aca4",
+      "recovered_path": ".codex/plans/2026-10-12-danse-runtime-lifecycle-recheck.md",
+      "recovered_sha256": "963fe0cbb2f49fb9d0805e304638d65606e229163a3f3a61587ae73d775d239e"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": "docs/danse-private-custody.md",
+      "source_blob": "d447053a31a107ad94295d42c66d3ee7a360a5f1",
+      "recovered_path": "docs/danse-private-custody.md",
+      "recovered_sha256": "93df0e37cb6b7d8af359deb22a0eb887df66afe3892405815edd4d8ee5933728"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": "docs/danse-private-remote-custody.md",
+      "source_blob": "f308e79c032dccf3522e527831872c3ff2686c1b",
+      "recovered_path": "docs/danse-private-remote-custody.md",
+      "recovered_sha256": "db2c3a541018799983488341a3bda318d0c31104139e56b66df712db15979776"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": "docs/danse-runtime-lifecycle-owner-packet.md",
+      "source_blob": "a3744394dba1a5c32c9eb60eacba3869fd77343a",
+      "recovered_path": "docs/danse-runtime-lifecycle-owner-packet.md",
+      "recovered_sha256": "674d4b05e4bb8bf701576ceddeb6c68ef3ada825ba3955df0d51f68f343f5fdf"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": "docs/evidence/danse-host-pressure-recovery-2026-10-12.json",
+      "source_blob": "3e34f231287998d5d98d15e642d8c2f7deb5d558",
+      "recovered_path": "docs/evidence/danse-host-pressure-recovery-2026-10-12.json",
+      "recovered_sha256": "98b5af2ed28ed214c582d55e2c31250a6aa40ded385c0f0ae4f272e7f6ccf3ee"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": "docs/evidence/danse-private-remote-preflight-2026-10-12.json",
+      "source_blob": "4f4f191f28356f43d6b1425b69bd6a2d6e04af25",
+      "recovered_path": "docs/evidence/danse-private-remote-preflight-2026-10-12.json",
+      "recovered_sha256": "fdc7e2039116a9851fbf032fb182d646055f351c5b6e585d30c22aa6cacdf041"
+    },
+    {
+      "source_pr": 5,
+      "source_head": "9ca97794d2a501398dc77dc0b49cc38b6e65a683",
+      "source_path": "docs/evidence/danse-runtime-lifecycle-2026-10-12.json",
+      "source_blob": "3cbc2dcac772b49252d1b3b21870065e78c70c6d",
+      "recovered_path": "docs/evidence/danse-runtime-lifecycle-2026-10-12.json",
+      "recovered_sha256": "891ae36b7789223375df7e6e8f79e09946cfb987428e6a655278418c08a214d6"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": ".codex/plans/2026-10-12-ingress-original-media-custody-v2.md",
+      "source_blob": "5dee2da70aaf46c5ec38796124f3eebe1967660e",
+      "recovered_path": ".codex/plans/2026-10-18-ingress-original-media-custody-v3.md",
+      "recovered_sha256": "00329e82026d9a285644818fbd8566ce507197542d695f2c4632174dc04b7062"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": ".codex/plans/2026-10-13-god-here-native-carryover-v2.md",
+      "source_blob": "29074d4ce02ddbc001bf32c4a346a3948bcdef0d",
+      "recovered_path": ".codex/plans/2026-10-13-god-here-native-carryover-v2.md",
+      "recovered_sha256": "2c3a4713d0b44a64bb24ba4b5073ab8c1496436546c1bd3d6b2e403838c06863"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": ".codex/plans/2026-10-13-god-here-native-carryover.md",
+      "source_blob": "cec3ed71378bb71f3e4bfe65744587253b8f4ef7",
+      "recovered_path": ".codex/plans/2026-10-13-god-here-native-carryover.md",
+      "recovered_sha256": "c7a61cb0c83944dd18f10771aa8c0f9b8d50f636e42cc045f4b948f98eb043ea"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": ".codex/plans/2026-10-18-codex-handoff-av-acceptance-closeout.md",
+      "source_blob": "08b43f559c2359a783967d73791bfdd524dee98a",
+      "recovered_path": ".codex/plans/2026-10-18-codex-handoff-av-acceptance-closeout.md",
+      "recovered_sha256": "163e11e2eeaafd771555f62783bea800d322898f8a208c55ae1229ea78bd0d09"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": "docs/evidence/ingress-custody-reconciliation-2026-10-18.json",
+      "source_blob": "034b2f58e3db4251f1fd773e4a244b897602d4b6",
+      "recovered_path": "docs/evidence/ingress-custody-reconciliation-2026-10-18.json",
+      "recovered_sha256": "536eb98c21f349a6447e6cbb20090d94831310fb3bbb657640fd3005fc278903"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": "docs/evidence/ingress-original-media-inventory-2026-10-18-v2.json",
+      "source_blob": "fd64f325f0f84c9c5f0c5d77ce230389ddf9a71e",
+      "recovered_path": "docs/evidence/ingress-original-media-inventory-2026-10-18-v2.json",
+      "recovered_sha256": "ed206daa8775b2ba82ee82de953d393f9dc85a8b62af4197f11eccb522a6ff89"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": "docs/evidence/take48-camera-coverage-proof-2026-10-18.json",
+      "source_blob": "32d97e84b5b59d22d47c64d3c6546d5645bf17fe",
+      "recovered_path": "docs/evidence/take48-camera-coverage-proof-2026-10-18.json",
+      "recovered_sha256": "20448d66a0952e013286c77811b0cb194645e358ab9981b4331ce36d2f416631"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": "docs/god-here-touchdesigner-carryover-2026-10-13.md",
+      "source_blob": "98a6e8b508ba92800d637fc5ff25493f73745436",
+      "recovered_path": "docs/god-here-touchdesigner-carryover-2026-10-13.md",
+      "recovered_sha256": "d8c2fd9074f8b6bb1b850e6ec3235e82d1ca5c9e9403e9ff89bbbfe96f97e399"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": "docs/god-here-touchdesigner-message-impact-2026-10-13.md",
+      "source_blob": "0024ccc5125e98b7c0fa84251f5b179abf696368",
+      "recovered_path": "docs/god-here-touchdesigner-message-impact-2026-10-13.md",
+      "recovered_sha256": "33810a9bdc82fdc0ecb38f8e975d96be2bf705cf4b1cc5ff198b487b55f8fcc1"
+    },
+    {
+      "source_pr": 10,
+      "source_head": "da65313a562ff91791ab0cf5897b0e5500351c51",
+      "source_path": "docs/god-here-touchdesigner-source-2026-10-13.md",
+      "source_blob": "dda211317bf8ff0f8255ab9f420b71901cbe4314",
+      "recovered_path": "docs/god-here-touchdesigner-source-2026-10-13.md",
+      "recovered_sha256": "1e979abdd1612fd8b4d582c6d502e617cdf9bf8f812733abbf8a5dff8391d135"
+    }
+  ],
+  "review_dispositions": [
+    {
+      "finding": "PR5 destination-state contradiction",
+      "disposition": "accepted; earlier observation explicitly marked historical and superseded by prepared-destination checkpoint"
+    },
+    {
+      "finding": "PR10 replacement of existing dated plan",
+      "disposition": "superseded; expanded plan retained as separate October18 v3; prior v2 bytes unchanged"
+    },
+    {
+      "finding": "PR10 destructive promotion and partial deletion",
+      "disposition": "accepted; require create-only no-clobber promotion and retain every interrupted partial with existing runner ledger"
+    },
+    {
+      "finding": "PR10 unsupported completed-copy claim",
+      "disposition": "accepted; inventory states metadata alone establishes no completed copy/readback/restore"
+    },
+    {
+      "finding": "PR10 archive-wide permanent three-camera claim",
+      "disposition": "accepted; conclusion bounded to Take48; alternative archival intervals remain searchable"
+    },
+    {
+      "finding": "PR10 public absolute source-file bindings",
+      "disposition": "accepted; source-relative projection; source branch retains original historical record"
+    },
+    {
+      "finding": "PR10 stale PR2/3 open state",
+      "disposition": "accepted; historical hold superseded by October12 merge receipts"
+    },
+    {
+      "finding": "historical handoff interpreted as fresh execution authority",
+      "disposition": "historical evidence only; current instructions govern session/archive boundaries"
+    }
+  ],
+  "validation": {
+    "json_parse": "passed",
+    "relative_markdown_links": "passed",
+    "inventory_arithmetic": "passed",
+    "original_v2_unchanged": "passed",
+    "catalog_consistency": "passed",
+    "independent_review": "material findings accepted and corrected; no second review loop"
+  },
+  "acceptance_scope": "Historical design and redacted evidence only. No new media copy, readback, restore, native playback, device qualification, source-owner acceptance or session-release result."
+}

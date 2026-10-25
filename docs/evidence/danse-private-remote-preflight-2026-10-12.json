@@ -1,0 +1,50 @@
+{
+  "run_id": "danse-remote-preflight-da6b60405ad342c98bd8b8b82fa5285b",
+  "github_repository": "4444J99/danse-private-custody",
+  "github_repository_id": 1416283322,
+  "github_private_verified": true,
+  "google_drive_authenticated": true,
+  "google_drive_shared_drive": false,
+  "google_drive_custom_root": false,
+  "copies_verified": 0,
+  "clean_restore_verified": false,
+  "source_payload_uploaded": false,
+  "originals_preserved": true,
+  "github_control_write_exit": 0,
+  "github_control_commit": {
+    "commit": "d0ae9773aa31c5828bd4c76adfb43b2078051fd7",
+    "file": "0561929334bb01fa230b717ff65b7fcdcc672e61"
+  },
+  "outcome": "destinations-prepared-custody-blocked",
+  "drive_folder_id_sha256": "3624a5e1bd60b87493eceb417090d846a3331e3c24d277afe36a9cb636611b7d",
+  "drive_folder_shared": false,
+  "drive_folder_permission_roles": [
+    "owner"
+  ],
+  "github_control_readback_verified": true,
+  "heavy_acquire_attempted": false,
+  "local_free_bytes": 18044506112,
+  "existing_runner_reserve_bytes": 21474836480,
+  "expected_physical_custody_disks_attached": false,
+  "remote_archive_transport_implemented": false,
+  "host_admission_status": {
+    "allowed": false,
+    "operation": "status",
+    "observed_at": "2026-10-13T00:50:34.296478+00:00",
+    "swap_fraction": 0.8558538818033412,
+    "swap_used_bytes": 14703457730,
+    "vitals_action": "shed",
+    "sensor_errors": [
+      "backblaze-process-sensor"
+    ],
+    "reasons": [
+      "swap-fraction",
+      "vitals-shed",
+      "pressure-sensor-unavailable"
+    ]
+  },
+  "github_control_readback_bytes": 691,
+  "github_control_readback_sha256": "da6dcb19eb03b7b0e4c6c1c56a21de7de4791ad86a2cc373f8aad24e8625046b",
+  "earlier_rclone_folder_state": "unknown-after-bounded-mkdir-and-readback-timeouts",
+  "drive_folder_state": "created-and-metadata-verified-via-connector"
+}

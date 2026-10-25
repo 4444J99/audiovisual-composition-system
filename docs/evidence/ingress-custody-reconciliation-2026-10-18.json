@@ -1,0 +1,139 @@
+{
+  "schema": "ace.ingress_custody_reconciliation.v2",
+  "verified_at": "2026-10-18T05:35:30Z",
+  "scope": "Comprehensive original-media custody, inventory refresh, loose media reconciliation, physical store qualification, and restore verification",
+  "ten_bank_inventory": {
+    "regular_files": 347,
+    "logical_bytes": 281534336361,
+    "directories": 12,
+    "symlinks": 0,
+    "special_files": 0,
+    "roots": {
+      "time-moment-brief": {
+        "files": 253,
+        "bytes": 181588707123
+      },
+      "backwards-up-hill": {
+        "files": 94,
+        "bytes": 99945629238
+      }
+    },
+    "private_manifest_reference": {
+      "locator": "ingress-inventory-20261012-56876a482ab8",
+      "sha256": "9cb729dcf38be13c7faff5e891cbfc9c1e126b833591ef026e773be6010fefe6"
+    }
+  },
+  "loose_ingress_media_reconciliation": {
+    "count": 6,
+    "logical_bytes": 10810337202,
+    "reconciliation_rule": "reconcile_in_place_without_moving_or_renaming",
+    "files": [
+      {
+        "filename": "2023-11-06b - alemor.mp4",
+        "bytes": 1919468325,
+        "mtime": 1699298660.0,
+        "sha256": "710f70fab427a622b9c6ba1d3c80efa1f231fc447af7e575eb90dc6aabeda766"
+      },
+      {
+        "filename": "692D3297-982D-46B8-B411-EB7FA3925396.MP4",
+        "bytes": 217677918,
+        "mtime": 1791172049.6551125,
+        "sha256": "48049ff35feea4b3502f718477b501dac79d5de2858bdc96816175cbbb2f2307"
+      },
+      {
+        "filename": "692D3297-982D-46B8-B411-EB7FA3925396.mov",
+        "bytes": 59130459,
+        "mtime": 1791235683.2360795,
+        "sha256": "926df53f621797c349590f102a39de90affefcc4d15ce4608db8488c148bed13"
+      },
+      {
+        "filename": "screen-recording-2025-03-18-at-3-22-21-pm.mov",
+        "bytes": 8362528363,
+        "mtime": 1742331292.0,
+        "sha256": "72ee668c68c3a91b77b497f590b3020b5d888964f0574e65c67bdc27990ecb1f"
+      },
+      {
+        "filename": "up-the-hill-backwards.mov",
+        "bytes": 51877542,
+        "mtime": 1791235709.3966315,
+        "sha256": "019fd4eb2150c51a75352ac4bb8a260144a774ff88576eac100e00ba79ec00ba"
+      },
+      {
+        "filename": "up-the-hill-backwards.mp4",
+        "bytes": 199654595,
+        "mtime": 1791172036.8814456,
+        "sha256": "e83eb57a2066e0b37d08669639b6c066467282b0625f09f22468a5a6ed165fc3"
+      }
+    ]
+  },
+  "total_accounted_estate": {
+    "total_regular_files": 353,
+    "total_logical_bytes": 292344673563,
+    "live_apfs_used_space_bytes": 292347879424,
+    "apfs_metadata_margin_bytes": 3205861,
+    "reconciliation_status": "complete_accounting_to_filesystem_margin"
+  },
+  "physical_store_qualification": {
+    "volumes": {
+      "Ingress": {
+        "uuid": "8E4C5386-7281-4E65-BC65-363C08FAAE50",
+        "device_node": "/dev/disk7s2",
+        "apfs_container": "disk7",
+        "physical_store": "/dev/disk6s2",
+        "total_bytes": 4000543715328,
+        "container_free_bytes": 1214555811840,
+        "used_bytes": 292347879424
+      },
+      "Archive4T": {
+        "uuid": "45C8AA30-307B-41E2-908D-5112E93B4AF5",
+        "device_node": "/dev/disk7s1",
+        "apfs_container": "disk7",
+        "physical_store": "/dev/disk6s2",
+        "total_bytes": 4000543715328,
+        "container_free_bytes": 1214555811840,
+        "used_bytes": 1144579997696
+      },
+      "T7Recovery": {
+        "uuid": "0287E02B-989A-419B-A7CA-B4BCE4ECA1FF",
+        "prior_parent": "disk9",
+        "mount_status": "disconnected_unmounted"
+      }
+    },
+    "reserve_guard": {
+      "required_reserve_bytes": 21474836480,
+      "container_free_bytes": 1214555811840,
+      "payload_bytes": 292344673563,
+      "remaining_after_payload_and_reserve_bytes": 900736301797,
+      "reserve_status": "satisfied_with_900_gb_margin"
+    },
+    "physical_store_independence": {
+      "colocated_container": "disk7",
+      "colocated_physical_store": "/dev/disk6s2",
+      "satisfies_physical_independence": false,
+      "qualification_statement": "Ingress and Archive4T reside within synthesized APFS container disk7 on physical store disk6s2. Copying between Ingress and Archive4T establishes volume redundancy and verifies restore mechanisms, but does NOT establish physical store independence. True physical store independence requires mounting T7Recovery or another distinct physical device."
+    }
+  },
+  "streamed_sha256_and_restore_proof": {
+    "hashing_protocol": {
+      "algorithm": "SHA-256",
+      "chunk_size_bytes": 8388608,
+      "pre_post_stat_verification": true,
+      "stat_invariants": ["st_size", "st_mtime_ns", "st_ino", "st_dev"]
+    },
+    "restore_verification_protocol": {
+      "membership_check": "exact_count_and_path_matching",
+      "byte_size_check": "exact_byte_equality",
+      "hash_check": "streaming_sha256_match_against_frozen_manifest",
+      "destination_reopen_readback": true
+    },
+    "safe_transfer_and_ledger_protocol": {
+      "exclusive_create_flag": "O_CREAT | O_EXCL",
+      "staging_extension": ".partial",
+      "fsync_before_readback": true,
+      "atomic_promotion_on_verification": true,
+      "clean_unlink_on_failure": true,
+      "interrupted_recovery_ledger_preserved": true,
+      "partial_file_contamination_prevented": true
+    }
+  }
+}
