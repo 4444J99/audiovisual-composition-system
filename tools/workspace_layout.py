@@ -2,6 +2,7 @@
 """Render and validate the ACE catalog; create non-destructive local views."""
 
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -117,13 +118,13 @@ BOUNDARIES = {
 }
 
 REQUIRED_BASELINE_PRS = {
-    "audiovisual-composition-system": (15, 16, 17),
-    "audiovisual-media-postproduction-system": (118, 119),
-    "simvltanea": (34, 35),
-    "time-moment-brief": (18, 19),
-    "timed-text-navigation-loop": (65, 66),
-    "generative-multimedia-spatial-environment": (183, 184),
-    "the-thing-without-a-name-screendance": (72, 73),
+    "audiovisual-composition-system": (15, 16, 17, 18),
+    "audiovisual-media-postproduction-system": (118, 119, 120),
+    "simvltanea": (34, 35, 36),
+    "time-moment-brief": (18, 19, 20),
+    "timed-text-navigation-loop": (65, 66, 67, 68),
+    "generative-multimedia-spatial-environment": (183, 184, 185),
+    "the-thing-without-a-name-screendance": (72, 73, 74, 75),
 }
 
 EXPECTED_ACTIVE_REPOS = tuple(REQUIRED_BASELINE_PRS.keys())
@@ -303,6 +304,30 @@ def audit_estate_wave_progression(manifest_data=None, source_led_data=None):
         "coverage_complete": coverage_complete,
         "errors": errors,
     }
+
+
+def generate_estate_completion_seal(manifest_data=None, source_led_data=None) -> dict:
+    """Generate a canonical SHA-256 digested estate completion seal across all 15 projects."""
+    audit = audit_estate_wave_progression(manifest_data=manifest_data, source_led_data=source_led_data)
+    ready = bool(audit.get("coverage_complete", False) and len(audit.get("errors", [])) == 0)
+
+    seal = {
+        "schema": "ace.estate_completion_seal.v1",
+        "ready": ready,
+        "total_projects": audit.get("total_projects", 0),
+        "active_repos": audit.get("active_repo_count", 0),
+        "source_led_works": audit.get("source_led_count", 0),
+        "wave_progressions": audit.get("wave_progressions", {}),
+        "errors": audit.get("errors", []),
+    }
+
+    payload_to_hash = {k: v for k, v in seal.items() if k not in ("seal_digest", "digest")}
+    canonical_bytes = json.dumps(payload_to_hash, sort_keys=True).encode("utf-8")
+    seal_digest = hashlib.sha256(canonical_bytes).hexdigest()
+
+    seal["seal_digest"] = seal_digest
+    seal["digest"] = seal_digest
+    return seal
 
 
 def rendered_files(manifest):
@@ -598,7 +623,7 @@ def check_workspace(manifest, catalog_only=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("render", "check", "plan", "apply", "status", "audit-progression"))
+    parser.add_argument("command", choices=("render", "check", "plan", "apply", "status", "audit-progression", "seal"))
     parser.add_argument("--catalog-only", action="store_true", help="CI: allow absent ignored workstation sources")
     args = parser.parse_args()
     if args.catalog_only and args.command != "check":
@@ -611,6 +636,12 @@ def main():
         result = audit_estate_wave_progression()
         print(json.dumps(result, indent=2))
         if result["status"] != "PASS":
+            sys.exit(1)
+        return
+    if args.command == "seal":
+        result = generate_estate_completion_seal()
+        print(json.dumps(result, indent=2))
+        if not result["ready"]:
             sys.exit(1)
         return
     files = rendered_files(manifest)
