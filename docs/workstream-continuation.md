@@ -1,5 +1,24 @@
 # Workstream continuation — 2026-10-12
 
+## Current operational owner — 2026-10-25
+
+The two custody runners and their fixtures now belong to the operational Limen
+repository, merged in PR 3248 at e69a32ca1825ff7606f6ad6bd14e0a179acedb23. All six
+source/test/document blobs were verified on fetched default. The [owner contract](https://github.com/4444J99/limen/blob/e69a32ca1825ff7606f6ad6bd14e0a179acedb23/docs/operations/media-custody-runners.md)
+and [original source provenance](https://github.com/4444J99/limen/blob/e69a32ca1825ff7606f6ad6bd14e0a179acedb23/docs/operations/media-custody-migration-2026-10-25.json)
+retain the operational path and review dispositions. Its 24 fixture cases and
+30 implicated gates pass, including orphaned partial accounting, checkpoint
+progress, stable volume identities, source-preservation evidence, destination
+containment and bounded finalization. No real media transfer, readback, restore,
+scheduler activation, installed-runtime or artistic/device acceptance is claimed.
+
+ACE retains coordination design and redacted/historical evidence. The dated
+commands, device numbers, admission observations and executable-copy paths below
+describe earlier attempts; they are not current operations or renewed authority.
+Original media, interrupted attempts, source branches and all receipts remain.
+
+## Historical continuation
+
 Six previously preserved files (four calibration derivatives and two screenshots), totaling 1,499,414 bytes, were copied with exclusive creation to T7Recovery, independently read back and SHA-256 checked, then restored from that device into a fresh private local directory and checked again. Prior custody files remain present and match their recorded hashes. No original was deleted, renamed or moved.
 
 T7Recovery is on physical disk9; Ingress and Archive4T are both on disk7. Archive4T does not establish an independent physical copy of Ingress. Private device and restore receipts use locator 6285876619c0. The public [verification receipt](evidence/t7recovery-custody-2026-10-12.json) records the bounded scope without media. This proves recovery of this six-file set, not custody of original recordings, fourth-camera material or the full archive.

@@ -135,7 +135,7 @@ refs, remotes and metadata; those private manifests are not published here.
 The native `scripts/private_custody.py` snapshot requires remote parity and
 bundles HEAD only. Local main is ahead of its private remote, and a HEAD-only
 bundle cannot secure other branches or older stash reflog entries. The new
-coordination runner [tools/custody_danse.py](../tools/custody_danse.py) preserves
+operational runner [Limen scripts/custody_danse.py](https://github.com/4444J99/limen/blob/e69a32ca1825ff7606f6ad6bd14e0a179acedb23/scripts/custody_danse.py) preserves
 the entire standalone checkout and `.git` store instead. It reuses the native
 physical-medium proof without changing that tool or pretending remote parity.
 It refuses shallow stores, alternates, submodules, external core.worktree
@@ -174,14 +174,24 @@ pass copied payload or changed source state.
 
 ## Next bounded run
 
-After host pressure materially changes and source writers finish, start one
-fresh, admitted attempt with a new receipt filename:
+The October 12 preflight and source observations above remain historical.
+Operational ownership moved to Limen in merged PR 3248 on October 25; ACE retains
+design and redacted evidence. The [operational contract](https://github.com/4444J99/limen/blob/e69a32ca1825ff7606f6ad6bd14e0a179acedb23/docs/operations/media-custody-runners.md)
+and its source-owned CLI now govern any new admitted attempt. Obtain its required
+source and receipt arguments from the existing private owner; no private binding
+or execution permission is introduced here. Before running this in a fresh shell,
+set and export `LIMEN_ROOT` to the verified operational source checkout selected
+by Limen's checkout/release owner. It must contain the published runner; a runtime
+root or an older checkout is insufficient. Inspect that entry point:
 
 ```sh
-python3 -B tools/custody_danse.py --source /Users/4jp/Workspace/audiovisual-composition-system/the-thing-without-a-name --redacted-receipt docs/evidence/danse-private-custody-next.json --wall-seconds 1200
+: "${LIMEN_ROOT:?Set and export LIMEN_ROOT to the verified Limen source checkout}"
+python3 -B "$LIMEN_ROOT/scripts/custody_danse.py" --help
 ```
 
-Do not retry the unchanged denial or override pressure policy. The runner also
+Use the verified source revision through Limen's normal checkout/release owner;
+the merge receipt alone does not establish an installed runtime. Do not retry
+an unchanged denial or override pressure policy. The runner also
 supports `--preflight-only`, which can never report completed custody. Commit
 the next redacted receipt only after inspecting it and running scoped checks.
 This covers the current checkout, not the undiscovered historical material
