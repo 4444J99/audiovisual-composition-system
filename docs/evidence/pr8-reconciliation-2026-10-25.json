@@ -1,0 +1,297 @@
+{
+  "schema": "ace.pr8_reconciliation.v1",
+  "original_pr": 8,
+  "original_head": "a0e7c38f86f9a3f0b6f352c6583ff7b7b33fc3a7",
+  "records": [
+    {
+      "path": ".codex/plans/2026-10-12-danse-host-pressure-recovery.md",
+      "original_blob": "d9e33b93970763bc3c42233b903c2cf8e51b1625",
+      "original_sha256": "16de223b824238a663b6ac64b1848a1a6dec78909e57ee996cf8952a1eac9b85",
+      "candidate_sha256": "5d9f9481d1e0937dbc658e712b766da9b776aa05160213167c50823926be9903",
+      "disposition": "original plan retained; later external merge observation appended"
+    },
+    {
+      "path": ".codex/plans/2026-10-12-danse-private-custody-v2.md",
+      "original_blob": "9afa130e9f1246dae449b069d6238e48bb516c21",
+      "original_sha256": "06f90bc1859de87a80dccc03305e61ec641d5daf1f9f46fd06380d26f4381240",
+      "candidate_sha256": "06f90bc1859de87a80dccc03305e61ec641d5daf1f9f46fd06380d26f4381240",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": ".codex/plans/2026-10-12-danse-private-custody.md",
+      "original_blob": "8126a11f8292cddf8e1446c807db7199e01e1389",
+      "original_sha256": "208fd8655f1107a59250d8e83021a67a31461875299787a5231a29424fe918e9",
+      "candidate_sha256": "208fd8655f1107a59250d8e83021a67a31461875299787a5231a29424fe918e9",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": ".codex/plans/2026-10-12-danse-source-authority.md",
+      "original_blob": "fb8cae970507003e297d3bf8e74217273fac8454",
+      "original_sha256": "f586b3f46a1c1f42880deaee36c790d1cc872f2bf637a66a899eee32dc46c72d",
+      "candidate_sha256": "f586b3f46a1c1f42880deaee36c790d1cc872f2bf637a66a899eee32dc46c72d",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": ".codex/plans/2026-10-12-ingress-original-media-custody-v2.md",
+      "original_blob": "8edc5bbb7bda21fd5d60e22843f334bfcc9c2997",
+      "original_sha256": "c186635788e7e7bdb5ca672025b1617ca41c40a9169768ef35fbfc8fe139e2fa",
+      "candidate_sha256": "c186635788e7e7bdb5ca672025b1617ca41c40a9169768ef35fbfc8fe139e2fa",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": ".codex/plans/2026-10-12-ingress-original-media-custody.md",
+      "original_blob": "c20a2b8868833adb598f2aae0409ed96da561034",
+      "original_sha256": "e6e7fdd3d9227618b5dc9c23e7df663050c79e7b59576e6d4a314e83422a29f9",
+      "candidate_sha256": "e6e7fdd3d9227618b5dc9c23e7df663050c79e7b59576e6d4a314e83422a29f9",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/danse-private-custody.md",
+      "original_blob": "78f82c50c960ca374e19a6f0cccab951af5b01a6",
+      "original_sha256": "e8d7b6292e33faec0b08e5cc56aaffb17aff29e42a41f87581bd4a96b6a98578",
+      "candidate_sha256": "1b0986b3c96d2d3bc776125caf90607b426bd2cb492d3bcb012f42baeebfe4cd",
+      "disposition": "historical evidence and later checkpoints retained; executable authority moved to pinned operational owner"
+    },
+    {
+      "path": "docs/danse-source-authority-reconciliation.md",
+      "original_blob": "0e03dca346007e2fc80df22e66add2fcf28b93c9",
+      "original_sha256": "f000c1e472c6dd3fc41ef3ff5fcf024a8317b23fa181581edd6411828bf6f689",
+      "candidate_sha256": "f000c1e472c6dd3fc41ef3ff5fcf024a8317b23fa181581edd6411828bf6f689",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/directory-architecture.md",
+      "original_blob": "c20f532a33a9ff0dfcfaab4614aea1431fdd2a5b",
+      "original_sha256": "10a536038bf7341378f57239fb9c35157f9758fc4d90eb6cffc8c0488b5c3856",
+      "candidate_sha256": "ba7c0d8f8f5bed819c0c68be224ba29759ed91799d8f7f508b3620ff253d4094",
+      "disposition": "repository visibility description corrected; typed identities and compatibility aliases retained"
+    },
+    {
+      "path": "docs/evidence/danse-host-pressure-recovery-2026-10-12.json",
+      "original_blob": "6e16d3b7b0c7dbe74bc21ec0e81d80ccf67d7afa",
+      "original_sha256": "b01dbddddc32de4073c142a034642e3a31fb8afae34e8a14932fd55a203d001b",
+      "candidate_sha256": "98b5af2ed28ed214c582d55e2c31250a6aa40ded385c0f0ae4f272e7f6ccf3ee",
+      "disposition": "later merge and successor review recorded without promoting custody"
+    },
+    {
+      "path": "docs/evidence/danse-private-custody-2026-10-12-v2.json",
+      "original_blob": "7533807a6b235e56a09798f5ac15f5eaca304439",
+      "original_sha256": "89392cff7f3b3902e4c8e3ba0182ec029efe30bef29f9d47f3c753d71497eebe",
+      "candidate_sha256": "89392cff7f3b3902e4c8e3ba0182ec029efe30bef29f9d47f3c753d71497eebe",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/danse-private-custody-2026-10-12-v3.json",
+      "original_blob": "bc7e6b205565e940c7ea533e4a4db6c47fb3ba2c",
+      "original_sha256": "c7a6f49c8b9dc36d92189f7a2636c0cba6c942ade14002b689fe967cc0c17865",
+      "candidate_sha256": "c7a6f49c8b9dc36d92189f7a2636c0cba6c942ade14002b689fe967cc0c17865",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/danse-private-custody-2026-10-12.json",
+      "original_blob": "c7b8a1b68bdaf315b088646af359a3f0829b737a",
+      "original_sha256": "59b10a8b8ed9beec1ef821a095a38e59aa315b788092f42b0026ddf6b586a4c4",
+      "candidate_sha256": "59b10a8b8ed9beec1ef821a095a38e59aa315b788092f42b0026ddf6b586a4c4",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/danse-private-custody-recheck-2026-10-12.json",
+      "original_blob": "df0b4a558afc04522b4933ced4200d1356480f80",
+      "original_sha256": "ec170f86dd5de704e51a7882c4a7c04d3338573649e48642d9621d956befc5f2",
+      "candidate_sha256": "ec170f86dd5de704e51a7882c4a7c04d3338573649e48642d9621d956befc5f2",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/danse-source-authority-2026-10-12.json",
+      "original_blob": "2fbe9274d7b4796d8c702f2c23b381ed7e6c83e8",
+      "original_sha256": "dcbe4ffc46408c5fab873e348ea667843b13e4f63da66821157d7dc0cd3fa2c5",
+      "candidate_sha256": "dcbe4ffc46408c5fab873e348ea667843b13e4f63da66821157d7dc0cd3fa2c5",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/host-swap-diagnosis-2026-10-12.json",
+      "original_blob": "faa3e3067fbda6751dc6b284ff8870639ffb433d",
+      "original_sha256": "d20dcd7f67a423f3c2887ddae51e3849179ab0634f08e49223eab0948be824a8",
+      "candidate_sha256": "d20dcd7f67a423f3c2887ddae51e3849179ab0634f08e49223eab0948be824a8",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/ingress-custody-attempt-2026-10-12.json",
+      "original_blob": "1af539cbbeb62c86b1a265e4a68a7d9825757111",
+      "original_sha256": "b3ca93359becff4737a52fab5f845fd38a8bc9272dcb91c879d6745e7cc7dcdc",
+      "candidate_sha256": "b3ca93359becff4737a52fab5f845fd38a8bc9272dcb91c879d6745e7cc7dcdc",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/ingress-custody-post-restart-2026-10-12.json",
+      "original_blob": "d15ad0f6cd760affba28dbb4d67ecebddbb1d443",
+      "original_sha256": "2b86fcb3138200011125b872a0a6c3c3ad3db0972c211a71c60a538bf7c997e5",
+      "candidate_sha256": "2b86fcb3138200011125b872a0a6c3c3ad3db0972c211a71c60a538bf7c997e5",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/ingress-original-media-inventory-2026-10-12.json",
+      "original_blob": "cd73a08c03e7edaae4f7e130c6061ffa79424ca6",
+      "original_sha256": "b84e71e4b95a47a7508db5c8888ef4afe668bb928d41f582e9603a311274ce2d",
+      "candidate_sha256": "b84e71e4b95a47a7508db5c8888ef4afe668bb928d41f582e9603a311274ce2d",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/evidence/t7recovery-custody-2026-10-12.json",
+      "original_blob": "c55733b837cdf05fa07e8dc76fed3a8a0ad4b0a0",
+      "original_sha256": "fccde2c2eb0a4a7ff0a03062e55b01052b172969d62670d93d3f097757a86874",
+      "candidate_sha256": "fccde2c2eb0a4a7ff0a03062e55b01052b172969d62670d93d3f097757a86874",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/helper-buildup-investigation.md",
+      "original_blob": "c7e36661d74fc0de84c8f9f104299e1449a64d86",
+      "original_sha256": "815220787084d46eaf015e990555449c4e2423ba73207098bb33de37b28a2ba5",
+      "candidate_sha256": "815220787084d46eaf015e990555449c4e2423ba73207098bb33de37b28a2ba5",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/project-catalog.md",
+      "original_blob": "0c67df94d50cf2aae3a86a6452b772e364489ced",
+      "original_sha256": "f1cfdf9cdbe1fdf0a7d7053aa0760a3ff4b3ecfa7bdd5b1e797ded3333a65cc4",
+      "candidate_sha256": "0d32604bd268bc5da0b87bfb0d27273ff28e5856192a71a561412c08786ea22f",
+      "disposition": "current public projection retains all 15 stable projects and withholds private bindings"
+    },
+    {
+      "path": "docs/review-resolution-2026-10-12.md",
+      "original_blob": "023b3139d22ee6839b5b938605f207c045eb386b",
+      "original_sha256": "24eab6f93e3dfb6d8acadfa97262a26fbb8f3de18cd3cf0c112c46b73c4156be",
+      "candidate_sha256": "24eab6f93e3dfb6d8acadfa97262a26fbb8f3de18cd3cf0c112c46b73c4156be",
+      "disposition": "exact_source_retained"
+    },
+    {
+      "path": "docs/workstream-continuation.md",
+      "original_blob": "7d843b3ac6cb9991bbf770aa0c65b014701f8b07",
+      "original_sha256": "ae2141fda2e30c030272c644f50d80cc529fb794dc826d0283469e7321d446fc",
+      "candidate_sha256": "9a3e4f156dda6539826091e75473f4cd8aa7d92ae4dd08ee76051ca724a4b3bb",
+      "disposition": "original attempts retained as historical; resolved coordination work and operational ownership distinguished"
+    },
+    {
+      "path": "projects/danse/README.md",
+      "original_blob": "80ed7819361e16d3d7beb29298b88d4241d790e2",
+      "original_sha256": "0a5e49256231f4a1a3a393954f01ca327362d0ef3d0f05a0629166c79d63d994",
+      "candidate_sha256": "30bc9d7fbe7a7e873d4391be095f16fa11d1a66f420510de4f9e92ad199604c1",
+      "disposition": "compatibility pointer to canonical artwork record"
+    },
+    {
+      "path": "projects/hole-loop/README.md",
+      "original_blob": "5205754859987d05d1817c0294102e245271366b",
+      "original_sha256": "e4b0cdcce8fb688027e0edb9462e32b58f463b3e8883f0590d4ed4da6912a656",
+      "candidate_sha256": "c74c8a60cf28812cebf4c2866afa9b74a425426768e5f342339910a86f4b55fb",
+      "disposition": "compatibility pointer to canonical artwork record"
+    },
+    {
+      "path": "repositories/danse-source/README.md",
+      "original_blob": "fa4081ae1cb94b356dc21711e3cde342aa16b8a3",
+      "original_sha256": "14f975794c617a877166196ea0e49a4721b05bd8801a98cd5b936c9f5e0ae8f0",
+      "candidate_sha256": "23c9bcb2748f37e714c205dfbc7796851eb39b7fa4d7ab2060b60d018f44f89e",
+      "disposition": "compatibility pointer to restricted functional record"
+    },
+    {
+      "path": "repositories/hole-loop/README.md",
+      "original_blob": "26a27b2887e6e9241dae5caa36dccbf9c83cf534",
+      "original_sha256": "41227d18e575a674727f68baa4848d61323d23c6436f437e51c61ca8ec6c2f80",
+      "candidate_sha256": "4645d233650265570ec5721575a8267db4da823cc0f2502072f6094354d2d071",
+      "disposition": "compatibility pointer to public functional record"
+    },
+    {
+      "path": "tools/custody_danse.py",
+      "original_blob": "f10c62f6789913624d122349bdaa83b09d98dbe1",
+      "original_sha256": "c1185a3a31f0d33de46b6da3a725a2fd80a206c650c0d8bb5c5d1fc9173b7958",
+      "candidate_sha256": null,
+      "disposition": "operational_source_migrated_with_original_provenance_and_safety_repairs",
+      "successor_repository": "4444J99/limen",
+      "successor_path": "scripts/custody_danse.py",
+      "successor_default": "e69a32ca1825ff7606f6ad6bd14e0a179acedb23"
+    },
+    {
+      "path": "tools/custody_original_media.py",
+      "original_blob": "602693f45b1c5d91be4ddb216a19c41a94ee44ef",
+      "original_sha256": "ff453c6b6f6c98962ea928066d5c0d93e2fa24524a7b1b859ee3de6413d52585",
+      "candidate_sha256": null,
+      "disposition": "operational_source_migrated_with_original_provenance_and_safety_repairs",
+      "successor_repository": "4444J99/limen",
+      "successor_path": "scripts/custody_original_media.py",
+      "successor_default": "e69a32ca1825ff7606f6ad6bd14e0a179acedb23"
+    },
+    {
+      "path": "tools/tests/test_custody_danse.py",
+      "original_blob": "3958fbb3204590d683838a5b79601aa37e6ff154",
+      "original_sha256": "5cfe1b3bd14c94c218f697a2c90b1042bce22a07f3c4997ed117341fdea7d67b",
+      "candidate_sha256": null,
+      "disposition": "operational_source_migrated_with_original_provenance_and_safety_repairs",
+      "successor_repository": "4444J99/limen",
+      "successor_path": "scripts/tests/test_custody_danse.py",
+      "successor_default": "e69a32ca1825ff7606f6ad6bd14e0a179acedb23"
+    },
+    {
+      "path": "tools/tests/test_custody_original_media.py",
+      "original_blob": "c3ec6ee4bcf80e9d27e250bc6efe019f22fc96b1",
+      "original_sha256": "8290c4c3cef0e8374bf46a8edde4bf0be2cf2d43b207cd8d7e4310373c659002",
+      "candidate_sha256": null,
+      "disposition": "operational_source_migrated_with_original_provenance_and_safety_repairs",
+      "successor_repository": "4444J99/limen",
+      "successor_path": "scripts/tests/test_custody_original_media.py",
+      "successor_default": "e69a32ca1825ff7606f6ad6bd14e0a179acedb23"
+    },
+    {
+      "path": "workspace-manifest.json",
+      "original_blob": "90ea6c98ba2dac128c1a243897e0dc0645f5e22c",
+      "original_sha256": "358761441c69525cd0e5bf03853419be3857ff790927bc0277fe9e8a150cbf5a",
+      "candidate_sha256": "e832e0d0f9756dfb45601c95aca8ab106db3403ce66e0ea07f40142b162bcbee",
+      "disposition": "all original project, repository, component and archive identities retained with typed references and later evidence"
+    }
+  ],
+  "review_dispositions": [
+    {
+      "thread": "PRRT_kwDOVENawM6rrjwR",
+      "disposition": "accepted; separate bounded partial namespace accounting prevents completion and retains interrupted payloads"
+    },
+    {
+      "thread": "PRRT_kwDOVENawM6rrjwT",
+      "disposition": "accepted; both operational runners and their fixtures migrated to verified Limen default before ACE executable copies retired"
+    },
+    {
+      "thread": "PRRT_kwDOVENawM6rrjwU",
+      "disposition": "accepted; final per-object readback checkpoints survive short verification windows; fresh fingerprints reject changed objects"
+    },
+    {
+      "thread": "PRRT_kwDOVENawM6rrjwX",
+      "disposition": "accepted; destination receipts bind stable configured volume UUIDs, not transient device numbers"
+    },
+    {
+      "thread": "PRRT_kwDOVENawM6rrjwY",
+      "disposition": "accepted; source preservation is evidence-derived true, false or unknown; unavailable evidence is not observed loss"
+    }
+  ],
+  "operational_receipt": "https://github.com/4444J99/limen/blob/e69a32ca1825ff7606f6ad6bd14e0a179acedb23/docs/operations/media-custody-migration-2026-10-25.json",
+  "validation": {
+    "original_paths": 33,
+    "exact_paths": 18,
+    "reconciled_paths": 11,
+    "migrated_operational_paths": 4,
+    "operational_blobs_verified_on_default": 6,
+    "operational_fixtures_passed": 24,
+    "operational_scoped_gates_passed": 30,
+    "ace_python_tests_passed": 71,
+    "ace_node_tests_passed": 14,
+    "catalog": {
+      "unique_projects": 15,
+      "repository_references": 6,
+      "generated_files": 54,
+      "local_links_in_projection": 0
+    },
+    "live_access": {
+      "repository_id": 1413700288,
+      "visibility": "public",
+      "verified": true
+    },
+    "independent_review": "all 33 original paths accounted for; no unique intention or evidence loss found; final receipt privacy/readback checked separately"
+  },
+  "acceptance_boundary": "Source migration and coordination evidence only. No real media copy/readback/restore, installed runtime, scheduler activation, deployment, artwork/device acceptance or source/checkout retirement. Carrier disposition requires subsequent verified ACE default readback; original physical custody and broader source-owner obligations remain unfulfilled."
+}
