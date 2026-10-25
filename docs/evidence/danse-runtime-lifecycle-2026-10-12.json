@@ -1,0 +1,108 @@
+{
+  "schema": "danse.runtime-lifecycle-recheck.v1",
+  "local_observation_date": "2026-10-12",
+  "timezone": "America/New_York",
+  "private_run_id": "danse-lifecycle-e08219050e464c3ea2d7f804567deab4",
+  "outcome": "blocked-pressure-and-disconnected-custody-media",
+  "python_samples": [
+    {
+      "python_process_count": 157,
+      "python_cpu_percent_sum": 491.7,
+      "python_rss_kib_sum": 1686224,
+      "parentless_python_count": 21
+    },
+    {
+      "python_process_count": 140,
+      "python_cpu_percent_sum": 13.2,
+      "python_rss_kib_sum": 850048,
+      "parentless_python_count": 3
+    }
+  ],
+  "examined_high_cpu_launch_wrappers": 8,
+  "examined_parentless_wrappers_no_longer_observed": 6,
+  "exit_cause_verified": false,
+  "signals_sent_by_this_attempt": 0,
+  "existing_work_restarted_or_retuned": false,
+  "declared_tools_or_admission_policy_modified": false,
+  "host_status_samples": [
+    {
+      "allowed": false,
+      "reasons": [
+        "swap-fraction",
+        "vitals-shed"
+      ],
+      "pressure": {
+        "backblaze_cpu_percent": 0.0,
+        "backblaze_rss_bytes": 0,
+        "disk_mib_per_second_samples": [
+          28.13,
+          18.17
+        ],
+        "memory_bytes": 17179869184,
+        "observed_at": "2026-10-13T00:39:18.519882+00:00",
+        "observed_epoch": 1791851958.519882,
+        "sensor_errors": [],
+        "swap_fraction": 0.6937792968237773,
+        "swap_growth_bytes_per_minute": 0.0,
+        "swap_used_bytes": 11919037562,
+        "vitals_action": "shed"
+      }
+    },
+    {
+      "allowed": false,
+      "reasons": [
+        "swap-fraction",
+        "vitals-shed"
+      ],
+      "pressure": {
+        "backblaze_cpu_percent": 0.0,
+        "backblaze_rss_bytes": 0,
+        "disk_mib_per_second_samples": [
+          64.58,
+          104.53
+        ],
+        "memory_bytes": 17179869184,
+        "observed_at": "2026-10-13T00:39:42.327361+00:00",
+        "observed_epoch": 1791851982.327361,
+        "sensor_errors": [],
+        "swap_fraction": 0.6825445556314662,
+        "swap_growth_bytes_per_minute": 0.0,
+        "swap_used_bytes": 11726026178,
+        "vitals_action": "shed"
+      }
+    }
+  ],
+  "source_recheck": {
+    "inventory_stable": true,
+    "git_state_stable": true,
+    "source_head": "f6f27c10a4bf617d895b0f0387eb3013aa39913b",
+    "ref_count": 14,
+    "stash_entries": 2,
+    "ignored_entries": 4257,
+    "ignored_bytes": 1212543676,
+    "writer_probe_complete": true,
+    "writable_handles": 0,
+    "minimum_observation_seconds": 5
+  },
+  "medium_availability": {
+    "expected_paths": {
+      "T7Recovery": {
+        "exists": false,
+        "is_directory": false
+      },
+      "Archive4T": {
+        "exists": false,
+        "is_directory": false
+      }
+    },
+    "attached_expected_volumes": {},
+    "apfs_inventory_succeeded": true
+  },
+  "heavy_acquire_attempted": false,
+  "source_payload_hashed_copied_or_uploaded": false,
+  "copies_verified": 0,
+  "clean_restore_verified": false,
+  "originals_and_partials_retained": true,
+  "private_repository_custody_is_possible": true,
+  "second_independent_copy_still_required": true
+}

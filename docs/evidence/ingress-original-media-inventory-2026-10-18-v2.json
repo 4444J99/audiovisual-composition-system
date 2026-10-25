@@ -1,0 +1,136 @@
+{
+  "observed_at": "2026-10-18T05:34:00Z",
+  "inventory_locator": "ingress-inventory-20261018-v2",
+  "inventory_version": "2.0.0",
+  "roots": {
+    "time-moment-brief": {
+      "files": 253,
+      "bytes": 181588707123,
+      "collections": {
+        "palm-beach-christmas": {
+          "2021DEC-100GOPRO": { "files": 21, "bytes": 20958806312 },
+          "2021DEC-360GOPRO": { "files": 102, "bytes": 93896076011 },
+          "2021DEC-PANASONIC": { "files": 40, "bytes": 2674868767 },
+          "metadata": { "files": 2, "bytes": 16392 }
+        },
+        "pompano-concepts": {
+          "2021AUG-100GOPRO": { "files": 67, "bytes": 33266419054 },
+          "2021AUG-PANASONIC": { "files": 20, "bytes": 30792510443 }
+        },
+        "root_metadata": { "files": 1, "bytes": 10244 }
+      }
+    },
+    "backwards-up-hill": {
+      "files": 94,
+      "bytes": 99945629238,
+      "banks": {
+        "2022FEB-100GOPRO": { "files": 4, "bytes": 2044858353 },
+        "2022FEB-360GOPRO": { "files": 36, "bytes": 23285133086 },
+        "2022FEB-DJI": { "files": 22, "bytes": 30072668795 },
+        "2022FEB-F6": { "files": 13, "bytes": 3438452644 },
+        "2022FEB-PANASONIC": { "files": 17, "bytes": 41104508164 },
+        "metadata": { "files": 2, "bytes": 8196 }
+      }
+    }
+  },
+  "ten_bank_regular_files": 347,
+  "ten_bank_logical_bytes": 281534336361,
+  "directories": 12,
+  "symlinks": 0,
+  "special_files": 0,
+  "enumeration_errors": 0,
+  "changed_on_second_stat": 0,
+  "loose_ingress_media_candidates": {
+    "files": 6,
+    "logical_bytes": 10810337202,
+    "reconciliation_disposition": "reconciled_in_place_without_moving",
+    "records": [
+      {
+        "filename": "2023-11-06b - alemor.mp4",
+        "source_relative_path": "2023-11-06b - alemor.mp4",
+        "size_bytes": 1919468325,
+        "mtime_iso": "2023-11-06T19:24:20Z",
+        "sha256": "710f70fab427a622b9c6ba1d3c80efa1f231fc447af7e575eb90dc6aabeda766",
+        "role": "external_reference_edit_screening_capture"
+      },
+      {
+        "filename": "692D3297-982D-46B8-B411-EB7FA3925396.MP4",
+        "source_relative_path": "692D3297-982D-46B8-B411-EB7FA3925396.MP4",
+        "size_bytes": 217677918,
+        "mtime_iso": "2026-10-05T03:47:29Z",
+        "sha256": "48049ff35feea4b3502f718477b501dac79d5de2858bdc96816175cbbb2f2307",
+        "role": "vertical_edit_reference_video"
+      },
+      {
+        "filename": "692D3297-982D-46B8-B411-EB7FA3925396.mov",
+        "source_relative_path": "692D3297-982D-46B8-B411-EB7FA3925396.mov",
+        "size_bytes": 59130459,
+        "mtime_iso": "2026-10-05T21:28:03Z",
+        "sha256": "926df53f621797c349590f102a39de90affefcc4d15ce4608db8488c148bed13",
+        "role": "quicktime_derivative_vertical_edit"
+      },
+      {
+        "filename": "screen-recording-2025-03-18-at-3-22-21-pm.mov",
+        "source_relative_path": "screen-recording-2025-03-18-at-3-22-21-pm.mov",
+        "size_bytes": 8362528363,
+        "mtime_iso": "2025-03-18T20:54:52Z",
+        "sha256": "72ee668c68c3a91b77b497f590b3020b5d888964f0574e65c67bdc27990ecb1f",
+        "role": "historical_playback_screen_recording"
+      },
+      {
+        "filename": "up-the-hill-backwards.mov",
+        "source_relative_path": "up-the-hill-backwards.mov",
+        "size_bytes": 51877542,
+        "mtime_iso": "2026-10-05T21:28:29Z",
+        "sha256": "019fd4eb2150c51a75352ac4bb8a260144a774ff88576eac100e00ba79ec00ba",
+        "role": "quicktime_derivative_first_iteration"
+      },
+      {
+        "filename": "up-the-hill-backwards.mp4",
+        "source_relative_path": "up-the-hill-backwards.mp4",
+        "size_bytes": 199654595,
+        "mtime_iso": "2026-10-05T03:47:16Z",
+        "sha256": "e83eb57a2066e0b37d08669639b6c066467282b0625f09f22468a5a6ed165fc3",
+        "role": "first_iteration_reference_video"
+      }
+    ]
+  },
+  "grand_total_accounted_files": 353,
+  "grand_total_accounted_bytes": 292344673563,
+  "volume_accounting": {
+    "mount_point": "/Volumes/Ingress",
+    "live_apfs_used_bytes": 292347879424,
+    "payload_accounted_bytes": 292344673563,
+    "apfs_metadata_margin_bytes": 3205861,
+    "apfs_metadata_margin_mib": 3.0573530197143555,
+    "reconciliation_status": "fully_accounted_to_metadata_margin"
+  },
+  "disks": {
+    "Ingress": {
+      "uuid": "8E4C5386-7281-4E65-BC65-363C08FAAE50",
+      "device_identifier": "disk7s2",
+      "apfs_container": "disk7",
+      "apfs_physical_store": "disk6s2",
+      "total_bytes": 4000543715328,
+      "container_free_bytes": 1214555811840,
+      "filesystem": "apfs"
+    },
+    "Archive4T": {
+      "uuid": "45C8AA30-307B-41E2-908D-5112E93B4AF5",
+      "device_identifier": "disk7s1",
+      "apfs_container": "disk7",
+      "apfs_physical_store": "disk6s2",
+      "total_bytes": 4000543715328,
+      "container_free_bytes": 1214555811840,
+      "filesystem": "apfs"
+    },
+    "T7Recovery": {
+      "uuid": "0287E02B-989A-419B-A7CA-B4BCE4ECA1FF",
+      "prior_parent": "disk9",
+      "mount_status": "disconnected_unmounted"
+    }
+  },
+  "physical_store_independence_note": "The historical metadata reports Ingress and Archive4T in APFS container disk7 on physical store disk6s2. No completed payload copy, readback or restore is established by this inventory; a second volume in that container would not provide independent physical custody.",
+  "reserve_bytes": 21474836480,
+  "available_margin_beyond_reserve_bytes": 900736301797
+}
