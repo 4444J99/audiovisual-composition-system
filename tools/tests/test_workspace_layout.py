@@ -1,7 +1,7 @@
 """Safety predicates for directory navigation and generated documents."""
 
 import importlib.util
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import tempfile
 import subprocess
 import unittest
@@ -19,6 +19,34 @@ class LayoutSafety(unittest.TestCase):
         for value in ("../private", "/private", "x/../../secret", "x\\y", ""):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 layout.safe_path(value)
+
+    def test_control_characters_rejected(self):
+        for value in ("safe\n!/published-private", "safe\nREADME.md", "safe\n!published-private",
+                      "safe\rextra", "safe\r\nextra", "safe\x00extra", "safe\x1fextra",
+                      "safe\x7fextra", "safe\textra", "\n", "nested/safe\nextra"):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                layout.safe_path(value)
+
+    def test_valid_portable_bindings_still_accepted(self):
+        for value in ("source", "Archive with spaces", "nested/source", "name-with.dots_and~marks"):
+            with self.subTest(value=value):
+                self.assertEqual(layout.safe_path(value), PurePosixPath(value))
+
+    def test_ignore_block_cannot_gain_directives(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            with patch.object(layout, "REPOSITORY", root):
+                for value in ("safe\nREADME.md", "safe\n!published-private", "safe\rextra", "safe\r\nextra"):
+                    manifest = {"root_entries": [], "preserved_root_files": [value],
+                                "projects": [], "repositories": [], "components": [], "archives": []}
+                    with self.subTest(value=value), self.assertRaises(ValueError):
+                        layout.rendered_ignore(manifest)
+                values = ["source", "Archive with spaces"]
+                manifest = {"root_entries": [], "preserved_root_files": values,
+                            "projects": [], "repositories": [], "components": [], "archives": []}
+                block = layout.rendered_ignore(manifest).split("# BEGIN generated sources\n")[1]
+                directives = block.split("# END generated sources")[0].splitlines()
+                self.assertEqual(directives, ["/Archive\\ with\\ spaces", "/source"])
 
     def test_regular_destination_preserved(self):
         with tempfile.TemporaryDirectory() as directory:
