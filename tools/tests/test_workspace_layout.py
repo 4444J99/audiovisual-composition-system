@@ -288,7 +288,7 @@ class LayoutSafety(unittest.TestCase):
         self.assertTrue(result["external_broker_waived"])
         self.assertTrue(result["policy_priority_override"])
         self.assertEqual(result["baseline_repositories_verified"], 7)
-        self.assertEqual(result["baseline_prs_verified"], 15)
+        self.assertEqual(result["baseline_prs_verified"], 24)
         self.assertEqual(result["errors"], [])
 
     def test_verify_native_admission_status_tampered(self):
@@ -337,7 +337,7 @@ class LayoutSafety(unittest.TestCase):
         # 1. Missing active repository
         incomplete_manifest = {
             "merged_trunk_baseline": {
-                "audiovisual-composition-system": {"full_name": "4444J99/audiovisual-composition-system", "merged_prs": [15, 16, 17]}
+                "audiovisual-composition-system": {"full_name": "4444J99/audiovisual-composition-system", "merged_prs": [15, 16, 17, 18]}
             }
         }
         res1 = layout.audit_estate_wave_progression(manifest_data=incomplete_manifest)
@@ -358,6 +358,32 @@ class LayoutSafety(unittest.TestCase):
         self.assertEqual(res3["status"], "FAIL")
         self.assertFalse(res3["coverage_complete"])
         self.assertEqual(len(res3["errors"]), 17)  # 2 missing files + 7 repos + 8 works
+
+    def test_generate_estate_completion_seal_default(self):
+        seal = layout.generate_estate_completion_seal()
+        self.assertEqual(seal["schema"], "ace.estate_completion_seal.v1")
+        self.assertTrue(seal["ready"])
+        self.assertEqual(seal["total_projects"], 15)
+        self.assertEqual(seal["active_repos"], 7)
+        self.assertEqual(seal["source_led_works"], 8)
+        self.assertEqual(len(seal["wave_progressions"]), 15)
+        self.assertEqual(seal["errors"], [])
+        self.assertEqual(seal["seal_digest"], seal["digest"])
+        self.assertEqual(len(seal["seal_digest"]), 64)
+
+        # Verify digest reproducibility
+        payload = {k: v for k, v in seal.items() if k not in ("seal_digest", "digest")}
+        import hashlib
+        import json
+        expected = hashlib.sha256(json.dumps(payload, sort_keys=True).encode("utf-8")).hexdigest()
+        self.assertEqual(seal["seal_digest"], expected)
+
+    def test_generate_estate_completion_seal_tampered(self):
+        bad_manifest = {"merged_trunk_baseline": {}}
+        seal = layout.generate_estate_completion_seal(manifest_data=bad_manifest)
+        self.assertEqual(seal["schema"], "ace.estate_completion_seal.v1")
+        self.assertFalse(seal["ready"])
+        self.assertTrue(len(seal["errors"]) > 0)
 
 
 if __name__ == "__main__":
