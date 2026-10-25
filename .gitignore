@@ -8,6 +8,7 @@ __pycache__/
 
 # Agent Coordination Metadata
 .agents/
+.limen-workstream/
 
 # Generated local navigation
 projects/*/local/
