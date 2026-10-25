@@ -1,0 +1,48 @@
+{
+  "schema": "ace.native_admission_observation.v1",
+  "observed_at": "2026-10-25T12:05:40Z",
+  "owner_url": "https://github.com/4444J99/audiovisual-composition-system/issues/12",
+  "session_id": "01a172ea-08c9-7623-b156-34a5647dfc32",
+  "principal_id": "codex-direct",
+  "run_id": "run-5060ff5876f476c30fb6c0608acea981",
+  "submitted": true,
+  "submission_status": "reserved",
+  "executor_session_id": "tabularius-conduct-keeper",
+  "native_executor_launched": false,
+  "child_runs": 0,
+  "branch": "work/av-portfolio-20261025-01a172ea",
+  "base_head": "7dffb2785a06e0570240e30e24df1a934ee3b0c8",
+  "producer_exit_code": 0,
+  "allocated_kib": 1264,
+  "execution_admission": {
+    "deadline_policy": "hard_deadline",
+    "outcome_id": "av-portfolio-20261022",
+    "reserved_seconds": 1800,
+    "input_hash": "726d356142e27037d083b7ff10ac8271b965dd2dede53324abad395179c68674",
+    "attempt_deadline": "2026-10-25T12:26:20.626Z",
+    "verification_seconds": 600,
+    "legacy_active": false,
+    "resource_reservations": [
+      {
+        "action": "worktree",
+        "identity_hash": "181bd429b3b7c233e73da6014a954b16d241f632aa89e5d87592a1e32ec1ca6d",
+        "reserved_at": "2026-10-25T12:00:56.162Z"
+      },
+      {
+        "action": "branch",
+        "identity_hash": "9c2a5d9b3625c9f9f08911b671a23d546ba005c0638a30b8dffac778adf65898",
+        "reserved_at": "2026-10-25T12:00:57.253Z"
+      }
+    ]
+  },
+  "cancellation": {
+    "attempts": 1,
+    "code": "conduct_rejected",
+    "http_status": 409,
+    "reason": "protected human session cannot be cancelled or signalled through autonomous conduct",
+    "protection_preserved": true,
+    "deadline_preserved": true
+  },
+  "original_portfolio_acceptance_completed": false,
+  "checkout_disposition": "retain under existing issue 12; no retirement authorized by admission"
+}

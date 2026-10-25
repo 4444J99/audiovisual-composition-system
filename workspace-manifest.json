@@ -485,6 +485,7 @@
     ".github",
     ".codex",
     ".agents",
+    ".limen-workstream",
     "AGENTS.md",
     "README.md",
     "workspace-manifest.json",
