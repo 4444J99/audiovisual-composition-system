@@ -118,13 +118,13 @@ BOUNDARIES = {
 }
 
 REQUIRED_BASELINE_PRS = {
-    "audiovisual-composition-system": (15, 16, 17, 18),
-    "audiovisual-media-postproduction-system": (118, 119, 120),
-    "simvltanea": (34, 35, 36),
-    "time-moment-brief": (18, 19, 20),
-    "timed-text-navigation-loop": (65, 66, 67, 68),
-    "generative-multimedia-spatial-environment": (183, 184, 185),
-    "the-thing-without-a-name-screendance": (72, 73, 74, 75),
+    "audiovisual-composition-system": (15, 16, 17, 18, 19),
+    "audiovisual-media-postproduction-system": (118, 119, 120, 121, 122),
+    "simvltanea": (34, 35, 36, 37),
+    "time-moment-brief": (18, 19, 20, 21),
+    "timed-text-navigation-loop": (65, 66, 67, 68, 69),
+    "generative-multimedia-spatial-environment": (183, 184, 186),
+    "the-thing-without-a-name-screendance": (72, 73, 74, 75, 76),
 }
 
 EXPECTED_ACTIVE_REPOS = tuple(REQUIRED_BASELINE_PRS.keys())
@@ -142,7 +142,7 @@ EXPECTED_SOURCE_LED_WORKS = (
 
 
 def verify_native_admission_status(manifest_data=None):
-    """Verify operator-authorized native admission override and Wave 1-3 merged baseline."""
+    """Validate a historical authorization record, never current executor authority."""
     if manifest_data is None:
         continuation_path = REPOSITORY / "manifests" / "project-continuation.json"
         if not continuation_path.is_file():
@@ -207,6 +207,9 @@ def verify_native_admission_status(manifest_data=None):
     is_valid = len(errors) == 0
     return {
         "status": "PASS" if is_valid else "FAIL",
+        "execution_authorized": False,
+        "current_admission_status": "not_evaluated",
+        "evidence_scope": "historical_authorization_record",
         "admission_status": adm_status,
         "external_broker_waived": broker_waived,
         "policy_priority_override": priority_override,
@@ -269,6 +272,14 @@ def audit_estate_wave_progression(manifest_data=None, source_led_data=None):
             errors.append(f"Missing active repository from merged trunk baseline: {repo_name}")
         else:
             found_active.append(repo_name)
+            expected_prs = REQUIRED_BASELINE_PRS[repo_name]
+            if tuple(repo_info.get("merged_prs", ())) != expected_prs:
+                errors.append(
+                    f"Merged PR mismatch for {repo_name}: expected {list(expected_prs)}, "
+                    f"got {repo_info.get('merged_prs', [])}"
+                )
+            if repo_info.get("baseline_status") != "merged":
+                errors.append(f"Merged baseline status missing or invalid for {repo_name}")
             wave_progressions[repo_name] = {
                 "type": "active_repository",
                 "full_name": repo_info.get("full_name"),
@@ -307,18 +318,28 @@ def audit_estate_wave_progression(manifest_data=None, source_led_data=None):
 
 
 def generate_estate_completion_seal(manifest_data=None, source_led_data=None) -> dict:
-    """Generate a canonical SHA-256 digested estate completion seal across all 15 projects."""
+    """Seal catalog coverage without promoting it into source-owner acceptance.
+
+    These inputs contain membership and historical merge records only. They cannot
+    evaluate the runtime, artistic, delivery or custody predicates owned by each
+    source. Preserve the legacy entry point and fail its completion verdict closed.
+    """
     audit = audit_estate_wave_progression(manifest_data=manifest_data, source_led_data=source_led_data)
-    ready = bool(audit.get("coverage_complete", False) and len(audit.get("errors", [])) == 0)
+    coverage_ready = bool(audit.get("coverage_complete", False) and not audit.get("errors"))
 
     seal = {
         "schema": "ace.estate_completion_seal.v1",
-        "ready": ready,
+        "ready": False,
+        "coverage_ready": coverage_ready,
+        "evidence_scope": "catalog_coverage",
+        "completion_status": "not_assessed",
         "total_projects": audit.get("total_projects", 0),
         "active_repos": audit.get("active_repo_count", 0),
         "source_led_works": audit.get("source_led_count", 0),
         "wave_progressions": audit.get("wave_progressions", {}),
-        "errors": audit.get("errors", []),
+        "errors": [*audit.get("errors", []),
+                   "Estate readiness requires source-owner runtime, artistic, delivery and custody "
+                   "acceptance; this catalog audit does not evaluate those predicates."],
     }
 
     payload_to_hash = {k: v for k, v in seal.items() if k not in ("seal_digest", "digest")}
@@ -393,9 +414,10 @@ def rendered_files(manifest):
         "`mavsoleum-a` and `ogod` (generative-multimedia-spatial-environment), and `simvltanea` (independent-loop-compositor) possess active public implementation repositories.\n"
         "- **Restricted implementations**: `danse` (deterministic-performance-engine) and `time-moment-brief` (synchronized-generation-playback) "
         "remain in private repositories with independent custody and verification gates.\n"
-        "- **Native admission & merged trunk baseline**: Operator-authorized native admission override (`admitted_operator_override`, external broker waived, policy priority override). "
-        "Wave 1–2 trunk baseline merged across all 6 implementation repositories (`audiovisual-composition-system` PRs #15/#16, `audiovisual-media-postproduction-system` PR #118, "
-        "`simvltanea` PR #34, `time-moment-brief` PR #18, `timed-text-navigation-loop` PR #65, `generative-multimedia-spatial-environment` PR #183, `the-thing-without-a-name-screendance` PR #72).\n\n"
+        "- **Admission and acceptance boundary**: The continuation manifest retains a historical authorization record; it "
+        "does not grant current execution authority. Current admission belongs to the native execution owner. "
+        "The merged-source ledger and catalog coverage do not establish runtime, artistic, delivery or custody acceptance. "
+        "The legacy completion-seal command reports coverage separately and exits nonzero while completion is unassessed.\n\n"
         "| Work or project | Stable project ID | Record profile | Source state | Identity / reference | Public implementation | Start Here / Continuation |\n"
         "| --- | --- | --- | --- | --- | --- | --- |\n" + "\n".join(rows) + "\n")
     for group, keyfield in (("repositories", "key"), ("components", "slug"), ("archives", "slug")):

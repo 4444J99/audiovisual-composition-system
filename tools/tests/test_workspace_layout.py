@@ -288,7 +288,7 @@ class LayoutSafety(unittest.TestCase):
         self.assertTrue(result["external_broker_waived"])
         self.assertTrue(result["policy_priority_override"])
         self.assertEqual(result["baseline_repositories_verified"], 7)
-        self.assertEqual(result["baseline_prs_verified"], 24)
+        self.assertEqual(result["baseline_prs_verified"], 31)
         self.assertEqual(result["errors"], [])
 
     def test_verify_native_admission_status_tampered(self):
@@ -362,12 +362,13 @@ class LayoutSafety(unittest.TestCase):
     def test_generate_estate_completion_seal_default(self):
         seal = layout.generate_estate_completion_seal()
         self.assertEqual(seal["schema"], "ace.estate_completion_seal.v1")
-        self.assertTrue(seal["ready"])
+        self.assertFalse(seal["ready"])
+        self.assertTrue(seal["coverage_ready"])
         self.assertEqual(seal["total_projects"], 15)
         self.assertEqual(seal["active_repos"], 7)
         self.assertEqual(seal["source_led_works"], 8)
         self.assertEqual(len(seal["wave_progressions"]), 15)
-        self.assertEqual(seal["errors"], [])
+        self.assertTrue(any("source-owner" in error for error in seal["errors"]))
         self.assertEqual(seal["seal_digest"], seal["digest"])
         self.assertEqual(len(seal["seal_digest"]), 64)
 
