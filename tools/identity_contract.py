@@ -286,7 +286,7 @@ def public_catalog(manifest):
         item["local_bindings"] = {}
         if project.get("identity_ref", {}).get("id") in public_ids:
             item["identity_ref"] = deepcopy(project["identity_ref"])
-        item["source_state"] = "metadata-only"
+        item["source_state"] = deepcopy(project.get("source_state", "metadata-only"))
         item["decision"] = "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
         projects.append(item)
     result = {"schema_version": manifest["schema_version"], "name": manifest["name"],

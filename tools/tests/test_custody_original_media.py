@@ -61,6 +61,91 @@ class CustodyTests(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertIn(b'cumulative budget exceeded', result.stderr)
 
+    def test_individual_file_enumeration(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            f1 = root / 'sample.bin'
+            f1.write_bytes(b'abc')
+            (root / 'sub').mkdir()
+            f2 = root / 'sub' / 'nested.bin'
+            f2.write_bytes(b'defgh')
+
+            files, dirs = custody.enumerate_source(root, ['sample.bin', 'sub/nested.bin'])
+            self.assertEqual(set(files.keys()), {'sample.bin', 'sub/nested.bin'})
+            self.assertEqual(dirs, {'sub'})
+            self.assertEqual(files['sample.bin'][0], 3)
+            self.assertEqual(files['sub/nested.bin'][0], 5)
+
+            # Duplicate destination rejection
+            with self.assertRaisesRegex(RuntimeError, '[Dd]uplicate'):
+                custody.enumerate_source(root, ['sample.bin', 'sample.bin'])
+            with self.assertRaisesRegex(RuntimeError, '[Dd]uplicate'):
+                custody.enumerate_source(root, ['sub', 'sub/nested.bin'])
+
+            # Path escape rejection
+            with self.assertRaisesRegex(RuntimeError, 'escape|unsafe'):
+                custody.enumerate_source(root, ['../outside.txt'])
+
+            # Symlink refusal
+            link = root / 'link.bin'
+            link.symlink_to(f1)
+            with self.assertRaisesRegex(RuntimeError, 'symlink|linked'):
+                custody.enumerate_source(root, ['link.bin'])
+
+    def test_same_device_rejection(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            src = root / 'source'
+            dst = root / 'destination'
+            src.mkdir()
+            dst.mkdir()
+
+            # Same filesystem has matching st_dev and must be rejected
+            with self.assertRaisesRegex(RuntimeError, 'same physical device'):
+                custody.validate_device_separation(src, dst)
+
+            # Independent physical devices with differing st_dev must pass
+            class MockStat:
+                def __init__(self, dev):
+                    self.st_dev = dev
+
+            def fake_stat(path_obj, *, follow_symlinks=True):
+                if path_obj == src:
+                    return MockStat(1001)
+                return MockStat(2002)
+
+            with patch.object(Path, 'stat', fake_stat):
+                # Should not raise
+                custody.validate_device_separation(src, dst)
+
+    def test_phase_deadline_enforcement(self):
+        tracker = custody.PhaseDeadlineTracker(wall_budget_s=50, verify_budget_s=10)
+
+        current_time = [100.0]
+        with patch.object(custody.time, 'monotonic', side_effect=lambda: current_time[0]):
+            tracker.started_at = 100.0
+
+            # 1. Non-verification phase takes 30s wall time: does NOT consume verification budget
+            current_time[0] = 130.0
+            tracker.guard()  # Wall elapsed = 30s (< 50s), verify elapsed = 0s (< 10s)
+            self.assertEqual(tracker.current_verification_seconds, 0.0)
+
+            # 2. Wall budget exhaustion raises independently of verify budget
+            current_time[0] = 151.0
+            with self.assertRaisesRegex(TimeoutError, 'attempt wall deadline'):
+                tracker.guard()
+
+            # Reset tracker for verify budget testing
+            tracker2 = custody.PhaseDeadlineTracker(wall_budget_s=1000, verify_budget_s=10)
+            tracker2.started_at = 200.0
+            current_time[0] = 200.0
+
+            # Inside verification phase, advancing beyond verify_budget_s raises
+            with tracker2.measuring_verification():
+                current_time[0] = 211.0
+                with self.assertRaisesRegex(TimeoutError, 'verification time exhausted'):
+                    tracker2.guard()
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,130 @@
+{
+  "schema": "ace.source_led_continuation_records.v1",
+  "generated_at": "2026-10-24T14:47:00Z",
+  "description": "Deterministic source-led works material and continuation records with exact denominator accounting, lineage separation guards, and public-safety controls.",
+  "works": {
+    "backwards-up-hill": {
+      "stable_project_id": "g-p-6ab7e2663fe881919dae29c328e14d72",
+      "artwork_id": "art-6ab7e2663fe881919dae29c328e14d72",
+      "work_type": "source_led_audio",
+      "binding_status": "unbound",
+      "denominator": {
+        "total_audio_files": 94,
+        "track_1_8_files": 40,
+        "track_1_9_files": 40,
+        "bounces_masters_files": 14,
+        "staged_partial_stems": 3,
+        "full_bank_complete": false
+      },
+      "custody_requirement": "Full bank requires staging all 94 audio files across track 1-8, 1-9, and bounces/masters before full_bank_complete may become true."
+    },
+    "cycles": {
+      "stable_project_id": "g-p-6ab7e5b6ce4c8191991f43045a689276",
+      "work_type": "source_collection_image",
+      "binding_status": "unbound",
+      "denominator": {
+        "primary_originals_count": 24,
+        "primary_originals_bytes": 152079224,
+        "backup_overlap_count": 24,
+        "backup_overlap_bytes": 152079224,
+        "byte_identical_verified": true
+      },
+      "custody_requirement": "Verified 24 primary original images match 24 backup overlap images byte-for-byte (152,079,224 bytes)."
+    },
+    "etc": {
+      "stable_project_id": "g-p-6ab7e4d0d8e881918e8c2395f70fe272",
+      "artwork_id": "art-6ab7e4d0d8e881918e8c2395f70fe272",
+      "work_type": "source_led_audio_project",
+      "binding_status": "unbound",
+      "denominator": {
+        "master_tracks_count": 4,
+        "master_tracks_bytes": 174804648,
+        "logic_project_backups_count": 29,
+        "requires_generation_comparison": true
+      },
+      "custody_requirement": "4 master tracks totaling 174,804,648 bytes and 29 Logic project backups requiring generational comparison."
+    },
+    "noonlight": {
+      "stable_project_id": "g-p-6ab7129c37dc8191b25a14aab7d6eae6",
+      "artwork_id": "art-6ab7129c37dc8191b25a14aab7d6eae6",
+      "work_type": "source_led_visual_studies",
+      "binding_status": "unbound",
+      "denominator": {
+        "total_assets": 27,
+        "total_bytes": 37796913,
+        "asset_breakdown": {
+          "dated_png": 7,
+          "numbered_jpg": 16,
+          "mov_studies": 3,
+          "psd_master": 1
+        }
+      },
+      "custody_requirement": "27 visual study assets totaling 37,796,913 bytes across 7 dated PNGs, 16 numbered JPGs, 3 MOV studies, and 1 PSD master."
+    },
+    "nrcsvs": {
+      "stable_project_id": "g-p-6ab70c12ed348191a2da5c77a9871f93",
+      "artwork_id": "art-6ab70c12ed348191a2da5c77a9871f93",
+      "work_type": "research_artwork_vault",
+      "binding_status": "unbound",
+      "layers": [
+        "narcissus",
+        "echo",
+        "macro-container"
+      ],
+      "layer_separation_enforced": true,
+      "disallow_flat_clip_buckets": true,
+      "custody_requirement": "Preserve 3 discrete conceptual layers (narcissus, echo, macro-container); flat clip bucket aggregation is disallowed."
+    },
+    "nvde": {
+      "stable_project_id": "g-p-6ab7110b24308191adec59e80966f19f",
+      "artwork_id": "art-6ab7110b24308191adec59e80966f19f",
+      "work_type": "source_led_lineage_vault",
+      "binding_status": "unbound",
+      "lineages": [
+        "nvde-performance-video",
+        "nvde-digital-garden"
+      ],
+      "lineage_separation_enforced": true,
+      "disallow_lineage_conflation": true,
+      "custody_requirement": "Preserve 2 discrete lineages (nvde-performance-video, nvde-digital-garden); conflation into a single tree is disallowed."
+    },
+    "passing-thru": {
+      "stable_project_id": "g-p-6ab7e52f536c81919963442321061397",
+      "artwork_id": "art-6ab7e52f536c81919963442321061397",
+      "work_type": "source_led_multi_stage_composition",
+      "binding_status": "unbound",
+      "denominator": {
+        "total_stages": 7,
+        "total_bytes": 2422068546,
+        "stages": [
+          "logic_demos",
+          "ableton_session",
+          "stems",
+          "mixdowns",
+          "Premiere_ assembly",
+          "touchdesigner_pass",
+          "final_masters"
+        ]
+      },
+      "custody_requirement": "7 compositional stages totaling 2,422,068,546 bytes across logic_demos, ableton_session, stems, mixdowns, Premiere_ assembly, touchdesigner_pass, and final_masters."
+    },
+    "wrvng-v": {
+      "stable_project_id": "g-p-6ab712825b40819196bb9fbf53d4d446",
+      "artwork_id": "art-6ab712825b40819196bb9fbf53d4d446",
+      "work_type": "hybrid_composition",
+      "binding_status": "hybrid",
+      "bound_implementation_repo": "4444J99/audiovisual-media-postproduction-system",
+      "dual_lineage": {
+        "audio": {
+          "total_bytes": 220762256,
+          "format": "master_audio_archive"
+        },
+        "visual": {
+          "format": "touchdesigner_toe",
+          "bound_repo": "4444J99/audiovisual-media-postproduction-system"
+        }
+      },
+      "custody_requirement": "Dual lineage: audio stem archive (220,762,256 bytes) and TouchDesigner .toe visuals bound to 4444J99/audiovisual-media-postproduction-system."
+    }
+  }
+}

@@ -80,7 +80,7 @@
         "type": "artwork",
         "id": "art-6ab7e2663fe881919dae29c328e14d72"
       },
-      "source_state": "metadata-only",
+      "source_state": "local-binding-missing",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -92,7 +92,7 @@
       "repository_keys": [],
       "repository_subpath": null,
       "local_bindings": {},
-      "source_state": "metadata-only",
+      "source_state": "page-record-only",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -108,7 +108,7 @@
         "type": "artwork",
         "id": "art-6a95f0226b2c81919be2e375b79af8db"
       },
-      "source_state": "metadata-only",
+      "source_state": "local-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -124,7 +124,7 @@
         "type": "artwork",
         "id": "art-6ab7e4d0d8e881918e8c2395f70fe272"
       },
-      "source_state": "metadata-only",
+      "source_state": "page-record-only",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -145,7 +145,7 @@
         "type": "artwork",
         "id": "art-6ab7e48981d88191ae8b0a658b118c39"
       },
-      "source_state": "metadata-only",
+      "source_state": "local-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -165,7 +165,7 @@
         "type": "artwork",
         "id": "art-6ab7e5f7ede88191903fcf8149f1b11e"
       },
-      "source_state": "metadata-only",
+      "source_state": "remote-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -187,7 +187,7 @@
         "type": "artwork",
         "id": "art-6ab7e73ded908191861a61f9f026db4b"
       },
-      "source_state": "metadata-only",
+      "source_state": "remote-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -203,7 +203,7 @@
         "type": "artwork",
         "id": "art-6ab7129c37dc8191b25a14aab7d6eae6"
       },
-      "source_state": "metadata-only",
+      "source_state": "page-record-only",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -222,7 +222,7 @@
         "type": "artwork",
         "id": "art-6ab70c12ed348191a2da5c77a9871f93"
       },
-      "source_state": "metadata-only",
+      "source_state": "local-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -238,7 +238,7 @@
         "type": "artwork",
         "id": "art-6ab7110b24308191adec59e80966f19f"
       },
-      "source_state": "metadata-only",
+      "source_state": "page-record-only",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -256,7 +256,7 @@
         "type": "artwork",
         "id": "art-6ab7e410fcd881919cf73a5e3e18bc77"
       },
-      "source_state": "metadata-only",
+      "source_state": "remote-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -272,7 +272,7 @@
         "type": "artwork",
         "id": "art-6ab7e52f536c81919963442321061397"
       },
-      "source_state": "metadata-only",
+      "source_state": "page-record-only",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -292,7 +292,7 @@
         "type": "artwork",
         "id": "art-6ab710d9b0c08191af651f0b2b4b8c80"
       },
-      "source_state": "metadata-only",
+      "source_state": "local-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -304,7 +304,7 @@
       "repository_keys": [],
       "repository_subpath": null,
       "local_bindings": {},
-      "source_state": "metadata-only",
+      "source_state": "local-observed",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     },
     {
@@ -322,7 +322,7 @@
         "type": "artwork",
         "id": "art-6ab712825b40819196bb9fbf53d4d446"
       },
-      "source_state": "metadata-only",
+      "source_state": "page-record-only",
       "decision": "Retained project membership. Artwork titles and legacy aliases do not name reusable software."
     }
   ],
