@@ -1,0 +1,48 @@
+{
+  "schema": "ace.project_continuation.v1",
+  "native_admission": {
+    "admission_status": "admitted_operator_override",
+    "external_broker_waived": true,
+    "policy_priority_override": true,
+    "authority": "Operator Authorization",
+    "recorded_at": "2026-10-25T11:30:00Z",
+    "rationale": "Operator-authorized native admission override; external broker waived and policy priority overridden for Wave 1-2 merged baseline."
+  },
+  "merged_trunk_baseline": {
+    "audiovisual-composition-system": {
+      "full_name": "4444J99/audiovisual-composition-system",
+      "merged_prs": [15, 16],
+      "baseline_status": "merged"
+    },
+    "audiovisual-media-postproduction-system": {
+      "full_name": "4444J99/audiovisual-media-postproduction-system",
+      "merged_prs": [118],
+      "baseline_status": "merged"
+    },
+    "simvltanea": {
+      "full_name": "4444J99/simvltanea",
+      "merged_prs": [34],
+      "baseline_status": "merged"
+    },
+    "time-moment-brief": {
+      "full_name": "4444J99/time-moment-brief",
+      "merged_prs": [18],
+      "baseline_status": "merged"
+    },
+    "timed-text-navigation-loop": {
+      "full_name": "4444J99/timed-text-navigation-loop",
+      "merged_prs": [65],
+      "baseline_status": "merged"
+    },
+    "generative-multimedia-spatial-environment": {
+      "full_name": "4444J99/generative-multimedia-spatial-environment",
+      "merged_prs": [183],
+      "baseline_status": "merged"
+    },
+    "the-thing-without-a-name-screendance": {
+      "full_name": "4444J99/the-thing-without-a-name-screendance",
+      "merged_prs": [72],
+      "baseline_status": "merged"
+    }
+  }
+}

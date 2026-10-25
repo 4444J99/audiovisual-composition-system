@@ -281,6 +281,48 @@ class LayoutSafety(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "Missing declared source"):
                     layout.check_workspace(manifest)
 
+    def test_verify_native_admission_status_default(self):
+        result = layout.verify_native_admission_status()
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["admission_status"], "admitted_operator_override")
+        self.assertTrue(result["external_broker_waived"])
+        self.assertTrue(result["policy_priority_override"])
+        self.assertEqual(result["baseline_repositories_verified"], 7)
+        self.assertEqual(result["baseline_prs_verified"], 8)
+        self.assertEqual(result["errors"], [])
+
+    def test_verify_native_admission_status_tampered(self):
+        # 1. Invalid admission_status
+        bad_status = {
+            "native_admission": {
+                "admission_status": "broker_pending",
+                "external_broker_waived": True,
+                "policy_priority_override": True,
+            },
+            "merged_trunk_baseline": {},
+        }
+        res1 = layout.verify_native_admission_status(bad_status)
+        self.assertEqual(res1["status"], "FAIL")
+        self.assertTrue(any("expected 'admitted_operator_override'" in e for e in res1["errors"]))
+
+        # 2. Broker not waived
+        not_waived = {
+            "native_admission": {
+                "admission_status": "admitted_operator_override",
+                "external_broker_waived": False,
+                "policy_priority_override": True,
+            },
+            "merged_trunk_baseline": {},
+        }
+        res2 = layout.verify_native_admission_status(not_waived)
+        self.assertEqual(res2["status"], "FAIL")
+        self.assertTrue(any("external_broker_waived must be true" in e for e in res2["errors"]))
+
+        # 3. Missing manifest file
+        res3 = layout.verify_native_admission_status(Path("/nonexistent/manifest.json"))
+        self.assertEqual(res3["status"], "FAIL")
+        self.assertTrue(any("Missing continuation manifest" in e for e in res3["errors"]))
+
 
 if __name__ == "__main__":
     unittest.main()
