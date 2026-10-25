@@ -179,9 +179,13 @@ Operational ownership moved to Limen in merged PR 3248 on October 25; ACE retain
 design and redacted evidence. The [operational contract](https://github.com/4444J99/limen/blob/e69a32ca1825ff7606f6ad6bd14e0a179acedb23/docs/operations/media-custody-runners.md)
 and its source-owned CLI now govern any new admitted attempt. Obtain its required
 source and receipt arguments from the existing private owner; no private binding
-or execution permission is introduced here. Inspect the published entry point:
+or execution permission is introduced here. Before running this in a fresh shell,
+set and export `LIMEN_ROOT` to the verified operational source checkout selected
+by Limen's checkout/release owner. It must contain the published runner; a runtime
+root or an older checkout is insufficient. Inspect that entry point:
 
 ```sh
+: "${LIMEN_ROOT:?Set and export LIMEN_ROOT to the verified Limen source checkout}"
 python3 -B "$LIMEN_ROOT/scripts/custody_danse.py" --help
 ```
 

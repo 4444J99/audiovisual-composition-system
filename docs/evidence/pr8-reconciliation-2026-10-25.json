@@ -49,7 +49,7 @@
       "path": "docs/danse-private-custody.md",
       "original_blob": "78f82c50c960ca374e19a6f0cccab951af5b01a6",
       "original_sha256": "e8d7b6292e33faec0b08e5cc56aaffb17aff29e42a41f87581bd4a96b6a98578",
-      "candidate_sha256": "1b0986b3c96d2d3bc776125caf90607b426bd2cb492d3bcb012f42baeebfe4cd",
+      "candidate_sha256": "94f3597fa73abc5162e929fbc3ad19611841b77a3e3cfa1ea2c2750de414b5c1",
       "disposition": "historical evidence and later checkpoints retained; executable authority moved to pinned operational owner"
     },
     {
