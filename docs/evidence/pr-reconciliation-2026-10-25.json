@@ -1,11 +1,11 @@
 {
   "schema": "ace.pr_reconciliation.v1",
-  "observed_at": "2026-10-25T22:05:03.262416+00:00",
+  "observed_at": "2026-10-25T23:45:40.057291+00:00",
   "native_session": "01a173a3-0a26-7d63-a71f-ec35f3b3e7d9",
   "owner": "https://github.com/4444J99/audiovisual-composition-system/issues/12",
   "original_pr_count": 38,
-  "resolved_original_prs": 33,
-  "remaining_open_original_prs": 5,
+  "resolved_original_prs": 38,
+  "remaining_open_original_prs": 0,
   "scope_exhaustive": true,
   "goal_complete": false,
   "corrections": [
@@ -24,6 +24,22 @@
       "pr": 190,
       "merge_commit": "a409b06391194411233d2c651ae2359f7118eea6",
       "result": "Full tested candidate tree matches fetched default; all 14 stewardship paths, 22 navigation paths and recorded versions in five lock graphs rechecked. Twenty dependency carriers and four runtime/stewardship carriers have individual no-loss verdicts."
+    },
+    {
+      "repository": "4444J99/audiovisual-composition-system",
+      "pr": 25,
+      "merge_commit": "fc20dab582dff9650b5eee62e29c3b0bb0e4b7f5",
+      "result": "All 33 original custody/ingress paths are preserved exactly, faithfully reconciled, or migrated to the operational owner with source provenance; physical custody remains unfulfilled."
+    },
+    {
+      "repository": "4444J99/generative-multimedia-spatial-environment",
+      "pr": 191,
+      "merge_commit": "bae5c6d7e4d36cea8bebeb47996a4c2b3efc58e7",
+      "result": "Fetched default whole tree equals tested candidate; all 248 feature paths, 227 original works and 209 preexisting image edits retained. 1479 unit/toolchain, 36 publication/media and 30 native gallery checks pass."
+    },
+    {
+      "source_owner_key": "danse",
+      "result": "Restricted-source successor merged with exact-default whole-tree and original-path proof in its private owner. Public binding and source identities remain redacted. Portable, delivery and native synthetic checks pass; remote CI was not executed because GitHub billing admission allocated no runners."
     }
   ],
   "review_minors": [
@@ -55,22 +71,25 @@
       "disposition": "superseded_by_merged_23",
       "next_action": "Original production/custody/artistic obligations remain under ACE #12.",
       "changed_files": 9,
-      "exact_main_blob_matches_at_initial_snapshot": 0
+      "exact_main_blob_matches_at_initial_snapshot": 0,
+      "closed_at": "2026-10-25T17:52:51Z"
     },
     {
       "repository": "4444J99/audiovisual-composition-system",
       "pr": 8,
       "head": "a0e7c38f86f9a3f0b6f352c6583ff7b7b33fc3a7",
-      "state": "OPEN",
+      "state": "CLOSED",
       "merged": false,
       "merge_commit": null,
-      "comparison_main": "116b216b74fd3a0b55525667675ec40d65c0ffcf",
-      "disposition": "operational_successor_verified_ace_reconciliation_pending",
-      "next_action": "Publish the complete 33-path ACE reconciliation and verify it on default before disposing the carrier; original physical custody remains unfulfilled.",
+      "comparison_main": "fc20dab582dff9650b5eee62e29c3b0bb0e4b7f5",
+      "disposition": "superseded_by_merged_25",
+      "next_action": "Operational runners are in their Limen owner; complete original real-media custody and restore predicates through ACE #12. No custody payload was transferred by fixture tests.",
       "changed_files": 33,
       "exact_main_blob_matches_at_initial_snapshot": 20,
       "operational_successor": "https://github.com/4444J99/limen/pull/3248",
-      "operational_default": "e69a32ca1825ff7606f6ad6bd14e0a179acedb23"
+      "operational_default": "e69a32ca1825ff7606f6ad6bd14e0a179acedb23",
+      "closed_at": "2026-10-25T22:51:27Z",
+      "successor": "https://github.com/4444J99/audiovisual-composition-system/pull/25"
     },
     {
       "repository": "4444J99/audiovisual-composition-system",
@@ -83,7 +102,8 @@
       "disposition": "superseded_by_merged_23",
       "next_action": "Original production/custody/artistic obligations remain under ACE #12.",
       "changed_files": 10,
-      "exact_main_blob_matches_at_initial_snapshot": 0
+      "exact_main_blob_matches_at_initial_snapshot": 0,
+      "closed_at": "2026-10-25T17:52:53Z"
     },
     {
       "repository": "4444J99/audiovisual-composition-system",
@@ -94,7 +114,8 @@
       "merge_commit": "da7434250ad8b29a23b0203091966909ece5ad96",
       "comparison_main": "116b216b74fd3a0b55525667675ec40d65c0ffcf",
       "disposition": "merged",
-      "next_action": "Original production/custody/artistic obligations remain under ACE #12."
+      "next_action": "Original production/custody/artistic obligations remain under ACE #12.",
+      "closed_at": "2026-10-25T17:25:54Z"
     },
     {
       "repository": "4444J99/audiovisual-media-postproduction-system",
@@ -105,7 +126,8 @@
       "merge_commit": "856d5b0521acc9858ac355fe8ac08934c305126a",
       "comparison_main": "856d5b0521acc9858ac355fe8ac08934c305126a",
       "disposition": "merged_partial_foundation",
-      "next_action": "Complete the original source-owned acceptance requirements under reopened program #63 and I05 #113; code integration does not certify the 53-task/38-deliverable program."
+      "next_action": "Complete the original source-owned acceptance requirements under reopened program #63 and I05 #113; code integration does not certify the 53-task/38-deliverable program.",
+      "closed_at": "2026-10-25T17:25:57Z"
     },
     {
       "repository": "4444J99/audiovisual-media-postproduction-system",
@@ -116,7 +138,8 @@
       "merge_commit": null,
       "comparison_main": "856d5b0521acc9858ac355fe8ac08934c305126a",
       "disposition": "integrated_code_carrier_closed",
-      "next_action": "Complete the original source-owned acceptance requirements under reopened program #63 and I05 #113; code integration does not certify the 53-task/38-deliverable program."
+      "next_action": "Complete the original source-owned acceptance requirements under reopened program #63 and I05 #113; code integration does not certify the 53-task/38-deliverable program.",
+      "closed_at": "2026-10-25T17:14:09Z"
     },
     {
       "repository": "4444J99/audiovisual-media-postproduction-system",
@@ -130,21 +153,29 @@
       "next_action": "Complete the original source-owned acceptance requirements under reopened program #63 and I05 #113; code integration does not certify the 53-task/38-deliverable program.",
       "changed_files": 187,
       "exact_main_blob_matches": 185,
-      "other_files": "build.py and prepare.py retain behavior and add resolver/relative-path support"
+      "other_files": "build.py and prepare.py retain behavior and add resolver/relative-path support",
+      "closed_at": "2026-10-25T17:52:57Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
       "pr": 100,
       "head": "90e7988d442dbab3d797082ee9ddf1d8875bb7e2",
-      "state": "OPEN",
+      "state": "CLOSED",
       "merged": false,
       "merge_commit": null,
-      "comparison_main": "8a9216d843eb4509f500a9e2cedccc8d7e1af291",
+      "comparison_main": "bae5c6d7e4d36cea8bebeb47996a4c2b3efc58e7",
       "changed_files": 248,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "disposition": "reviewed_retained",
-      "next_action": "Qualify the 248-file visual-home feature and source/media provenance against current navigation, accessibility and publication contracts."
+      "disposition": "superseded_by_merged_191",
+      "next_action": "Source and local browser purpose pass. Hosted rollout, Safari/iPhone and artist/device acceptance remain separately owned under ACE #12.",
+      "closed_at": "2026-10-25T23:41:11Z",
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/191",
+      "original_path_receipt": {
+        "paths": 248,
+        "byte_identical": 233,
+        "faithfully_reconciled": 15
+      }
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -164,7 +195,8 @@
       ],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:59:49Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -177,10 +209,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#122@28298ac812b4286f15ccb8c06f36ee8fdb5e0099: DEFERRED — BLOCKED",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#122@28298ac812b4286f15ccb8c06f36ee8fdb5e0099: DEFERRED \u2014 BLOCKED",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:57:55Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -193,10 +226,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#130@33400d2745fa77a616778b944b9f0587e8e074af: DEFERRED — BLOCKED",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#130@33400d2745fa77a616778b944b9f0587e8e074af: DEFERRED \u2014 BLOCKED",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:57:57Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -209,10 +243,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#132@33e55ef8f16332554d81e1cd9c4b927c3c819e9f: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#132@33e55ef8f16332554d81e1cd9c4b927c3c819e9f: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:57:58Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -230,7 +265,8 @@
       ],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:58:00Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -245,7 +281,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:59:53Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -269,7 +306,8 @@
       ],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:59:56Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -283,7 +321,8 @@
       "exact_main_blob_matches_at_initial_snapshot": 1,
       "unresolved_review_threads": [],
       "disposition": "content_superseded_closed",
-      "next_action": "No carrier work remains: all 654 original test lines preserved with 115 inserted lines, verification document identical, independent review complete, 22 current-source tests passed."
+      "next_action": "No carrier work remains: all 654 original test lines preserved with 115 inserted lines, verification document identical, independent review complete, 22 current-source tests passed.",
+      "closed_at": "2026-10-25T17:45:13Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -296,10 +335,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#148@902ffdf205e588d66e1b70a2ee19b40166b5caba: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#148@902ffdf205e588d66e1b70a2ee19b40166b5caba: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:58:02Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -312,10 +352,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#149@2c0efc977fdcc35d36fcfb7bc186ee173506e1e5: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#149@2c0efc977fdcc35d36fcfb7bc186ee173506e1e5: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:58:05Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -328,10 +369,11 @@
       "changed_files": 5,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#157@89994de69bb389236b9c917ae534a7050633c34c: DEFERRED — CONFLICT",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#157@89994de69bb389236b9c917ae534a7050633c34c: DEFERRED \u2014 CONFLICT",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:54:26Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -344,10 +386,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#159@ba8867586f82898f52ecbcfc8f7a44ad59dd2e4c: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#159@ba8867586f82898f52ecbcfc8f7a44ad59dd2e4c: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:42Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -360,10 +403,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#160@43d512c4058ab6f5fd59fe583e689453c60ae330: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#160@43d512c4058ab6f5fd59fe583e689453c60ae330: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:39Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -376,10 +420,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#161@517ee8e664671439215960797573ab7657bd75d0: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#161@517ee8e664671439215960797573ab7657bd75d0: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:58:09Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -392,10 +437,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#162@5368d41a2fabbea0cea4b3781f6e025c0eb39306: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#162@5368d41a2fabbea0cea4b3781f6e025c0eb39306: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:48Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -408,10 +454,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#163@4ee823b8b2b8cfc2a4013cce595bfef047860ae4: DEFERRED — STALE-BASE",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#163@4ee823b8b2b8cfc2a4013cce595bfef047860ae4: DEFERRED \u2014 STALE-BASE",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:43Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -426,7 +473,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:54Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -441,7 +489,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:47Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -456,7 +505,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:41Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -469,10 +519,11 @@
       "changed_files": 1,
       "exact_main_blob_matches_at_initial_snapshot": 0,
       "unresolved_review_threads": [],
-      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#173@e85ef19008ecbf74100cf01cf3b721d70a2b0c8c: DEFERRED — BLOCKED",
+      "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#173@e85ef19008ecbf74100cf01cf3b721d70a2b0c8c: DEFERRED \u2014 BLOCKED",
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:53:13Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -487,7 +538,8 @@
       "unresolved_review_threads": [],
       "merge_submission": "MERGE-SUBMISSION 4444J99/generative-multimedia-spatial-environment#175@d223f45d0dea64315d356f2dbd33dbff4a7764cc: MERGED",
       "disposition": "merged",
-      "next_action": "No carrier work remains; later source/runtime acceptance remains separate."
+      "next_action": "No carrier work remains; later source/runtime acceptance remains separate.",
+      "closed_at": "2026-10-25T17:44:59Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -502,7 +554,8 @@
       "unresolved_review_threads": [],
       "merge_submission": "MERGED at pinned head 3681328ca505e5bc5674d209bb9ea45f1296e05c",
       "disposition": "merged",
-      "next_action": "No carrier work remains; later source/runtime acceptance remains separate."
+      "next_action": "No carrier work remains; later source/runtime acceptance remains separate.",
+      "closed_at": "2026-10-25T17:42:58Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -517,7 +570,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:59Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -532,7 +586,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:45Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -547,7 +602,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:52:54Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -562,7 +618,8 @@
       "unresolved_review_threads": [],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:54:10Z"
     },
     {
       "repository": "4444J99/generative-multimedia-spatial-environment",
@@ -582,43 +639,54 @@
       ],
       "disposition": "superseded_by_merged_190",
       "next_action": "Carrier complete through verified default and an individual no-loss verdict; retain broader issue, publication, device, artistic and custody obligations with their original owners.",
-      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190"
+      "successor": "https://github.com/4444J99/generative-multimedia-spatial-environment/pull/190",
+      "closed_at": "2026-10-25T21:59:59Z"
     },
     {
       "record_key": "restricted-source-pr-1",
       "source_owner_key": "danse",
       "identity_scope": "original PR identity and pinned head retained in the restricted source tracker",
-      "state": "OPEN",
-      "disposition": "reviewed_retained",
+      "state": "CLOSED",
+      "disposition": "source_reconciled_on_restricted_default",
       "changed_files": 23,
       "exact_main_blob_matches": 21,
-      "next_action": "Reconcile the existing review findings against unchanged runtime modules and retain physical, artistic, custody and deployment acceptance under the source owner."
+      "next_action": "Original runtime, physical capture, installation, artistic and custody acceptance remain under the restricted source owner and ACE #12.",
+      "source_acceptance": "Pinned successor was merged; fetched private default equals the tested whole tree, and every original source path has a private per-path disposition. Original carrier received its own evidence comment before closure.",
+      "private_identity_preserved": true
     },
     {
       "record_key": "restricted-source-pr-2",
       "source_owner_key": "danse",
       "identity_scope": "original PR identity and pinned head retained in the restricted source tracker",
-      "state": "OPEN",
-      "disposition": "reviewed_retained",
+      "state": "CLOSED",
+      "disposition": "source_reconciled_on_restricted_default",
       "changed_files": 5,
       "exact_main_blob_matches": 0,
-      "next_action": "Reconcile the existing review findings against unchanged runtime modules and retain physical, artistic, custody and deployment acceptance under the source owner."
+      "next_action": "Original runtime, physical capture, installation, artistic and custody acceptance remain under the restricted source owner and ACE #12.",
+      "source_acceptance": "Pinned successor was merged; fetched private default equals the tested whole tree, and every original source path has a private per-path disposition. Original carrier received its own evidence comment before closure.",
+      "private_identity_preserved": true
     },
     {
       "record_key": "restricted-source-pr-3",
       "source_owner_key": "danse",
       "identity_scope": "original PR identity and pinned head retained in the restricted source tracker",
-      "state": "OPEN",
-      "disposition": "reviewed_retained",
+      "state": "CLOSED",
+      "disposition": "source_reconciled_on_restricted_default",
       "changed_files": 23,
       "exact_main_blob_matches": 21,
-      "next_action": "Reconcile the existing review findings against unchanged runtime modules and retain physical, artistic, custody and deployment acceptance under the source owner."
+      "next_action": "Original runtime, physical capture, installation, artistic and custody acceptance remain under the restricted source owner and ACE #12.",
+      "source_acceptance": "Pinned successor was merged; fetched private default equals the tested whole tree, and every original source path has a private per-path disposition. Original carrier received its own evidence comment before closure.",
+      "private_identity_preserved": true
     }
   ],
-  "acceptance_boundary": "Every original PR is accounted for; retained PRs and original runtime, artistic, device, custody and delivery requirements remain unfinished. Merged, live, observed and session release are separate claims.",
+  "acceptance_boundary": "All 38 original PR carriers are resolved, with source preservation and exact-default evidence. The original all-waves estate-completion assertion remains unsupported: runtime production, physical capture/device/venue, artistic approval, real-media custody/restore, deployment and source-owned program acceptance are separate unfinished requirements. Session release and deletion eligibility are separate.",
   "initial_snapshot": {
     "observed_at": "2026-10-25T17:55:34.292Z",
     "resolved_original_prs": 9,
     "remaining_open_original_prs": 29
+  },
+  "original_pr_outcomes": {
+    "merged_directly": 4,
+    "closed_with_individual_disposition": 34
   }
 }
