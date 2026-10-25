@@ -1,0 +1,11 @@
+{
+  "schema": "ace.native_reservation_terminal_observation.v1",
+  "run_id": "run-5060ff5876f476c30fb6c0608acea981",
+  "status": "expired",
+  "lease_state": "expired",
+  "hard_deadline": "2026-10-25T12:26:20.626Z",
+  "observed_at": "2026-10-25T12:26:30Z",
+  "owner_url": "https://github.com/4444J99/audiovisual-composition-system/issues/12",
+  "implementation_executed": false,
+  "original_allowance_reset": false
+}
