@@ -288,7 +288,7 @@ class LayoutSafety(unittest.TestCase):
         self.assertTrue(result["external_broker_waived"])
         self.assertTrue(result["policy_priority_override"])
         self.assertEqual(result["baseline_repositories_verified"], 7)
-        self.assertEqual(result["baseline_prs_verified"], 8)
+        self.assertEqual(result["baseline_prs_verified"], 15)
         self.assertEqual(result["errors"], [])
 
     def test_verify_native_admission_status_tampered(self):
@@ -322,6 +322,42 @@ class LayoutSafety(unittest.TestCase):
         res3 = layout.verify_native_admission_status(Path("/nonexistent/manifest.json"))
         self.assertEqual(res3["status"], "FAIL")
         self.assertTrue(any("Missing continuation manifest" in e for e in res3["errors"]))
+
+    def test_audit_estate_wave_progression_default(self):
+        result = layout.audit_estate_wave_progression()
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["total_projects"], 15)
+        self.assertEqual(result["source_led_count"], 8)
+        self.assertEqual(result["active_repo_count"], 7)
+        self.assertTrue(result["coverage_complete"])
+        self.assertEqual(result["errors"], [])
+        self.assertEqual(len(result["wave_progressions"]), 15)
+
+    def test_audit_estate_wave_progression_tampered(self):
+        # 1. Missing active repository
+        incomplete_manifest = {
+            "merged_trunk_baseline": {
+                "audiovisual-composition-system": {"full_name": "4444J99/audiovisual-composition-system", "merged_prs": [15, 16, 17]}
+            }
+        }
+        res1 = layout.audit_estate_wave_progression(manifest_data=incomplete_manifest)
+        self.assertEqual(res1["status"], "FAIL")
+        self.assertFalse(res1["coverage_complete"])
+        self.assertTrue(any("Missing active repository" in e for e in res1["errors"]))
+
+        # 2. Missing source-led work
+        incomplete_source_led = {"works": {}}
+        res2 = layout.audit_estate_wave_progression(source_led_data=incomplete_source_led)
+        self.assertEqual(res2["status"], "FAIL")
+        self.assertFalse(res2["coverage_complete"])
+        self.assertTrue(any("Missing source-led work" in e for e in res2["errors"]))
+
+        # 3. Missing continuation files
+        res3 = layout.audit_estate_wave_progression(manifest_data=Path("/missing/manifest.json"),
+                                                    source_led_data=Path("/missing/records.json"))
+        self.assertEqual(res3["status"], "FAIL")
+        self.assertFalse(res3["coverage_complete"])
+        self.assertEqual(len(res3["errors"]), 17)  # 2 missing files + 7 repos + 8 works
 
 
 if __name__ == "__main__":

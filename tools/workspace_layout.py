@@ -117,18 +117,31 @@ BOUNDARIES = {
 }
 
 REQUIRED_BASELINE_PRS = {
-    "audiovisual-composition-system": (15, 16),
-    "audiovisual-media-postproduction-system": (118,),
-    "simvltanea": (34,),
-    "time-moment-brief": (18,),
-    "timed-text-navigation-loop": (65,),
-    "generative-multimedia-spatial-environment": (183,),
-    "the-thing-without-a-name-screendance": (72,),
+    "audiovisual-composition-system": (15, 16, 17),
+    "audiovisual-media-postproduction-system": (118, 119),
+    "simvltanea": (34, 35),
+    "time-moment-brief": (18, 19),
+    "timed-text-navigation-loop": (65, 66),
+    "generative-multimedia-spatial-environment": (183, 184),
+    "the-thing-without-a-name-screendance": (72, 73),
 }
+
+EXPECTED_ACTIVE_REPOS = tuple(REQUIRED_BASELINE_PRS.keys())
+
+EXPECTED_SOURCE_LED_WORKS = (
+    "backwards-up-hill",
+    "cycles",
+    "etc",
+    "noonlight",
+    "nrcsvs",
+    "nvde",
+    "passing-thru",
+    "wrvng-v",
+)
 
 
 def verify_native_admission_status(manifest_data=None):
-    """Verify operator-authorized native admission override and Wave 1-2 merged baseline."""
+    """Verify operator-authorized native admission override and Wave 1-3 merged baseline."""
     if manifest_data is None:
         continuation_path = REPOSITORY / "manifests" / "project-continuation.json"
         if not continuation_path.is_file():
@@ -202,6 +215,92 @@ def verify_native_admission_status(manifest_data=None):
             "admission": admission,
             "repositories": verified_repos,
         },
+        "errors": errors,
+    }
+
+
+def audit_estate_wave_progression(manifest_data=None, source_led_data=None):
+    """Audit full estate cross-wave progression across 8 source-led works and 7 active repositories.
+
+    Guarantees 15/15 complete estate coverage without omissions.
+    """
+    errors = []
+
+    # 1. Resolve manifest_data (project-continuation.json)
+    if manifest_data is None:
+        p = REPOSITORY / "manifests" / "project-continuation.json"
+        if not p.is_file():
+            errors.append(f"Missing continuation manifest: {p}")
+            manifest_data = {}
+        else:
+            manifest_data = json.loads(p.read_text(encoding="utf-8"))
+    elif isinstance(manifest_data, (str, Path)):
+        p = Path(manifest_data)
+        if not p.is_file():
+            errors.append(f"Missing continuation manifest: {p}")
+            manifest_data = {}
+        else:
+            manifest_data = json.loads(p.read_text(encoding="utf-8"))
+
+    # 2. Resolve source_led_data (source-led-continuation-records.json)
+    if source_led_data is None:
+        p = REPOSITORY / "manifests" / "source-led-continuation-records.json"
+        if not p.is_file():
+            errors.append(f"Missing source-led records manifest: {p}")
+            source_led_data = {}
+        else:
+            source_led_data = json.loads(p.read_text(encoding="utf-8"))
+    elif isinstance(source_led_data, (str, Path)):
+        p = Path(source_led_data)
+        if not p.is_file():
+            errors.append(f"Missing source-led records manifest: {p}")
+            source_led_data = {}
+        else:
+            source_led_data = json.loads(p.read_text(encoding="utf-8"))
+
+    # 3. Check active repositories
+    baseline = manifest_data.get("merged_trunk_baseline", {})
+    wave_progressions = {}
+    found_active = []
+    for repo_name in EXPECTED_ACTIVE_REPOS:
+        repo_info = baseline.get(repo_name)
+        if not repo_info:
+            errors.append(f"Missing active repository from merged trunk baseline: {repo_name}")
+        else:
+            found_active.append(repo_name)
+            wave_progressions[repo_name] = {
+                "type": "active_repository",
+                "full_name": repo_info.get("full_name"),
+                "merged_prs": repo_info.get("merged_prs", []),
+                "baseline_status": repo_info.get("baseline_status", "merged"),
+            }
+
+    # 4. Check source-led works
+    works = source_led_data.get("works", {})
+    found_source_led = []
+    for work_name in EXPECTED_SOURCE_LED_WORKS:
+        work_info = works.get(work_name)
+        if not work_info:
+            errors.append(f"Missing source-led work from continuation records: {work_name}")
+        else:
+            found_source_led.append(work_name)
+            wave_progressions[work_name] = {
+                "type": "source_led_work",
+                "stable_project_id": work_info.get("stable_project_id"),
+                "work_type": work_info.get("work_type"),
+                "binding_status": work_info.get("binding_status", "unbound"),
+            }
+
+    total_projects = len(found_active) + len(found_source_led)
+    coverage_complete = (len(errors) == 0) and (total_projects == 15) and (len(found_active) == 7) and (len(found_source_led) == 8)
+
+    return {
+        "status": "PASS" if coverage_complete else "FAIL",
+        "total_projects": total_projects,
+        "source_led_count": len(found_source_led),
+        "active_repo_count": len(found_active),
+        "wave_progressions": wave_progressions,
+        "coverage_complete": coverage_complete,
         "errors": errors,
     }
 
@@ -499,7 +598,7 @@ def check_workspace(manifest, catalog_only=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("render", "check", "plan", "apply", "status"))
+    parser.add_argument("command", choices=("render", "check", "plan", "apply", "status", "audit-progression"))
     parser.add_argument("--catalog-only", action="store_true", help="CI: allow absent ignored workstation sources")
     args = parser.parse_args()
     if args.catalog_only and args.command != "check":
@@ -507,6 +606,12 @@ def main():
     manifest = load_manifest()
     if args.command == "status":
         print(json.dumps(source_status(manifest), indent=2))
+        return
+    if args.command == "audit-progression":
+        result = audit_estate_wave_progression()
+        print(json.dumps(result, indent=2))
+        if result["status"] != "PASS":
+            sys.exit(1)
         return
     files = rendered_files(manifest)
     paths = {relative: render_path(relative) for relative in files}
