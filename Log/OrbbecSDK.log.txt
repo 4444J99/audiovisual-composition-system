@@ -1,0 +1,23 @@
+[10/13 17:14:50.082875][debug][4508348][Context.cpp:30] Context creating, work_dir=/Users/4jp/Workspace/audiovisual-composition-system
+[10/13 17:14:50.083042][debug][4508348][Context.cpp:49] Config file version=1.1
+[10/13 17:14:50.083172][debug][4508348][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[10/13 17:14:50.083179][info][4508348][Context.cpp:68] Context created with config: default config!
+[10/13 17:14:50.083310][info][4508348][Context.cpp:73] Work directory=/Users/4jp/Workspace/audiovisual-composition-system, SDK version=v1.10.16-20241021-c0329e356
+[10/13 17:14:50.083325][debug][4508348][DeviceManager.cpp:30] DeviceManager init ...
+[10/13 17:14:50.083464][info][4508348][MacPal.cpp:31] createObPal: create MacPal!
+[10/13 17:14:50.084583][debug][4508348][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[10/13 17:14:50.084806][debug][4508348][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[10/13 17:14:50.084824][info][4508348][MacPal.cpp:125] Create PollingDeviceWatcher!
+[10/13 17:14:50.084834][debug][4508348][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[10/13 17:14:50.084839][info][4508348][DeviceManager.cpp:15] Current found device(s): (0)
+[10/13 17:14:50.084843][debug][4508348][DeviceManager.cpp:52] DeviceManager construct done!
+[10/13 17:14:50.084858][info][4508348][DeviceManager.cpp:304] Enable net device enumeration: true
+[10/13 17:14:50.085171][debug][4508348][GVCPClient.cpp:223] bind 0.0.0.0:0
+[10/13 17:14:51.090528][debug][4508348][NetDeviceEnumerator.cpp:49] No net source port found!
+[10/13 17:14:51.090621][debug][4508348][NetDeviceEnumerator.cpp:33] No net device found!
+[10/13 17:14:51.090727][info][4508348][DeviceManager.cpp:15] Current device(s) list: (0)
+[10/13 17:14:51.170086][debug][4508348][Context.cpp:81] Context destroying ...
+[10/13 17:14:51.170110][debug][4508348][DeviceManager.cpp:56] DeviceManager destroy ...
+[10/13 17:14:51.170114][debug][4508348][DeviceManager.cpp:64] DeviceManager Destructors done
+[10/13 17:14:52.096924][info][4508348][Context.cpp:84] Context destroyed
+[10/13 17:14:52.097066][debug][4817077][GVCPClient.cpp:223] bind 169.254.224.163:0 [**2 logs in 2011ms, last: 17:14:50.085249**]
