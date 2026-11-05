@@ -143,7 +143,7 @@ class SourceLedRecordsTest(unittest.TestCase):
     def test_wrvng_v_dual_lineage(self) -> None:
         wrv = self.manifest_data["works"]["wrvng-v"]
         self.assertEqual(wrv["binding_status"], "hybrid")
-        self.assertEqual(wrv["bound_implementation_repo"], "4444J99/audiovisual-media-postproduction-system")
+        self.assertEqual(wrv["bound_implementation_repo"], "4444J99/tool-audiovisual-postproduction")
         dual = wrv["dual_lineage"]
         self.assertEqual(dual["audio"]["total_bytes"], 220762256)
         self.assertEqual(dual["visual"]["format"], "touchdesigner_toe")

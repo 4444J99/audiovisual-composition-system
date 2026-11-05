@@ -10,17 +10,17 @@
   },
   "merged_trunk_baseline": {
     "audiovisual-composition-system": {
-      "full_name": "4444J99/audiovisual-composition-system",
+      "full_name": "4444J99/hub-audiovisual-projects",
       "merged_prs": [15, 16, 17, 18, 19],
       "baseline_status": "merged"
     },
     "audiovisual-media-postproduction-system": {
-      "full_name": "4444J99/audiovisual-media-postproduction-system",
+      "full_name": "4444J99/tool-audiovisual-postproduction",
       "merged_prs": [118, 119, 120, 121, 122],
       "baseline_status": "merged"
     },
     "simvltanea": {
-      "full_name": "4444J99/simvltanea",
+      "full_name": "4444J99/tool-video-loop-compositor",
       "merged_prs": [34, 35, 36, 37],
       "baseline_status": "merged"
     },

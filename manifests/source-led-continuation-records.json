@@ -113,7 +113,7 @@
       "artwork_id": "art-6ab712825b40819196bb9fbf53d4d446",
       "work_type": "hybrid_composition",
       "binding_status": "hybrid",
-      "bound_implementation_repo": "4444J99/audiovisual-media-postproduction-system",
+      "bound_implementation_repo": "4444J99/tool-audiovisual-postproduction",
       "dual_lineage": {
         "audio": {
           "total_bytes": 220762256,
@@ -121,10 +121,10 @@
         },
         "visual": {
           "format": "touchdesigner_toe",
-          "bound_repo": "4444J99/audiovisual-media-postproduction-system"
+          "bound_repo": "4444J99/tool-audiovisual-postproduction"
         }
       },
-      "custody_requirement": "Dual lineage: audio stem archive (220,762,256 bytes) and TouchDesigner .toe visuals bound to 4444J99/audiovisual-media-postproduction-system."
+      "custody_requirement": "Dual lineage: audio stem archive (220,762,256 bytes) and TouchDesigner .toe visuals bound to 4444J99/tool-audiovisual-postproduction."
     }
   }
 }
