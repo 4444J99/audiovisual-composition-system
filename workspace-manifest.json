@@ -11,7 +11,7 @@
     {
       "key": "postproduction",
       "github_id": 1409689012,
-      "full_name": "4444J99/audiovisual-media-postproduction-system",
+      "full_name": "4444J99/tool-audiovisual-postproduction",
       "private": false,
       "local_path": null,
       "role": "Source-addressed audio processing, spatial compositing, directed revisions, source-unit scheduling and hash-bound native execution. The amp package retains its existing public interfaces.",
@@ -37,7 +37,7 @@
     {
       "key": "simvltanea",
       "github_id": 1364497735,
-      "full_name": "4444J99/simvltanea",
+      "full_name": "4444J99/tool-video-loop-compositor",
       "private": false,
       "local_path": "simvltanea",
       "role": "Compile independently clocked video-loop compositions with authored orientation layouts, stage browser previews, render audiovisual exports, and adapt authenticated shared playback generations.",

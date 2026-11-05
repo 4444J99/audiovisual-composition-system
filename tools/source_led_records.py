@@ -194,19 +194,19 @@ def validate_denominators(works: dict[str, Any]) -> list[str]:
             f"passing-thru denominator error: expected 7 stages (2,422,068,546 bytes) matching {list(PASSING_THRU_STAGES)}, got {stages}"
         )
 
-    # 8. wrvng-v: hybrid dual lineage (audio: 220,762,256 bytes, visual TouchDesigner .toe, bound to 4444J99/audiovisual-media-postproduction-system)
+    # 8. wrvng-v: hybrid dual lineage (audio: 220,762,256 bytes, visual TouchDesigner .toe, bound to 4444J99/tool-audiovisual-postproduction)
     wrv = works.get("wrvng-v", {})
     dual = wrv.get("dual_lineage", {})
     audio = dual.get("audio", {})
     visual = dual.get("visual", {})
     if (
         wrv.get("binding_status") != "hybrid"
-        or wrv.get("bound_implementation_repo") != "4444J99/audiovisual-media-postproduction-system"
+        or wrv.get("bound_implementation_repo") != "4444J99/tool-audiovisual-postproduction"
         or audio.get("total_bytes") != 220762256
         or visual.get("format") != "touchdesigner_toe"
     ):
         errors.append(
-            "wrvng-v hybrid lineage error: expected audio 220,762,256 bytes and visual touchdesigner_toe bound to 4444J99/audiovisual-media-postproduction-system"
+            "wrvng-v hybrid lineage error: expected audio 220,762,256 bytes and visual touchdesigner_toe bound to 4444J99/tool-audiovisual-postproduction"
         )
 
     return errors
